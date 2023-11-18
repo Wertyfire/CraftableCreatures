@@ -1,0 +1,71 @@
+achievement.thanksForDownload=Craftable Creatures
+achievement.thanksForDownload.desc=Thank you for downloading this mod!
+achievement.bluedustCollector=Bluedust collector
+achievement.bluedustCollector.desc=Got bluedust
+achievement.templateManager=Blueprint manager
+achievement.templateManager.desc=Craft blueprint
+achievement.mobSpawner=Mob spawner
+achievement.mobSpawner.desc=Craft spawn egg blueprint
+achievement.energy=Energy
+achievement.energy.desc=Craft powered block of bluestone
+achievement.pbc=Transmutator
+achievement.pbc.desc=Craft transmutator
+
+item.spawnEggTemplate.name=Spawn egg blueprint
+item.template.name=Blueprint
+item.bluestone.name=Bluestone
+item.batWing.name=Bat wing
+item.guideBook.name=Craftable Creatures guide
+item.portativeBodyChanger.name=Transmutator
+item.bluestoneSword.name=Bluestone sword
+item.bluestonePickaxe.name=Bluestone pickaxe
+item.bluestoneAxe.name=Bluestone axe
+item.bluestoneShovel.name=Bluestone shovel
+item.bluestoneHoe.name=Bluestone hoe
+item.soul.name=Soul
+item.soul.creeper.name=Soul [§aCreeper§f]
+item.soul.skeleton.name=Soul [§7Skeleton§f]
+item.soul.spider.name=Soul [§8Spider§f]
+item.soul.zombie.name=Soul [§2Zombie§f]
+item.soul.slime.name=Soul [§aSlime§f]
+item.soul.ghast.name=Soul [§7Ghast§f]
+item.soul.zombiePigman.name=Soul [§dZombie pigman§f]
+item.soul.enderman.name=Soul [§0Enderman§f]
+item.soul.caveSpider.name=Soul [§1Cave spider§f]
+item.soul.silverfish.name=Soul [§8Silverfish§f]
+item.soul.blaze.name=Soul [§6Blaze§f]
+item.soul.magmaCube.name=Soul [§4Magma cube§f]
+item.soul.bat.name=Soul [§6Bat§f]
+item.soul.witch.name=Soul [§5Witch§f]
+item.soul.pig.name=Soul [§dPig§f]
+item.soul.sheep.name=Soul [Sheep]
+item.soul.cow.name=Soul [§8Cow§f]
+item.soul.chicken.name=Soul [Chicken]
+item.soul.squid.name=Soul [§1Squid§f]
+item.soul.wolf.name=Soul [§7Wolf§f]
+item.soul.mooshroom.name=Soul [§cMooshroom§f]
+item.soul.ocelot.name=Soul [§eOcelot§f]
+item.soul.horse.name=Soul [§6Horse§f]
+item.soul.villager.name=Soul [§6Villager§f]
+
+item.portativeBodyChanger.tooltip.1=Got all mob souls and load it to
+item.portativeBodyChanger.tooltip.2=transmutator. Now you can turn into mobs!
+item.portativeBodyChanger.tooltip.3=§7§lNote: in transmutator you see only HOTBAR!
+
+tooltip.lshift.press=§fPress §cLSHIFT §fto see info
+
+itemGroup.craftableCreatures=Craftable Creatures
+
+tile.bluestoneBlock.name=Block of bluestone
+tile.poweredBluestoneBlock.name=Powered block of bluestone
+tile.bluestoneOre.name=Bluestone ore
+
+craftableCreatures.configGui.checkForUpdates=Check for updates (Doesn't work now)
+craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
+
+container.hotbar=Hotbar
+container.pbc=Transmutator
+
+gui.turn=Turn
+
+chat.craftable_creations.mod_info=Mod Craftable Creations v0.1.0 working good! Experimental content =

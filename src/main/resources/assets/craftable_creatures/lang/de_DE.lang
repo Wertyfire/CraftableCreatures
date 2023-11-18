@@ -1,0 +1,72 @@
+achievement.thanksForDownload=Craftable Creatures
+achievement.thanksForDownload.desc=Vielen Dank für das herunterladen der modifikation!
+achievement.bluedustCollector=Blaustaub sammler
+achievement.bluedustCollector.desc=Habe blaustaub
+achievement.templateManager=Zeichnung manager
+achievement.templateManager.desc=Craft zeichnung
+achievement.mobSpawner=Mob-Spawner
+achievement.mobSpawner.desc=Basteln sie "erschaffe" zeichnung
+achievement.energy=Energie
+achievement.energy.desc=Basteln sie einen angetriebenen blausteinblock
+achievement.pbc=Der Transformator
+achievement.pbc.desc=Basteln sie einen der transformator
+
+item.spawnEggTemplate.name=Zeichnung von "erschaffe"
+item.template.name=Zeichnung
+item.bluestone.name=Blaustaub
+item.batWing.name=Fledermausflügel
+item.guideBook.name=Craftable Creatures buch
+item.portativeBodyChanger.name=Der Transformator
+item.bluestoneSword.name=Schwert aus Blaustein
+item.bluestonePickaxe.name=Spitzhacke aus Blaustein
+item.bluestoneAxe.name=Axt aus Blaustein
+item.bluestoneShovel.name=Spaten aus Blaustein
+item.bluestoneHoe.name=Hacke aus Blaustein
+item.soul.name=Seele
+item.soul.creeper.name=Seele [§aCreeper§f]
+item.soul.skeleton.name=Seele [§7Skelett§f]
+item.soul.spider.name=Seele [§8Spinne§f]
+item.soul.zombie.name=Seele [§2Zombie§f]
+item.soul.slime.name=Seele [§aSchleim§f]
+item.soul.ghast.name=Seele [§7Ghast§f]
+item.soul.zombiePigman.name=Seele [§dZombie pigman§f]
+item.soul.enderman.name=Seele [§0Enderman§f]
+item.soul.caveSpider.name=Seele [§1Höhlenspinne§f]
+item.soul.silverfish.name=Seele [§8Silberfischchen§f]
+item.soul.blaze.name=Seele [§6Lohe§f]
+item.soul.magmaCube.name=Seele [§4Magmaschleim§f]
+item.soul.bat.name=Seele [§6Fledermaus§f]
+item.soul.witch.name=Seele [§5Hexe§f]
+item.soul.pig.name=Seele [§dSchwein§f]
+item.soul.sheep.name=Seele [Schaf]
+item.soul.cow.name=Seele [§8Kuh§f]
+item.soul.chicken.name=Seele [Huhn]
+item.soul.squid.name=Seele [§1Tintenfisch§f]
+item.soul.wolf.name=Seele [§7Wolf§f]
+item.soul.mooshroom.name=Seele [§cPilzkuh§f]
+item.soul.ocelot.name=Seele [§eOzelot§f]
+item.soul.horse.name=Seele [§6Pferd§f]
+item.soul.villager.name=Seele [§6Dorfbewohner§f]
+
+item.portativeBodyChanger.tooltip.1=Habe alle mob-seelen und lade sie auf das
+item.portativeBodyChanger.tooltip.2=gerät. Jetzt kannst du dich in mobs verwandeln!
+item.portativeBodyChanger.tooltip.3=§7§lHinweis: im transmutator sehen sie nur HOTBAR!
+
+itemGroup.craftableCreatures=Craftable Creatures
+
+tile.bluestoneBlock.name=Block aus blaustein
+tile.poweredBluestoneBlock.name=Angetriebener block aus blaustein
+tile.bluestoneOre.name=Blaustaub erz
+
+craftableCreatures.configGui.checkForUpdates=Auf updates prüfen (funktioniert jetzt nicht)
+craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experimentelle inhalte
+
+
+tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
+
+container.hotbar=Schnellzugriffspanel
+container.pbc=Der Transformator
+
+gui.turn=Ausarten
+
+chat.craftable_creations.mod_info=Mod Craftable Creations v0.1.0 funktioniert gut! Experimenteller inhalt =
