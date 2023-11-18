@@ -64,7 +64,7 @@ public class GuiTransmutator extends GuiContainer
     public void initGui()
     {
         super.initGui();
-        this.buttonList.add(new GuiButton(1, 460, 270, 100, 20, I18n.format("gui.turn")));
+        this.buttonList.add(new GuiButton(1, 430, 270, 100, 20, I18n.format("gui.turn")));
     }
 
     @Override
