@@ -14,7 +14,7 @@ import java.util.List;
 public class ItemPortativeBodyChanger extends ItemDefault {
 
     public ItemPortativeBodyChanger() {
-        super("portativeBodyChanger", null, CCCreativeTabs.tabCraftableCreatures);
+        super("portativeBodyChanger", "transmutator", CCCreativeTabs.tabCraftableCreatures);
         setMaxStackSize(1);
     }
 
