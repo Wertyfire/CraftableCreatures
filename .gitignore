@@ -5,3 +5,5 @@
 /CraftableCreatures.iws
 /build
 /.gradle
+/run/logs
+/run/crash-reports
