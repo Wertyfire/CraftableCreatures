@@ -9,10 +9,6 @@ buildscript {
             name = "sonatype"
             url = "https://oss.sonatype.org/content/repositories/snapshots/"
         }
-        maven {
-            name = "CB Maven FS"
-            url = "http://chickenbones.net/maven"
-        }
     }
     dependencies {
         classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
