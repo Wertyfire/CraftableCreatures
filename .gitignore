@@ -16,3 +16,6 @@
 *.mca
 *.lock
 *.cfg
+*.dat_old
+*.dat_mcr
+*.zip
