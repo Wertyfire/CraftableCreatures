@@ -5,8 +5,6 @@
 /CraftableCreatures.iws
 /build
 /.gradle
-/run/logs
-/run/crash-reports
 /run/
 /run/options.txt
 *.location
