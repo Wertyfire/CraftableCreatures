@@ -19,3 +19,5 @@
 *.dat_old
 *.dat_mcr
 *.zip
+*.xml
+*.jar
