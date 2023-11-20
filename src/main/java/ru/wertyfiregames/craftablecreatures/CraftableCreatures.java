@@ -50,7 +50,6 @@ public class CraftableCreatures
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
 
-        proxy.registerRenderers();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
     }
     @EventHandler
