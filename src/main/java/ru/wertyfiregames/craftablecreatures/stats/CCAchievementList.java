@@ -19,12 +19,10 @@ public class CCAchievementList
             1, CCItems.spawn_egg_template, templateManager).registerStat());
     public static Achievement energy = (new Achievement("achievement.energy", "energy", -2, -1,
             CCBlocks.powered_bluestone_block, bluedustCollector).registerStat());
-    public static Achievement pbc = (new Achievement("achievement.pbc", "transmutator", -2, 1,
-            CCItems.portative_body_changer, bluedustCollector).registerStat());
 
     public static void register()
     {
         AchievementPage.registerAchievementPage(new AchievementPage(
-                "Craftable Creatures", thanksForDownload, bluedustCollector, templateManager, mobSpawner, energy, pbc));
+                "Craftable Creatures", thanksForDownload, bluedustCollector, templateManager, mobSpawner, energy));
     }
 }

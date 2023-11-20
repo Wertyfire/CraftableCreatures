@@ -8,15 +8,12 @@ achievement.mobSpawner=Mob spawner
 achievement.mobSpawner.desc=Craft spawn egg blueprint
 achievement.energy=Energy
 achievement.energy.desc=Craft powered block of bluestone
-achievement.pbc=Transmutator
-achievement.pbc.desc=Craft transmutator
 
 item.spawnEggTemplate.name=Spawn egg blueprint
 item.template.name=Blueprint
 item.bluestone.name=Bluestone
 item.batWing.name=Bat wing
 item.guideBook.name=Craftable Creatures guide
-item.portativeBodyChanger.name=Transmutator
 item.bluestoneSword.name=Bluestone sword
 item.bluestonePickaxe.name=Bluestone pickaxe
 item.bluestoneAxe.name=Bluestone axe
@@ -48,10 +45,6 @@ item.soul.ocelot.name=Soul [§eOcelot§f]
 item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
 
-item.portativeBodyChanger.tooltip.1=Got all mob souls and load it to
-item.portativeBodyChanger.tooltip.2=transmutator. Now you can turn into mobs!
-item.portativeBodyChanger.tooltip.3=§7§lNote: in transmutator you see only HOTBAR!
-
 tooltip.lshift.press=§fPress §cLSHIFT §fto see info
 
 itemGroup.craftableCreatures=Craftable Creatures
@@ -62,10 +55,5 @@ tile.bluestoneOre.name=Bluestone ore
 
 craftableCreatures.configGui.checkForUpdates=Check for updates (Doesn't work now)
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
-
-container.hotbar=Hotbar
-container.pbc=Transmutator
-
-gui.turn=Turn
 
 chat.craftable_creations.mod_info=Mod Craftable Creations v0.1.0 working good! Experimental content =

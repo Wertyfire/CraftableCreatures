@@ -8,15 +8,12 @@ achievement.mobSpawner=Mob-Spawner
 achievement.mobSpawner.desc=Basteln sie "erschaffe" zeichnung
 achievement.energy=Energie
 achievement.energy.desc=Basteln sie einen angetriebenen blausteinblock
-achievement.pbc=Der Transformator
-achievement.pbc.desc=Basteln sie einen der transformator
 
 item.spawnEggTemplate.name=Zeichnung von "erschaffe"
 item.template.name=Zeichnung
 item.bluestone.name=Blaustaub
 item.batWing.name=Fledermausflügel
 item.guideBook.name=Craftable Creatures buch
-item.portativeBodyChanger.name=Der Transformator
 item.bluestoneSword.name=Schwert aus Blaustein
 item.bluestonePickaxe.name=Spitzhacke aus Blaustein
 item.bluestoneAxe.name=Axt aus Blaustein
@@ -48,10 +45,6 @@ item.soul.ocelot.name=Seele [§eOzelot§f]
 item.soul.horse.name=Seele [§6Pferd§f]
 item.soul.villager.name=Seele [§6Dorfbewohner§f]
 
-item.portativeBodyChanger.tooltip.1=Habe alle mob-seelen und lade sie auf das
-item.portativeBodyChanger.tooltip.2=gerät. Jetzt kannst du dich in mobs verwandeln!
-item.portativeBodyChanger.tooltip.3=§7§lHinweis: im transmutator sehen sie nur HOTBAR!
-
 itemGroup.craftableCreatures=Craftable Creatures
 
 tile.bluestoneBlock.name=Block aus blaustein
@@ -63,10 +56,5 @@ craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experiment
 
 
 tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
-
-container.hotbar=Schnellzugriffspanel
-container.pbc=Der Transformator
-
-gui.turn=Ausarten
 
 chat.craftable_creations.mod_info=Mod Craftable Creations v0.1.0 funktioniert gut! Experimenteller inhalt =

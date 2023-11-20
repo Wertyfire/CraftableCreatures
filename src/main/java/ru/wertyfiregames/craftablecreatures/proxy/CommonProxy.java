@@ -7,9 +7,6 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.transmutator.inventory.ContainerTransmutator;
-import ru.wertyfiregames.craftablecreatures.transmutator.inventory.GuiTransmutator;
-import ru.wertyfiregames.craftablecreatures.transmutator.item.ItemTransmutatorInv;
 
 public class CommonProxy implements IGuiHandler
 {
@@ -32,7 +29,7 @@ public class CommonProxy implements IGuiHandler
     {
         if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
         {
-            return new ContainerTransmutator(player, player.inventory, new ItemTransmutatorInv(player.getHeldItem()));
+            return null;
         }
 
         return null;
@@ -43,7 +40,7 @@ public class CommonProxy implements IGuiHandler
     {
         if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
         {
-            return new GuiTransmutator(new ContainerTransmutator(player, player.inventory, new ItemTransmutatorInv(player.getHeldItem())));
+            return null;
         }
 
         return null;

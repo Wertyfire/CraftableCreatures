@@ -8,15 +8,12 @@ achievement.mobSpawner=Творець мобів
 achievement.mobSpawner.desc=Створіть креслення яйця призову
 achievement.energy=Енергія
 achievement.energy.desc=Створіть заряджений блок синього каменю
-achievement.pbc=Трансмутатор
-achievement.pbc.desc=Створiть трансмутатор
 
 item.spawnEggTemplate.name=Креслення яйця призову
 item.template.name=Малювання
 item.bluestone.name=Синій камінь
 item.batWing.name=Крило кажана
 item.guideBook.name=Craftable Creatures інструкція
-item.portativeBodyChanger.name=Трансмутатор
 item.bluestoneSword.name=Меч із синього каменю
 item.bluestonePickaxe.name=Кірка із синього каменю
 item.bluestoneAxe.name=Сокира iз синього каменю
@@ -48,10 +45,6 @@ item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Кiнь§f]
 item.soul.villager.name=Душа [§6Селянин§f]
 
-item.portativeBodyChanger.tooltip.1=Отримайте душі всіх мобів та завантажте їх
-item.portativeBodyChanger.tooltip.2=трансмутатор. Тепер ви можете перетворюватися на мобів!
-item.portativeBodyChanger.tooltip.3=§7§lПримітка: у трансмутатора видно лише панель швидкого доступу
-
 tooltip.lshift.press=§fНатисніть §cLSHIFT §fщоб побачити інформацію
 
 itemGroup.craftableCreatures=Craftable Creatures
@@ -62,10 +55,5 @@ tile.bluestoneOre.name=Руда синього каменю
 
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень (Поки не працює)
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
-
-container.hotbar=Панель швидкого доступу
-container.pbc=Трансмутатор
-
-gui.turn=Перетворюватися
 
 chat.craftable_creations.mod_info=Мод Craftable Creations v0.1.0 працює правильно! Експериментальний режим =

@@ -29,9 +29,6 @@ public class TradeHandler implements IVillageTradeHandler
                 recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 15),
                         new ItemStack(CCItems.soul_element, 1, 0),
                         new ItemStack(CCItems.soul_element, 1, random.nextInt(25))));
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 8),
-                        new ItemStack(Items.redstone, 4),
-                        new ItemStack(CCItems.portative_body_changer, 1)));
                 break;
             case 3:
                 break;

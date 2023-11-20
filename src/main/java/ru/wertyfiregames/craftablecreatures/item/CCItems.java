@@ -5,7 +5,6 @@ import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.guidebook.item.ItemGuideBook;
-import ru.wertyfiregames.craftablecreatures.transmutator.item.ItemPortativeBodyChanger;
 
 public class CCItems
 {
@@ -16,7 +15,6 @@ public class CCItems
     public static final Item bat_wing = new ItemDefault("batWing", "bat_wing", CCCreativeTabs.tabCraftableCreatures);
     public static final Item soul_element = new ItemSoulElement();
     public static final Item guide_book = new ItemGuideBook();
-    public static final Item portative_body_changer = new ItemPortativeBodyChanger();
     public static final Item bluestone_sword = new ItemBluestoneSword();
     public static final Item bluestone_pickaxe = new ItemBluestonePickaxe();
     public static final Item bluestone_axe = new ItemBluestoneAxe();
@@ -38,7 +36,6 @@ public class CCItems
         if (CCConfigHandler.enableExperimentalContent)
         {
             GameRegistry.registerItem(guide_book, "guide");
-            GameRegistry.registerItem(portative_body_changer, "transmutator");
         }
         //Must be in the end
         GameRegistry.registerItem(soul_element, "soul_element");
