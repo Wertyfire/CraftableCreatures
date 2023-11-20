@@ -21,7 +21,7 @@ public class CCFMLEventListener {
     public void onPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event)
     {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
-        event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftable_creations.mod_info") + CCConfigHandler.enableExperimentalContent));
+        event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftable_creations.mod_info") + " " + CCConfigHandler.enableExperimentalContent));
     }
 
     @SubscribeEvent
