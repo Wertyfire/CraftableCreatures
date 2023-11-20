@@ -5,7 +5,8 @@ import net.minecraft.entity.EntityList;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import net.minecraft.init.Items;
@@ -15,18 +16,20 @@ public class CCRecipes
 {
     public static void register()
     {
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.spawn_egg_template),
-                new ItemStack(Items.egg), new ItemStack(CCItems.template));
-        GameRegistry.addShapedRecipe(new ItemStack(CCItems.template),
-                "SR", "RS", 'R', CCItems.bluestone, 'S', Items.paper);
-        GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.powered_bluestone_block),
-                "SSS", "SUS", "SSS", 'S', CCItems.bluestone, 'U', Items.redstone);
-        GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
-                "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(CCItems.spawn_egg_template),
+                new ItemStack(Items.egg), new ItemStack(CCItems.template)));
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 9),
                 new ItemStack(CCBlocks.bluestone_block));
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 8),
                 new ItemStack(CCBlocks.powered_bluestone_block));
+
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
+                "SR", "RS", 'R', "dustBluestone", 'S', Items.paper));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.powered_bluestone_block),
+                "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.bluestone_block),
+                "SSS", "SSS", "SSS", 'S', "dustBluestone"));
+
         GameRegistry.addSmelting(new ItemStack(CCBlocks.bluestone_ore), new ItemStack(CCItems.bluestone), 10f);
 
         //Souls
