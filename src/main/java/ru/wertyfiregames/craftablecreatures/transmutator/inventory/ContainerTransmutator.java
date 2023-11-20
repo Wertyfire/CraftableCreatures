@@ -52,7 +52,7 @@ public class ContainerTransmutator extends Container
         ItemStack itemStack = null;
         Slot slot = (Slot) this.inventorySlots.get(index);
 
-        if (slot != null)
+        if (slot != null && slot.getHasStack())
         {
             ItemStack itemStack1 = slot.getStack();
             itemStack = itemStack1.copy();
@@ -63,6 +63,8 @@ public class ContainerTransmutator extends Container
                 {
                     return null;
                 }
+
+                slot.onSlotChange(itemStack1, itemStack);
             } else
             {
                 if (itemStack1.getItem() instanceof ItemSoulElement)
@@ -91,16 +93,5 @@ public class ContainerTransmutator extends Container
         }
 
         return itemStack;
-    }
-
-    @Override
-    public ItemStack slotClick(int slot, int button, int flag, EntityPlayer player)
-    {
-        if (slot >= 0 && getSlot(slot) != null && getSlot(slot).getStack() == player.getHeldItem())
-        {
-            return null;
-        }
-
-        return super.slotClick(slot, button, flag, player);
     }
 }
