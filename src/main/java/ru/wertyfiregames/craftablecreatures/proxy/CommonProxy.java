@@ -43,11 +43,9 @@ public class CommonProxy implements IGuiHandler
     {
         if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
         {
-            return new GuiTransmutator((ContainerTransmutator) new ContainerTransmutator(player, player.inventory, new ItemTransmutatorInv(player.getHeldItem())));
+            return new GuiTransmutator(new ContainerTransmutator(player, player.inventory, new ItemTransmutatorInv(player.getHeldItem())));
         }
 
         return null;
     }
-
-    public void registerRenderers() { }
 }

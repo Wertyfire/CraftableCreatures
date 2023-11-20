@@ -58,7 +58,4 @@ public class ClientProxy extends CommonProxy {
         super.postInit(event);
         FMLLog.info("Post initialization of Craftable Creatures complete");
     }
-
-    @Override
-    public void registerRenderers() { }
 }
