@@ -40,9 +40,6 @@ public class CCFMLEventListener {
             if (event.crafting.getItem() == Item.getItemFromBlock(CCBlocks.powered_bluestone_block)) {
                 event.player.triggerAchievement(CCAchievementList.energy);
             }
-            if (event.crafting.getItem() == CCItems.portative_body_changer) {
-                event.player.triggerAchievement(CCAchievementList.pbc);
-            }
         }
     }
 }
