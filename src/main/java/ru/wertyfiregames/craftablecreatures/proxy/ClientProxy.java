@@ -14,7 +14,7 @@ import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
 import ru.wertyfiregames.craftablecreatures.common.handler.TradeHandler;
 import ru.wertyfiregames.craftablecreatures.common.listener.CCFMLEventListener;
 import ru.wertyfiregames.craftablecreatures.item.CCItems;
-import ru.wertyfiregames.craftablecreatures.item.render.CCItemRenderers;
+import ru.wertyfiregames.craftablecreatures.render.CCRenderers;
 import ru.wertyfiregames.craftablecreatures.recipe.CCRecipes;
 import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.world.CCWorldGenVines;
@@ -47,7 +47,7 @@ public class ClientProxy extends CommonProxy {
         FMLLog.info("Pre initialization of Craftable Creatures complete");
     }
     public void init(FMLInitializationEvent event) {
-        CCItemRenderers.register();
+        CCRenderers.registerItemRenderers();
         FMLLog.info("CC Item renderers loaded");
         super.init(event);
         FMLLog.info("Initialization of Craftable Creatures complete");
