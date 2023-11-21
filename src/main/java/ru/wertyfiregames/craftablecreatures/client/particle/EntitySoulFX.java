@@ -12,7 +12,7 @@ public class EntitySoulFX extends CCEntityFX
         this.setGravity(-0.2);
     }
 
-    public static ResourceLocation particle = new ResourceLocation(CraftableCreatures.modId, "textures/particles/soul.png");
+    public static ResourceLocation particle = new ResourceLocation(CraftableCreatures.getModId(), "textures/particles/soul.png");
 
     @Override
     protected ResourceLocation getIconPath()

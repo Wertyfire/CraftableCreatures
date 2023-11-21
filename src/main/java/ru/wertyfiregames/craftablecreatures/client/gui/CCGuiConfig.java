@@ -13,7 +13,7 @@ public class CCGuiConfig extends GuiConfig
     public CCGuiConfig(GuiScreen guiScreen)
     {
         super(guiScreen, new ConfigElement(getConfig().getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(),
-                CraftableCreatures.modId, false, false,
+                CraftableCreatures.getModId(), false, false,
                 GuiConfig.getAbridgedConfigPath(getConfig().toString()));
     }
 }

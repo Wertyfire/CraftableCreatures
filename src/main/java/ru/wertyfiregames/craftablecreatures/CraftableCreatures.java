@@ -9,22 +9,22 @@ import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
 
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
-@Mod(modid = modId, version = modStatus + modVersion + "(05)-1.7.10", name = name,
+@Mod(modid = modId, version = modStatus + "-" + modVersion + "(05)-1.7.10", name = name,
         acceptedMinecraftVersions = acceptedMinecraftVersions, guiFactory = guiFactory)
 public class CraftableCreatures
 {
 
 //    Version
-    public static final String modId = "craftable_creatures";
-    public static final String modVersion = "0.1.3";
-    public static final String acceptedMinecraftVersions = "1.7.10";
-    public static final String majorVersion = "0";
-    public static final String minorVersion = "2";
-    public static final String patch = "0";
-    public static final String modStatus = "beta-";
+    protected static final String modId = "craftable_creatures";
+    protected static final String modVersion = "0.1.3";
+    protected static final String acceptedMinecraftVersions = "1.7.10";
+    protected static final String majorVersion = "0";
+    protected static final String minorVersion = "2";
+    protected static final String patch = "0";
+    protected static final String modStatus = "beta";
 
 //    Name
-    public static final String name = "Craftable Creatures";
+    protected static final String name = "Craftable Creatures";
 
 //    Config
     public static String configDir;
@@ -61,7 +61,7 @@ public class CraftableCreatures
 
     }
 
-
+//    Getters
     public static String getVersion() {
         return modVersion;
     }

@@ -16,7 +16,7 @@ public class CCBlocks
             CCCreativeTabs.tabCraftableCreatures, "pickaxe", 2, 5f, 10f);
     public static final Block bluestone_ore = new BlockCCCompressed(MapColor.stoneColor, Material.rock, "bluestoneOre", "bluestone_ore",
             CCCreativeTabs.tabCraftableCreatures, "pickaxe", 2, 3f, 5f);
-    public static final Block sPGenerator = new BlockSPG();
+    public static final Block soulExtractor = new BlockSE();
 
     public static void register()
     {
@@ -25,7 +25,7 @@ public class CCBlocks
         GameRegistry.registerBlock(bluestone_ore, "bluestone_ore");
         if (CCConfigHandler.enableExperimentalContent)
         {
-            GameRegistry.registerBlock(sPGenerator, "spawn_egg_generator");
+            GameRegistry.registerBlock(soulExtractor, "soul_extractor");
         }
     }
 }

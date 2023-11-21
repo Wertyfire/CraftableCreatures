@@ -55,7 +55,7 @@ public class CCConfigHandler
     @SubscribeEvent
     public void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
     {
-        if (event.modID.equalsIgnoreCase(CraftableCreatures.modId)) {
+        if (event.modID.equalsIgnoreCase(CraftableCreatures.getModId())) {
             loadConfig();
         }
     }
