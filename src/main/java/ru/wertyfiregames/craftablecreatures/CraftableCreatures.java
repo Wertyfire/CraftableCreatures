@@ -9,7 +9,7 @@ import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
 
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
-@Mod(modid = modId, version = modStatus + "-" + modVersion + "(05)-1.7.10", name = name,
+@Mod(modid = modId, version = modStatus + "-" + modVersion + "(" + allVersionsNumber + ")-1.7.10", name = name,
         acceptedMinecraftVersions = acceptedMinecraftVersions, guiFactory = guiFactory)
 public class CraftableCreatures
 {
@@ -21,6 +21,7 @@ public class CraftableCreatures
     protected static final String majorVersion = "0";
     protected static final String minorVersion = "2";
     protected static final String patch = "0";
+    protected static final String allVersionsNumber = "05";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -31,14 +32,14 @@ public class CraftableCreatures
 
 //    Gui
     private static int modGuiIndex = 0;
-    public static final int GUI_TRANSMUTATOR = modGuiIndex++;
+    public static final int GUI_SOUL_EXTRACTOR = modGuiIndex++;
+    public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.client.gui.CCGuiFactory";
 
 //    Proxy
-    public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.client.gui.CCGuiFactory";
     private static final String clientSide = "ru.wertyfiregames.craftablecreatures.proxy.ClientProxy";
     private static final String serverSide = "ru.wertyfiregames.craftablecreatures.proxy.CommonProxy";
     @Mod.Instance("craftable_creatures")
-    public static CraftableCreatures instance;
+    public static CraftableCreatures INSTANCE;
     @SidedProxy(clientSide = clientSide, serverSide = serverSide)
     public static CommonProxy proxy;
 
