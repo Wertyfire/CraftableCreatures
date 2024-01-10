@@ -56,4 +56,4 @@ tile.bluestoneOre.name=Руда синього каменю
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень (Поки не працює)
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
 
-chat.craftable_creations.mod_info=Мод Craftable Creations v0.2.0b (05) працює правильно! Експериментальний режим =
+chat.craftableCreatures.modInfo=Мод Craftable Creations v0.2.0b (05) працює правильно! Експериментальний режим =
