@@ -17,7 +17,6 @@ public class CCOreDictionary
 
 //        Blocks
         OreDictionary.registerOre("blockBluestone", CCBlocks.bluestone_block);
-        OreDictionary.registerOre("blockBluestonePowered", CCBlocks.bluestone_block);
 
 //        Dusts
         OreDictionary.registerOre("dustBluestone", CCItems.bluestone);
