@@ -9,6 +9,8 @@ import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
 import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
+import ru.wertyfiregames.craftablecreatures.version.CCVersion;
+import ru.wertyfiregames.craftablecreatures.version.CCVersion.UpdateResult;
 
 public class CCFMLEventListener {
     @SubscribeEvent
@@ -22,6 +24,22 @@ public class CCFMLEventListener {
     {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfigHandler.enableExperimentalContent));
+
+        if (CCConfigHandler.checkForUpdates) {
+            if (CCVersion.getStatus() == UpdateResult.FAILED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
+            }
+            if (CCVersion.getStatus() == UpdateResult.UP_TO_DATE) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
+            }
+            if (CCVersion.getStatus() == UpdateResult.OUTDATED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
+                event.player.addChatMessage(new ChatComponentText(CCVersion.getChangelog()));
+            }
+            if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
+            }
+        }
     }
 
     @SubscribeEvent

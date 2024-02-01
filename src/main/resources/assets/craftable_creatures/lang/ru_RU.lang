@@ -2,9 +2,9 @@ achievement.thanksForDownload=Craftable Creatures!
 achievement.thanksForDownload.desc=Спасибо за установку мода Craftable Creatures!
 achievement.bluedustCollector=Коллекционер синего камня
 achievement.bluedustCollector.desc=Добудьте синий камень
-achievement.mobSpawner=А вон ана чё
+achievement.mobSpawner=Создатель
 achievement.mobSpawner.desc=Создайте чертёж яйца призыва
-achievement.templateManager=Эт чё
+achievement.templateManager=Чертёж
 achievement.templateManager.desc=Создайте чертёж
 achievement.energy=Энергия
 achievement.energy.desc=Создайте заряженный блок синего камня
@@ -53,7 +53,11 @@ tile.bluestoneBlock.name=Блок синего камня
 tile.poweredBluestoneBlock.name=Заряженный блок синего камня
 tile.bluestoneOre.name=Руда синего камня
 
-craftableCreatures.configGui.checkForUpdates=Проверять обновления (Сейчас не работает)
+craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
 
-chat.craftableCreatures.modInfo=Мод Craftable Creations v0.2.0b (05) работает! Экспериментальный режим =
+chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Мод Craftable Creations v0.2.0 (05) работает! Экспериментальный режим =
+chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Не удалось проверить обновления!
+chat.craftableCreatures.latest=[§bCraftableCreatures§f] Установлена новейшая стабильная версия!
+chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Вышла новая версия мода!
+chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Вышла новая бета версия мода!

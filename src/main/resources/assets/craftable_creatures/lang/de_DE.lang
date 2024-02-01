@@ -51,10 +51,14 @@ tile.bluestoneBlock.name=Block aus blaustein
 tile.poweredBluestoneBlock.name=Angetriebener block aus blaustein
 tile.bluestoneOre.name=Blaustaub erz
 
-craftableCreatures.configGui.checkForUpdates=Auf updates prüfen (funktioniert jetzt nicht)
+craftableCreatures.configGui.checkForUpdates=Auf updates prüfen
 craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experimentelle inhalte
 
 
 tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
 
-chat.craftableCreatures.modInfo=Mod Craftable Creations v0.2.0b (05) funktioniert gut! Experimenteller inhalt =
+chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Mod Craftable Creatures v0.2.0 (05) funktioniert gut! Experimenteller inhalt =
+chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Suche nach Mod-Updates fehlgeschlagen!
+chat.craftableCreatures.latest=[§bCraftableCreatures§f] Neueste stabile Version des Mods installiert!
+chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Es gibt eine neue Version des Mods!
+chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Es gibt eine neue Beta-Version des Mods!
