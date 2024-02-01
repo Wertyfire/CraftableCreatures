@@ -1,28 +1,25 @@
 package ru.wertyfiregames.craftablecreatures;
 
+import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.network.NetworkRegistry;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
+import ru.wertyfiregames.craftablecreatures.version.CCVersion;
 
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
-@Mod(modid = modId, version = modStatus + "-" + modVersion + "(" + allVersionsNumber + ")-1.7.10", name = name,
-        acceptedMinecraftVersions = acceptedMinecraftVersions, guiFactory = guiFactory)
+@Mod(modid = modId, version = modVersion, name = name,
+        guiFactory = guiFactory, canBeDeactivated = true)
 public class CraftableCreatures
 {
-
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.1.3";
-    protected static final String acceptedMinecraftVersions = "1.7.10";
+    protected static final String modVersion = "0.2.0";
     protected static final String majorVersion = "0";
     protected static final String minorVersion = "2";
     protected static final String patch = "0";
-    protected static final String allVersionsNumber = "05";
-    protected static final String modStatus = "beta";
 
 //    Name
     protected static final String name = "Craftable Creatures";
@@ -31,8 +28,6 @@ public class CraftableCreatures
     public static String configDir;
 
 //    Gui
-    private static int modGuiIndex = 0;
-    public static final int GUI_SOUL_EXTRACTOR = modGuiIndex++;
     public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.client.gui.CCGuiFactory";
 
 //    Proxy
@@ -46,20 +41,16 @@ public class CraftableCreatures
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         proxy.preInit(event);
+        CCVersion.startVersionCheck();
+        FMLLog.info("CC Version checking...");
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
-
-        NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
-    }
-    @EventHandler
-    public void serverStarting(FMLServerStartingEvent event) {
-
     }
 
 //    Getters
@@ -80,8 +71,5 @@ public class CraftableCreatures
     }
     public static String getPatchVersion() {
         return patch;
-    }
-    public static String getModStatus() {
-        return modStatus;
     }
 }

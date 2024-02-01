@@ -37,6 +37,7 @@ public class CCItems
         {
             GameRegistry.registerItem(guide_book, "guide");
         }
+
         //Must be in the end
         GameRegistry.registerItem(soul_element, "soul_element");
     }

@@ -25,6 +25,8 @@ public class CCRecipes
 
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
                 "SR", "RS", 'R', "dustBluestone", 'S', Items.paper));
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
+                "RS", "SR", 'R', "dustBluestone", 'S', Items.paper));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.powered_bluestone_block),
                 "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.bluestone_block),

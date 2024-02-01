@@ -20,6 +20,5 @@ public class CCOreDictionary
 
 //        Dusts
         OreDictionary.registerOre("dustBluestone", CCItems.bluestone);
-
     }
 }

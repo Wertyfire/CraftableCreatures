@@ -27,11 +27,10 @@ public class ClientProxy extends CommonProxy {
         CCConfigHandler.register(CraftableCreatures.configDir);
         FMLCommonHandler.instance().bus().register(new CCConfigHandler());
         FMLCommonHandler.instance().bus().register(new CCFMLEventListener());
-        FMLLog.info("Craftable Creatures config loaded");
+        FMLLog.info("CC Config loaded");
 
         CCItems.register();
         FMLLog.info("CC Items loaded");
-        FMLLog.info("CC Tool materials loaded");
         CCBlocks.register();
         FMLLog.info("CC Blocks loaded");
         CCWorldGenVines.register();
@@ -54,9 +53,10 @@ public class ClientProxy extends CommonProxy {
         FMLLog.info("Initialization of Craftable Creatures complete");
     }
     public void postInit(FMLPostInitializationEvent event) {
-        CCRecipes.register();
         CCOreDictionary.register();
         FMLLog.info("CC Recipes loaded");
+        CCRecipes.register();
+        FMLLog.info("CC Ore dictionary loaded");
         super.postInit(event);
         FMLLog.info("Post initialization of Craftable Creatures complete");
     }
