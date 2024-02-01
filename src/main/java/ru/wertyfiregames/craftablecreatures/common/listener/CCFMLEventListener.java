@@ -38,6 +38,7 @@ public class CCFMLEventListener {
             }
             if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
                 event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
+                event.player.addChatMessage(new ChatComponentText(CCVersion.getChangelog()));
             }
         }
     }
