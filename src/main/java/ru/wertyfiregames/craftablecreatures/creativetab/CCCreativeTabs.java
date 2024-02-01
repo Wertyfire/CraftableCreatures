@@ -6,7 +6,6 @@ import net.minecraft.item.Item;
 
 public class CCCreativeTabs extends CreativeTabs
 {
-
     public static final CCCreativeTabs tabCraftableCreatures = new CCCreativeTabs("craftableCreatures");
 
     private CCCreativeTabs(String tabId)
