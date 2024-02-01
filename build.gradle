@@ -20,7 +20,7 @@ buildscript {
 apply plugin: 'forge'
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "0.2.0b (05)"
+version = "0.2.0"
 group= "me.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
@@ -29,22 +29,12 @@ minecraft {
     runDir = "run"
 }
 
-//repositories {
-//    maven {
-//        name = "chickenbones"
-//        url = "http://chickenbones.net/maven"
-//    }
-//}
-
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
 dependencies {
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-//    compile 'codechicken:CodeChickenCore:1.7.10-1.0.7.48:dev'
-//    compile 'codechicken:CodeChickenLib:1.7.10-1.1.3.141:dev'
-//    compile 'codechicken:NotEnoughItems:1.7.10-1.0.5.120:dev'
 }
 
 processResources {

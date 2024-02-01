@@ -6,10 +6,10 @@
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "https://www.youtube.com/@wertyfire_",
-    "updateUrl": "",
+    "updateUrl": "https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/1.7.10/updates.json",
     "authorList": ["Wertyfire"],
     "credits": "Web-site mcmodding.ru and its forum",
-    "logoFile": "/logo.png",
+    "logoFile": "logo.png",
     "screenshots": [],
     "dependencies": []
   }
