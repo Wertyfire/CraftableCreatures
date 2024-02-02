@@ -5,12 +5,16 @@ import cpw.mods.fml.common.gameevent.PlayerEvent;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.Item;
 import net.minecraft.util.ChatComponentText;
+import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
 import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.version.CCVersion;
 import ru.wertyfiregames.craftablecreatures.version.CCVersion.UpdateResult;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class CCFMLEventListener {
     @SubscribeEvent
@@ -26,19 +30,26 @@ public class CCFMLEventListener {
         event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfigHandler.enableExperimentalContent));
 
         if (CCConfigHandler.checkForUpdates) {
-            if (CCVersion.getStatus() == UpdateResult.FAILED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
+            try {
+                URL link = new URL("https://modrinth.com/mod/craftable_creatures");
+                if (CCVersion.getStatus() == UpdateResult.FAILED) {
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
+                }
+                if (CCVersion.getStatus() == UpdateResult.UP_TO_DATE) {
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
+                }
+                if (CCVersion.getStatus() == UpdateResult.OUTDATED) {
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
+                }
+                if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
+                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
+
+                }
             }
-            if (CCVersion.getStatus() == UpdateResult.UP_TO_DATE) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
-            }
-            if (CCVersion.getStatus() == UpdateResult.OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
-                event.player.addChatMessage(new ChatComponentText(CCVersion.getChangelog()));
-            }
-            if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
-                event.player.addChatMessage(new ChatComponentText(CCVersion.getChangelog()));
+            catch (MalformedURLException e) {
+                CraftableCreatures.getModLogger().error("Failed to create update URL!");
             }
         }
     }

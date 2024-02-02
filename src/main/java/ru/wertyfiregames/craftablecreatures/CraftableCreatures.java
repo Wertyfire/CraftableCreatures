@@ -1,10 +1,10 @@
 package ru.wertyfiregames.craftablecreatures;
 
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
 import ru.wertyfiregames.craftablecreatures.version.CCVersion;
 
@@ -29,6 +29,8 @@ public class CraftableCreatures
 
 //    Gui
     public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.client.gui.CCGuiFactory";
+    
+    private static Logger modLogger;
 
 //    Proxy
     private static final String clientSide = "ru.wertyfiregames.craftablecreatures.proxy.ClientProxy";
@@ -40,9 +42,11 @@ public class CraftableCreatures
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
+        modLogger =event.getModLog();
+        modLogger.debug("CC Logger loaded");
         proxy.preInit(event);
         CCVersion.startVersionCheck();
-        FMLLog.info("CC Version checking...");
+        getModLogger().debug("CC Version checking...");
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
@@ -71,5 +75,9 @@ public class CraftableCreatures
     }
     public static String getPatchVersion() {
         return patch;
+    }
+
+    public static Logger getModLogger() {
+        return modLogger;
     }
 }
