@@ -56,8 +56,9 @@ tile.bluestoneOre.name=Bluestone ore
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Mod Craftable Creations v0.2.0 (05) working good! Experimental content =
+chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Experimental content =
 chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Failed to check for mod updates!
 chat.craftableCreatures.latest=[§bCraftableCreatures§f] Installed latest stable version of mod!
 chat.craftableCreatures.outdated=[§bCraftableCreatures§f] There is new version of mod!
 chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] There is new beta version of mod!
+chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Download update:

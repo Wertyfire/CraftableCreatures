@@ -23,8 +23,6 @@ public class CCVersion {
     private static UpdateResult updateResult = UpdateResult.PENDING;
     private static String target = null;
 
-    private static String changelog;
-
     public static int getMajorVersion() {
         return majorVersion;
     }
@@ -71,13 +69,11 @@ public class CCVersion {
                     con.close();
 
                     Map<String, Object> json = new Gson().fromJson(data, Map.class);
-                    Map<String, String> changelog = (Map<String, String>) json.get("1.7.10");
                     Map<String, String> promos = (Map<String, String>) json.get("promos");
 
                     String rec = promos.get(MinecraftForge.MC_VERSION + "-recommended");
                     String lat = promos.get(MinecraftForge.MC_VERSION + "-latest");
                     ArtifactVersion current = new DefaultArtifactVersion(getVersion());
-                    CCVersion.changelog = changelog.get(rec);
 
                     if (rec != null) {
                         ArtifactVersion recommended = new DefaultArtifactVersion(rec);
@@ -111,9 +107,5 @@ public class CCVersion {
                 }
             }
         }.start();
-    }
-
-    public static String getChangelog() {
-        return changelog;
     }
 }

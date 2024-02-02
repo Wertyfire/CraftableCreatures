@@ -56,8 +56,9 @@ tile.bluestoneOre.name=Руда синього каменю
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Мод Craftable Creations v0.2.0 (05) працює правильно! Експериментальний режим =
+chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Експериментальний режим =
 chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Не вдалося перевірити оновлення модів!
 chat.craftableCreatures.latest=[§bCraftableCreatures§f] Встановлена остання стабільна версія мода!
 chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Вийшла нова версія моду!
 chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Є нова бета версія мода!
+chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Завантажити оновлення:
