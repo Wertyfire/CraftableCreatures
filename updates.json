@@ -1,7 +1,10 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
+  "1.7.10": {
+    "0.2.1": "Ето ченчлох"
+  },
   "promos": {
-    "1.7.10-latest": "0.2.0",
-    "1.7.10-recommended": "0.2.0"
+    "1.7.10-latest": "0.2.1",
+    "1.7.10-recommended": "0.2.1"
   }
 }
