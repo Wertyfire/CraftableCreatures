@@ -1,8 +1,5 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
-  "1.7.10": {
-    "0.2.0": "1). Проверка обновлений теперь работает!\n2). Отменён извлекатель душ для данной версии Minecraft"
-  },
   "promos": {
     "1.7.10-latest": "0.2.0",
     "1.7.10-recommended": "0.2.0"
