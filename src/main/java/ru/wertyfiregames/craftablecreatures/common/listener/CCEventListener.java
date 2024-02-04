@@ -32,24 +32,25 @@ public class CCEventListener {
         if (CCConfigHandler.checkForUpdates) {
             try {
                 URL link = new URL("https://modrinth.com/mod/craftable_creatures");
-                if (CCVersion.getStatus() == UpdateResult.FAILED) {
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
-                }
-                if (CCVersion.getStatus() == UpdateResult.UP_TO_DATE) {
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
-                }
-                if (CCVersion.getStatus() == UpdateResult.OUTDATED) {
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
-                }
-                if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
-                    event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
-
-                }
             }
             catch (MalformedURLException e) {
                 CraftableCreatures.getModLogger().error("Failed to create update URL!");
+            }
+
+            if (CCVersion.getStatus() == UpdateResult.FAILED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
+            }
+            if (CCVersion.getStatus() == UpdateResult.UP_TO_DATE) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
+            }
+            if (CCVersion.getStatus() == UpdateResult.OUTDATED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
+            }
+            if (CCVersion.getStatus() == UpdateResult.BETA_OUTDATED) {
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.getUpdate") + " " + link));
+
             }
         }
     }
