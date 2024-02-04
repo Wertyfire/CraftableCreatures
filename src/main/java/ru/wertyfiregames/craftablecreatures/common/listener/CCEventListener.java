@@ -16,7 +16,7 @@ import ru.wertyfiregames.craftablecreatures.version.CCVersion.UpdateResult;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class CCFMLEventListener {
+public class CCEventListener {
     @SubscribeEvent
     public void onPlayerDied(PlayerEvent.PlayerRespawnEvent event)
     {

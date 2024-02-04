@@ -1,7 +1,6 @@
 package ru.wertyfiregames.craftablecreatures.proxy;
 
 import cpw.mods.fml.common.FMLCommonHandler;
-import cpw.mods.fml.common.FMLLog;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -12,7 +11,7 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
 import ru.wertyfiregames.craftablecreatures.common.handler.TradeHandler;
-import ru.wertyfiregames.craftablecreatures.common.listener.CCFMLEventListener;
+import ru.wertyfiregames.craftablecreatures.common.listener.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import ru.wertyfiregames.craftablecreatures.recipe.CCOreDictionary;
 import ru.wertyfiregames.craftablecreatures.render.CCRenderers;
@@ -26,7 +25,7 @@ public class ClientProxy extends CommonProxy {
         CraftableCreatures.configDir = event.getModConfigurationDirectory().toString();
         CCConfigHandler.register(CraftableCreatures.configDir);
         FMLCommonHandler.instance().bus().register(new CCConfigHandler());
-        FMLCommonHandler.instance().bus().register(new CCFMLEventListener());
+        FMLCommonHandler.instance().bus().register(new CCEventListener());
         CraftableCreatures.getModLogger().debug("CC Config loaded");
 
         CCItems.register();

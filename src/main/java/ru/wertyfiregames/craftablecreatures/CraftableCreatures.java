@@ -42,7 +42,7 @@ public class CraftableCreatures
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        modLogger =event.getModLog();
+        modLogger = event.getModLog();
         modLogger.debug("CC Logger loaded");
         proxy.preInit(event);
         CCVersion.startVersionCheck();
