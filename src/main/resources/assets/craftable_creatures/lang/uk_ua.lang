@@ -1,0 +1,62 @@
+achievement.thanksForDownload=Craftable Creatures
+achievement.thanksForDownload.desc=Дякуємо за встановлення!
+achievement.bluedustCollector=Колекціонер синього каменю
+achievement.bluedustCollector.desc=Добудьте синій камінь
+achievement.templateManager=Менеджер шаблонів
+achievement.templateManager.desc=Створіть шаблон
+achievement.mobSpawner=Творець мобів
+achievement.mobSpawner.desc=Створіть креслення яйця призову
+achievement.energy=Енергія
+achievement.energy.desc=Створіть заряджений блок синього каменю
+
+item.spawnEggBlueprint.name=Креслення яйця призову
+item.blueprint.name=Малювання
+item.bluestone.name=Синій камінь
+item.batWing.name=Крило кажана
+item.guideBook.name=Craftable Creatures інструкція
+item.bluestoneSword.name=Меч із синього каменю
+item.bluestonePickaxe.name=Кірка із синього каменю
+item.bluestoneAxe.name=Сокира iз синього каменю
+item.bluestoneShovel.name=Лопата iз синього каменю
+item.bluestoneHoe.name=Мотика iз синього каменю
+item.soul.name=Душа
+item.soul.creeper.name=Душа [§aКрiпер§f]
+item.soul.skeleton.name=Душа [§7Скелет§f]
+item.soul.spider.name=Душа [§8Павук§f]
+item.soul.zombie.name=Душа [§2Зомбi§f]
+item.soul.slime.name=Душа [§aСлимак§f]
+item.soul.ghast.name=Душа [§7Ґаст§f]
+item.soul.zombiePigman.name=Душа [§dЗомбi пиґмен§f]
+item.soul.enderman.name=Душа [§0Ендермен§f]
+item.soul.caveSpider.name=Душа [§1Печерний павук§f]
+item.soul.silverfish.name=Душа [§8Лускiвниця§f]
+item.soul.blaze.name=Душа [§6Блейз§f]
+item.soul.magmaCube.name=Душа [§4Магмокуб§f]
+item.soul.bat.name=Душа [§6Кажан§f]
+item.soul.witch.name=Душа [§5Вiдьма§f]
+item.soul.pig.name=Душа [§dСвиня§f]
+item.soul.sheep.name=Душа [Вiвця]
+item.soul.cow.name=Душа [§8Корова§f]
+item.soul.chicken.name=Душа [Курка]
+item.soul.squid.name=Душа [§1Кальмар§f]
+item.soul.wolf.name=Душа [§7Вовк§f]
+item.soul.mooshroom.name=Душа [§cГрибна корова§f]
+item.soul.ocelot.name=Душа [§eОцелот§f]
+item.soul.horse.name=Душа [§6Кiнь§f]
+item.soul.villager.name=Душа [§6Селянин§f]
+
+tooltip.lshift.press=§fНатисніть §cLSHIFT §fщоб побачити інформацію
+
+itemGroup.craftableCreatures=Craftable Creatures
+
+tile.bluestoneBlock.name=Блок синього каменю
+tile.poweredBluestoneBlock.name=Заряджений блок синього каменю
+tile.bluestoneOre.name=Руда синього каменю
+tile.soulExtractor.name=Витягувач душ
+
+container.soulExtractor=Витягувач душ
+
+craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
+craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
+
+chat.craftableCreatures.modInfo=Мод Craftable Creations v0.2.0b (05) працює правильно! Експериментальний режим =

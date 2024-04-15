@@ -1,0 +1,62 @@
+achievement.thanksForDownload=Craftable Creatures!
+achievement.thanksForDownload.desc=Спасибо за установку мода Craftable Creatures!
+achievement.bluedustCollector=Коллекционер синего камня
+achievement.bluedustCollector.desc=Добудьте синий камень
+achievement.mobSpawner=Создатель
+achievement.mobSpawner.desc=Создайте чертёж яйца призыва
+achievement.templateManager=Чертёж
+achievement.templateManager.desc=Создайте чертёж
+achievement.energy=Энергия
+achievement.energy.desc=Создайте заряженный блок синего камня
+
+item.spawnEggBlueprint.name=Чертёж яйца призыва
+item.blueprint.name=Чертёж
+item.bluestone.name=Синий камень
+item.batWing.name=Крыло летучей мыши
+item.guideBook.name=Инструкция по Craftable Creatures
+item.bluestoneSword.name=Синекаменный меч
+item.bluestonePickaxe.name=Синекаменная кирка
+item.bluestoneAxe.name=Синекаменный топор
+item.bluestoneShovel.name=Синекаменная лопата
+item.bluestoneHoe.name=Синекаменная мотыга
+item.soul.name=Душа
+item.soul.creeper.name=Душа [§aКрипер§f]
+item.soul.skeleton.name=Душа [§7Скелет§f]
+item.soul.spider.name=Душа [§8Паук§f]
+item.soul.zombie.name=Душа [§2Зомби§f]
+item.soul.slime.name=Душа [§aСлизень§f]
+item.soul.ghast.name=Душа [§7Гаст§f]
+item.soul.zombiePigman.name=Душа [§dСвинозомби§f]
+item.soul.enderman.name=Душа [§0Эндермен§f]
+item.soul.caveSpider.name=Душа [§1Пещерный паук§f]
+item.soul.silverfish.name=Душа [§8Чешуйница§f]
+item.soul.blaze.name=Душа [§6Ифрит§f]
+item.soul.magmaCube.name=Душа [§4Адский слизень§f]
+item.soul.bat.name=Душа [§6Летучая мышь§f]
+item.soul.witch.name=Душа [§5Ведьма§f]
+item.soul.pig.name=Душа [§dСвинья§f]
+item.soul.sheep.name=Душа [Овца]
+item.soul.cow.name=Душа [§8Корова§f]
+item.soul.chicken.name=Душа [Курица]
+item.soul.squid.name=Душа [§1Спрут§f]
+item.soul.wolf.name=Душа [§7Волк§f]
+item.soul.mooshroom.name=Душа [§cМууухомор§f]
+item.soul.ocelot.name=Душа [§eОцелот§f]
+item.soul.horse.name=Душа [§6Лошадь§f]
+item.soul.villager.name=Душа [§6Житель§f]
+
+tooltip.lshift.press=§fЗажмите §cLSHIFT§f, чтобы увидеть информацию
+
+itemGroup.craftableCreatures=Craftable Creatures
+
+tile.bluestoneBlock.name=Блок синего камня
+tile.poweredBluestoneBlock.name=Заряженный блок синего камня
+tile.bluestoneOre.name=Руда синего камня
+tile.soulExtractor.name=Извлекатель душ
+
+container.soulExtractor=Извлекатель душ
+
+craftableCreatures.configGui.checkForUpdates=Проверять обновления
+craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
+
+chat.craftableCreatures.modInfo=Мод Craftable Creations v0.1.0b (01) работает! Экспериментальный режим =
