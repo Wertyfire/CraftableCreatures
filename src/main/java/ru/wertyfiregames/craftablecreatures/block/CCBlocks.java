@@ -11,8 +11,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -20,6 +18,7 @@ import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class CCBlocks {
     public static final List<Block> BLOCKS = new ArrayList<>();
@@ -51,11 +50,11 @@ public class CCBlocks {
 
     private static void setRegister(Block block) {
         ForgeRegistries.BLOCKS.register(block);
-        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+        ForgeRegistries.ITEMS.register(new ItemBlock(block).setRegistryName(Objects.requireNonNull(block.getRegistryName())));
     }
 
     private static void setRender(Block block) {
         Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.getItemFromBlock(block),
-                0, new ModelResourceLocation(block.getRegistryName(), "inventory"));
+                0, new ModelResourceLocation(Objects.requireNonNull(block.getRegistryName()), "inventory"));
     }
 }
