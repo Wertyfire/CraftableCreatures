@@ -44,6 +44,12 @@ item.soul.mooshroom.name=Душа [§cМууухомор§f]
 item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Лошадь§f]
 item.soul.villager.name=Душа [§6Житель§f]
+item.soul.donkey.name=Душа [§6Осёл§f]
+item.soul.llama.name=Душа [§eЛама§f]
+item.soul.mule.name=Душа [§6Мул§f]
+item.soul.parrot.name=Душа [§cПопугай§f]
+item.soul.rabbit.name=Душа [§8Кролик§f]
+item.soul.skeletonHorse.name=Душа [Лошадь-скелет]
 
 tooltip.lshift.press=§fЗажмите §cLSHIFT§f, чтобы увидеть информацию
 

@@ -44,7 +44,12 @@ item.soul.mooshroom.name=Soul [§cMooshroom§f]
 item.soul.ocelot.name=Soul [§eOcelot§f]
 item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
-#item.soul.donkey.name=Soul [§Donkey§]
+item.soul.donkey.name=Soul [§6Donkey§f]
+item.soul.llama.name=Soul [§eLlama§f]
+item.soul.mule.name=Soul [§6Mule§f]
+item.soul.parrot.name=Soul [§cParrot§f]
+item.soul.rabbit.name=Soul [§8Rabbit§f]
+item.soul.skeletonHorse.name=Soul [Skeleton horse]
 
 tooltip.lshift.press=§fPress §cLSHIFT §fto see info
 

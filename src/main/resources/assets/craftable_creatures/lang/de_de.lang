@@ -44,6 +44,12 @@ item.soul.mooshroom.name=Seele [§cPilzkuh§f]
 item.soul.ocelot.name=Seele [§eOzelot§f]
 item.soul.horse.name=Seele [§6Pferd§f]
 item.soul.villager.name=Seele [§6Dorfbewohner§f]
+item.soul.donkey.name=Seele [§6Esel§f]
+item.soul.llama.name=Seele [§eLama§f]
+item.soul.mule.name=Seele [§6Maultier§f]
+item.soul.parrot.name=Seele [§cPapagei§f]
+item.soul.rabbit.name=Seele [§8Kaninchen§f]
+item.soul.skeletonHorse.name=Seele [Skelettpferd]
 
 itemGroup.craftableCreatures=Craftable Creatures
 
