@@ -16,7 +16,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.craftablecreatures.guidebook.item.ItemGuideBook;
+import ru.wertyfiregames.craftablecreatures.guidebook.ItemGuideBook;
 import ru.wertyfiregames.craftablecreatures.util.config.CCConfig;
 
 import java.util.ArrayList;

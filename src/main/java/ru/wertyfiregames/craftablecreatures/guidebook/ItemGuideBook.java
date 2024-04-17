@@ -2,7 +2,7 @@
  * File created on 16:58 09.01.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.guidebook.item;
+package ru.wertyfiregames.craftablecreatures.guidebook;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
