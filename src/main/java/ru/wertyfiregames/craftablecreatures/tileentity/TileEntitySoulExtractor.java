@@ -37,7 +37,8 @@ public class TileEntitySoulExtractor extends TileEntity implements IInventory, I
     private int burnTime,
             currentBurnTime,
             cookTime,
-            totalCookTime;
+            totalCookTime,
+            testValue;
 
     @Override
     public String getName() {
