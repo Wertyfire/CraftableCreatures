@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "normal": {
+      "model": "craftable_creatures:powered_bluestone_block"
+    }
+  }
+}

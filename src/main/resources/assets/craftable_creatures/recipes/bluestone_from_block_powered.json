@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "bluestone",
+  "pattern": [
+    "S"
+  ],
+  "key": {
+    "S": {
+      "item": "craftable_creatures:powered_bluestone_block"
+    }
+  },
+  "result": {
+    "item": "craftable_creatures:bluestone",
+    "count": 8
+  }
+}

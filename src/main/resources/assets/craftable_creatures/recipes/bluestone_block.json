@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "craftable_creatures:bluestone"
+    }
+  },
+  "result": {
+    "item": "craftable_creatures:bluestone_block"
+  }
+}

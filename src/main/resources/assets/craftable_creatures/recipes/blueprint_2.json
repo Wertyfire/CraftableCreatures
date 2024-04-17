@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RS",
+    "SR"
+  ],
+  "key": {
+    "S": {
+      "item": "forge:ore_dict",
+      "ore": "dustBluestone"
+    },
+    "R": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "craftable_creatures:blueprint"
+  }
+}

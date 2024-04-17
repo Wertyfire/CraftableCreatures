@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "SUS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:redstone"
+    },
+    "U": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "craftable_creatures:powered_bluestone_block"
+  }
+}

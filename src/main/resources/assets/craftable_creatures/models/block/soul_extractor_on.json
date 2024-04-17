@@ -1,0 +1,12 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "particle": "craftable_creatures:blocks/se_top",
+    "up": "craftable_creatures:blocks/se_top",
+    "down": "craftable_creatures:blocks/se_top",
+    "north": "craftable_creatures:blocks/se_front_on",
+    "east": "craftable_creatures:blocks/se_side",
+    "south": "craftable_creatures:blocks/se_side",
+    "west": "craftable_creatures:blocks/se_side"
+  }
+}

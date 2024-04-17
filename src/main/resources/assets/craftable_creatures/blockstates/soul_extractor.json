@@ -1,0 +1,34 @@
+{
+  "variants": {
+    "extracting=false,facing=north": {
+      "model": "craftable_creatures:soul_extractor"
+    },
+    "extracting=false,facing=east": {
+      "model": "craftable_creatures:soul_extractor",
+      "y": 90
+    },
+    "extracting=false,facing=south": {
+      "model": "craftable_creatures:soul_extractor",
+      "y": 180
+    },
+    "extracting=false,facing=west": {
+      "model": "craftable_creatures:soul_extractor",
+      "y": 270
+    },
+    "extracting=true,facing=north": {
+      "model": "craftable_creatures:soul_extractor_on"
+    },
+    "extracting=true,facing=east": {
+      "model": "craftable_creatures:soul_extractor_on",
+      "y": 90
+    },
+    "extracting=true,facing=south": {
+      "model": "craftable_creatures:soul_extractor_on",
+      "y": 180
+    },
+    "extracting=true,facing=west": {
+      "model": "craftable_creatures:soul_extractor_on",
+      "y": 270
+    }
+  }
+}
