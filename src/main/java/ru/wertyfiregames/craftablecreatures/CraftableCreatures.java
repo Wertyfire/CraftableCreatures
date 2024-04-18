@@ -20,6 +20,8 @@ public class CraftableCreatures
     protected static final String majorVersion = "0";
     protected static final String minorVersion = "2";
     protected static final String patch = "0";
+    protected static final String allVersionsNumber = "05";
+    protected static final String modStatus = "05";
 
 //    Name
     protected static final String name = "Craftable Creatures";
@@ -75,6 +77,9 @@ public class CraftableCreatures
     }
     public static String getPatchVersion() {
         return patch;
+    }
+    public static String getModStatus() {
+        return modStatus;
     }
 
     public static Logger getModLogger() {
