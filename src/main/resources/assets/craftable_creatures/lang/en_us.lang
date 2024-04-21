@@ -27,7 +27,7 @@ item.soul.zombie.name=Soul [§2Zombie§f]
 item.soul.slime.name=Soul [§aSlime§f]
 item.soul.ghast.name=Soul [§7Ghast§f]
 item.soul.zombiePigman.name=Soul [§dZombie pigman§f]
-item.soul.enderman.name=Soul [§0Enderman§f]
+item.soul.enderman.name=Soul [§5Enderman§f]
 item.soul.caveSpider.name=Soul [§1Cave spider§f]
 item.soul.silverfish.name=Soul [§8Silverfish§f]
 item.soul.blaze.name=Soul [§6Blaze§f]
@@ -50,6 +50,22 @@ item.soul.mule.name=Soul [§6Mule§f]
 item.soul.parrot.name=Soul [§cParrot§f]
 item.soul.rabbit.name=Soul [§8Rabbit§f]
 item.soul.skeletonHorse.name=Soul [Skeleton horse]
+item.soul.zombieHorse.name=Soul [§2Zombie horse§f]
+item.soul.elderGuardian.name=Soul [§8Elder guardian§f]
+item.soul.endermite.name=Soul [§5Endermite§f]
+item.soul.evoker.name=Soul [§7Evoker§f]
+item.soul.ironGolem.name=Soul [Iron golem]
+item.soul.guardian.name=Soul [§3Guardian§f]
+item.soul.husk.name=Soul [§eHusk§f]
+item.soul.illusionIllager.name=Soul [§1Illusioner§f]
+item.soul.polarBear.name=Soul [Polar bear]
+item.soul.shulker.name=Soul [§dShulker§f]
+item.soul.snowman.name=Soul [Snow golem]
+item.soul.stray.name=Soul [§3Stray§f]
+item.soul.vex.name=Soul [§7Vex§f]
+item.soul.vindicator.name=Soul [§7Vindicator§f]
+item.soul.witherSkeleton.name=Soul [§8Wither skeleton§f]
+item.soul.zombieVillager.name=Soul [§2Zombie villager§f]
 
 tooltip.lshift.press=§fPress §cLSHIFT §fto see info
 
@@ -65,4 +81,4 @@ container.soulExtractor=Soul extractor
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
 
-chat.craftableCreatures.modInfo=Mod Craftable Creations v0.2.0b (05) working good! Experimental content =
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimental content =

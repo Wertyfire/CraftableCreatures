@@ -50,6 +50,21 @@ item.soul.mule.name=Seele [§6Maultier§f]
 item.soul.parrot.name=Seele [§cPapagei§f]
 item.soul.rabbit.name=Seele [§8Kaninchen§f]
 item.soul.skeletonHorse.name=Seele [Skelettpferd]
+item.soul.zombieHorse.name=Seele [§§f]
+item.soul.elderGuardian.name=Seele [§§f]
+item.soul.endermite.name=Seele [§§f]
+item.soul.evoker.name=Seele [§§f]
+item.soul.ironGolem.name=Seele [§§f]
+item.soul.guardian.name=Seele [§§f]
+item.soul.husk.name=Seele [§§f]
+item.soul.illusionIllager.name=Seele [§§f]
+item.soul.polarBear.name=Seele []
+item.soul.shulker.name=Seele [§§f]
+item.soul.snowman.name=Seele []
+item.soul.vex.name=Seele [§§f]
+item.soul.vindicator.name=Seele [§§f]
+item.soul.witherSkeleton.name=Seele [§§f]
+item.soul.zombieVillager.name=Seele [§§f]
 
 itemGroup.craftableCreatures=Craftable Creatures
 
@@ -66,4 +81,4 @@ craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experiment
 
 tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
 
-chat.craftableCreatures.modInfo=Mod Craftable Creations v0.2.0b (05) funktioniert gut! Experimenteller inhalt =
+chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Experimenteller inhalt =

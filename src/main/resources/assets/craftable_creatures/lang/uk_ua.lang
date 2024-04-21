@@ -50,6 +50,22 @@ item.soul.mule.name=Душа [§6Мул§f]
 item.soul.parrot.name=Душа [§cПапуга§f]
 item.soul.rabbit.name=Душа [§8Кролик§f]
 item.soul.skeletonHorse.name=Душа [Кiнь-скелет]
+item.soul.zombieHorse.name=Душа [§§f]
+item.soul.elderGuardian.name=Душа [§§f]
+item.soul.endermite.name=Душа [§§f]
+item.soul.evoker.name=Душа [§§f]
+item.soul.ironGolem.name=Душа [§§f]
+item.soul.guardian.name=Душа [§§f]
+item.soul.husk.name=Душа [§§f]
+item.soul.illusionIllager.name=Душа [§§f]
+item.soul.polarBear.name=Душа []
+item.soul.shulker.name=Душа [§§f]
+item.soul.snowman.name=Душа []
+
+item.soul.vex.name=Душа [§§f]
+item.soul.vindicator.name=Душа [§§f]
+item.soul.witherSkeleton.name=Душа [§§f]
+item.soul.zombieVillager.name=Душа [§§f]
 
 tooltip.lshift.press=§fНатисніть §cLSHIFT §fщоб побачити інформацію
 
@@ -65,4 +81,4 @@ container.soulExtractor=Витягувач душ
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
 
-chat.craftableCreatures.modInfo=Мод Craftable Creations v0.2.0b (05) працює правильно! Експериментальний режим =
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Експериментальний режим =

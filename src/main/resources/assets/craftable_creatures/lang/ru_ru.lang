@@ -43,13 +43,29 @@ item.soul.wolf.name=Душа [§7Волк§f]
 item.soul.mooshroom.name=Душа [§cМууухомор§f]
 item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Лошадь§f]
-item.soul.villager.name=Душа [§6Житель§f]
+item.soul.villager.name=Душа [§6Крестьянин§f]
 item.soul.donkey.name=Душа [§6Осёл§f]
 item.soul.llama.name=Душа [§eЛама§f]
 item.soul.mule.name=Душа [§6Мул§f]
 item.soul.parrot.name=Душа [§cПопугай§f]
 item.soul.rabbit.name=Душа [§8Кролик§f]
 item.soul.skeletonHorse.name=Душа [Лошадь-скелет]
+item.soul.zombieHorse.name=Душа [§2Лошадь-зомби§f]
+item.soul.elderGuardian.name=Душа [§8Древний страж§f]
+item.soul.endermite.name=Душа [§§f]
+item.soul.evoker.name=Душа [§7Заклинатель§f]
+item.soul.ironGolem.name=Душа [Железный голем]
+item.soul.guardian.name=Душа [§3Страж§f]
+item.soul.husk.name=Душа [§eКадавр§f]
+item.soul.illusionIllager.name=Душа [§1Иллюзор§f]
+item.soul.polarBear.name=Душа [Белый медведь]
+item.soul.shulker.name=Душа [§dШалкер§f]
+item.soul.snowman.name=Душа [Снежный голем]
+item.soul.stray.name=Душа [§3Зимогор§f]
+item.soul.vex.name=Душа [§7Вредина§f]
+item.soul.vindicator.name=Душа [§7Поборник§f]
+item.soul.witherSkeleton.name=Душа [§8Визер-скелет§f]
+item.soul.zombieVillager.name=Душа [§2Зомби-крестьянин§f]
 
 tooltip.lshift.press=§fЗажмите §cLSHIFT§f, чтобы увидеть информацию
 
@@ -65,4 +81,4 @@ container.soulExtractor=Извлекатель душ
 craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
 
-chat.craftableCreatures.modInfo=Мод Craftable Creations v0.1.0b (01) работает! Экспериментальный режим =
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Экспериментальный режим =
