@@ -9,7 +9,7 @@
     "updateUrl": "https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/1.7.10/updates.json",
     "authorList": ["Wertyfire"],
     "credits": "Web-site mcmodding.ru and its forum",
-    "logoFile": "logo.png",
+    "logoFile": "assets/craftable_creatures/logo.png",
     "screenshots": [],
     "dependencies": []
   }
