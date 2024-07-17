@@ -11,17 +11,17 @@ import ru.wertyfiregames.craftablecreatures.version.CCVersion;
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
 @Mod(modid = modId, version = modVersion, name = name,
-        guiFactory = guiFactory, canBeDeactivated = true)
+        guiFactory = guiFactory)
 public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.2.0";
+    protected static final String modVersion = "0.3.0";
     protected static final String majorVersion = "0";
-    protected static final String minorVersion = "2";
+    protected static final String minorVersion = "3";
     protected static final String patch = "0";
-    protected static final String allVersionsNumber = "05";
-    protected static final String modStatus = "05";
+    protected static final String allVersionsNumber = "06";
+    protected static final String modStatus = "beta";
 
 //    Name
     protected static final String name = "Craftable Creatures";
@@ -30,7 +30,7 @@ public class CraftableCreatures
     public static String configDir;
 
 //    Gui
-    public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.client.gui.CCGuiFactory";
+    public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.config.CCGuiFactory";
     
     private static Logger modLogger;
 

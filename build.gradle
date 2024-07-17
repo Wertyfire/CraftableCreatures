@@ -20,7 +20,7 @@ buildscript {
 apply plugin: 'forge'
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "0.2.0"
+version = "0.3.0"
 group= "me.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
