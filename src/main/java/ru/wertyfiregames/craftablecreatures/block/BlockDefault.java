@@ -13,7 +13,7 @@ public class BlockDefault extends Block
         super(material);
         this.setBlockName(name);
         if (!textureName.equals("custom")) this.setBlockTextureName(CraftableCreatures.getModId() + ":" + textureName);
-        if (textureName.equals("") || textureName == null) this.setBlockTextureName(CraftableCreatures.getModId() + ":" + textureName);
+        if (textureName.isEmpty()) this.setBlockTextureName(CraftableCreatures.getModId() + ":unknown_block_texture");
         this.setCreativeTab(creativeTab);
         this.setHarvestLevel(toolType, level);
         this.setHardness(hardness);
