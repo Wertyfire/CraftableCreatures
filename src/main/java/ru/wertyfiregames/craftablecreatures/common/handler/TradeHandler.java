@@ -14,28 +14,12 @@ import ru.wertyfiregames.craftablecreatures.item.CCItems;
 
 import java.util.Random;
 
-public class TradeHandler implements IVillageTradeHandler
-{
+public class TradeHandler implements IVillageTradeHandler {
     @Override
-    public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random)
-    {
-        switch (villager.getProfession())
-        {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 15),
-                        new ItemStack(CCItems.soul_element, 1, 0),
-                        new ItemStack(CCItems.soul_element, 1, random.nextInt(25))));
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            default:
-                break;
-        }
+    public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random) {
+        if (villager.getProfession() == 2)
+            recipeList.add(new MerchantRecipe(new ItemStack(Items.emerald, 15),
+                    new ItemStack(CCItems.soul_element, 1, 0),
+                    new ItemStack(CCItems.soul_element, 1, random.nextInt(25))));
     }
 }
