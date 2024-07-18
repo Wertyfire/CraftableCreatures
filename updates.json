@@ -7,6 +7,11 @@
     "1.12.2-recommended": "0.1.0"
   },
   "1.7.10": {
-    "0.3.0": ""
+    "0.1.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added bluestone ore<n><t>2. Added bluestone block<n><t>3. Added powered bluestone block (like redstone block)<n><t>4. Added bluestone<n><t>5. Added soul<n><t>6. Added 24 mob souls<n><t>7. Added template<n><t>8. Added 5 achievement<n><t>9. Bluestone ore generation parameters in config",
+    "0.1.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added bat wings<n><t>2. Added craft for villager soul<n><t>3. Added craft for horse soul<n><t>4. Template now blueprint<n><t>5. Returned villager soul<n><t>6. Repaired bluestone block craft<n><t>7. Repaired bluestone craft from bluestone block<n><t>8. Repaired \"Energy!\" achievement",
+    "0.1.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added ukrainian language",
+    "0.1.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added bluestone pickaxe<n><t>2. Added bluestone sword<n><t>3. Portative body changer now transmutator<n><t>4. Added testing gui for transmutator<n><t>5. Source now on github",
+    "0.2.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added update checker<n><t>2. Deleted transmutator<n><t>3. Deleted soul extractor",
+    "0.3.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Improved config system<n><t>2. Improved generation system<n><t>3. Improved update checking system"
   }
 }
