@@ -56,9 +56,12 @@ tile.bluestoneOre.name=Руда синего камня
 craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Экспериментальный режим =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Не удалось проверить обновления!
-chat.craftableCreatures.latest=[§bCraftableCreatures§f] Установлена новейшая стабильная версия!
-chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Вышла новая версия мода!
-chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Вышла новая бета версия мода!
-chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Скачать:
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Экспериментальный режим =
+chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Не удалось проверить обновления!
+chat.craftableCreatures.latest=[§bCraftable Creatures§f] Установлена последняя стабильная версия!
+chat.craftableCreatures.outdated=[§bCraftable Creatures§f] Вышла новая версия мода!
+chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Ваша версия мода выше последней зарегистрированной. Убедитесь, что вы скачали его с modrinth или github.
+chat.craftableCreatures.beta=[§bCraftable Creatures§f] Вы используете нестабильную версию мода!
+chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] Вышла новая бета версия мода!
+chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Скачать:
+chat.craftableCreatures.clickToOpenUrl=Нажмите, чтобы открыть ссылку

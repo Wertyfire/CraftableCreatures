@@ -56,9 +56,12 @@ tile.bluestoneOre.name=Bluestone ore
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Experimental content =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Failed to check for mod updates!
-chat.craftableCreatures.latest=[§bCraftableCreatures§f] Installed latest stable version of mod!
-chat.craftableCreatures.outdated=[§bCraftableCreatures§f] There is new version of mod!
-chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] There is new beta version of mod!
-chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Download update:
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimental content =
+chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Failed to check for mod updates!
+chat.craftableCreatures.latest=[§bCraftable Creatures§f] Installed latest stable version of mod!
+chat.craftableCreatures.outdated=[§bCraftable Creatures§f] There is new version of mod!
+chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Your mod version is higher than latest registered. Make sure you downloaded it from modrinth or github.
+chat.craftableCreatures.beta=[§bCraftable Creatures§f] You are using unstable version of mod!
+chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] There is new beta version of mod!
+chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Download update:
+chat.craftableCreatures.clickToOpenUrl=Click to open link

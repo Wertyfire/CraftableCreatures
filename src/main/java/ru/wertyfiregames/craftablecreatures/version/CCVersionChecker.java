@@ -10,41 +10,37 @@ import com.google.gson.Gson;
 import cpw.mods.fml.common.versioning.ArtifactVersion;
 import cpw.mods.fml.common.versioning.DefaultArtifactVersion;
 import net.minecraftforge.common.MinecraftForge;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
 
-public class CCVersion {
-    public static final int majorVersion = 0;
-    public static final int minorVersion = 2;
-    public static final int revisionVersion = 0;
+import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.METADATA;
 
+public class CCVersionChecker {
     private static UpdateResult updateResult = UpdateResult.PENDING;
     private static String target = null;
-
-    public static int getMajorVersion() {
-        return majorVersion;
-    }
-
-    public static int getMinorVersion() {
-        return minorVersion;
-    }
-
-    public static int getRevisionVersion() {
-        return revisionVersion;
-    }
-
-    public static UpdateResult getStatus() {
-        return updateResult;
-    }
+    private static String changelog = null;
+    private static String homepage = null;
+    private static String downloadLink = null;
 
     public static String getTarget() {
         return target;
     }
-
-    public static String getVersion() {
-        return String.format("%d.%d.%d", majorVersion, minorVersion, revisionVersion);
+    public static String getChangelog() {
+        return changelog;
+    }
+    public static String getHomepageUrl() {
+        return homepage;
+    }
+    public static String getDownloadLink() {
+        return downloadLink;
+    }
+    public static UpdateResult getStatus() {
+        return updateResult;
     }
 
     public enum UpdateResult {
@@ -57,23 +53,29 @@ public class CCVersion {
         BETA_OUTDATED
     }
 
-    public static void startVersionCheck() {
-        new Thread("CC Version Check") {
+    public static void check(String currentVersion) {
+        if (CCConfig.checkForUpdates) new Thread("CC Version Check") {
             @SuppressWarnings("unchecked")
             @Override
             public void run() {
                 try {
-                    URL url = new URL("https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/1.7.10/updates.json");
+                    Logger logger = LogManager.getLogger("CC Version Check");
+                    logger.info("Checking Craftable Creatures version...");
+                    logger.info("Current version: {}", currentVersion);
+
+                    URL url = new URL(METADATA.updateUrl);
                     InputStream con = url.openStream();
                     String data = new String(ByteStreams.toByteArray(con));
                     con.close();
 
                     Map<String, Object> json = new Gson().fromJson(data, Map.class);
+                    homepage = (String) json.get("homepage");
                     Map<String, String> promos = (Map<String, String>) json.get("promos");
+                    Map<String, String> changes = (Map<String, String>) json.get(MinecraftForge.MC_VERSION);
 
                     String rec = promos.get(MinecraftForge.MC_VERSION + "-recommended");
                     String lat = promos.get(MinecraftForge.MC_VERSION + "-latest");
-                    ArtifactVersion current = new DefaultArtifactVersion(getVersion());
+                    ArtifactVersion current = new DefaultArtifactVersion(currentVersion);
 
                     if (rec != null) {
                         ArtifactVersion recommended = new DefaultArtifactVersion(rec);
@@ -91,18 +93,22 @@ public class CCVersion {
                             }
                         } else {
                             updateResult = UpdateResult.OUTDATED;
+                            downloadLink = homepage + rec;
                             target = rec;
+                            changelog = changes.get(rec);
                         }
                     } else if (lat != null) {
                         if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
                             updateResult = UpdateResult.BETA_OUTDATED;
+                            downloadLink = homepage + lat;
                             target = lat;
+                            changelog = changes.get(lat);
                         } else
                             updateResult = UpdateResult.BETA;
                     } else
                         updateResult = UpdateResult.BETA;
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    e.printStackTrace(System.out);
                     updateResult = UpdateResult.FAILED;
                 }
             }

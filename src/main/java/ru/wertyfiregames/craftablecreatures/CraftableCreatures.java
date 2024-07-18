@@ -2,11 +2,16 @@ package ru.wertyfiregames.craftablecreatures;
 
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
+import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Logger;
+import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
-import ru.wertyfiregames.craftablecreatures.version.CCVersion;
+import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
+
+import java.io.File;
 
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
@@ -17,9 +22,6 @@ public class CraftableCreatures
 //    Version
     protected static final String modId = "craftable_creatures";
     protected static final String modVersion = "0.3.0";
-    protected static final String majorVersion = "0";
-    protected static final String minorVersion = "3";
-    protected static final String patch = "0";
     protected static final String allVersionsNumber = "06";
     protected static final String modStatus = "beta";
 
@@ -27,7 +29,7 @@ public class CraftableCreatures
     protected static final String name = "Craftable Creatures";
 
 //    Config
-    public static String configDir;
+    public static Configuration config;
 
 //    Gui
     public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.config.CCGuiFactory";
@@ -37,8 +39,11 @@ public class CraftableCreatures
 //    Proxy
     private static final String clientSide = "ru.wertyfiregames.craftablecreatures.proxy.ClientProxy";
     private static final String serverSide = "ru.wertyfiregames.craftablecreatures.proxy.CommonProxy";
+
     @Mod.Instance("craftable_creatures")
     public static CraftableCreatures INSTANCE;
+    @Mod.Metadata
+    public static ModMetadata METADATA;
     @SidedProxy(clientSide = clientSide, serverSide = serverSide)
     public static CommonProxy proxy;
 
@@ -46,9 +51,11 @@ public class CraftableCreatures
     public void preInit(FMLPreInitializationEvent event) {
         modLogger = event.getModLog();
         modLogger.debug("CC Logger loaded");
+        File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
+        config = new Configuration(configFile);
+        CCConfig.load();
         proxy.preInit(event);
-        CCVersion.startVersionCheck();
-        getModLogger().debug("CC Version checking...");
+        CCVersionChecker.check(getVersion());
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
@@ -69,14 +76,20 @@ public class CraftableCreatures
     public static String getName() {
         return name;
     }
-    public static String getMajorVersion() {
-        return majorVersion;
+    public static int getMajorVersion() {
+        String[] version = getVersion().split("-");
+        String[] parts = version[0].split("\\.");
+        return Integer.parseInt(parts[0]);
     }
-    public static String getMinorVersion() {
-        return minorVersion;
+    public static int getMinorVersion() {
+        String[] version = getVersion().split("-");
+        String[] parts = version[0].split("\\.");
+        return Integer.parseInt(parts[1]);
     }
-    public static String getPatchVersion() {
-        return patch;
+    public static int getPatchVersion() {
+        String[] version = getVersion().split("-");
+        String[] parts = version[0].split("\\.");
+        return Integer.parseInt(parts[2]);
     }
     public static String getModStatus() {
         return modStatus;
@@ -84,5 +97,8 @@ public class CraftableCreatures
 
     public static Logger getModLogger() {
         return modLogger;
+    }
+    public static Configuration getConfig() {
+        return config;
     }
 }

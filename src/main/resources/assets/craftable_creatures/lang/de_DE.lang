@@ -57,9 +57,12 @@ craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experiment
 
 tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Experimenteller inhalt =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Suche nach Mod-Updates fehlgeschlagen!
-chat.craftableCreatures.latest=[§bCraftableCreatures§f] Neueste stabile Version des Mods installiert!
-chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Es gibt eine neue Version des Mods!
-chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Es gibt eine neue Beta-Version des Mods!
-chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Aktualisierung herunterladen:
+chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimenteller inhalt =
+chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Suche nach Mod-Updates fehlgeschlagen!
+chat.craftableCreatures.latest=[§bCraftable Creatures§f] Neueste stabile Version des Mods installiert!
+chat.craftableCreatures.outdated=[§bCraftable Creatures§f] Es gibt eine neue Version des Mods!
+chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Ihre Mod-Version ist höher als die zuletzt registrierte. Stellen Sie sicher, dass Sie es von modrinth oder github heruntergeladen haben!
+chat.craftableCreatures.beta=[§bCraftable Creatures§f] Sie verwenden eine instabile Version von Mod!
+chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] Es gibt eine neue Beta-Version des Mods!
+chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Aktualisierung herunterladen:
+chat.craftableCreatures.clickToOpenUrl=Klicken, um den Link zu öffnen
