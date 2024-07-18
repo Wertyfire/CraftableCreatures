@@ -1,13 +1,8 @@
 package ru.wertyfiregames.craftablecreatures.item;
 
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
-import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
 
 public class ItemDefault extends Item {
     public ItemDefault(String name, String textureName, CreativeTabs creativeTab) {
