@@ -1,7 +1,7 @@
 package ru.wertyfiregames.craftablecreatures.item;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import ru.wertyfiregames.craftablecreatures.common.config.CCConfigHandler;
+import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.guidebook.item.ItemGuideBook;
@@ -33,7 +33,7 @@ public class CCItems
         GameRegistry.registerItem(bluestone_spade, "bluestone_spade");
         GameRegistry.registerItem(bluestone_hoe, "bluestone_hoe");
 
-        if (CCConfigHandler.enableExperimentalContent)
+        if (CCConfig.enableExperimentalContent)
         {
             GameRegistry.registerItem(guide_book, "guide");
         }
