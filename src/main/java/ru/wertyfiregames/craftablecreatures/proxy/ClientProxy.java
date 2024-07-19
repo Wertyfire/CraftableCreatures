@@ -8,22 +8,23 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.common.MinecraftForge;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
+import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.common.handler.TradeHandler;
 import ru.wertyfiregames.craftablecreatures.common.listener.CCEventListener;
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
-import ru.wertyfiregames.craftablecreatures.recipe.CCOreDictionary;
-import ru.wertyfiregames.craftablecreatures.recipe.CCRecipes;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
+import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
+import ru.wertyfiregames.craftablecreatures.init.CCRecipes;
 import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.world.CCWorldOreGenerator;
 
 @SideOnly(Side.CLIENT)
 public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
-        FMLCommonHandler.instance().bus().register(new CCConfig());
-        FMLCommonHandler.instance().bus().register(new CCEventListener());
+        MinecraftForge.EVENT_BUS.register(new CCConfig());
+        MinecraftForge.EVENT_BUS.register(new CCEventListener());
         CraftableCreatures.getModLogger().debug("CC Config loaded");
         CCItems.register();
         CraftableCreatures.getModLogger().debug("CC Items loaded");

@@ -5,12 +5,12 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import ru.wertyfiregames.craftablecreatures.block.BlockCCOre;
-import ru.wertyfiregames.craftablecreatures.block.BlockCCOrePowered;
+import ru.wertyfiregames.craftablecreatures.block.BlockCCCompressedPowered;
 import ru.wertyfiregames.craftablecreatures.block.BlockDefault;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 
 public class CCBlocks {
-    public static final Block powered_bluestone_block = new BlockCCOrePowered(MapColor.blueColor, Material.iron,
+    public static final Block powered_bluestone_block = new BlockCCCompressedPowered(MapColor.blueColor, Material.iron,
             "poweredBluestoneBlock", "bluestone_block", CCCreativeTabs.tabCraftableCreatures,
             "pickaxe", 2, 5f, 10f);
     public static final Block bluestone_block = new BlockDefault(Material.iron, "bluestoneBlock", "bluestone_block",
