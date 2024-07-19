@@ -81,14 +81,17 @@ public class CCVersionChecker {
                         ArtifactVersion recommended = new DefaultArtifactVersion(rec);
                         int diff = recommended.compareTo(current);
 
-                        if (diff == 0)
+                        if (diff == 0) {
                             updateResult = UpdateResult.UP_TO_DATE;
+                            logger.info("Version up to date");
+                        }
                         else if (diff < 0) {
                             updateResult = UpdateResult.AHEAD;
                             if (lat != null) {
                                 if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
                                     updateResult = UpdateResult.OUTDATED;
                                     target = lat;
+                                    logger.info("You are using some version but latest is {}", lat);
                                 }
                             }
                         } else {
@@ -96,6 +99,7 @@ public class CCVersionChecker {
                             downloadLink = homepage + rec;
                             target = rec;
                             changelog = changes.get(rec);
+                            logger.info("Found new version: {}", rec);
                         }
                     } else if (lat != null) {
                         if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
@@ -103,10 +107,13 @@ public class CCVersionChecker {
                             downloadLink = homepage + lat;
                             target = lat;
                             changelog = changes.get(lat);
+                            logger.info("You using outdated unstable version! New version is {}", lat);
                         } else
                             updateResult = UpdateResult.BETA;
+                        logger.info("You using unstable version on mod");
                     } else
                         updateResult = UpdateResult.BETA;
+                    logger.info("You using unstable version on mod");
                 } catch (Exception e) {
                     e.printStackTrace(System.out);
                     updateResult = UpdateResult.FAILED;
