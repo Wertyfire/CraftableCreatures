@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "0.3.0",
-    "1.7.10-recommended": "0.3.0",
+    "1.7.10-latest": "0.4.0",
+    "1.7.10-recommended": "0.4.0",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -12,6 +12,7 @@
     "0.1.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added ukrainian language",
     "0.1.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added bluestone pickaxe<n><t>2. Added bluestone sword<n><t>3. Portative body changer now transmutator<n><t>4. Added testing gui for transmutator<n><t>5. Source now on github",
     "0.2.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added update checker<n><t>2. Deleted transmutator<n><t>3. Deleted soul extractor",
-    "0.3.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Improved config system<n><t>2. Improved generation system<n><t>3. Improved update checking system"
+    "0.3.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Improved config system<n><t>2. Improved generation system<n><t>3. Improved update checking system",
+    "0.4.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Bat drops bat wing<n><t>2. Now player drops soul when dead instead of dropping soul when respawned"
   }
 }

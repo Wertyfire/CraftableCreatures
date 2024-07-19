@@ -21,8 +21,8 @@ public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.3.0";
-    protected static final String allVersionsNumber = "06";
+    protected static final String modVersion = "0.4.0";
+    protected static final String allVersionsNumber = "07";
     protected static final String modStatus = "beta";
 
 //    Name
