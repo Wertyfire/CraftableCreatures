@@ -8,10 +8,8 @@ import net.minecraft.item.ItemAxe;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 
-public class ItemBluestoneAxe extends ItemAxe
-{
-    public ItemBluestoneAxe()
-    {
+public class ItemBluestoneAxe extends ItemAxe {
+    public ItemBluestoneAxe() {
         super(CCToolMaterials.BLUESTONE_TOOL_MATERIAL);
         setUnlocalizedName("bluestoneAxe");
         setTextureName(CraftableCreatures.getModId() + ":bluestone_axe");

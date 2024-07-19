@@ -8,10 +8,8 @@ import net.minecraft.item.ItemHoe;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 
-public class ItemBluestoneHoe extends ItemHoe
-{
-    public ItemBluestoneHoe()
-    {
+public class ItemBluestoneHoe extends ItemHoe {
+    public ItemBluestoneHoe() {
         super(CCToolMaterials.BLUESTONE_TOOL_MATERIAL);
         setUnlocalizedName("bluestoneHoe");
         setTextureName(CraftableCreatures.getModId() + ":bluestone_hoe");

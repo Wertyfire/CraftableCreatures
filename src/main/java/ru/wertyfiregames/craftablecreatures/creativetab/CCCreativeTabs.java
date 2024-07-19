@@ -1,11 +1,10 @@
 package ru.wertyfiregames.craftablecreatures.creativetab;
 
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
-public class CCCreativeTabs
-{
+public class CCCreativeTabs {
     public static final CreativeTabs tabCraftableCreatures = new CreativeTabs("craftableCreatures") {
         @Override
         public Item getTabIconItem() {

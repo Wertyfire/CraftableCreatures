@@ -1,12 +1,11 @@
 package ru.wertyfiregames.craftablecreatures.stats;
 
-import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
+import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
-public class CCAchievementList
-{
+public class CCAchievementList {
     public static final Achievement thanksForDownload = (new Achievement("achievement.thanksForDownload",
             "thanksForDownload", 2, -1,
             CCItems.spawn_egg_template, null).registerStat());
@@ -19,8 +18,7 @@ public class CCAchievementList
     public static final Achievement energy = (new Achievement("achievement.energy", "energy", -2, -1,
             CCBlocks.powered_bluestone_block, bluedustCollector).registerStat());
 
-    public static void register()
-    {
+    public static void register() {
         AchievementPage.registerAchievementPage(new AchievementPage(
                 "Craftable Creatures", thanksForDownload, bluedustCollector, templateManager, mobSpawner, energy));
     }
