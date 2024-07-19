@@ -10,7 +10,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.village.MerchantRecipe;
 import net.minecraft.village.MerchantRecipeList;
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 import java.util.Random;
 

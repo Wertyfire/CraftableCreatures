@@ -1,13 +1,13 @@
-package ru.wertyfiregames.craftablecreatures.item;
+package ru.wertyfiregames.craftablecreatures.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.guidebook.item.ItemGuideBook;
+import ru.wertyfiregames.craftablecreatures.item.*;
 
-public class CCItems
-{
+public class CCItems {
     public static final Item bluestone = new ItemDefault("bluestone", CCCreativeTabs.tabCraftableCreatures);
     public static final Item template = new ItemDefault("template", CCCreativeTabs.tabCraftableCreatures);
     public static final Item spawn_egg_template = new ItemDefault("spawnEggTemplate", "spawn_egg_template",
@@ -21,8 +21,7 @@ public class CCItems
     public static final Item bluestone_spade = new ItemBluestoneSpade();
     public static final Item bluestone_hoe = new ItemBluestoneHoe();
 
-    public static void register()
-    {
+    public static void register() {
         GameRegistry.registerItem(bluestone, "bluestone");
         GameRegistry.registerItem(template, "template");
         GameRegistry.registerItem(spawn_egg_template, "spawn_egg_template");
@@ -33,8 +32,7 @@ public class CCItems
         GameRegistry.registerItem(bluestone_spade, "bluestone_spade");
         GameRegistry.registerItem(bluestone_hoe, "bluestone_hoe");
 
-        if (CCConfig.enableExperimentalContent)
-        {
+        if (CCConfig.enableExperimentalContent) {
             GameRegistry.registerItem(guide_book, "guide");
         }
 

@@ -1,23 +1,18 @@
-package ru.wertyfiregames.craftablecreatures.recipe;
+package ru.wertyfiregames.craftablecreatures.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
-import net.minecraftforge.oredict.ShapedOreRecipe;
-import net.minecraftforge.oredict.ShapelessOreRecipe;
-import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.ShapedOreRecipe;
 
-public class CCRecipes
-{
-    public static void register()
-    {
-        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(CCItems.spawn_egg_template),
-                new ItemStack(Items.egg), new ItemStack(CCItems.template)));
+public class CCRecipes {
+    public static void register() {
+        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.spawn_egg_template),
+                new ItemStack(Items.egg), new ItemStack(CCItems.template));
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 9),
                 new ItemStack(CCBlocks.bluestone_block));
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 8),
@@ -29,10 +24,8 @@ public class CCRecipes
                 "RS", "SR", 'R', "dustBluestone", 'S', Items.paper));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.powered_bluestone_block),
                 "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.bluestone_block),
-                "SSS", "SSS", "SSS", 'S', "dustBluestone"));
-
-        GameRegistry.addSmelting(new ItemStack(CCBlocks.bluestone_ore), new ItemStack(CCItems.bluestone), 10f);
+        GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
+                "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
 
         //Souls
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
