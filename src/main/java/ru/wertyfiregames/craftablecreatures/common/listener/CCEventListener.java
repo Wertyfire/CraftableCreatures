@@ -4,30 +4,43 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
-import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.block.CCBlocks;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
-import ru.wertyfiregames.craftablecreatures.item.CCItems;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.util.Utils;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
 
-import java.net.MalformedURLException;
-
 public class CCEventListener {
     @SubscribeEvent
-    public void onPlayerDied(PlayerEvent.PlayerRespawnEvent event) {
-        event.player.dropItem(CCItems.soul_element, 1);
+    public void onLivingDrop(LivingDropsEvent event) {
+        if (event.entityLiving instanceof EntityPlayer) {
+            EntityPlayer player = (EntityPlayer) event.entityLiving;
+
+            event.drops.add(new EntityItem(player.worldObj, player.posX, player.posY, player.posZ,
+                    new ItemStack(CCItems.soul_element, 1, 0)));
+        }
+
+        if (event.entityLiving instanceof EntityBat) {
+            EntityBat bat = (EntityBat) event.entityLiving;
+
+            event.drops.add(new EntityItem(bat.worldObj, bat.posX, bat.posY, bat.posZ,
+                    new ItemStack(CCItems.bat_wing)));
+        }
     }
 
     @SubscribeEvent
     public void onPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
-        event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + CCConfig.enableExperimentalContent));
+        event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfig.enableExperimentalContent));
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
