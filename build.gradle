@@ -13,6 +13,7 @@ buildscript {
     dependencies {
         classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
             changing = true
+            exclude group:'org.osgi', module: 'org.osgi.service.prefs'
         }
     }
 }
