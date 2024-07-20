@@ -1,6 +1,5 @@
 package ru.wertyfiregames.craftablecreatures.proxy;
 
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
@@ -13,7 +12,7 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.common.handler.TradeHandler;
-import ru.wertyfiregames.craftablecreatures.common.listener.CCEventListener;
+import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
 import ru.wertyfiregames.craftablecreatures.init.CCRecipes;
