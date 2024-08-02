@@ -48,7 +48,7 @@ public class CCEventListener {
     }
 
     @SubscribeEvent
-    public void playerLoggerIn(PlayerEvent.PlayerLoggedInEvent event) {
+    public void playerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         System.out.println("Player logged in");
     }
 
