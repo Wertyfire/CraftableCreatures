@@ -92,7 +92,7 @@ public class CCEventListener {
         }
     }
 
-//    @SubscribeEvent
+    @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && event.player != null) {
             for (ItemStack stack : event.player.inventory.mainInventory) {
