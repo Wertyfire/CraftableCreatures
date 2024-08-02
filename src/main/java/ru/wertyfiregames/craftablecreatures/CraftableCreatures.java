@@ -3,13 +3,22 @@ package ru.wertyfiregames.craftablecreatures;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
-import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.registry.GameRegistry;
+import cpw.mods.fml.common.registry.VillagerRegistry;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Logger;
+import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
+import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
+import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
+import ru.wertyfiregames.craftablecreatures.init.*;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
+import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
+import ru.wertyfiregames.craftablecreatures.world.CCWorldOreGenerator;
 
 import java.io.File;
 
@@ -22,30 +31,25 @@ public class CraftableCreatures
 //    Version
     protected static final String modId = "craftable_creatures";
     protected static final String modVersion = "0.4.0";
-    protected static final String allVersionsNumber = "07";
+    protected static final String buildNumber = "07";
     protected static final String modStatus = "beta";
 
 //    Name
     protected static final String name = "Craftable Creatures";
 
 //    Config
-    public static Configuration config;
+    private static Configuration config;
 
 //    Gui
-    public static final String guiFactory = "ru.wertyfiregames.craftablecreatures.config.CCGuiFactory";
+    protected static final String guiFactory = "ru.wertyfiregames.craftablecreatures.config.CCGuiFactory";
+    public static final int GUI_SOUL_EXTRACTOR = 0;
     
     private static Logger modLogger;
-
-//    Proxy
-    private static final String clientSide = "ru.wertyfiregames.craftablecreatures.proxy.ClientProxy";
-    private static final String serverSide = "ru.wertyfiregames.craftablecreatures.proxy.CommonProxy";
 
     @Mod.Instance("craftable_creatures")
     public static CraftableCreatures INSTANCE;
     @Mod.Metadata
     public static ModMetadata METADATA;
-    @SidedProxy(clientSide = clientSide, serverSide = serverSide)
-    public static CommonProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -54,16 +58,39 @@ public class CraftableCreatures
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);
         CCConfig.load();
-        proxy.preInit(event);
+        CraftableCreatures.getModLogger().debug("CC Config loaded");
+        CCItems.register();
+        CraftableCreatures.getModLogger().debug("CC Items loaded");
+        CCBlocks.register();
+        CraftableCreatures.getModLogger().debug("CC Blocks loaded");
+        CCTileEntities.register();
+        CraftableCreatures.getModLogger().debug("CC Tile entities loaded");
         CCVersionChecker.check(getVersion());
+        CraftableCreatures.getModLogger().info("Pre initialization of Craftable Creatures complete");
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        proxy.init(event);
+        MinecraftForge.EVENT_BUS.register(new CCEventListener());
+        CraftableCreatures.getModLogger().debug("CC Event listener loaded");
+        NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
+        CraftableCreatures.getModLogger().debug("CC Gui handler loaded");
+        for (int i = 0; i < 5; i++) {
+            VillagerRegistry.instance().registerVillageTradeHandler(i, new CCTradeHandler());
+        }
+        CraftableCreatures.getModLogger().debug("CC Villager trades loaded");
+        GameRegistry.registerWorldGenerator(new CCWorldOreGenerator(), 0);
+        CraftableCreatures.getModLogger().debug("CC Ore generation loaded");
+        CCAchievementList.register();
+        CraftableCreatures.getModLogger().debug("CC Achievements loaded");
+        CCRecipes.register();
+        CraftableCreatures.getModLogger().debug("CC Recipes loaded");
+        CCOreDictionary.register();
+        CraftableCreatures.getModLogger().debug("CC Ore dictionary loaded");
+        CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        proxy.postInit(event);
+        CraftableCreatures.getModLogger().info("Post initialization of Craftable Creatures complete");
     }
 
 //    Getters
@@ -90,6 +117,12 @@ public class CraftableCreatures
         String[] version = getVersion().split("-");
         String[] parts = version[0].split("\\.");
         return Integer.parseInt(parts[2]);
+    }
+    public static String getBuildNum() {
+        return buildNumber;
+    }
+    public static int getBuildNumInt() {
+        return Integer.parseInt(buildNumber);
     }
     public static String getModStatus() {
         return modStatus;

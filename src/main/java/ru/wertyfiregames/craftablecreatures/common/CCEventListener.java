@@ -1,16 +1,19 @@
 package ru.wertyfiregames.craftablecreatures.common;
 
+import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityBat;
+import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
+import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
@@ -35,10 +38,22 @@ public class CCEventListener {
             event.drops.add(new EntityItem(bat.worldObj, bat.posX, bat.posY, bat.posZ,
                     new ItemStack(CCItems.bat_wing)));
         }
+
+        if (event.entityLiving instanceof EntityOcelot) {
+            EntityOcelot ocelot = (EntityOcelot) event.entityLiving;
+
+            event.drops.add(new EntityItem(ocelot.worldObj, ocelot.posX, ocelot.posY, ocelot.posZ,
+                    new ItemStack(CCItems.ocelot_tail)));
+        }
     }
 
     @SubscribeEvent
-    public void onPlayerLoggedInEvent(PlayerEvent.PlayerLoggedInEvent event) {
+    public void playerLoggerIn(PlayerEvent.PlayerLoggedInEvent event) {
+        System.out.println("Player logged in");
+    }
+
+//    @SubscribeEvent
+    public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfig.enableExperimentalContent));
 
@@ -77,7 +92,7 @@ public class CCEventListener {
         }
     }
 
-    @SubscribeEvent
+//    @SubscribeEvent
     public void onPlayerTick(TickEvent.PlayerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && event.player != null) {
             for (ItemStack stack : event.player.inventory.mainInventory) {
@@ -97,5 +112,11 @@ public class CCEventListener {
                 }
             }
         }
+    }
+
+    @SubscribeEvent
+    public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.modID.equalsIgnoreCase(CraftableCreatures.getModId()))
+            CCConfig.load();
     }
 }
