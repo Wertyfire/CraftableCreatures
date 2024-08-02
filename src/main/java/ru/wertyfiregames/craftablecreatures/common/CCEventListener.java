@@ -52,7 +52,7 @@ public class CCEventListener {
         System.out.println("Player logged in");
     }
 
-    @SubscribeEvent
+    //@SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfig.enableExperimentalContent));
