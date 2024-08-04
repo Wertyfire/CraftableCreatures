@@ -70,7 +70,6 @@ public class CraftableCreatures
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        MinecraftForge.EVENT_BUS.register(new CCEventListener());
         CraftableCreatures.getModLogger().debug("CC Event listener loaded");
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
         CraftableCreatures.getModLogger().debug("CC Gui handler loaded");
@@ -91,6 +90,7 @@ public class CraftableCreatures
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         CraftableCreatures.getModLogger().info("Post initialization of Craftable Creatures complete");
+        MinecraftForge.EVENT_BUS.register(new CCEventListener());
     }
 
 //    Getters
