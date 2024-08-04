@@ -1,8 +1,8 @@
 /shelf/
 /.idea
-/CraftableCreatures.iml
-/CraftableCreatures.ipr
-/CraftableCreatures.iws
+*.iml
+*.ipr
+*.iws
 /build
 /.gradle
 /run/
