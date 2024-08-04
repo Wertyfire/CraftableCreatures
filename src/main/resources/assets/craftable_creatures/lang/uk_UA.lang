@@ -13,6 +13,7 @@ item.spawnEggTemplate.name=Креслення яйця призову
 item.template.name=Малювання
 item.bluestone.name=Синій камінь
 item.batWing.name=Крило кажана
+item.ocelotTail.name=Хвіст оцелота
 item.guideBook.name=Craftable Creatures інструкція
 item.bluestoneSword.name=Меч із синього каменю
 item.bluestonePickaxe.name=Кірка із синього каменю
@@ -52,6 +53,8 @@ itemGroup.craftableCreatures=Craftable Creatures
 tile.bluestoneBlock.name=Блок синього каменю
 tile.poweredBluestoneBlock.name=Заряджений блок синього каменю
 tile.bluestoneOre.name=Руда синього каменю
+
+container.soulExtractor=Витягувач душ
 
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим

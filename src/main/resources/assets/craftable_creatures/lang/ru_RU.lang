@@ -13,6 +13,7 @@ item.spawnEggTemplate.name=Чертёж яйца призыва
 item.template.name=Чертёж
 item.bluestone.name=Синий камень
 item.batWing.name=Крыло летучей мыши
+item.ocelotTail.name=Хвост оцелота
 item.guideBook.name=Инструкция по Craftable Creatures
 item.bluestoneSword.name=Синекаменный меч
 item.bluestonePickaxe.name=Синекаменная кирка
@@ -52,6 +53,8 @@ itemGroup.craftableCreatures=Craftable Creatures
 tile.bluestoneBlock.name=Блок синего камня
 tile.poweredBluestoneBlock.name=Заряженный блок синего камня
 tile.bluestoneOre.name=Руда синего камня
+
+container.soulExtractor=Извлекатель душ
 
 craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим

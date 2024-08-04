@@ -13,6 +13,7 @@ item.spawnEggTemplate.name=Spawn egg blueprint
 item.template.name=Blueprint
 item.bluestone.name=Bluestone
 item.batWing.name=Bat wing
+item.ocelotTail.name=Ocelot Tail
 item.guideBook.name=Craftable Creatures guide
 item.bluestoneSword.name=Bluestone sword
 item.bluestonePickaxe.name=Bluestone pickaxe
@@ -52,6 +53,8 @@ itemGroup.craftableCreatures=Craftable Creatures
 tile.bluestoneBlock.name=Block of bluestone
 tile.poweredBluestoneBlock.name=Powered block of bluestone
 tile.bluestoneOre.name=Bluestone ore
+
+container.soulExtractor=Soul Extractor
 
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content

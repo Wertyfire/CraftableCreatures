@@ -13,6 +13,7 @@ item.spawnEggTemplate.name=Zeichnung von "erschaffe"
 item.template.name=Zeichnung
 item.bluestone.name=Blaustaub
 item.batWing.name=Fledermausflügel
+item.ocelotTail.name=Ozelot Schwanz
 item.guideBook.name=Craftable Creatures buch
 item.bluestoneSword.name=Schwert aus Blaustein
 item.bluestonePickaxe.name=Spitzhacke aus Blaustein
@@ -47,15 +48,16 @@ item.soul.villager.name=Seele [§6Dorfbewohner§f]
 
 itemGroup.craftableCreatures=Craftable Creatures
 
+tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
+
 tile.bluestoneBlock.name=Block aus blaustein
 tile.poweredBluestoneBlock.name=Angetriebener block aus blaustein
 tile.bluestoneOre.name=Blaustaub erz
 
+container.soulExtractor=Seelenextraktor
+
 craftableCreatures.configGui.checkForUpdates=Auf updates prüfen
 craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experimentelle inhalte
-
-
-tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
 
 chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimenteller inhalt =
 chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Suche nach Mod-Updates fehlgeschlagen!
