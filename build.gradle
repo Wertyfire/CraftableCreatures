@@ -34,6 +34,19 @@ tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
+build.doFirst {
+    Scanner scanner = new Scanner(System.in);
+    println 'Are you updated version numbers??? [y/n]'
+
+    def input = scanner.nextLine()
+
+    if (input.toLowerCase() == 'y' || input.toLowerCase() == 'д') println 'Continuing build...'
+    else if (input.toLowerCase() == 'n' || input.toLowerCase() == 'н') {
+        println 'Build cancelled'
+        throw new GradleException('Build cancelled.')
+    } else throw new GradleException('Incorrect input!')
+}
+
 dependencies {
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
 }
