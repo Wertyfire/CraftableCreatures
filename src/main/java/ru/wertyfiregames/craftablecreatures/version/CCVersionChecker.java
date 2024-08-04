@@ -91,7 +91,7 @@ public class CCVersionChecker {
                                 if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
                                     updateResult = UpdateResult.OUTDATED;
                                     target = lat;
-                                    logger.info("You are using some version but latest is {}", lat);
+                                    logger.info("Found new version: {}", lat);
                                 }
                             }
                         } else {
@@ -107,13 +107,11 @@ public class CCVersionChecker {
                             downloadLink = homepage + lat;
                             target = lat;
                             changelog = changes.get(lat);
-                            logger.info("You using outdated unstable version! New version is {}", lat);
+                            logger.info("Found new version: {}", lat);
                         } else
                             updateResult = UpdateResult.BETA;
-                        logger.info("You using unstable version on mod");
                     } else
                         updateResult = UpdateResult.BETA;
-                    logger.info("You using unstable version on mod");
                 } catch (Exception e) {
                     e.printStackTrace(System.out);
                     updateResult = UpdateResult.FAILED;

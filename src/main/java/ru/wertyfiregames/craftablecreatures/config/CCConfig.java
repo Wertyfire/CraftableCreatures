@@ -30,11 +30,4 @@ public class CCConfig {
         prop.setRequiresMcRestart(requiresMcRestart);
         return prop.getBoolean();
     }
-
-    @SubscribeEvent
-    public void onConfigChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.modID.equalsIgnoreCase(CraftableCreatures.getModId())) {
-            load();
-        }
-    }
 }

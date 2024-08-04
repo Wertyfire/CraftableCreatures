@@ -14,7 +14,7 @@ import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
 
 public class Utils {
-//    Credits goes to chatgpt. Why no ChatComponentLink? (Fack)
+//    Credits goes to chatgpt. Why no ChatComponentLink?
     public static void sendClickableLink(EntityPlayer player, String beforeLinkKey, String url, String urlKey, String afterLinkKey) {
         ChatComponentText beforeLinkText = new ChatComponentText(I18n.format(beforeLinkKey) + " ");
         ChatComponentText urlText = new ChatComponentText(I18n.format(urlKey));

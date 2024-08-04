@@ -2,7 +2,7 @@
  * File created on 18:33 15.11.2023 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.common.handler;
+package ru.wertyfiregames.craftablecreatures.common;
 
 import cpw.mods.fml.common.registry.VillagerRegistry.IVillageTradeHandler;
 import net.minecraft.entity.passive.EntityVillager;
@@ -14,7 +14,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 import java.util.Random;
 
-public class TradeHandler implements IVillageTradeHandler {
+public class CCTradeHandler implements IVillageTradeHandler {
     @Override
     public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random) {
         if (villager.getProfession() == 2)

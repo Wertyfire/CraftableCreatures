@@ -1,19 +1,18 @@
 package ru.wertyfiregames.craftablecreatures.block;
 
 import net.minecraft.block.material.MapColor;
-import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.world.IBlockAccess;
 
-public class BlockCCCompressedPowered extends BlockCCOre {
-    public BlockCCCompressedPowered(MapColor mapColor, Material material, String name, String textureName,
-                                    CreativeTabs creativeTab, String toolType, int level, float hardness, float resistance) {
-        super(mapColor, material, name, textureName, creativeTab, toolType, level, hardness, resistance);
+public class BlockCCCompressedPowered extends BlockCCCompressed {
+    public BlockCCCompressedPowered(MapColor mapColor, String name, String textureName,
+                                    CreativeTabs creativeTab, int level, float hardness, float resistance) {
+        super(mapColor, name, textureName, creativeTab, level, hardness, resistance);
     }
 
-    public BlockCCCompressedPowered(MapColor mapColor, Material material, String nameAll,
-                                    CreativeTabs creativeTab, String toolType, int level, float hardness, float resistance) {
-        super(mapColor, material, nameAll, creativeTab, toolType, level, hardness, resistance);
+    public BlockCCCompressedPowered(MapColor mapColor, String nameAll,
+                                    CreativeTabs creativeTab, int level, float hardness, float resistance) {
+        super(mapColor, nameAll, creativeTab, level, hardness, resistance);
     }
 
     @Override
@@ -22,7 +21,7 @@ public class BlockCCCompressedPowered extends BlockCCOre {
     }
 
     @Override
-    public int isProvidingWeakPower(IBlockAccess blockAccess, int int1, int int2, int int3, int int4) {
+    public int isProvidingWeakPower(IBlockAccess world, int x, int y, int z, int side) {
         return 15;
     }
 }
