@@ -27,60 +27,6 @@ public class CCRecipes {
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
                 "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
 
-        //Souls
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                1), new ItemStack(Items.gunpowder), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                2), new ItemStack(Items.bone), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                3), new ItemStack(Items.spider_eye), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                4), new ItemStack(Items.rotten_flesh), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                5), new ItemStack(Items.slime_ball), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                6), new ItemStack(Items.ghast_tear), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                7), new ItemStack(Items.golden_sword), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                8), new ItemStack(Items.ender_eye), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                9), new ItemStack(CCItems.soul_element, 1, 4), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                10), new ItemStack(Blocks.monster_egg), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                11), new ItemStack(Items.blaze_rod), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                12), new ItemStack(Items.magma_cream), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                13), new ItemStack(CCItems.bat_wing), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                14), new ItemStack(Items.sugar), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                14), new ItemStack(Items.stick), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                14), new ItemStack(Items.potionitem), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                15), new ItemStack(Items.porkchop), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                16), new ItemStack(Blocks.wool), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                17), new ItemStack(Items.beef), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                17), new ItemStack(Items.milk_bucket), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                18), new ItemStack(Items.chicken), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                18), new ItemStack(Items.egg), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                18), new ItemStack(Items.feather), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                19), new ItemStack(Items.dye, 1, 0), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                20), new ItemStack(CCItems.soul_element, 1, 2), new ItemStack(CCItems.soul_element, 1, 0));
-        GameRegistry.addShapelessRecipe(new ItemStack(CCItems.soul_element, 1,
-                21), new ItemStack(Blocks.red_mushroom), new ItemStack(CCItems.soul_element, 1, 0));
-
         //Spawn eggs
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
                 EntityList.getEntityID(new EntityCreeper(null))), new ItemStack(CCItems.spawn_egg_template), new ItemStack(CCItems.soul_element, 1, 1));
