@@ -1,10 +1,9 @@
-package ru.wertyfiregames.craftablecreatures.guidebook.item;
+package ru.wertyfiregames.craftablecreatures.item;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.craftablecreatures.item.ItemDefault;
 
 public class ItemGuideBook extends ItemDefault {
     public ItemGuideBook() {
