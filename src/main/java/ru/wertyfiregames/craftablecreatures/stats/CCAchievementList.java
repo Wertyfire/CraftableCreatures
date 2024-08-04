@@ -6,16 +6,16 @@ import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 public class CCAchievementList {
-    public static final Achievement thanksForDownload = (new Achievement("achievement.thanksForDownload",
+    public static final Achievement thanksForDownload = (new Achievement("achievement.craftableCreatures.thanksForDownload",
             "thanksForDownload", 2, -1,
             CCItems.spawn_egg_template, null).registerStat());
-    public static final Achievement bluedustCollector = (new Achievement("achievement.bluedustCollector",
+    public static final Achievement bluedustCollector = (new Achievement("achievement.craftableCreatures.bluedustCollector",
             "bluedustCollector", 0, 0, CCItems.bluestone, thanksForDownload).registerStat());
-    public static final Achievement templateManager = (new Achievement("achievement.templateManager",
+    public static final Achievement templateManager = (new Achievement("achievement.craftableCreatures.templateManager",
             "templateManager", 1, 2, CCItems.template, bluedustCollector).registerStat());
-    public static final Achievement mobSpawner = (new Achievement("achievement.mobSpawner", "mobSpawner", 2,
-            1, CCItems.spawn_egg_template, templateManager).registerStat());
-    public static final Achievement energy = (new Achievement("achievement.energy", "energy", -2, -1,
+    public static final Achievement mobSpawner = (new Achievement("achievement.craftableCreatures.mobSpawner",
+            "mobSpawner", 2, 1, CCItems.spawn_egg_template, templateManager).registerStat());
+    public static final Achievement energy = (new Achievement("achievement.craftableCreatures.energy", "energy", -2, -1,
             CCBlocks.powered_bluestone_block, bluedustCollector).registerStat());
 
     public static void register() {
