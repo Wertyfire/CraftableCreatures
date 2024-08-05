@@ -42,9 +42,9 @@ public class GuiSoulExtractor extends GuiContainer {
 
         //TODO: create normal progress indicator
         if (tileSoulExtractor.isExtracting()) {
-            int scaled = tileSoulExtractor.getBurnTimeRemainingScaled(13);
+            int scaled = tileSoulExtractor.getFuelWorkTimeRemainingScaled(13);
             drawTexturedModalRect(xPos + 42, yPos + 36 + 12 - scaled, 176, 12 - scaled, 14, scaled + 1);
-            scaled = tileSoulExtractor.getCookProgressScaled(42);
+            scaled = tileSoulExtractor.getExtractProgressScaled(42);
             drawTexturedModalRect(xPos + 60, yPos + 20, 176, 14, scaled + 1, 30);
         }
 //        if (tileSoulExtractor.isExtracting()) { //original furnace

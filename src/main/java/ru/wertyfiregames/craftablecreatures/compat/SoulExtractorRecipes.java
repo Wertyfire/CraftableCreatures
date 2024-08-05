@@ -115,7 +115,7 @@ public class SoulExtractorRecipes {
     }
     public float getExtractingExperience(ItemStack stack) {
         for (Map.Entry<ItemStack, Float> entry : experienceList.entrySet()) {
-            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue();
+            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue() * 10f;
         }
         return 0f;
     }

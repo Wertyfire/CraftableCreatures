@@ -1,12 +1,16 @@
 package ru.wertyfiregames.craftablecreatures;
 
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.common.eventhandler.EventBus;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
+import cpw.mods.fml.relauncher.ReflectionHelper;
+import net.minecraftforge.common.ForgeInternalHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Logger;
@@ -30,8 +34,8 @@ public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.4.0";
-    protected static final String buildNumber = "07";
+    protected static final String modVersion = "0.4.1";
+    protected static final String buildNumber = "08";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -70,7 +74,11 @@ public class CraftableCreatures
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        CCEventListener eventListener = new CCEventListener();
+        FMLCommonHandler.instance().bus().register(eventListener);
+        MinecraftForge.EVENT_BUS.register(eventListener);
         CraftableCreatures.getModLogger().debug("CC Event listener loaded");
+        CraftableCreatures.getModLogger().warn("Registered event listeners: {}", ReflectionHelper.getPrivateValue(EventBus.class, MinecraftForge.EVENT_BUS, "listenerOwners").toString());
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
         CraftableCreatures.getModLogger().debug("CC Gui handler loaded");
         for (int i = 0; i < 5; i++) {
@@ -90,7 +98,6 @@ public class CraftableCreatures
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         CraftableCreatures.getModLogger().info("Post initialization of Craftable Creatures complete");
-        MinecraftForge.EVENT_BUS.register(new CCEventListener());
     }
 
 //    Getters

@@ -21,7 +21,7 @@ buildscript {
 apply plugin: 'forge'
 targetCompatibility = sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "0.4.0"
+version = "0.4.1"
 group= "me.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
@@ -40,8 +40,8 @@ build.doFirst {
 
     def input = scanner.nextLine()
 
-    if (input.toLowerCase() == 'y' || input.toLowerCase() == 'д') println 'Continuing build...'
-    else if (input.toLowerCase() == 'n' || input.toLowerCase() == 'н') {
+    if (input.toLowerCase() == 'y') println 'Continuing build...'
+    else if (input.toLowerCase() == 'n') {
         println 'Build cancelled'
         throw new GradleException('Build cancelled.')
     } else throw new GradleException('Incorrect input!')

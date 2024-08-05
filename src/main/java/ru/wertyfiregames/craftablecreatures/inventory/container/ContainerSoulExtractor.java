@@ -13,6 +13,7 @@ import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.compat.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.inventory.slot.SlotSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
 public class ContainerSoulExtractor extends Container {

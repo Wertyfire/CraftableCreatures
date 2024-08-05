@@ -135,12 +135,12 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
     }
 
     @SideOnly(Side.CLIENT)
-    public int getCookProgressScaled(int scale) {
+    public int getExtractProgressScaled(int scale) {
         return soulExtractorExtractTime * scale / 200;
     }
 
     @SideOnly(Side.CLIENT)
-    public int getBurnTimeRemainingScaled(int scale) {
+    public int getFuelWorkTimeRemainingScaled(int scale) {
         if (currentSoulExtractTime == 0) currentSoulExtractTime = 200;
 
         return soulExtractorFuelWorkTime * scale / currentSoulExtractTime;

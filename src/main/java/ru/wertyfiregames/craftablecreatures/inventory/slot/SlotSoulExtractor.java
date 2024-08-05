@@ -2,7 +2,7 @@
  * File created on 16:39 01.08.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.inventory.container;
+package ru.wertyfiregames.craftablecreatures.inventory.slot;
 
 import net.minecraft.entity.item.EntityXPOrb;
 import net.minecraft.entity.player.EntityPlayer;
@@ -48,13 +48,13 @@ SlotSoulExtractor extends Slot {
 
         if (!player.worldObj.isRemote) {
             int remainingXp = xpGained;
-            float xpMultiplier = SoulExtractorRecipes.get().getExtractingExperience(stack);
+            float xps = SoulExtractorRecipes.get().getExtractingExperience(stack);
             int orbs;
 
-            if (xpMultiplier == 0f) remainingXp = 0;
-            else if (xpMultiplier < 1f) {
-                orbs = MathHelper.floor_float(remainingXp * xpMultiplier);
-                if (orbs < MathHelper.ceiling_float_int(remainingXp * xpMultiplier) && Math.random() < remainingXp * xpMultiplier - orbs) ++orbs;
+            if (xps == 0f) remainingXp = 0;
+            else if (xps < 1f) {
+                orbs = MathHelper.floor_float(remainingXp * xps);
+                if (orbs < MathHelper.ceiling_float_int(remainingXp * xps) && Math.random() < remainingXp * xps - orbs) ++orbs;
                 remainingXp = orbs;
             }
 
