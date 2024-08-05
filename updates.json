@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "0.4.1",
-    "1.7.10-recommended": "0.4.1",
+    "1.7.10-latest": "0.5.0",
+    "1.7.10-recommended": "0.5.0",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -14,6 +14,6 @@
     "0.2.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added update checker<n><t>2. Deleted transmutator<n><t>3. Deleted soul extractor",
     "0.3.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Improved config system<n><t>2. Improved generation system<n><t>3. Improved update checking system",
     "0.4.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Bat drops bat wing<n><t>2. Now player drops soul when dead instead of dropping soul when respawned",
-    "0.4.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed event listener so now achievements and update messages will work fine!"
+    "0.5.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed event listener so now achievements and startup messages should work fine<n><t>2. Added ocelot tail<n><t>3. Finally added working soul extractor. In future versions will be added NEI integration. Now to craft soul of mob you should use this soul extractor<n><t>\u00A70Please don't tell anyone that 0.4.1 exists!\u00A7f"
   }
 }
