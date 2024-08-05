@@ -23,7 +23,7 @@ import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
 
 public class CCEventListener {
-    @SubscribeEvent(receiveCanceled = true)
+    @SubscribeEvent
     public void onLivingDrop(LivingDropsEvent event) {
         if (event.entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.entityLiving;
