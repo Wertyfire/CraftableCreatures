@@ -53,6 +53,7 @@ itemGroup.craftableCreatures=Craftable Creatures
 tile.bluestoneBlock.name=Block of bluestone
 tile.poweredBluestoneBlock.name=Powered block of bluestone
 tile.bluestoneOre.name=Bluestone ore
+tile.soulExtractor.name=Soul Extractor
 
 container.soulExtractor=Soul Extractor
 

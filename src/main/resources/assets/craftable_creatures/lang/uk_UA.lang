@@ -53,6 +53,7 @@ itemGroup.craftableCreatures=Craftable Creatures
 tile.bluestoneBlock.name=Блок синього каменю
 tile.poweredBluestoneBlock.name=Заряджений блок синього каменю
 tile.bluestoneOre.name=Руда синього каменю
+tile.soulExtractor.name=Витягувач душ
 
 container.soulExtractor=Витягувач душ
 

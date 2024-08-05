@@ -26,6 +26,8 @@ public class CCRecipes {
                 "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
                 "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
+        GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.soul_extractor),
+                "SSS", "SUS", "SSS", 'S', Blocks.cobblestone, 'U', CCItems.bluestone);
 
         //Spawn eggs
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,

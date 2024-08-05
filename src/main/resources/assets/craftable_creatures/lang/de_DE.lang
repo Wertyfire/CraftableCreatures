@@ -53,6 +53,7 @@ tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
 tile.bluestoneBlock.name=Block aus blaustein
 tile.poweredBluestoneBlock.name=Angetriebener block aus blaustein
 tile.bluestoneOre.name=Blaustaub erz
+tile.soulExtractor.name=Seelenextraktor
 
 container.soulExtractor=Seelenextraktor
 
