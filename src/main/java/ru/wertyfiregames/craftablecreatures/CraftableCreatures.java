@@ -5,18 +5,16 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.event.*;
-import cpw.mods.fml.common.eventhandler.EventBus;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
-import cpw.mods.fml.relauncher.ReflectionHelper;
-import net.minecraftforge.common.ForgeInternalHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
 import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
+import ru.wertyfiregames.craftablecreatures.compat.CCNEICompat;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.*;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
@@ -35,7 +33,7 @@ public class CraftableCreatures
 //    Version
     protected static final String modId = "craftable_creatures";
     protected static final String modVersion = "0.5.0";
-    protected static final String buildNumber = "09";
+    protected static final String buildNumber = "08";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -78,7 +76,6 @@ public class CraftableCreatures
         FMLCommonHandler.instance().bus().register(eventListener);
         MinecraftForge.EVENT_BUS.register(eventListener);
         CraftableCreatures.getModLogger().debug("CC Event listener loaded");
-        CraftableCreatures.getModLogger().warn("Registered event listeners: {}", ReflectionHelper.getPrivateValue(EventBus.class, MinecraftForge.EVENT_BUS, "listenerOwners").toString());
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
         CraftableCreatures.getModLogger().debug("CC Gui handler loaded");
         for (int i = 0; i < 5; i++) {
@@ -93,6 +90,7 @@ public class CraftableCreatures
         CraftableCreatures.getModLogger().debug("CC Recipes loaded");
         CCOreDictionary.register();
         CraftableCreatures.getModLogger().debug("CC Ore dictionary loaded");
+        CCNEICompat.initNEICompatibility();
         CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
     }
     @EventHandler
