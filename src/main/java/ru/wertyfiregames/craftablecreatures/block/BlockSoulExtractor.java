@@ -34,6 +34,7 @@ public class BlockSoulExtractor extends BlockContainer {
 
     private final boolean enabled;
     private static boolean isWorking;
+
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
     @SideOnly(Side.CLIENT)
@@ -42,8 +43,9 @@ public class BlockSoulExtractor extends BlockContainer {
     public BlockSoulExtractor(boolean isLit) {
         super(Material.rock);
         enabled = isLit;
-        setBlockName(CraftableCreatures.getModId() + ":soul_extractor");
+        setBlockName("soulExtractor");
         if (!enabled) setCreativeTab(CCCreativeTabs.tabCraftableCreatures);
+        setStepSound(soundTypePiston);
         setHarvestLevel("pickaxe", 0);
         setHardness(3.5f);
         setResistance(3.5f);

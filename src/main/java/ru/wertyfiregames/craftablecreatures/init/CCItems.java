@@ -24,6 +24,7 @@ public class CCItems {
         GameRegistry.registerItem(bat_wing, "bat_wing");
         GameRegistry.registerItem(ocelot_tail, "ocelot_tail");
         registerExperimental();
+
         //Must be in the end
         GameRegistry.registerItem(soul_element, "soul_element");
     }

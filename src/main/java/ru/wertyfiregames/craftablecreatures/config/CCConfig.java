@@ -1,7 +1,5 @@
 package ru.wertyfiregames.craftablecreatures.config;
 
-import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.common.config.Property;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 
@@ -13,7 +11,7 @@ public class CCConfig {
 
     public static void load() {
         checkForUpdates = getBoolean(CATEGORY_CRAFTABLE_CREATURES, "checkForUpdates", "craftableCreatures.configGui.checkForUpdates",
-                "Allow this mod to check for updates (needs access to internet)", false, false);
+                "Allow this mod to check for updates (needs access to internet)", true, false);
 
         enableExperimentalContent = getBoolean(CATEGORY_CRAFTABLE_CREATURES, "enableExperimentalContent", "craftableCreatures.configGui.enableExperimentalContent",
                 "Enable blocks, items, recipes, etc. that are in development", false, true);

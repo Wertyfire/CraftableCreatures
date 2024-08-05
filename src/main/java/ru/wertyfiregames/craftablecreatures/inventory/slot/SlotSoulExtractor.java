@@ -13,8 +13,7 @@ import net.minecraft.util.MathHelper;
 import ru.wertyfiregames.craftablecreatures.compat.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.compat.event.CraftableCreaturesEventFactory;
 
-public class
-SlotSoulExtractor extends Slot {
+public class SlotSoulExtractor extends Slot {
     private final EntityPlayer player;
     private int xpGained;
 
