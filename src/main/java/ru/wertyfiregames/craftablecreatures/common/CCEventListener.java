@@ -14,8 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.compat.event.SEFuelBurnTimeEvent;
-import ru.wertyfiregames.craftablecreatures.compat.event.SoulExtractedEvent;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
@@ -25,12 +23,7 @@ import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
 
 public class CCEventListener {
-    @SubscribeEvent
-    public void soulExtracted(SoulExtractedEvent event) {
-        System.out.println("Soul extracted" + event.extracted.getUnlocalizedName());
-    }
-
-    @SubscribeEvent
+    @SubscribeEvent(receiveCanceled = true)
     public void onLivingDrop(LivingDropsEvent event) {
         if (event.entityLiving instanceof EntityPlayer) {
             EntityPlayer player = (EntityPlayer) event.entityLiving;
@@ -55,7 +48,7 @@ public class CCEventListener {
     }
 
     @SubscribeEvent
-    public void playerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
+    public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfig.enableExperimentalContent));
 
