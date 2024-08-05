@@ -79,7 +79,9 @@ public class ContainerSoulExtractor extends Container {
     }
 
     public ItemStack transferStackInSlot(EntityPlayer player, int slotIndex) {
-        ItemStack itemStack = null;
+        return null;
+        //TODO: do shift clicking
+        /*ItemStack itemStack = null;
         Slot slot = (Slot) inventorySlots.get(slotIndex);
 
         if (slot != null && slot.getHasStack()) {
@@ -109,6 +111,6 @@ public class ContainerSoulExtractor extends Container {
             slot.onPickupFromSlot(player, slotStack);
         }
 
-        return itemStack;
+        return itemStack;*/
     }
 }
