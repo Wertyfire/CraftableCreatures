@@ -81,7 +81,7 @@ public class SoulExtractorRecipes {
     }
     public void addRecipe(ItemStack input, ItemStack output, float xp) {
         extractingRecipes.put(input.copy(), output);
-        experienceList.put(output.copy(), xp);
+        experienceList.put(output.copy(), xp * 10f);
     }
 
     public void addExtractHelper(Block helper) {
@@ -115,7 +115,7 @@ public class SoulExtractorRecipes {
     }
     public float getExtractingExperience(ItemStack stack) {
         for (Map.Entry<ItemStack, Float> entry : experienceList.entrySet()) {
-            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue() * 10f;
+            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue();
         }
         return 0f;
     }
