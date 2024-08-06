@@ -12,7 +12,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import ru.wertyfiregames.craftablecreatures.compat.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.inventory.slot.SlotSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
@@ -78,30 +78,28 @@ public class ContainerSoulExtractor extends Container {
         return tileSoulExtractor.isUseableByPlayer(player);
     }
 
-    public ItemStack transferStackInSlot(EntityPlayer player, int slotIndex) {
-        return null;
-        //TODO: do shift clicking
-        /*ItemStack itemStack = null;
-        Slot slot = (Slot) inventorySlots.get(slotIndex);
+    public ItemStack transferStackInSlot(EntityPlayer player, int fromSlot) {
+        ItemStack itemStack = null;
+        Slot slot = (Slot) inventorySlots.get(fromSlot);
 
         if (slot != null && slot.getHasStack()) {
             ItemStack slotStack = slot.getStack();
             itemStack = slotStack.copy();
 
-            if (slotIndex == 3) {
-                if (!this.mergeItemStack(slotStack, 3, 39, true)) return null;
+            if (fromSlot == 3) {
+                if (!this.mergeItemStack(slotStack, 3 + 1, 3 + 36 + 1, true)) return null;
                 slot.onSlotChange(slotStack, itemStack);
-            } else if (slotIndex == 0 || slotIndex == 1) {
+            } else if (fromSlot != 1 && fromSlot != 0 && fromSlot != 2) {
                 if (SoulExtractorRecipes.get().getExtractingResult(slotStack) != null) {
-                    if (!mergeItemStack(slotStack, 3, 4, false)) return null;
+                    if (!mergeItemStack(slotStack, 0, 0 + 1, false)) return null;
+                } else if (SoulExtractorRecipes.get().isItemExtractHelper(slotStack)) {
+                    if (!mergeItemStack(slotStack, 2, 2 + 1, false)) return null;
                 } else if (TileEntitySoulExtractor.isItemFuel(slotStack)) {
-                    if (!mergeItemStack(slotStack, 1, 2, false)) return null;
-                }
-            } else if (slotIndex == 2) {
-                if (TileEntitySoulExtractor.isItemExtractHelper(slotStack)) {
-                    if (!mergeItemStack(slotStack, 3, 4, false)) return null;
-                } else return null;
-            }
+                    if (!mergeItemStack(slotStack, 1, 1 + 1, false)) return null;
+                } else if (fromSlot < 3 + 28) {
+                    if (!mergeItemStack(slotStack, 3 + 28, 3 + 37, false)) return null;
+                } else if (fromSlot < 3 + 37 && !mergeItemStack(slotStack, 3 + 1, 3 + 28, false)) return null;
+            } else if (!mergeItemStack(slotStack, 3 + 1, 3 + 37, false)) return null;
 
             if (slotStack.stackSize == 0) slot.putStack(null);
             else slot.onSlotChanged();
@@ -110,7 +108,6 @@ public class ContainerSoulExtractor extends Container {
 
             slot.onPickupFromSlot(player, slotStack);
         }
-
-        return itemStack;*/
+        return itemStack;
     }
 }
