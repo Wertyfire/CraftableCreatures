@@ -2,7 +2,7 @@
  * File created on 19:08 31.07.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.compat;
+package ru.wertyfiregames.craftablecreatures.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -10,7 +10,6 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 import java.util.*;
 
