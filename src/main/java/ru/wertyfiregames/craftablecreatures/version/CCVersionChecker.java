@@ -90,13 +90,15 @@ public class CCVersionChecker {
                             if (lat != null) {
                                 if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
                                     updateResult = UpdateResult.OUTDATED;
+                                    downloadLink = homepage + "/versions/" + lat;
                                     target = lat;
+                                    changelog = changes.get(lat);
                                     logger.info("Found new version: {}", lat);
                                 }
                             }
                         } else {
                             updateResult = UpdateResult.OUTDATED;
-                            downloadLink = homepage + rec;
+                            downloadLink = homepage + "/versions/" + rec;
                             target = rec;
                             changelog = changes.get(rec);
                             logger.info("Found new version: {}", rec);
@@ -104,7 +106,7 @@ public class CCVersionChecker {
                     } else if (lat != null) {
                         if (current.compareTo(new DefaultArtifactVersion(lat)) < 0) {
                             updateResult = UpdateResult.BETA_OUTDATED;
-                            downloadLink = homepage + lat;
+                            downloadLink = homepage + "/versions/" + lat;
                             target = lat;
                             changelog = changes.get(lat);
                             logger.info("Found new version: {}", lat);
