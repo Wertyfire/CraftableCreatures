@@ -31,9 +31,8 @@ public class CCGuiFactory implements IModGuiFactory {
     }
 
     public static class CCGuiConfig extends GuiConfig {
-        @SuppressWarnings({"unchecked", "rawtypes"})
         public CCGuiConfig(GuiScreen guiScreen) {
-            super(guiScreen, new ConfigElement(getConfig().getCategory(CCConfig.CATEGORY_CRAFTABLE_CREATURES)).getChildElements(),
+            super(guiScreen, new ConfigElement<>(getConfig().getCategory(CCConfig.CATEGORY_CRAFTABLE_CREATURES)).getChildElements(),
                     CraftableCreatures.getModId(), false, false,
                     GuiConfig.getAbridgedConfigPath(getConfig().toString()));
         }
