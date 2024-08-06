@@ -10,6 +10,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
@@ -55,7 +56,7 @@ public class CraftableCreatures
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        modLogger = event.getModLog();
+        modLogger = LogManager.getLogger("Craftable Creatures");
         modLogger.debug("CC Logger loaded");
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);
