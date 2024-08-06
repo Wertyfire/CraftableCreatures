@@ -15,7 +15,7 @@ public class CCNEICompat {
         if (Loader.isModLoaded("NotEnoughItems")) {
             CraftableCreatures.getModLogger().info("Found NEI. Injecting recipes data and other stuff");
             hideItems();
-            CraftableCreatures.getModLogger().info(("CC NEI compatibility loaded"));
+            CraftableCreatures.getModLogger().info(("NEI compatibility loaded"));
         }
     }
 
