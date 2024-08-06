@@ -4,12 +4,12 @@ achievement.bluedustCollector=Blaustaub sammler
 achievement.bluedustCollector.desc=Habe blaustaub
 achievement.templateManager=Zeichnung manager
 achievement.templateManager.desc=Craft zeichnung
-achievement.mobSpawner=Mob-Spawner
+achievement.mobSpawner=Schöpfer
 achievement.mobSpawner.desc=Basteln sie "erschaffe" zeichnung
 achievement.energy=Energie
 achievement.energy.desc=Basteln sie einen angetriebenen blausteinblock
 
-item.spawnEggTemplate.name=Zeichnung von "erschaffe"
+item.spawnEggTemplate.name=Zeichnung von erschaffe
 item.template.name=Zeichnung
 item.bluestone.name=Blaustaub
 item.batWing.name=Fledermausflügel
