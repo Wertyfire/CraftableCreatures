@@ -18,7 +18,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import ru.wertyfiregames.craftablecreatures.block.BlockSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
-import ru.wertyfiregames.craftablecreatures.compat.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.compat.event.CraftableCreaturesEventFactory;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
