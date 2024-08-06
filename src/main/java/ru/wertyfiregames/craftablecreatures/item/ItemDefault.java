@@ -6,18 +6,18 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 
 public class ItemDefault extends Item {
     public ItemDefault(String name, String textureName, CreativeTabs creativeTab) {
-        this.setCreativeTab(creativeTab);
-        this.setUnlocalizedName(name);
+        setCreativeTab(creativeTab);
+        setUnlocalizedName(name);
         if (textureName != null) {
-            this.setTextureName(CraftableCreatures.getModId() + ":" + textureName);
+            setTextureName(CraftableCreatures.getModId() + ":" + textureName);
         } else {
-            this.setTextureName(CraftableCreatures.getModId() + ":unknown_item_texture");
+            setTextureName(CraftableCreatures.getModId() + ":unknown_item_texture");
         }
     }
 
     public ItemDefault(String nameAll, CreativeTabs creativeTab) {
-        this.setCreativeTab(creativeTab);
-        this.setUnlocalizedName(nameAll);
-        this.setTextureName(CraftableCreatures.getModId() + ":" + nameAll);
+        setCreativeTab(creativeTab);
+        setUnlocalizedName(nameAll);
+        setTextureName(CraftableCreatures.getModId() + ":" + nameAll);
     }
 }

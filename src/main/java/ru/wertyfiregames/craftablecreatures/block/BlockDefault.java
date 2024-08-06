@@ -9,13 +9,13 @@ public class BlockDefault extends Block {
     public BlockDefault(Material material, String name, String textureName, CreativeTabs creativeTab,
                         String toolType, int level, float hardness, float resistance) {
         super(material);
-        this.setBlockName(name);
-        if (!textureName.equals("custom")) this.setBlockTextureName(CraftableCreatures.getModId() + ":" + textureName);
-        if (textureName.isEmpty()) this.setBlockTextureName(CraftableCreatures.getModId() + ":unknown_block_texture");
-        this.setCreativeTab(creativeTab);
-        this.setHarvestLevel(toolType, level);
-        this.setHardness(hardness);
-        this.setResistance(resistance);
+        setBlockName(name);
+        if (!textureName.equals("custom")) setBlockTextureName(CraftableCreatures.getModId() + ":" + textureName);
+        if (textureName.isEmpty()) setBlockTextureName(CraftableCreatures.getModId() + ":unknown_block_texture");
+        setCreativeTab(creativeTab);
+        setHarvestLevel(toolType, level);
+        setHardness(hardness);
+        setResistance(resistance);
     }
 
     public BlockDefault(Material material, String nameAll, CreativeTabs creativeTab,
