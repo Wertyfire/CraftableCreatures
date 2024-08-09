@@ -20,7 +20,7 @@ public class SoulExtractorRecipes {
     private final Map<ItemStack, Float> experienceList = new HashMap<>();
 
     private SoulExtractorRecipes() {
-        addExtractHelper(new ItemStack(CCItems.soul_element, 1, 0));
+        addBaseSoul(new ItemStack(CCItems.soul_element, 1, 0));
 
         addRecipe(Items.gunpowder, new ItemStack(CCItems.soul_element, 1, 1), 0.3f);
         addRecipe(Items.bone, new ItemStack(CCItems.soul_element, 1, 2), 0.25f);
@@ -43,7 +43,7 @@ public class SoulExtractorRecipes {
         for (int i = 0; i < 16; i++) {
             ItemStack stack2 = new ItemStack(Blocks.wool);
             stack2.setItemDamage(i);
-            addRecipe(stack2, new ItemStack(CCItems.soul_element, 1,16), 0.1f);
+            addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.1f);
         }
         addRecipe(Items.beef, new ItemStack(CCItems.soul_element, 1, 17), 0.1f);
         addRecipe(Items.milk_bucket, new ItemStack(CCItems.soul_element, 1, 17), 0.1f);
@@ -83,18 +83,18 @@ public class SoulExtractorRecipes {
         experienceList.put(output.copy(), xp * 10f);
     }
 
-    public void addExtractHelper(Block helper) {
-        addExtractHelper(Item.getItemFromBlock(helper));
+    public void addBaseSoul(Block helper) {
+        addBaseSoul(Item.getItemFromBlock(helper));
     }
-    public void addExtractHelper(Item helper) {
-        addExtractHelper(new ItemStack(helper));
+    public void addBaseSoul(Item helper) {
+        addBaseSoul(new ItemStack(helper));
     }
-    public void addExtractHelper(String oreDictName) {
+    public void addBaseSoul(String oreDictName) {
         for (ItemStack stack : OreDictionary.getOres(oreDictName)) {
-            addExtractHelper(stack);
+            addBaseSoul(stack);
         }
     }
-    public void addExtractHelper(ItemStack helper) {
+    public void addBaseSoul(ItemStack helper) {
         extractHelpers.add(helper.copy());
     }
 
