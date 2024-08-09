@@ -128,7 +128,6 @@ public class SoulExtractorRecipeHandler extends TemplateRecipeHandler {
 
     @Override
     public String getOverlayIdentifier() {
-        //TODO: overlay (wtf?)
         return SE_EXTRACTING_OVERLAY_IDENTIFIER;
     }
 
