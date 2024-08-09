@@ -4,7 +4,6 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.craftablecreatures.item.ItemGuideBook;
 import ru.wertyfiregames.craftablecreatures.item.*;
 
 public class CCItems {
