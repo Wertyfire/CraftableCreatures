@@ -44,7 +44,7 @@ public class GuiSoulExtractor extends GuiContainer {
             int scaled = tileSoulExtractor.getFuelWorkTimeRemainingScaled(13);
             drawTexturedModalRect(xPos + 42, yPos + 36 + 12 - scaled, 176, 12 - scaled, 14, scaled + 1);
             scaled = tileSoulExtractor.getExtractProgressScaled(42);
-            drawTexturedModalRect(xPos + 60, yPos + 20, 176, 14, scaled + 1, 30);
+            drawTexturedModalRect(xPos + 60, yPos + 20, 176, 14, scaled + 1, 31);
         }
     }
 }
