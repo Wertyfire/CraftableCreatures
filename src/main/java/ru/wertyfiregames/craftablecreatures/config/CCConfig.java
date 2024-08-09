@@ -6,8 +6,9 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 public class CCConfig {
     public static final String CATEGORY_CRAFTABLE_CREATURES = "craftable_creatures";
 
-    public static boolean checkForUpdates;
-    public static boolean enableExperimentalContent;
+    public static boolean
+            checkForUpdates,
+            enableExperimentalContent;
 
     public static void load() {
         checkForUpdates = getBoolean(CATEGORY_CRAFTABLE_CREATURES, "checkForUpdates", "craftableCreatures.configGui.checkForUpdates",
@@ -20,9 +21,9 @@ public class CCConfig {
             CraftableCreatures.getConfig().save();
     }
 
-    private static boolean getBoolean(@SuppressWarnings("SameParameterValue") String category, String name, String languageKey, String comment,
+    private static boolean getBoolean(@SuppressWarnings("SameParameterValue") String category, String key, String languageKey, String comment,
                                       @SuppressWarnings("SameParameterValue") boolean def, boolean requiresMcRestart) {
-        Property prop = CraftableCreatures.getConfig().get(category, name, def);
+        Property prop = CraftableCreatures.getConfig().get(category, key, def);
         prop.setLanguageKey(languageKey);
         prop.comment = comment;
         prop.setRequiresMcRestart(requiresMcRestart);
