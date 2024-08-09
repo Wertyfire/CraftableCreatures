@@ -12,6 +12,7 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
+import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 
 public class Utils {
 //    Credits goes to chatgpt. Why no ChatComponentLink?
