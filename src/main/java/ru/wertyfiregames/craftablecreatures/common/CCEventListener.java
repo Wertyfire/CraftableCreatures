@@ -50,19 +50,19 @@ public class CCEventListener {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
-        event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.modInfo") + " " + CCConfig.enableExperimentalContent));
+        event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent)));
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
             if (CCVersionChecker.getStatus() == UpdateResult.FAILED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.failedToCheckUpdates")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.failedToCheckUpdates")));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.UP_TO_DATE) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.latest")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.latest")));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.outdated")));
-                Utils.sendClickableLink(event.player, "chat.craftableCreatures.getUpdate", homepage, homepage, "");
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.outdated")));
+                Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
                         change = change.replace("<t>", "    ");
@@ -70,14 +70,14 @@ public class CCEventListener {
                 }
             }
             if (CCVersionChecker.getStatus() == UpdateResult.AHEAD) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.ahead")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.ahead")));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.BETA) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.beta")));
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.beta")));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.BETA_OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("chat.craftableCreatures.betaOutdated")));
-                Utils.sendClickableLink(event.player, "chat.craftableCreatures.getUpdate", homepage, homepage, "");
+                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.betaOutdated")));
+                Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
                         change = change.replace("<t>", "    ");
