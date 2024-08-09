@@ -14,12 +14,7 @@ item.template.name=Чертёж
 item.bluestone.name=Синий камень
 item.batWing.name=Крыло летучей мыши
 item.ocelotTail.name=Хвост оцелота
-item.guideBook.name=Инструкция по Craftable Creatures
-item.bluestoneSword.name=Синекаменный меч
-item.bluestonePickaxe.name=Синекаменная кирка
-item.bluestoneAxe.name=Синекаменный топор
-item.bluestoneShovel.name=Синекаменная лопата
-item.bluestoneHoe.name=Синекаменная мотыга
+item.guideBook.name=Путеводитель по Craftable Creatures
 item.soul.name=Душа
 item.soul.creeper.name=Душа [§aКрипер§f]
 item.soul.skeleton.name=Душа [§7Скелет§f]
@@ -60,12 +55,16 @@ container.soulExtractor=Извлекатель душ
 craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
 
-chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Экспериментальный режим =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Не удалось проверить обновления!
-chat.craftableCreatures.latest=[§bCraftable Creatures§f] Установлена последняя стабильная версия!
-chat.craftableCreatures.outdated=[§bCraftable Creatures§f] Вышла новая версия мода!
-chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Ваша версия мода выше последней зарегистрированной. Убедитесь, что вы скачали его с modrinth или github.
-chat.craftableCreatures.beta=[§bCraftable Creatures§f] Вы используете нестабильную версию мода!
-chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] Вышла новая бета версия мода!
-chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Скачать:
-chat.craftableCreatures.clickToOpenUrl=Нажмите, чтобы открыть ссылку
+craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Экспериментальный режим = %s
+craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Не удалось проверить обновления!
+craftableCreatures.chat.latest=[§bCraftable Creatures§f] Установлена последняя стабильная версия!
+craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Вышла новая версия мода!
+craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Ваша версия мода выше последней зарегистрированной. Убедитесь, что вы скачали его с Modrinth или Github.
+craftableCreatures.chat.beta=[§bCraftable Creatures§f] Вы используете нестабильную версию мода!
+craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] Вышла новая бета версия мода!
+craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Скачать:
+craftableCreatures.chat.clickToOpenUrl=Нажмите, чтобы открыть ссылку
+
+craftableCreatures.nei.recipe.soulExtracting=Извлечение души
+craftableCreatures.nei.recipe.fuel.tooltip=Это топливо может извлечь: %s душ (-у)
+craftableCreatures.nei.subsets.souls=Души

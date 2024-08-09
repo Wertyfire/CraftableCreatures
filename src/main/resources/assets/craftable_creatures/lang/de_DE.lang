@@ -1,25 +1,20 @@
 achievement.thanksForDownload=Craftable Creatures
-achievement.thanksForDownload.desc=Vielen Dank für das herunterladen der modifikation!
-achievement.bluedustCollector=Blaustaub sammler
-achievement.bluedustCollector.desc=Habe blaustaub
-achievement.templateManager=Zeichnung manager
-achievement.templateManager.desc=Craft zeichnung
-achievement.mobSpawner=Schöpfer
-achievement.mobSpawner.desc=Basteln sie "erschaffe" zeichnung
+achievement.thanksForDownload.desc=Vielen Dank für das Herunterladen dieses Mods!
+achievement.bluedustCollector=Blaustaubsammler
+achievement.bluedustCollector.desc=Blaustaub erhalten
+achievement.templateManager=Vorlagenmanager
+achievement.templateManager.desc=Vorlage herstellen
+achievement.mobSpawner=Ersteller
+achievement.mobSpawner.desc=Spawn-Ei-Vorlage herstellen
 achievement.energy=Energie
-achievement.energy.desc=Basteln sie einen angetriebenen blausteinblock
+achievement.energy.desc=Einen angetriebenen Blausteinblock herstellen
 
-item.spawnEggTemplate.name=Zeichnung von erschaffe
+item.spawnEggTemplate.name=Spawn-Ei-Vorlage
 item.template.name=Zeichnung
-item.bluestone.name=Blaustaub
+item.bluestone.name=Blaustein
 item.batWing.name=Fledermausflügel
 item.ocelotTail.name=Ozelot Schwanz
-item.guideBook.name=Craftable Creatures buch
-item.bluestoneSword.name=Schwert aus Blaustein
-item.bluestonePickaxe.name=Spitzhacke aus Blaustein
-item.bluestoneAxe.name=Axt aus Blaustein
-item.bluestoneShovel.name=Spaten aus Blaustein
-item.bluestoneHoe.name=Hacke aus Blaustein
+item.guideBook.name=Leitfaden zu Craftable Creatures
 item.soul.name=Seele
 item.soul.creeper.name=Seele [§aCreeper§f]
 item.soul.skeleton.name=Seele [§7Skelett§f]
@@ -48,24 +43,28 @@ item.soul.villager.name=Seele [§6Dorfbewohner§f]
 
 itemGroup.craftableCreatures=Craftable Creatures
 
-tooltip.lshift.press=§fDrücken Sie §cLSHIFT §fum Informationen anzuzeigen
+tooltip.lshift.press=§fDrücken Sie §cLSHIFT§f, um Informationen zu sehen
 
-tile.bluestoneBlock.name=Block aus blaustein
-tile.poweredBluestoneBlock.name=Angetriebener block aus blaustein
-tile.bluestoneOre.name=Blaustaub erz
+tile.bluestoneBlock.name=Block aus Blaustein
+tile.poweredBluestoneBlock.name=Angetriebener Block aus Blaustein
+tile.bluestoneOre.name=Blaustein Erz
 tile.soulExtractor.name=Seelenextraktor
 
 container.soulExtractor=Seelenextraktor
 
-craftableCreatures.configGui.checkForUpdates=Auf updates prüfen
-craftableCreatures.configGui.enableExperimentalContent=Aktivieren sie experimentelle inhalte
+craftableCreatures.configGui.checkForUpdates=Auf Updates prüfen
+craftableCreatures.configGui.enableExperimentalContent=Aktivieren Sie experimentelle Inhalte
 
-chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimenteller inhalt =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Suche nach Mod-Updates fehlgeschlagen!
-chat.craftableCreatures.latest=[§bCraftable Creatures§f] Neueste stabile Version des Mods installiert!
-chat.craftableCreatures.outdated=[§bCraftable Creatures§f] Es gibt eine neue Version des Mods!
-chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Ihre Mod-Version ist höher als die zuletzt registrierte. Stellen Sie sicher, dass Sie es von modrinth oder github heruntergeladen haben!
-chat.craftableCreatures.beta=[§bCraftable Creatures§f] Sie verwenden eine instabile Version von Mod!
-chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] Es gibt eine neue Beta-Version des Mods!
-chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Aktualisierung herunterladen:
-chat.craftableCreatures.clickToOpenUrl=Klicken, um den Link zu öffnen
+craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Experimentelle Inhalte = %s
+craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Suche nach Mod-Updates fehlgeschlagen!
+craftableCreatures.chat.latest=[§bCraftable Creatures§f] Neueste stabile Version des Mods installiert!
+craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Es gibt eine neue Version des Mods!
+craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Ihre Mod-Version ist höher als die zuletzt registrierte. Stellen Sie sicher, dass Sie sie von Modrinth oder GitHub heruntergeladen haben!
+craftableCreatures.chat.beta=[§bCraftable Creatures§f] Sie verwenden eine instabile Version des Mods!
+craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] Es gibt eine neue Beta-Version des Mods!
+craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Vorlage herunterladen:
+craftableCreatures.chat.clickToOpenUrl=Klicken, um den Link zu öffnen
+
+craftableCreatures.nei.recipe.soulExtracting=Seelenextraktion
+craftableCreatures.nei.recipe.fuel.tooltip=Dieser Treibstoff kann extrahieren: %s Seele (-n)
+craftableCreatures.nei.subsets.souls=Seelen

@@ -1,25 +1,20 @@
 achievement.thanksForDownload=Craftable Creatures
-achievement.thanksForDownload.desc=Дякуємо за встановлення!
-achievement.bluedustCollector=Колекціонер синього каменю
-achievement.bluedustCollector.desc=Добудьте синій камінь
+achievement.thanksForDownload.desc=Дякуємо за установку!
+achievement.bluedustCollector=Колекціонер блакитного каменю
+achievement.bluedustCollector.desc=Добудьте блакитний камінь
 achievement.templateManager=Менеджер шаблонів
 achievement.templateManager.desc=Створіть шаблон
-achievement.mobSpawner=Творець
-achievement.mobSpawner.desc=Створіть креслення яйця призову
+achievement.mobSpawner=Створювач
+achievement.mobSpawner.desc=Створіть креслення яйця виклику
 achievement.energy=Енергія
-achievement.energy.desc=Створіть заряджений блок синього каменю
+achievement.energy.desc=Створіть заряджений блок блакитного каменю
 
-item.spawnEggTemplate.name=Креслення яйця призову
-item.template.name=Малювання
-item.bluestone.name=Синій камінь
+item.spawnEggTemplate.name=Креслення яйця виклику
+item.template.name=Шаблон
+item.bluestone.name=Блакитний камінь
 item.batWing.name=Крило кажана
 item.ocelotTail.name=Хвіст оцелота
-item.guideBook.name=Craftable Creatures інструкція
-item.bluestoneSword.name=Меч із синього каменю
-item.bluestonePickaxe.name=Кірка із синього каменю
-item.bluestoneAxe.name=Сокира iз синього каменю
-item.bluestoneShovel.name=Лопата iз синього каменю
-item.bluestoneHoe.name=Мотика iз синього каменю
+item.guideBook.name=Путiвник по Craftable Creatures
 item.soul.name=Душа
 item.soul.creeper.name=Душа [§aКрiпер§f]
 item.soul.skeleton.name=Душа [§7Скелет§f]
@@ -46,26 +41,30 @@ item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Кiнь§f]
 item.soul.villager.name=Душа [§6Селянин§f]
 
-tooltip.lshift.press=§fНатисніть §cLSHIFT §fщоб побачити інформацію
+tooltip.lshift.press=§fНатисніть §cLSHIFT§f, щоб побачити інформацію
 
 itemGroup.craftableCreatures=Craftable Creatures
 
-tile.bluestoneBlock.name=Блок синього каменю
-tile.poweredBluestoneBlock.name=Заряджений блок синього каменю
-tile.bluestoneOre.name=Руда синього каменю
+tile.bluestoneBlock.name=Блок блакитного каменю
+tile.poweredBluestoneBlock.name=Заряджений блок блакитного каменю
+tile.bluestoneOre.name=Руда блакитного каменю
 tile.soulExtractor.name=Витягувач душ
 
 container.soulExtractor=Витягувач душ
 
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
-craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний режим
+craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний контент
 
-chat.craftableCreatures.modInfo=[§bCraftableCreatures§f] Експериментальний режим =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftableCreatures§f] Не вдалося перевірити оновлення модів!
-chat.craftableCreatures.latest=[§bCraftableCreatures§f] Встановлена остання стабільна версія мода!
-chat.craftableCreatures.outdated=[§bCraftableCreatures§f] Вийшла нова версія моду!
-chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Ваша версія мода вище останньої зареєстрованої. Переконайтеся, що ви завантажили його з modrinth або github!
-chat.craftableCreatures.beta=[§bCraftable Creatures§f] Ви використовуєте нестабільну версію мода!
-chat.craftableCreatures.betaOutdated=[§bCraftableCreatures§f] Є нова бета версія мода!
-chat.craftableCreatures.getUpdate=[§bCraftableCreatures§f] Завантажити оновлення:
-chat.craftableCreatures.clickToOpenUrl=Натисніть, щоб відкрити посилання
+craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Експериментальний режим = %s
+craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Не вдалося перевірити оновлення модів!
+craftableCreatures.chat.latest=[§bCraftable Creatures§f] Встановлено останню стабільну версію мода!
+craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Вийшла нова версия моду!
+craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Ваша версія мода вище останньої зареєстрованої. Переконайтеся, що ви завантажили його з Modrinth або GitHub!
+craftableCreatures.chat.beta=[§bCraftable Creatures§f] Ви використовуєте нестабільну версію мода!
+craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] Є нова бета-версія мода!
+craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Завантажити оновлення:
+craftableCreatures.chat.clickToOpenUrl=Натисніть, щоб відкрити посилання
+
+craftableCreatures.nei.recipe.soulExtracting=Витягування душі
+craftableCreatures.nei.recipe.fuel.tooltip=Це паливо може витягнути: %s душу (-и)
+craftableCreatures.nei.subsets.souls=Душі

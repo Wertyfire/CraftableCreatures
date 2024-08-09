@@ -14,12 +14,7 @@ item.template.name=Blueprint
 item.bluestone.name=Bluestone
 item.batWing.name=Bat wing
 item.ocelotTail.name=Ocelot Tail
-item.guideBook.name=Craftable Creatures guide
-item.bluestoneSword.name=Bluestone sword
-item.bluestonePickaxe.name=Bluestone pickaxe
-item.bluestoneAxe.name=Bluestone axe
-item.bluestoneShovel.name=Bluestone shovel
-item.bluestoneHoe.name=Bluestone hoe
+item.guideBook.name=Guide to Craftable Creatures
 item.soul.name=Soul
 item.soul.creeper.name=Soul [§aCreeper§f]
 item.soul.skeleton.name=Soul [§7Skeleton§f]
@@ -46,7 +41,7 @@ item.soul.ocelot.name=Soul [§eOcelot§f]
 item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
 
-tooltip.lshift.press=§fPress §cLSHIFT §fto see info
+tooltip.lshift.press=§fPress §cLSHIFT§f to see info
 
 itemGroup.craftableCreatures=Craftable Creatures
 
@@ -60,12 +55,16 @@ container.soulExtractor=Soul Extractor
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
 
-chat.craftableCreatures.modInfo=[§bCraftable Creatures§f] Experimental content =
-chat.craftableCreatures.failedToCheckUpdates=[§bCraftable Creatures§f] Failed to check for mod updates!
-chat.craftableCreatures.latest=[§bCraftable Creatures§f] Installed latest stable version of mod!
-chat.craftableCreatures.outdated=[§bCraftable Creatures§f] There is new version of mod!
-chat.craftableCreatures.ahead=[§bCraftable Creatures§f] Your mod version is higher than latest registered. Make sure you downloaded it from modrinth or github.
-chat.craftableCreatures.beta=[§bCraftable Creatures§f] You are using unstable version of mod!
-chat.craftableCreatures.betaOutdated=[§bCraftable Creatures§f] There is new beta version of mod!
-chat.craftableCreatures.getUpdate=[§bCraftable Creatures§f] Download update:
-chat.craftableCreatures.clickToOpenUrl=Click to open link
+craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Experimental content = %s
+craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Failed to check for mod updates!
+craftableCreatures.chat.latest=[§bCraftable Creatures§f] Installed latest stable version of mod!
+craftableCreatures.chat.outdated=[§bCraftable Creatures§f] There is new version of mod!
+craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Your mod version is higher than latest registered. Make sure you downloaded it from Modrinth or Github.
+craftableCreatures.chat.beta=[§bCraftable Creatures§f] You are using unstable version of mod!
+craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] There is new beta version of mod!
+craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Download update:
+craftableCreatures.chat.clickToOpenUrl=Click to open link
+
+craftableCreatures.nei.recipe.soulExtracting=Soul Extraction
+craftableCreatures.nei.recipe.fuel.tooltip=This fuel can extract: %s soul (-s)
+craftableCreatures.nei.subsets.souls=Souls
