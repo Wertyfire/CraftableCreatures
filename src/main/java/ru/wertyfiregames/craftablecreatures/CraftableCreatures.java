@@ -15,7 +15,6 @@ import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
 import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
-import ru.wertyfiregames.craftablecreatures.compat.CCNEICompat;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.*;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
@@ -33,8 +32,8 @@ public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.5.0";
-    protected static final String buildNumber = "08";
+    protected static final String modVersion = "0.5.1";
+    protected static final String buildNumber = "09";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -61,13 +60,13 @@ public class CraftableCreatures
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);
         CCConfig.load();
-        CraftableCreatures.getModLogger().debug("CC Config loaded");
+        getModLogger().debug("CC Config loaded");
         CCItems.register();
-        CraftableCreatures.getModLogger().debug("CC Items loaded");
+        getModLogger().debug("CC Items loaded");
         CCBlocks.register();
-        CraftableCreatures.getModLogger().debug("CC Blocks loaded");
+        getModLogger().debug("CC Blocks loaded");
         CCTileEntities.register();
-        CraftableCreatures.getModLogger().debug("CC Tile entities loaded");
+        getModLogger().debug("CC Tile entities loaded");
         CCVersionChecker.check(getVersion());
         CraftableCreatures.getModLogger().info("Pre initialization of Craftable Creatures complete");
     }
@@ -76,22 +75,22 @@ public class CraftableCreatures
         CCEventListener eventListener = new CCEventListener();
         FMLCommonHandler.instance().bus().register(eventListener);
         MinecraftForge.EVENT_BUS.register(eventListener);
-        CraftableCreatures.getModLogger().debug("CC Event listener loaded");
+        getModLogger().debug("CC Event listener loaded");
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
-        CraftableCreatures.getModLogger().debug("CC Gui handler loaded");
+        getModLogger().debug("CC Gui handler loaded");
         for (int i = 0; i < 5; i++) {
             VillagerRegistry.instance().registerVillageTradeHandler(i, new CCTradeHandler());
         }
-        CraftableCreatures.getModLogger().debug("CC Villager trades loaded");
+        getModLogger().debug("CC Villager trades loaded");
         GameRegistry.registerWorldGenerator(new CCWorldOreGenerator(), 0);
-        CraftableCreatures.getModLogger().debug("CC Ore generation loaded");
+        getModLogger().debug("CC Ore generation loaded");
         CCAchievementList.register();
-        CraftableCreatures.getModLogger().debug("CC Achievements loaded");
+        getModLogger().debug("CC Achievements loaded");
         CCRecipes.register();
-        CraftableCreatures.getModLogger().debug("CC Recipes loaded");
+        getModLogger().debug("CC Recipes loaded");
         CCOreDictionary.register();
-        CraftableCreatures.getModLogger().debug("CC Ore dictionary loaded");
-        CCNEICompat.initNEICompatibility();
+        getModLogger().debug("CC Ore dictionary loaded");
+        CCAPIInit.register();
         CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
     }
     @EventHandler

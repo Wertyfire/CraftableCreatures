@@ -11,7 +11,9 @@ buildscript {
         }
     }
     dependencies {
-        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+')
+        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
+            exclude group: 'org.osgi', module: 'org.osgi.service.prefs'
+        }
     }
 }
 
@@ -19,7 +21,7 @@ apply plugin: 'forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "0.5.0"
+version = "0.5.1"
 group= "me.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
