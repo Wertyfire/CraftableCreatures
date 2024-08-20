@@ -32,8 +32,8 @@ public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.5.1";
-    protected static final String buildNumber = "09";
+    protected static final String modVersion = "0.5.2";
+    protected static final String buildNumber = "10";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -48,14 +48,14 @@ public class CraftableCreatures
     
     private static Logger modLogger;
 
-    @Mod.Instance("craftable_creatures")
+    @Mod.Instance(modId)
     public static CraftableCreatures INSTANCE;
-    @Mod.Metadata
+    @Mod.Metadata(modId)
     public static ModMetadata METADATA;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        modLogger = LogManager.getLogger("Craftable Creatures");
+        modLogger = event.getModLog();
         modLogger.debug("CC Logger loaded");
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);
