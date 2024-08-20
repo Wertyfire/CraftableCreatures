@@ -9,7 +9,6 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
 public class CCTileEntities {
-
     public static void register() {
         GameRegistry.registerTileEntity(TileEntitySoulExtractor.class, CraftableCreatures.getModId() + ":" + "soul_extractor");
     }
