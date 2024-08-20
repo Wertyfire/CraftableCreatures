@@ -14,7 +14,7 @@ import java.util.List;
 
 /**@author Wertyfire*/
 public class CraftableCreaturesRegistry {
-    /**List of souls which should be written to subsets in NEI*/
+    /**List of souls which should be written to subset in NEI*/
     private static final List<Item> souls = Lists.newArrayList();
     /**List of soul extractor fuel handlers*/
     private static final List<ISEFuelHandler> seFuelHandlers = Lists.newArrayList();
@@ -39,22 +39,22 @@ public class CraftableCreaturesRegistry {
 
     /**Add recipe to soul extractor
      * @param xp experience from this extraction. Will be multiplied by 10*/
-    public static void addSoulExtractorRecipe(Block input, ItemStack output, float xp) {
+    public static void addExtracting(Block input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
      * @param xp experience from this extraction. Will be multiplied by 10*/
-    public static void addSoulExtractorRecipe(Item input, ItemStack output, float xp) {
+    public static void addExtracting(Item input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
      * @param xp experience from this extraction. Will be multiplied by 10*/
-    public static void addSoulExtractorRecipe(String nameInOreDict, ItemStack output, float xp) {
+    public static void addExtracting(String nameInOreDict, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(nameInOreDict, output, xp);
     }
     /**Add recipe to soul extractor
      * @param xp experience from this extraction. Will be multiplied by 10*/
-    public static void addSoulExtractorRecipe(ItemStack input, ItemStack output, float xp) {
+    public static void addExtracting(ItemStack input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
 
