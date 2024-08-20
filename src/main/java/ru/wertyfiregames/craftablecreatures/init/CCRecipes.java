@@ -11,6 +11,7 @@ import net.minecraftforge.oredict.ShapedOreRecipe;
 
 public class CCRecipes {
     public static void register() {
+        //Shapeless recipes
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.spawn_egg_template),
                 new ItemStack(Items.egg), new ItemStack(CCItems.template));
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 9),
@@ -18,6 +19,7 @@ public class CCRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(CCItems.bluestone, 8),
                 new ItemStack(CCBlocks.powered_bluestone_block));
 
+        //Shaped recipes
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
                 "SR", "RS", 'R', "dustBluestone", 'S', Items.paper));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
@@ -28,6 +30,9 @@ public class CCRecipes {
                 "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.soul_extractor),
                 "SSS", "SUS", "SSS", 'S', Blocks.cobblestone, 'U', CCBlocks.powered_bluestone_block);
+
+        //Smelting recipes
+        GameRegistry.addSmelting(CCBlocks.bluestone_ore, new ItemStack(CCItems.bluestone), 0.7f);
 
         //Spawn eggs
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
