@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "0.5.2",
-    "1.7.10-recommended": "0.5.2",
+    "1.7.10-latest": "0.5.3",
+    "1.7.10-recommended": "0.5.3",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -16,6 +16,7 @@
     "0.4.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Bat drops bat wing<n><t>2. Now player drops soul when dead instead of dropping soul when respawned",
     "0.5.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed event listener so now achievements and startup messages should work fine<n><t>2. Added ocelot tail<n><t>3. Finally added working soul extractor. In future versions will be added NEI integration. Now to craft soul of mob you should use this soul extractor<n><t>4/ Removed bluestone tools<n><t>\u00A70Please don't tell anyone that 0.4.1 exists!\u00A7f",
     "0.5.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Now you can view recipes of soul extractor with NEI<n><t>2. Added subset \"Souls\" to NEI",
-    "0.5.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Returned bluestone recipe from bluestone ore"
+    "0.5.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Returned bluestone recipe from bluestone ore",
+    "0.5.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added particles to soul extractor<n><t>2. Changed soul extractor recipe<n><t>3. Added tooltip for soul extractor"
   }
 }
