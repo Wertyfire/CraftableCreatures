@@ -15,6 +15,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import java.util.Random;
 
 public class CCTradeHandler implements IVillageTradeHandler {
+    @SuppressWarnings("unchecked")
     @Override
     public void manipulateTradesForVillager(EntityVillager villager, MerchantRecipeList recipeList, Random random) {
         if (villager.getProfession() == 2)
