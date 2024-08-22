@@ -55,7 +55,7 @@ public class CraftableCreatures
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        modLogger = event.getModLog();
+        modLogger = LogManager.getLogger("Craftable Creatures");
         modLogger.debug("CC Logger loaded");
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);
@@ -88,6 +88,7 @@ public class CraftableCreatures
         getModLogger().debug("CC Achievements loaded");
         CCRecipes.register();
         getModLogger().debug("CC Recipes loaded");
+        CCParticles.register();
         CCOreDictionary.register();
         getModLogger().debug("CC Ore dictionary loaded");
         CCAPIInit.register();

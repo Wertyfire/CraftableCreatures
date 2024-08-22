@@ -10,23 +10,29 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import org.lwjgl.input.Keyboard;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
+import ru.wertyfiregames.craftablecreatures.init.CCParticles;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
+import ru.wertyfiregames.craftablecreatures.util.ParticleUtils;
 
+import java.util.List;
 import java.util.Random;
 
 public class BlockSoulExtractor extends BlockContainer {
@@ -52,12 +58,10 @@ public class BlockSoulExtractor extends BlockContainer {
         if (enabled) setLightLevel(0.875f);
     }
 
-    @Override
     public Item getItemDropped(int metadata, Random random, int fortune) {
         return Item.getItemFromBlock(CCBlocks.soul_extractor);
     }
 
-    @Override
     public void onBlockAdded(World world, int x, int y, int z) {
         super.onBlockAdded(world, x, y, z);
         updateBlockForNeighborChange(world, x, y, z);
@@ -87,14 +91,12 @@ public class BlockSoulExtractor extends BlockContainer {
         }
     }
 
-    @Override
     public IIcon getIcon(int side, int metadata) {
         return (metadata == 0 && side == 3) ? iconFront
                 : (side == 1 ? this.iconTop :
                 (side == 0 ? this.iconTop : (side == metadata ? iconFront : this.blockIcon)));
     }
 
-    @Override
     public void registerBlockIcons(IIconRegister iconRegister) {
         String modId = CraftableCreatures.getModId();
         blockIcon = iconRegister.registerIcon(modId + ":se_side");
@@ -102,7 +104,6 @@ public class BlockSoulExtractor extends BlockContainer {
         iconTop = iconRegister.registerIcon(modId + ":se_top");
     }
 
-    @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int side, float hitX, float hitY, float hitZ) {
         player.openGui(CraftableCreatures.INSTANCE, CraftableCreatures.GUI_SOUL_EXTRACTOR, world, x, y, z);
         return true;
@@ -125,12 +126,10 @@ public class BlockSoulExtractor extends BlockContainer {
         }
     }
 
-    @Override
     public TileEntity createNewTileEntity(World world, int metadata) {
         return new TileEntitySoulExtractor();
     }
 
-    @Override
     public void onBlockPlacedBy(World world, int x, int y, int z, EntityLivingBase placer, ItemStack stack) {
         int direction = MathHelper.floor_double((placer.rotationYaw * 4f / 360f) + 0.5d) & 3;
 
@@ -151,7 +150,6 @@ public class BlockSoulExtractor extends BlockContainer {
         }
     }
 
-    @Override
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
         if (!isWorking) {
             TileEntitySoulExtractor teSe = (TileEntitySoulExtractor) world.getTileEntity(x, y, z);
@@ -191,24 +189,50 @@ public class BlockSoulExtractor extends BlockContainer {
         super.breakBlock(world, x, y, z, block, metadata);
     }
 
-    @Override
+    @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World world, int x, int y, int z, Random random) {
-        super.randomDisplayTick(world, x, y, z, random);
-        //TODO: create particles
+        if (enabled) {
+            int meta = world.getBlockMetadata(x, y, z);
+            float xPos = x + 0.5f;
+            float yPos = y + 0f + random.nextFloat() * 6f / 16f;
+            float zPos = z + 0.5f;
+            float verticalOffset = 0.52f;
+            float horizontalOffset = random.nextFloat() * 0.6f - 0.3f;
+
+            if (meta == 4) {
+                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos - verticalOffset, yPos, zPos + horizontalOffset,0d, 0d, 0d);
+            } else if (meta == 5) {
+                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + verticalOffset, yPos, zPos + horizontalOffset, 0d, 0d, 0d);
+            } else if (meta == 2) {
+                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + horizontalOffset, yPos, zPos - verticalOffset, 0d, 0d, 0d);
+            } else if (meta == 3) {
+                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + horizontalOffset, yPos, zPos + verticalOffset, 0d, 0d, 0d);
+            }
+        }
     }
 
-    @Override
     public boolean hasComparatorInputOverride() {
         return true;
     }
 
-    @Override
     public int getComparatorInputOverride(World world, int x, int y, int z, int metadata) {
         return Container.calcRedstoneFromInventory((IInventory) world.getTileEntity(x, y, z));
     }
 
-    @Override
     public Item getItem(World world, int x, int y, int z) {
         return Item.getItemFromBlock(CCBlocks.soul_extractor);
+    }
+
+    public static class SoulExtractorItemBlock extends ItemBlock {
+        public SoulExtractorItemBlock(BlockSoulExtractor block) {
+            super(block);
+        }
+
+        @SuppressWarnings("unchecked")
+        @Override
+        public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tile.soulExtractor.tooltip"));
+            else tooltip.add(I18n.format("tooltip.lshift.press"));
+        }
     }
 }
