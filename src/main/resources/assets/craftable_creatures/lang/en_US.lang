@@ -68,3 +68,5 @@ craftableCreatures.chat.clickToOpenUrl=Click to open link
 craftableCreatures.nei.recipe.soulExtracting=Soul Extraction
 craftableCreatures.nei.recipe.fuel.tooltip=This fuel can extract: %s soul (-s)
 craftableCreatures.nei.subsets.souls=Souls
+
+updateChecker.tempUnavailable=[§bCraftable Creatures§f] Update checker may be temporarily unavailable due to github requirements (cancel 2FA!!!)

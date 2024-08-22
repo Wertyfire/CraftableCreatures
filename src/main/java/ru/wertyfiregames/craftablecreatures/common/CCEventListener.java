@@ -51,6 +51,8 @@ public class CCEventListener {
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent)));
+        //TODO: dont forget about this!
+        event.player.addChatMessage(new ChatComponentText(I18n.format("updateChecker.tempUnavailable"))); //SHIT FUCK THIS FUCKING GITHUB!!!!!!!!!!!!!!!!!!!!! AND 2FA!!! FUCK!
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
