@@ -22,7 +22,7 @@ public class CCBlocks {
         GameRegistry.registerBlock(powered_bluestone_block, "powered_bluestone_block");
         GameRegistry.registerBlock(bluestone_block, "bluestone_block");
         GameRegistry.registerBlock(bluestone_ore, "bluestone_ore");
-        GameRegistry.registerBlock(soul_extractor, "soul_extractor");
+        GameRegistry.registerBlock(soul_extractor, BlockSoulExtractor.SoulExtractorItemBlock.class, "soul_extractor");
         GameRegistry.registerBlock(lit_soul_extractor, "lit_soul_extractor");
         registerExperimental();
     }
