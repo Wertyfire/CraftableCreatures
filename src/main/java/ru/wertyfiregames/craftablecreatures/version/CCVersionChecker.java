@@ -12,8 +12,10 @@ import cpw.mods.fml.common.versioning.DefaultArtifactVersion;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Map;
@@ -114,8 +116,8 @@ public class CCVersionChecker {
                             updateResult = UpdateResult.BETA;
                     } else
                         updateResult = UpdateResult.BETA;
-                } catch (Exception e) {
-                    e.printStackTrace(System.out);
+                } catch (IOException e) {
+                    CraftableCreatures.getModLogger().error("Failed to check for updates: {}", e.getMessage());
                     updateResult = UpdateResult.FAILED;
                 }
             }

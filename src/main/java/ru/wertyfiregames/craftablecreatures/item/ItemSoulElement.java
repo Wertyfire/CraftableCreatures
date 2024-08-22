@@ -32,6 +32,7 @@ public class ItemSoulElement extends ItemDefault {
         return super.getUnlocalizedName() + unlocalizedName[i];
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public void getSubItems(Item item, CreativeTabs creativeTabs, List list) {
         for (int i = 0; i < 25; i++) {
