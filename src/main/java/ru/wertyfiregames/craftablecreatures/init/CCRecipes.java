@@ -29,7 +29,7 @@ public class CCRecipes {
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
                 "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.soul_extractor),
-                "SSS", "SUS", "SSS", 'S', Blocks.cobblestone, 'U', CCBlocks.powered_bluestone_block);
+                "SSS", "SUS", "SAS", 'S', Blocks.cobblestone, 'U', CCBlocks.powered_bluestone_block, 'A', Blocks.furnace);
 
         //Smelting recipes
         GameRegistry.addSmelting(CCBlocks.bluestone_ore, new ItemStack(CCItems.bluestone), 0.7f);
