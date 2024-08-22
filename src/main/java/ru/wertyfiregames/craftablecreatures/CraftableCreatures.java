@@ -32,8 +32,8 @@ public class CraftableCreatures
 {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.5.2";
-    protected static final String buildNumber = "10";
+    protected static final String modVersion = "0.5.3";
+    protected static final String buildNumber = "11";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -89,6 +89,7 @@ public class CraftableCreatures
         CCRecipes.register();
         getModLogger().debug("CC Recipes loaded");
         CCParticles.register();
+        getModLogger().debug("CC Particles loaded");
         CCOreDictionary.register();
         getModLogger().debug("CC Ore dictionary loaded");
         CCAPIInit.register();
