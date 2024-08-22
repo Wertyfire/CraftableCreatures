@@ -14,7 +14,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
 
-//TODO: add this to Wertyfire Core
 public class ParticleUtils {
     private static final Map<String, Class<? extends EntityFX>> effects = new HashMap<>();
 

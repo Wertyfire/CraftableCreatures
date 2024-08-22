@@ -8,6 +8,7 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
 
 import java.util.List;
