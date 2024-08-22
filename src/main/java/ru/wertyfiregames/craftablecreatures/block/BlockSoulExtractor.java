@@ -224,7 +224,7 @@ public class BlockSoulExtractor extends BlockContainer {
     }
 
     public static class SoulExtractorItemBlock extends ItemBlock {
-        public SoulExtractorItemBlock(BlockSoulExtractor block) {
+        public SoulExtractorItemBlock(Block block) {
             super(block);
         }
 
