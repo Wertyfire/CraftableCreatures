@@ -12,7 +12,6 @@ import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraft.util.ChatStyle;
 import net.minecraft.util.EnumChatFormatting;
-import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 
 public class Utils {
 //    Credits goes to chatgpt. Why no ChatComponentLink?
@@ -33,5 +32,38 @@ public class Utils {
         beforeLinkText.appendSibling(afterLinkText);
 
         player.addChatMessage(beforeLinkText);
+    }
+
+    public static class RGB {
+        private final float red, green, blue, alpha;
+
+        private RGB() {red=0;green=0;blue=0;alpha=0;}
+
+        public RGB(float red, float green, float blue) {
+            this.red = red;
+            this.green = green;
+            this.blue = blue;
+            this.alpha = 1f;
+        }
+
+        public RGB(float red, float green, float blue, float alpha) {
+            this.red = red;
+            this.green = green;
+            this.blue = blue;
+            this.alpha = alpha;
+        }
+
+        public float r() {
+            return red;
+        }
+        public float g() {
+            return green;
+        }
+        public float b() {
+            return blue;
+        }
+        public float a() {
+            return alpha;
+        }
     }
 }
