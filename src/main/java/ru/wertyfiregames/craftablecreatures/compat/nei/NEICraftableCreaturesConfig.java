@@ -6,16 +6,13 @@ package ru.wertyfiregames.craftablecreatures.compat.nei;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
-import codechicken.nei.api.ItemFilter;
 import codechicken.nei.recipe.TemplateRecipeHandler;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
-import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;
-import ru.wertyfiregames.craftablecreatures.item.ItemSoulElement;
 
 public class NEICraftableCreaturesConfig implements IConfigureNEI {
     @Override
