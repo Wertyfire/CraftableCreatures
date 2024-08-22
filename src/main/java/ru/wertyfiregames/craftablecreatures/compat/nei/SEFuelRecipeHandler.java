@@ -15,8 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 public class SEFuelRecipeHandler extends SoulExtractorRecipeHandler {
-
-
     private final List<CachedSoulExtractorRecipe> seRecipes = new ArrayList<>();
 
     public SEFuelRecipeHandler() {
