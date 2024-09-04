@@ -18,7 +18,7 @@ import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
 import ru.wertyfiregames.craftablecreatures.block.BlockSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.compat.event.CraftableCreaturesEventFactory;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
@@ -32,7 +32,7 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
     private static final int[] slotAccess_fromBottom = new int[] { 3, 1 };
     private static final int[] slotAccess_fromSides = new int[] { 1 };
 
-    public int soulExtractorFuelWorkTime, currentSoulExtractTime, soulExtractorExtractTime;
+    public int fuelWorkTime, currentFuelWorkTime, extractTime;
 
     private String customName;
 
@@ -70,19 +70,16 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
     public void setInventorySlotContents(int slot, ItemStack item) {
         soulExtractorItemStacks[slot] = item;
 
-        if (item != null && item.stackSize > getInventoryStackLimit()) {
+        if (item != null && item.stackSize > getInventoryStackLimit())
             item.stackSize = getInventoryStackLimit();
-        }
     }
 
     public String getInventoryName() {
         return hasCustomInventoryName() ? customName : "container.soulExtractor";
     }
-
     public boolean hasCustomInventoryName() {
         return !(customName == "" || customName == null);
     }
-
     public void setCustomName(String customName) {
         this.customName = customName;
     }
@@ -99,20 +96,19 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
             if (slot >= 0 && slot < soulExtractorItemStacks.length)
                 soulExtractorItemStacks[slot] = ItemStack.loadItemStackFromNBT(nbtCompound);
 
-            soulExtractorFuelWorkTime = nbt.getShort("FuelWorkTime");
-            soulExtractorExtractTime = nbt.getShort("ExtractTime");
-            currentSoulExtractTime = getFuelWorkTime(soulExtractorItemStacks[1]);
+            fuelWorkTime = nbt.getShort("FuelWorkTime");
+            extractTime = nbt.getShort("ExtractTime");
+            currentFuelWorkTime = getFuelWorkTime(soulExtractorItemStacks[1]);
 
-            if (nbt.hasKey("CustomName", 8)) {
+            if (nbt.hasKey("CustomName", 8))
                 customName = nbt.getString("CustomName");
-            }
         }
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
         super.writeToNBT(nbt);
-        nbt.setShort("FuelWorkTime", (short) soulExtractorFuelWorkTime);
-        nbt.setShort("ExtractTime", (short) soulExtractorExtractTime);
+        nbt.setShort("FuelWorkTime", (short) fuelWorkTime);
+        nbt.setShort("ExtractTime", (short) extractTime);
         NBTTagList nbtList = new NBTTagList();
 
         for (int i = 0; i < soulExtractorItemStacks.length; ++i) {
@@ -136,33 +132,33 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
 
     @SideOnly(Side.CLIENT)
     public int getExtractProgressScaled(int scale) {
-        return soulExtractorExtractTime * scale / 200;
+        return extractTime * scale / 200;
     }
 
     @SideOnly(Side.CLIENT)
     public int getFuelWorkTimeRemainingScaled(int scale) {
-        if (currentSoulExtractTime == 0) currentSoulExtractTime = 200;
+        if (currentFuelWorkTime == 0) currentFuelWorkTime = 200;
 
-        return soulExtractorFuelWorkTime * scale / currentSoulExtractTime;
+        return fuelWorkTime * scale / currentFuelWorkTime;
     }
 
-    public boolean isExtracting() {
-        return soulExtractorFuelWorkTime > 0;
+    public boolean hasFuel() {
+        return fuelWorkTime > 0;
     }
 
     public void updateEntity() {
-        boolean flag1 = soulExtractorFuelWorkTime > 0;
-        boolean flag2 = false;
+        boolean working = fuelWorkTime > 0;
+        boolean changed = false;
 
-        if (soulExtractorFuelWorkTime > 0) --soulExtractorFuelWorkTime;
+        if (fuelWorkTime > 0) --fuelWorkTime;
 
         if (!worldObj.isRemote) {
-            if (soulExtractorFuelWorkTime != 0 || soulExtractorItemStacks[1] != null && soulExtractorItemStacks[0] != null && soulExtractorItemStacks[2] != null) {
-                if (soulExtractorFuelWorkTime == 0 && canExtractSoul()) {
-                    currentSoulExtractTime = soulExtractorFuelWorkTime = getFuelWorkTime(soulExtractorItemStacks[1]);
+            if (fuelWorkTime != 0 || soulExtractorItemStacks[1] != null && soulExtractorItemStacks[0] != null && soulExtractorItemStacks[2] != null) {
+                if (fuelWorkTime == 0 && canExtractSoul()) {
+                    currentFuelWorkTime = fuelWorkTime = getFuelWorkTime(soulExtractorItemStacks[1]);
 
-                    if (soulExtractorFuelWorkTime > 0) {
-                        flag2 = true;
+                    if (fuelWorkTime > 0) {
+                        changed = true;
 
                         if (soulExtractorItemStacks[1] != null) {
                             --soulExtractorItemStacks[1].stackSize;
@@ -173,24 +169,24 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
                     }
                 }
 
-                if (isExtracting() && canExtractSoul()) {
-                    ++soulExtractorExtractTime;
+                if (hasFuel() && canExtractSoul()) {
+                    ++extractTime;
 
-                    if (soulExtractorExtractTime == 200) {
-                        soulExtractorExtractTime = 0;
+                    if (extractTime == 200) {
+                        extractTime = 0;
                         extractSoul();
-                        flag2 = true;
+                        changed = true;
                     }
-                } else soulExtractorExtractTime = 0;
+                } else extractTime = 0;
             }
 
-            if (flag1 != soulExtractorFuelWorkTime > 0) {
-                flag2 = true;
-                BlockSoulExtractor.updateSoulExtractorBlockState(soulExtractorFuelWorkTime > 0, worldObj, xCoord, yCoord, zCoord);
+            if (working != fuelWorkTime > 0) {
+                changed = true;
+                BlockSoulExtractor.updateSoulExtractorBlockState(worldObj, xCoord, yCoord, zCoord, fuelWorkTime > 0);
             }
         }
 
-        if (flag2) markDirty();
+        if (changed) markDirty();
     }
 
     private boolean canExtractSoul() {
