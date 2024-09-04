@@ -1,13 +1,17 @@
-achievement.thanksForDownload=Craftable Creatures
-achievement.thanksForDownload.desc=Thank you for downloading this mod!
-achievement.bluedustCollector=Bluedust collector
-achievement.bluedustCollector.desc=Got bluedust
-achievement.templateManager=Blueprint manager
-achievement.templateManager.desc=Craft blueprint
-achievement.mobSpawner=Creator
-achievement.mobSpawner.desc=Craft spawn egg blueprint
-achievement.energy=Energy
-achievement.energy.desc=Craft powered block of bluestone
+achievement.craftableCreatures.thanksForDownload=Craftable Creatures
+achievement.craftableCreatures.thanksForDownload.desc=Thank you for downloading this mod!
+achievement.craftableCreatures.bluedustCollector=Bluedust Collector
+achievement.craftableCreatures.bluedustCollector.desc=Got Bluedust
+achievement.craftableCreatures.templateManager=Blueprint Manager
+achievement.craftableCreatures.templateManager.desc=Craft blueprint
+achievement.craftableCreatures.mobSpawner=Creator
+achievement.craftableCreatures.mobSpawner.desc=Craft spawn egg blueprint
+achievement.craftableCreatures.energy=Energy
+achievement.craftableCreatures.energy.desc=Craft powered block of bluestone
+achievement.craftableCreatures.soulExtractor=Soul Extractor
+achievement.craftableCreatures.soulExtractor.desc=Craft Soul extractor
+achievement.craftableCreatures.combiner=Combiner
+achievement.craftableCreatures.combiner.desc=Craft combiner
 
 item.spawnEggTemplate.name=Spawn egg blueprint
 item.template.name=Blueprint
@@ -42,15 +46,19 @@ item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
 
 tooltip.lshift.press=§fPress §cLSHIFT§f to see info
+tooltip.soulExtractor=Extracts clear soul from item and puts it into usual soul
+tooltip.spawnEggCombiner=Transforms item according to blueprint
 
 itemGroup.craftableCreatures=Craftable Creatures
 
-tile.bluestoneBlock.name=Block of bluestone
-tile.poweredBluestoneBlock.name=Powered block of bluestone
-tile.bluestoneOre.name=Bluestone ore
+tile.bluestoneBlock.name=Block of Bluestone
+tile.poweredBluestoneBlock.name=Powered Block of Bluestone
+tile.bluestoneOre.name=Bluestone Ore
 tile.soulExtractor.name=Soul Extractor
+tile.spawnEggCombiner.name=Combiner
 
 container.soulExtractor=Soul Extractor
+container.combiner=Combiner
 
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
@@ -67,6 +75,7 @@ craftableCreatures.chat.clickToOpenUrl=Click to open link
 
 craftableCreatures.nei.recipe.soulExtracting=Soul Extraction
 craftableCreatures.nei.recipe.fuel.tooltip=This fuel can extract: %s soul (-s)
+craftableCreatures.nei.recipe.combining=Combining
 craftableCreatures.nei.subsets.souls=Souls
 
-updateChecker.tempUnavailable=[§bCraftable Creatures§f] Update checker may be temporarily unavailable due to github requirements (cancel 2FA!!!)
+craftableCreatures.guide.cover.title=Guide to

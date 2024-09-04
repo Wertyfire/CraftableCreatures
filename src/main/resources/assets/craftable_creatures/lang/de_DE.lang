@@ -1,13 +1,17 @@
-achievement.thanksForDownload=Craftable Creatures
-achievement.thanksForDownload.desc=Vielen Dank für das Herunterladen dieses Mods!
-achievement.bluedustCollector=Blaustaubsammler
-achievement.bluedustCollector.desc=Blaustaub erhalten
-achievement.templateManager=Vorlagenmanager
-achievement.templateManager.desc=Vorlage herstellen
-achievement.mobSpawner=Ersteller
-achievement.mobSpawner.desc=Spawn-Ei-Vorlage herstellen
-achievement.energy=Energie
-achievement.energy.desc=Einen angetriebenen Blausteinblock herstellen
+achievement.craftableCreatures.thanksForDownload=Craftable Creatures
+achievement.craftableCreatures.thanksForDownload.desc=Vielen Dank für das Herunterladen dieses Mods!
+achievement.craftableCreatures.bluedustCollector=Blaustaubsammler
+achievement.craftableCreatures.bluedustCollector.desc=Blaustaub erhalten
+achievement.craftableCreatures.templateManager=Vorlagenmanager
+achievement.craftableCreatures.templateManager.desc=Vorlage herstellen
+achievement.craftableCreatures.mobSpawner=Ersteller
+achievement.craftableCreatures.mobSpawner.desc=Spawn-Ei-Vorlage herstellen
+achievement.craftableCreatures.energy=Energie
+achievement.craftableCreatures.energy.desc=Blausteinblock herstellen
+achievement.craftableCreatures.soulExtractor=Seelenextraktor
+achievement.craftableCreatures.soulExtractor.desc=Seelenextraktor herstellen
+achievement.craftableCreatures.combiner=Kombinator
+achievement.craftableCreatures.combiner.desc=Kombinator herstellen
 
 item.spawnEggTemplate.name=Spawn-Ei-Vorlage
 item.template.name=Zeichnung
@@ -44,13 +48,17 @@ item.soul.villager.name=Seele [§6Dorfbewohner§f]
 itemGroup.craftableCreatures=Craftable Creatures
 
 tooltip.lshift.press=§fDrücken Sie §cLSHIFT§f, um Informationen zu sehen
+tooltip.soulExtractor=Entzieht dem Objekt eine klare Seele und legt sie in eine gewöhnliche Seele ein
+tooltip.spawnEggCombiner=Transformiert den Gegenstand gemäß der Zeichnung
 
 tile.bluestoneBlock.name=Block aus Blaustein
 tile.poweredBluestoneBlock.name=Angetriebener Block aus Blaustein
 tile.bluestoneOre.name=Blaustein Erz
 tile.soulExtractor.name=Seelenextraktor
+tile.spawnEggCombiner.name=Kombinator
 
 container.soulExtractor=Seelenextraktor
+container.combiner=Kombinator
 
 craftableCreatures.configGui.checkForUpdates=Auf Updates prüfen
 craftableCreatures.configGui.enableExperimentalContent=Aktivieren Sie experimentelle Inhalte
@@ -67,4 +75,5 @@ craftableCreatures.chat.clickToOpenUrl=Klicken, um den Link zu öffnen
 
 craftableCreatures.nei.recipe.soulExtracting=Seelenextraktion
 craftableCreatures.nei.recipe.fuel.tooltip=Dieser Treibstoff kann extrahieren: %s Seele (-n)
+craftableCreatures.nei.recipe.combining=Kombinieren
 craftableCreatures.nei.subsets.souls=Seelen

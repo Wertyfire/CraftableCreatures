@@ -1,13 +1,17 @@
-achievement.thanksForDownload=Craftable Creatures
-achievement.thanksForDownload.desc=Дякуємо за установку!
-achievement.bluedustCollector=Колекціонер блакитного каменю
-achievement.bluedustCollector.desc=Добудьте блакитний камінь
-achievement.templateManager=Менеджер шаблонів
-achievement.templateManager.desc=Створіть шаблон
-achievement.mobSpawner=Створювач
-achievement.mobSpawner.desc=Створіть креслення яйця виклику
-achievement.energy=Енергія
-achievement.energy.desc=Створіть заряджений блок блакитного каменю
+achievement.craftableCreatures.thanksForDownload=Craftable Creatures
+achievement.craftableCreatures.thanksForDownload.desc=Дякуємо за установку!
+achievement.craftableCreatures.bluedustCollector=Колекціонер блакитного каменю
+achievement.craftableCreatures.bluedustCollector.desc=Добудьте блакитний камінь
+achievement.craftableCreatures.templateManager=Менеджер шаблонів
+achievement.craftableCreatures.templateManager.desc=Створіть шаблон
+achievement.craftableCreatures.mobSpawner=Створювач
+achievement.craftableCreatures.mobSpawner.desc=Створіть креслення яйця виклику
+achievement.craftableCreatures.energy=Енергія
+achievement.craftableCreatures.energy.desc=Створіть заряджений блок блакитного каменю
+achievement.craftableCreatures.soulExtractor=Витягувач душ
+achievement.craftableCreatures.soulExtractor.desc=Створiть витягувач душ
+achievement.craftableCreatures.combiner=Комбінатор
+achievement.craftableCreatures.combiner.desc=Створiть комбінатор
 
 item.spawnEggTemplate.name=Креслення яйця виклику
 item.template.name=Шаблон
@@ -42,6 +46,8 @@ item.soul.horse.name=Душа [§6Кiнь§f]
 item.soul.villager.name=Душа [§6Селянин§f]
 
 tooltip.lshift.press=§fНатисніть §cLSHIFT§f, щоб побачити інформацію
+tooltip.soulExtractor=Витягує чисту душу з предмета і поміщає її в звичайну душу
+tooltip.spawnEggCombiner=Преобразует предмет согласно чертежу
 
 itemGroup.craftableCreatures=Craftable Creatures
 
@@ -49,8 +55,10 @@ tile.bluestoneBlock.name=Блок блакитного каменю
 tile.poweredBluestoneBlock.name=Заряджений блок блакитного каменю
 tile.bluestoneOre.name=Руда блакитного каменю
 tile.soulExtractor.name=Витягувач душ
+tile.spawnEggCombiner.name=Комбінатор
 
 container.soulExtractor=Витягувач душ
+container.combiner=Комбінатор
 
 craftableCreatures.configGui.checkForUpdates=Перевірка оновлень
 craftableCreatures.configGui.enableExperimentalContent=Увімкнути експериментальний контент
@@ -67,4 +75,5 @@ craftableCreatures.chat.clickToOpenUrl=Натисніть, щоб відкрит
 
 craftableCreatures.nei.recipe.soulExtracting=Витягування душі
 craftableCreatures.nei.recipe.fuel.tooltip=Це паливо може витягнути: %s душу (-и)
+craftableCreatures.nei.recipe.combining=Комбінування
 craftableCreatures.nei.subsets.souls=Душі
