@@ -10,10 +10,10 @@ import net.minecraft.item.ItemStack;
 
 public class SoulExtractedEvent extends Event {
     public final EntityPlayer player;
-    public final ItemStack extractedFrom;
+    public final ItemStack result;
 
-    public SoulExtractedEvent(EntityPlayer player, ItemStack extractedFrom) {
+    public SoulExtractedEvent(EntityPlayer player, ItemStack result) {
         this.player = player;
-        this.extractedFrom = extractedFrom;
+        this.result = result;
     }
 }
