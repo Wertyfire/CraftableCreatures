@@ -17,7 +17,7 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
-import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
+import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.util.Utils;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
@@ -51,8 +51,6 @@ public class CCEventListener {
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
         event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent)));
-        //TODO: dont forget about this!
-        event.player.addChatMessage(new ChatComponentText(I18n.format("updateChecker.tempUnavailable"))); //SHIT FUCK THIS FUCKING GITHUB!!!!!!!!!!!!!!!!!!!!! AND 2FA!!! FUCK!
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
@@ -105,6 +103,12 @@ public class CCEventListener {
                     }
                     if (stack.getItem() == Item.getItemFromBlock(CCBlocks.powered_bluestone_block)) {
                         event.player.triggerAchievement(CCAchievementList.energy);
+                    }
+                    if (stack.getItem() == Item.getItemFromBlock(CCBlocks.soul_extractor)) {
+                        event.player.triggerAchievement(CCAchievementList.soulExtractor);
+                    }
+                    if (stack.getItem() == Item.getItemFromBlock(CCBlocks.combiner)) {
+                        event.player.triggerAchievement(CCAchievementList.combiner);
                     }
                 }
             }
