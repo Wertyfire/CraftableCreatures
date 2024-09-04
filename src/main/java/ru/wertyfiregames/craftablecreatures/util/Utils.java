@@ -34,19 +34,19 @@ public class Utils {
         player.addChatMessage(beforeLinkText);
     }
 
-    public static class RGB {
+    public static class RGBA {
         private final float red, green, blue, alpha;
 
-        private RGB() {red=0;green=0;blue=0;alpha=0;}
+        private RGBA() {red=0;green=0;blue=0;alpha=0;}
 
-        public RGB(float red, float green, float blue) {
+        public RGBA(float red, float green, float blue) {
             this.red = red;
             this.green = green;
             this.blue = blue;
             this.alpha = 1f;
         }
 
-        public RGB(float red, float green, float blue, float alpha) {
+        public RGBA(float red, float green, float blue, float alpha) {
             this.red = red;
             this.green = green;
             this.blue = blue;
