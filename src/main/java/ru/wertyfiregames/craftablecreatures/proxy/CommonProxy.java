@@ -19,8 +19,8 @@ public class CommonProxy implements IGuiHandler {
             return new GuiSoulExtractor(player.inventory, (TileEntitySoulExtractor) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_COMBINER)
             return new GuiCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
-//        else if (ID == CraftableCreatures.GUI_GUIDE_BOOK)
-//            return new GuiScreenGuideBook();
+        else if (ID == CraftableCreatures.GUI_GUIDE_BOOK)
+            return new GuiScreenGuideBook();
 
         return null;
     }
