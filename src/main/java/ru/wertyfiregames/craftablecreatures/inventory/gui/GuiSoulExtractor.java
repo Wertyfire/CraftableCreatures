@@ -17,7 +17,7 @@ import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
 @SideOnly(Side.CLIENT)
 public class GuiSoulExtractor extends GuiContainer {
-    private static final ResourceLocation soulExtractorGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/soul_extractor.png");
+    private static final ResourceLocation soulExtractorGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/soul_extractor.png");
     private final TileEntitySoulExtractor tileSoulExtractor;
 
     public GuiSoulExtractor(InventoryPlayer player, TileEntitySoulExtractor soulExtractor) {
@@ -40,7 +40,7 @@ public class GuiSoulExtractor extends GuiContainer {
         int yPos = (height - ySize) / 2;
         drawTexturedModalRect(xPos, yPos, 0, 0, xSize, ySize);
 
-        if (tileSoulExtractor.isExtracting()) {
+        if (tileSoulExtractor.hasFuel()) {
             int scaled = tileSoulExtractor.getFuelWorkTimeRemainingScaled(13);
             drawTexturedModalRect(xPos + 42, yPos + 36 + 12 - scaled, 176, 12 - scaled, 14, scaled + 1);
             scaled = tileSoulExtractor.getExtractProgressScaled(42);

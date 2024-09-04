@@ -52,7 +52,7 @@ public class BlockSoulExtractor extends BlockContainer {
         setBlockName("soulExtractor");
         if (!enabled) setCreativeTab(CCCreativeTabs.tabCraftableCreatures);
         setStepSound(soundTypePiston);
-        setHarvestLevel("pickaxe", 0);
+        setHarvestLevel("pickaxe", 1);
         setHardness(3.5f);
         setResistance(3.5f);
         if (enabled) setLightLevel(0.875f);
@@ -93,13 +93,13 @@ public class BlockSoulExtractor extends BlockContainer {
 
     public IIcon getIcon(int side, int metadata) {
         return (metadata == 0 && side == 3) ? iconFront
-                : (side == 1 ? this.iconTop :
-                (side == 0 ? this.iconTop : (side == metadata ? iconFront : this.blockIcon)));
+                : (side == 1 ? iconTop :
+                (side == 0 ? iconTop : (side == metadata ? iconFront : blockIcon)));
     }
 
     public void registerBlockIcons(IIconRegister iconRegister) {
         String modId = CraftableCreatures.getModId();
-        blockIcon = iconRegister.registerIcon(modId + ":se_side");
+        blockIcon = iconRegister.registerIcon(modId + ":soul_extractor");
         iconFront = iconRegister.registerIcon(enabled ? modId + ":se_front_on" : modId + ":se_front_off");
         iconTop = iconRegister.registerIcon(modId + ":se_top");
     }
@@ -109,7 +109,7 @@ public class BlockSoulExtractor extends BlockContainer {
         return true;
     }
 
-    public static void updateSoulExtractorBlockState(boolean working, World world, int x, int y, int z) {
+    public static void updateSoulExtractorBlockState(World world, int x, int y, int z, boolean working) {
         int meta = world.getBlockMetadata(x, y, z);
         TileEntity tileEntity = world.getTileEntity(x, y, z);
         isWorking = true;
@@ -145,9 +145,8 @@ public class BlockSoulExtractor extends BlockContainer {
         if (direction == 3)
             world.setBlockMetadataWithNotify(x, y, z, 4, 2);
 
-        if (stack.hasDisplayName()) {
+        if (stack.hasDisplayName())
             ((TileEntitySoulExtractor) world.getTileEntity(x, y, z)).setCustomName(stack.getDisplayName());
-        }
     }
 
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
@@ -185,7 +184,6 @@ public class BlockSoulExtractor extends BlockContainer {
                 world.func_147453_f(x, y, z, block);
             }
         }
-
         super.breakBlock(world, x, y, z, block, metadata);
     }
 
@@ -199,15 +197,14 @@ public class BlockSoulExtractor extends BlockContainer {
             float verticalOffset = 0.52f;
             float horizontalOffset = random.nextFloat() * 0.6f - 0.3f;
 
-            if (meta == 4) {
-                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos - verticalOffset, yPos, zPos + horizontalOffset,0d, 0d, 0d);
-            } else if (meta == 5) {
-                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + verticalOffset, yPos, zPos + horizontalOffset, 0d, 0d, 0d);
-            } else if (meta == 2) {
-                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + horizontalOffset, yPos, zPos - verticalOffset, 0d, 0d, 0d);
-            } else if (meta == 3) {
-                ParticleUtils.spawnParticle(CCParticles.SOUL_ID, xPos + horizontalOffset, yPos, zPos + verticalOffset, 0d, 0d, 0d);
-            }
+            if (meta == 4)
+                ParticleUtils.spawnParticle(CCParticles.soul, xPos - verticalOffset, yPos, zPos + horizontalOffset,0d, 0d, 0d);
+            else if (meta == 5)
+                ParticleUtils.spawnParticle(CCParticles.soul, xPos + verticalOffset, yPos, zPos + horizontalOffset, 0d, 0d, 0d);
+            else if (meta == 2)
+                ParticleUtils.spawnParticle(CCParticles.soul, xPos + horizontalOffset, yPos, zPos - verticalOffset, 0d, 0d, 0d);
+            else if (meta == 3)
+                ParticleUtils.spawnParticle(CCParticles.soul, xPos + horizontalOffset, yPos, zPos + verticalOffset, 0d, 0d, 0d);
         }
     }
 
@@ -231,7 +228,7 @@ public class BlockSoulExtractor extends BlockContainer {
         @SuppressWarnings("unchecked")
         @Override
         public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
-            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tile.soulExtractor.tooltip"));
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.soulExtractor"));
             else tooltip.add(I18n.format("tooltip.lshift.press"));
         }
     }

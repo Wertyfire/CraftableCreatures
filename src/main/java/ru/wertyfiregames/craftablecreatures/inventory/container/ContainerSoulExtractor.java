@@ -12,7 +12,7 @@ import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ICrafting;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.inventory.slot.SlotSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
@@ -41,9 +41,9 @@ public class ContainerSoulExtractor extends Container {
 
     public void addCraftingToCrafters(ICrafting crafting) {
         super.addCraftingToCrafters(crafting);
-        crafting.sendProgressBarUpdate(this, 0, tileSoulExtractor.soulExtractorExtractTime);
-        crafting.sendProgressBarUpdate(this, 1, tileSoulExtractor.soulExtractorFuelWorkTime);
-        crafting.sendProgressBarUpdate(this, 2, tileSoulExtractor.currentSoulExtractTime);
+        crafting.sendProgressBarUpdate(this, 0, tileSoulExtractor.extractTime);
+        crafting.sendProgressBarUpdate(this, 1, tileSoulExtractor.fuelWorkTime);
+        crafting.sendProgressBarUpdate(this, 2, tileSoulExtractor.currentFuelWorkTime);
     }
 
     public void detectAndSendChanges() {
@@ -52,26 +52,26 @@ public class ContainerSoulExtractor extends Container {
         for (Object crafter : crafters) {
             ICrafting icrafting = (ICrafting) crafter;
 
-            if (lastExtractTime != tileSoulExtractor.soulExtractorExtractTime)
-                icrafting.sendProgressBarUpdate(this, 0, tileSoulExtractor.soulExtractorExtractTime);
+            if (lastExtractTime != tileSoulExtractor.extractTime)
+                icrafting.sendProgressBarUpdate(this, 0, tileSoulExtractor.extractTime);
 
-            if (lastFuelWorkTime != tileSoulExtractor.soulExtractorFuelWorkTime)
-                icrafting.sendProgressBarUpdate(this, 1, tileSoulExtractor.soulExtractorFuelWorkTime);
+            if (lastFuelWorkTime != tileSoulExtractor.fuelWorkTime)
+                icrafting.sendProgressBarUpdate(this, 1, tileSoulExtractor.fuelWorkTime);
 
-            if (lastSoulExtractTime != tileSoulExtractor.currentSoulExtractTime)
-                icrafting.sendProgressBarUpdate(this, 2, tileSoulExtractor.currentSoulExtractTime);
+            if (lastSoulExtractTime != tileSoulExtractor.currentFuelWorkTime)
+                icrafting.sendProgressBarUpdate(this, 2, tileSoulExtractor.currentFuelWorkTime);
         }
 
-        lastExtractTime = tileSoulExtractor.soulExtractorExtractTime;
-        lastFuelWorkTime = tileSoulExtractor.soulExtractorFuelWorkTime;
-        lastSoulExtractTime = tileSoulExtractor.currentSoulExtractTime;
+        lastExtractTime = tileSoulExtractor.extractTime;
+        lastFuelWorkTime = tileSoulExtractor.fuelWorkTime;
+        lastSoulExtractTime = tileSoulExtractor.currentFuelWorkTime;
     }
 
     @SideOnly(Side.CLIENT)
     public void updateProgressBar(int id, int value) {
-        if (id == 0) tileSoulExtractor.soulExtractorExtractTime = value;
-        if (id == 1) tileSoulExtractor.soulExtractorFuelWorkTime = value;
-        if (id == 2) tileSoulExtractor.currentSoulExtractTime = value;
+        if (id == 0) tileSoulExtractor.extractTime = value;
+        if (id == 1) tileSoulExtractor.fuelWorkTime = value;
+        if (id == 2) tileSoulExtractor.currentFuelWorkTime = value;
     }
 
     public boolean canInteractWith(EntityPlayer player) {
@@ -89,7 +89,7 @@ public class ContainerSoulExtractor extends Container {
             if (fromSlot == 3) {
                 if (!this.mergeItemStack(slotStack, 3 + 1, 3 + 36 + 1, true)) return null;
                 slot.onSlotChange(slotStack, itemStack);
-            } else if (fromSlot != 1 && fromSlot != 0 && fromSlot != 2) {
+            } else if (fromSlot != 0 && fromSlot != 1 && fromSlot != 2) {
                 if (SoulExtractorRecipes.get().getExtractingResult(slotStack) != null) {
                     if (!mergeItemStack(slotStack, 0, 0 + 1, false)) return null;
                 } else if (SoulExtractorRecipes.get().isItemExtractHelper(slotStack)) {
