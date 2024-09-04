@@ -8,6 +8,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
+import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 
 public class CCRecipes {
     public static void register() {
@@ -28,11 +29,17 @@ public class CCRecipes {
                 "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
                 "SSS", "SSS", "SSS", 'S', CCItems.bluestone);
+        GameRegistry.addShapedRecipe(new ItemStack(CCItems.guide_book),
+                "SSS", "SUS", "SSS", 'S', CCItems.soul_element, 'U', Items.book);
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.soul_extractor),
                 "SSS", "SUS", "SAS", 'S', Blocks.cobblestone, 'U', CCBlocks.powered_bluestone_block, 'A', Blocks.furnace);
+        GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.combiner),
+                "SSS", "SUS", "SAS", 'S', Blocks.cobblestone, 'U', CCItems.template, 'A', Blocks.redstone_block);
 
         //Smelting recipes
         GameRegistry.addSmelting(CCBlocks.bluestone_ore, new ItemStack(CCItems.bluestone), 0.7f);
+
+        if (CCConfig.enableExperimentalContent) return;
 
         //Spawn eggs
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
@@ -52,7 +59,7 @@ public class CCRecipes {
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
                 EntityList.getEntityID(new EntityEnderman(null))), new ItemStack(CCItems.spawn_egg_template), new ItemStack(CCItems.soul_element, 1, 8));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
-                EntityList.getEntityID(new EntityCaveSpider(null))), new ItemStack(CCItems.spawn_egg_template, 1, 4), new ItemStack(CCItems.soul_element, 1, 9));
+                EntityList.getEntityID(new EntityCaveSpider(null))), new ItemStack(CCItems.spawn_egg_template), new ItemStack(CCItems.soul_element, 1, 9));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
                 EntityList.getEntityID(new EntitySilverfish(null))), new ItemStack(CCItems.spawn_egg_template), new ItemStack(CCItems.soul_element, 1, 10));
         GameRegistry.addShapelessRecipe(new ItemStack(Items.spawn_egg, 1,
