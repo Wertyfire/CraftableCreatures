@@ -4,6 +4,7 @@ import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.ModMetadata;
+import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -18,7 +19,7 @@ import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.*;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
-import ru.wertyfiregames.craftablecreatures.stats.CCAchievementList;
+import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.world.CCWorldOreGenerator;
 
@@ -28,8 +29,7 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
 @Mod(modid = modId, version = modVersion, name = name,
         guiFactory = guiFactory)
-public class CraftableCreatures
-{
+public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
     protected static final String modVersion = "0.5.3";
@@ -45,9 +45,19 @@ public class CraftableCreatures
 //    Gui
     protected static final String guiFactory = "ru.wertyfiregames.craftablecreatures.config.CCGuiFactory";
     public static final int GUI_SOUL_EXTRACTOR = 0;
-    
+    public static final int GUI_COMBINER = 1;
+    public static final int GUI_GUIDE_BOOK = 2;
+
+//    Logger
     private static Logger modLogger;
 
+//    Proxy
+    protected static final String clientProxy = "ru.wertyfiregames.craftablecreatures.proxy.ClientProxy";
+    protected static final String commonProxy = "ru.wertyfiregames.craftablecreatures.proxy.CommonProxy";
+    @SidedProxy(clientSide = clientProxy, serverSide = commonProxy)
+    public static CommonProxy proxy;
+
+//    Instance and metadata
     @Mod.Instance(modId)
     public static CraftableCreatures INSTANCE;
     @Mod.Metadata(modId)
@@ -88,10 +98,10 @@ public class CraftableCreatures
         getModLogger().debug("CC Achievements loaded");
         CCRecipes.register();
         getModLogger().debug("CC Recipes loaded");
-        CCParticles.register();
-        getModLogger().debug("CC Particles loaded");
+        proxy.registerParticles();
         CCOreDictionary.register();
         getModLogger().debug("CC Ore dictionary loaded");
+        CCChestsLoot.register();
         CCAPIInit.register();
         CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
     }
