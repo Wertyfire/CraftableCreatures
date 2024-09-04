@@ -8,8 +8,8 @@ import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import ru.wertyfiregames.craftablecreatures.init.CCItems;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.CombinerRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 
 import java.util.List;
 
@@ -28,8 +28,7 @@ public class CraftableCreaturesRegistry {
     public static void addBaseSoulItem(Item helper) {
         SoulExtractorRecipes.get().addBaseSoul(helper);
     }
-    /**Add every thing from ore dictionary as base soul
-     * @apiNote not recommend to use, it needs bugfix*/
+    /**Add every thing from ore dictionary as base soul*/
     public static void addBaseSoulItem(String nameInOreDict) {
         SoulExtractorRecipes.get().addBaseSoul(nameInOreDict);
     }
@@ -39,24 +38,45 @@ public class CraftableCreaturesRegistry {
     }
 
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 10*/
+     * @param xp experience from this extraction. Will be multiplied by 5*/
     public static void addExtracting(Block input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 10*/
+     * @param xp experience from this extraction. Will be multiplied by 5*/
     public static void addExtracting(Item input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 10*/
+     * @param xp experience from this extraction. Will be multiplied by 5*/
     public static void addExtracting(String nameInOreDict, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(nameInOreDict, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 10*/
+     * @param xp experience from this extraction. Will be multiplied by 5*/
     public static void addExtracting(ItemStack input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
+    }
+
+    /**Add recipe to combiner
+     * @param xp experience from this extraction. Will be multiplied by 5*/
+    public static void addCombining(Item firstInput, Item secondInput, ItemStack output, float xp) {
+        CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
+    }
+    /**Add recipe to combiner
+     * @param xp experience from this extraction. Will be multiplied by 5*/
+    public static void addCombining(ItemStack firstInput, Item secondInput, ItemStack output, float xp) {
+        CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
+    }
+    /**Add recipe to combiner
+     * @param xp experience from this extraction. Will be multiplied by 5*/
+    public static void addCombining(Item firstInput, ItemStack secondInput, ItemStack output, float xp) {
+        CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
+    }
+    /**Add recipe to combiner
+     * @param xp experience from this extraction. Will be multiplied by 5*/
+    public static void addCombining(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
+        CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
 
     /**Add block as soul so this will be shown in subset "Souls" in NEI*/

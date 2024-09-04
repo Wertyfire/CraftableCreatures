@@ -17,6 +17,8 @@ public class CCBlocks {
             CCCreativeTabs.tabCraftableCreatures, "pickaxe", 2, 3f, 5f);
     public static final Block soul_extractor = new BlockSoulExtractor(false);
     public static final Block lit_soul_extractor = new BlockSoulExtractor(true);
+    public static final Block combiner = new BlockCombiner(false);
+    public static final Block lit_combiner = new BlockCombiner(true);
 
     public static void register() {
         GameRegistry.registerBlock(powered_bluestone_block, "powered_bluestone_block");
@@ -29,5 +31,8 @@ public class CCBlocks {
 
     private static void registerExperimental() {
         if (!CCConfig.enableExperimentalContent) return;
+
+        GameRegistry.registerBlock(combiner, BlockCombiner.CombinerItemBlock.class, "combiner");
+        GameRegistry.registerBlock(lit_combiner, "lit_combiner");
     }
 }

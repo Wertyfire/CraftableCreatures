@@ -6,10 +6,11 @@ package ru.wertyfiregames.craftablecreatures.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
+import ru.wertyfiregames.craftablecreatures.tileentity.*;
 
 public class CCTileEntities {
     public static void register() {
         GameRegistry.registerTileEntity(TileEntitySoulExtractor.class, CraftableCreatures.getModId() + ":" + "soul_extractor");
+        GameRegistry.registerTileEntity(TileEntityCombiner.class, CraftableCreatures.getModId() + ":" + "combiner");
     }
 }

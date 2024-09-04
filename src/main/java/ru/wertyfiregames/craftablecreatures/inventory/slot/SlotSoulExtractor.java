@@ -10,7 +10,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.compat.event.CraftableCreaturesEventFactory;
 
 public class SlotSoulExtractor extends Slot {

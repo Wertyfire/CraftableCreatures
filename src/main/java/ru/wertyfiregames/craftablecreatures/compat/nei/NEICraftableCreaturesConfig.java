@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
+import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiCombiner;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;
 
 public class NEICraftableCreaturesConfig implements IConfigureNEI {
@@ -40,7 +41,9 @@ public class NEICraftableCreaturesConfig implements IConfigureNEI {
         //Soul Extractor
         registerRecipeAndUsageHandler(new SoulExtractorRecipeHandler());
         registerRecipeAndUsageHandler(new SEFuelRecipeHandler());
+        registerRecipeAndUsageHandler(new CombinerRecipeHandler());
         API.registerGuiOverlay(GuiSoulExtractor.class, SoulExtractorRecipeHandler.SE_EXTRACTING_OVERLAY_IDENTIFIER);
+        API.registerGuiOverlay(GuiCombiner.class, CombinerRecipeHandler.C_COMBINING_OVERLAY_IDENTIFIER);
     }
 
 // <!------------- Utils Zone ------------->

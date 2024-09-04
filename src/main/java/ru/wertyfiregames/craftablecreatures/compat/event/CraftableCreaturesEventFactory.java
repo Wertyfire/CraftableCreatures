@@ -10,8 +10,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 
 public class CraftableCreaturesEventFactory {
-    public static void soulExtractedEvent(EntityPlayer player, ItemStack extractedFrom) {
-        SoulExtractedEvent event = new SoulExtractedEvent(player, extractedFrom);
+    public static void soulExtractedEvent(EntityPlayer player, ItemStack result) {
+        SoulExtractedEvent event = new SoulExtractedEvent(player, result);
+        MinecraftForge.EVENT_BUS.post(event);
+    }
+
+    public static void itemCombinedEvent(EntityPlayer player, ItemStack result) {
+        ItemCombinedEvent event = new ItemCombinedEvent(player, result);
         MinecraftForge.EVENT_BUS.post(event);
     }
 
