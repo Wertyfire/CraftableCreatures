@@ -8,7 +8,7 @@ import codechicken.nei.PositionedStack;
 import codechicken.nei.recipe.GuiRecipe;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 
 import java.util.ArrayList;
 import java.util.List;

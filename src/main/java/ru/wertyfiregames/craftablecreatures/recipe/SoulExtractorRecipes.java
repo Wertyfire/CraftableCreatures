@@ -2,7 +2,7 @@
  * File created on 19:08 31.07.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.init;
+package ru.wertyfiregames.craftablecreatures.recipe;
 
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
@@ -10,6 +10,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
+import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 import java.util.*;
 
@@ -80,7 +81,7 @@ public class SoulExtractorRecipes {
     }
     public void addRecipe(ItemStack input, ItemStack output, float xp) {
         extractingRecipes.put(input.copy(), output);
-        experienceList.put(output.copy(), xp * 10f);
+        experienceList.put(output.copy(), xp * 5f);
     }
 
     public void addBaseSoul(Block helper) {
@@ -106,15 +107,15 @@ public class SoulExtractorRecipes {
         return extractHelpers.stream().anyMatch(helperStack -> areStacksEqual(helperStack, stack));
     }
 
-    public ItemStack getExtractingResult(ItemStack stack) {
+    public ItemStack getExtractingResult(ItemStack ingredient) {
         for (Map.Entry<ItemStack, ItemStack> entry : extractingRecipes.entrySet()) {
-            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue();
+            if (areStacksEqual(entry.getKey(), ingredient)) return entry.getValue();
         }
         return null;
     }
-    public float getExtractingExperience(ItemStack stack) {
+    public float getExtractingExperience(ItemStack result) {
         for (Map.Entry<ItemStack, Float> entry : experienceList.entrySet()) {
-            if (areStacksEqual(entry.getKey(), stack)) return entry.getValue();
+            if (areStacksEqual(entry.getKey(), result)) return entry.getValue();
         }
         return 0f;
     }

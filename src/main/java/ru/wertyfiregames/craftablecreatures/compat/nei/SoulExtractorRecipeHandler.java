@@ -12,7 +12,7 @@ import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.init.SoulExtractorRecipes;
+import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
@@ -24,7 +24,6 @@ public class SoulExtractorRecipeHandler extends TemplateRecipeHandler {
     public static final String SE_FUEL_ID = CraftableCreatures.getModId() + ":se_fuel";
     public static final String EXTRACTING_ID = CraftableCreatures.getModId() + ":extracting";
     public static final String SE_EXTRACTING_OVERLAY_IDENTIFIER = CraftableCreatures.getModId() + ":soul_extractor";
-
 
     public static List<Fuel> listFuels;
     public static List<ExtractHelper> listExtractHelpers;
@@ -101,7 +100,7 @@ public class SoulExtractorRecipeHandler extends TemplateRecipeHandler {
 
     @Override
     public String getGuiTexture() {
-        return CraftableCreatures.getModId() + ":textures/gui/container/soul_extractor.png";
+        return CraftableCreatures.getModId() + ":textures/gui/soul_extractor.png";
     }
 
     @Override
