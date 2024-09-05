@@ -2,7 +2,7 @@
  * File created on 15:13 31.07.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.compat.event;
+package ru.wertyfiregames.craftablecreatures.api.event;
 
 import cpw.mods.fml.common.eventhandler.Event.Result;
 import net.minecraft.entity.player.EntityPlayer;

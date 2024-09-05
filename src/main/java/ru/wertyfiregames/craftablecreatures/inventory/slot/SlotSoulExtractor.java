@@ -11,7 +11,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
-import ru.wertyfiregames.craftablecreatures.compat.event.CraftableCreaturesEventFactory;
+import ru.wertyfiregames.craftablecreatures.api.event.CraftableCreaturesEventFactory;
 
 public class SlotSoulExtractor extends Slot {
     private final EntityPlayer player;

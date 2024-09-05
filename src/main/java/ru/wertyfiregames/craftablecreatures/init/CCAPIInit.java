@@ -4,7 +4,7 @@
 
 package ru.wertyfiregames.craftablecreatures.init;
 
-import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
+import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 
 public class CCAPIInit {
     public static void register() {

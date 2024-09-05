@@ -10,7 +10,7 @@ import codechicken.nei.recipe.TemplateRecipeHandler;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.compat.CraftableCreaturesRegistry;
+import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiCombiner;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;

@@ -1,18 +1,18 @@
 /**
- * File created on 18:31 01.08.2024 by Wertyfire
+ * File created on 19:06 24.08.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.compat.event;
+package ru.wertyfiregames.craftablecreatures.api.event;
 
 import cpw.mods.fml.common.eventhandler.Event;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 
-public class SoulExtractedEvent extends Event {
+public class ItemCombinedEvent extends Event {
     public final EntityPlayer player;
     public final ItemStack result;
 
-    public SoulExtractedEvent(EntityPlayer player, ItemStack result) {
+    public ItemCombinedEvent(EntityPlayer player, ItemStack result) {
         this.player = player;
         this.result = result;
     }

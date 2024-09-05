@@ -2,7 +2,7 @@
  * File created on 15:07 31.07.2024 by Wertyfire
  */
 
-package ru.wertyfiregames.craftablecreatures.compat;
+package ru.wertyfiregames.craftablecreatures.api;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
