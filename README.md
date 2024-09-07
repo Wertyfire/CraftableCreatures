@@ -1,4 +1,4 @@
-# CraftableCreatures
+# Craftable Creatures
 
 Мод находится в бета версии, поэтому ничего интересного тут пока нет.
 
