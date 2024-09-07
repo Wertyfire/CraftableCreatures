@@ -23,42 +23,42 @@ public class SoulExtractorRecipes {
     private SoulExtractorRecipes() {
         addBaseSoul(new ItemStack(CCItems.soul_element, 1, 0));
 
-        addRecipe(Items.gunpowder, new ItemStack(CCItems.soul_element, 1, 1), 0.3f);
+        addRecipe(Items.gunpowder, new ItemStack(CCItems.soul_element, 1, 1), 0.15f);
         addRecipe(Items.bone, new ItemStack(CCItems.soul_element, 1, 2), 0.25f);
         addRecipe(Items.spider_eye, new ItemStack(CCItems.soul_element, 1, 3), 0.25f);
         addRecipe(Items.fermented_spider_eye, new ItemStack(CCItems.soul_element, 1, 3), 0.25f);
-        addRecipe(Items.rotten_flesh, new ItemStack(CCItems.soul_element, 1, 4), 0.2f);
-        addRecipe(Items.slime_ball, new ItemStack(CCItems.soul_element, 1, 5), 0.2f);
-        addRecipe(Items.ghast_tear, new ItemStack(CCItems.soul_element, 1, 6), 0.35f);
+        addRecipe(Items.rotten_flesh, new ItemStack(CCItems.soul_element, 1, 4), 0.1f);
+        addRecipe(Items.slime_ball, new ItemStack(CCItems.soul_element, 1, 5), 0.1f);
+        addRecipe(Items.ghast_tear, new ItemStack(CCItems.soul_element, 1, 6), 0.175f);
         addRecipe(Items.golden_sword, new ItemStack(CCItems.soul_element, 1, 7), 0.25f);
-        addRecipe(Items.ender_eye, new ItemStack(CCItems.soul_element, 1, 8), 0.35f);
+        addRecipe(Items.ender_eye, new ItemStack(CCItems.soul_element, 1, 8), 0.175f);
         ItemStack stack1 = new ItemStack(CCItems.soul_element);
         stack1.setItemDamage(3);
         addRecipe(stack1, new ItemStack(CCItems.soul_element, 1, 9), 0.25f);
-        addRecipe(Blocks.monster_egg, new ItemStack(CCItems.soul_element, 1, 10), 0.5f);
-        addRecipe(Items.blaze_rod, new ItemStack(CCItems.soul_element, 1, 11), 0.4f);
-        addRecipe(Items.magma_cream, new ItemStack(CCItems.soul_element, 1, 12), 0.3f);
-        addRecipe(CCItems.bat_wing, new ItemStack(CCItems.soul_element, 1, 13), 0.1f);
+        addRecipe(Blocks.monster_egg, new ItemStack(CCItems.soul_element, 1, 10), 0.25f);
+        addRecipe(Items.blaze_rod, new ItemStack(CCItems.soul_element, 1, 11), 0.2f);
+        addRecipe(Items.magma_cream, new ItemStack(CCItems.soul_element, 1, 12), 0.15f);
+        addRecipe(CCItems.bat_wing, new ItemStack(CCItems.soul_element, 1, 13), 0.05f);
         addRecipe(Items.potionitem, new ItemStack(CCItems.soul_element, 1, 14), 0.25f);
-        addRecipe(Items.porkchop, new ItemStack(CCItems.soul_element, 1, 15), 0.1f);
+        addRecipe(Items.porkchop, new ItemStack(CCItems.soul_element, 1, 15), 0.05f);
         for (int i = 0; i < 16; i++) {
             ItemStack stack2 = new ItemStack(Blocks.wool);
             stack2.setItemDamage(i);
-            addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.1f);
+            addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.05f);
         }
-        addRecipe(Items.beef, new ItemStack(CCItems.soul_element, 1, 17), 0.1f);
-        addRecipe(Items.milk_bucket, new ItemStack(CCItems.soul_element, 1, 17), 0.1f);
-        addRecipe(Items.chicken, new ItemStack(CCItems.soul_element, 1, 18), 0.1f);
-        addRecipe(Items.egg, new ItemStack(CCItems.soul_element, 1, 18), 0.1f);
-        addRecipe(Items.feather, new ItemStack(CCItems.soul_element, 1, 18), 0.1f);
-        addRecipe(Items.dye, new ItemStack(CCItems.soul_element, 1, 19), 0.05f);
+        addRecipe(Items.beef, new ItemStack(CCItems.soul_element, 1, 17), 0.05f);
+        addRecipe(Items.milk_bucket, new ItemStack(CCItems.soul_element, 1, 17), 0.05f);
+        addRecipe(Items.chicken, new ItemStack(CCItems.soul_element, 1, 18), 0.05f);
+        addRecipe(Items.egg, new ItemStack(CCItems.soul_element, 1, 18), 0.05f);
+        addRecipe(Items.feather, new ItemStack(CCItems.soul_element, 1, 18), 0.05f);
+        addRecipe(Items.dye, new ItemStack(CCItems.soul_element, 1, 19), 0.025f);
         ItemStack stack3 = new ItemStack(CCItems.soul_element);
         stack3.setItemDamage(2);
         addRecipe(stack3, new ItemStack(CCItems.soul_element, 1, 20), 0.25f);
         addRecipe(Blocks.red_mushroom, new ItemStack(CCItems.soul_element, 1, 21), 0.25f);
         addRecipe(CCItems.ocelot_tail, new ItemStack(CCItems.soul_element, 1, 22), 0.15f);
         //TODO: add horse recipe
-        addRecipe(Items.emerald, new ItemStack(CCItems.soul_element, 1, 24), 0.3f);
+        addRecipe(Items.emerald, new ItemStack(CCItems.soul_element, 1, 24), 0.15f);
     }
 
     public static SoulExtractorRecipes get() {
