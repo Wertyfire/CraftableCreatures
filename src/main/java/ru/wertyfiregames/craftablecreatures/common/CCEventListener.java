@@ -12,6 +12,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ChatComponentText;
+import net.minecraft.util.ChatComponentTranslation;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
@@ -50,18 +51,18 @@ public class CCEventListener {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
-        event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent)));
+        event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent));
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
             if (CCVersionChecker.getStatus() == UpdateResult.FAILED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.failedToCheckUpdates")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.failedToCheckUpdates"));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.UP_TO_DATE) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.latest")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.latest"));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.outdated")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.outdated"));
                 Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
@@ -70,13 +71,13 @@ public class CCEventListener {
                 }
             }
             if (CCVersionChecker.getStatus() == UpdateResult.AHEAD) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.ahead")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.ahead"));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.BETA) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.beta")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.beta"));
             }
             if (CCVersionChecker.getStatus() == UpdateResult.BETA_OUTDATED) {
-                event.player.addChatMessage(new ChatComponentText(I18n.format("craftableCreatures.chat.betaOutdated")));
+                event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.betaOutdated"));
                 Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
