@@ -15,6 +15,7 @@ public class CCItems {
     public static final Item ocelot_tail = new ItemDefault("ocelotTail", "ocelot_tail", CCCreativeTabs.tabCraftableCreatures);
     public static final Item soul_element = new ItemSoulElement();
     public static final Item guide_book = new ItemGuideBook();
+    public static final Item transmutator = new ItemTransmutator();
 
     public static void register() {
         GameRegistry.registerItem(bluestone, "bluestone");
@@ -32,5 +33,6 @@ public class CCItems {
         if (!CCConfig.enableExperimentalContent) return;
 
         GameRegistry.registerItem(guide_book, "guide");
+        GameRegistry.registerItem(transmutator, "transmutator");
     }
 }
