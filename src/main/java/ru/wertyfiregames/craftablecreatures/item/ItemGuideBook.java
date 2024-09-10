@@ -7,12 +7,16 @@ import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ItemGuideBook extends ItemDefault {
+    public static final Map<String, Short> lastPageForPlayers = new HashMap<>();
+
     public ItemGuideBook() {
         super("guideBook", "guide_book", CCCreativeTabs.tabCraftableCreatures);
-        this.setMaxStackSize(1);
+        setMaxStackSize(1);
     }
 
     @SuppressWarnings("unchecked")
@@ -25,5 +29,12 @@ public class ItemGuideBook extends ItemDefault {
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
         player.openGui(CraftableCreatures.INSTANCE, CraftableCreatures.GUI_GUIDE_BOOK, world, (int) player.posX, (int) player.posY, (int) player.posZ);
         return stack;
+    }
+
+    public static void setLastPageForPlayer(String uuid, short page) {
+        lastPageForPlayers.put(uuid, page);
+    }
+    public static short getLastPageForPlayer(String uuid) {
+        return lastPageForPlayers.get(uuid);
     }
 }

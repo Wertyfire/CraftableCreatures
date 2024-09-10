@@ -20,7 +20,7 @@ public class CommonProxy implements IGuiHandler {
         else if (ID == CraftableCreatures.GUI_COMBINER)
             return new GuiCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_GUIDE_BOOK)
-            return new GuiScreenGuideBook();
+            return new GuiScreenGuideBook(player);
 
         return null;
     }
