@@ -21,10 +21,8 @@ public class CCRecipes {
                 new ItemStack(CCBlocks.powered_bluestone_block));
 
         //Shaped recipes
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template), true,
                 "SR", "RS", 'R', "dustBluestone", 'S', Items.paper));
-        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCItems.template),
-                "RS", "SR", 'R', "dustBluestone", 'S', Items.paper));
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(CCBlocks.powered_bluestone_block),
                 "SSS", "SUS", "SSS", 'S', "dustBluestone", 'U', "dustRedstone"));
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.bluestone_block),
