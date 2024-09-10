@@ -7,7 +7,7 @@ package ru.wertyfiregames.craftablecreatures.init;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
 
-public class CCChestsLoot {
+public class CCChestLoot {
     public static void register() {
         //Souls
         for (int i = 14; i <= 24; i++) {
