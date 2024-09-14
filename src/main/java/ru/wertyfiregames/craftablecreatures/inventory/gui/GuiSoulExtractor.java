@@ -17,7 +17,7 @@ import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 
 @SideOnly(Side.CLIENT)
 public class GuiSoulExtractor extends GuiContainer {
-    private static final ResourceLocation soulExtractorGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/soul_extractor.png");
+    private static final ResourceLocation soulExtractorGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/combiner/soul_extractor.png");
     private final TileEntitySoulExtractor tileSoulExtractor;
 
     public GuiSoulExtractor(InventoryPlayer player, TileEntitySoulExtractor soulExtractor) {
