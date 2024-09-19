@@ -32,8 +32,8 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.5.3";
-    protected static final String buildNumber = "11";
+    protected static final String modVersion = "0.6.0";
+    protected static final String buildNumber = "12";
     protected static final String modStatus = "beta";
 
 //    Name
@@ -101,7 +101,7 @@ public class CraftableCreatures {
         proxy.registerParticles();
         CCOreDictionary.register();
         getModLogger().debug("CC Ore dictionary loaded");
-        CCChestsLoot.register();
+        CCChestLoot.register();
         CCAPIInit.register();
         CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
     }

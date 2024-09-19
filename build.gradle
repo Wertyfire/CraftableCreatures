@@ -3,17 +3,11 @@ buildscript {
         mavenCentral()
         maven {
             name = "forge"
-            url = "https://maven.minecraftforge.net/"
-        }
-        maven {
-            name = "sonatype"
-            url = "https://oss.sonatype.org/content/repositories/snapshots/"
+            url = "https://github.com/juanmuscaria/maven/raw/master"
         }
     }
     dependencies {
-        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.0.+') {
-            exclude group: 'org.osgi', module: 'org.osgi.service.prefs'
-        }
+        classpath ('net.minecraftforge.gradle:ForgeGradle:1.2-1.4.6-SNAPSHOT')
     }
 }
 
