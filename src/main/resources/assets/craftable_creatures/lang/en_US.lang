@@ -1,7 +1,7 @@
 achievement.craftableCreatures.thanksForDownload=Craftable Creatures
 achievement.craftableCreatures.thanksForDownload.desc=Thank you for downloading this mod!
 achievement.craftableCreatures.bluedustCollector=Bluedust Collector
-achievement.craftableCreatures.bluedustCollector.desc=Got Bluedust
+achievement.craftableCreatures.bluedustCollector.desc=Got bluedust
 achievement.craftableCreatures.templateManager=Blueprint Manager
 achievement.craftableCreatures.templateManager.desc=Craft blueprint
 achievement.craftableCreatures.mobSpawner=Creator
@@ -9,14 +9,14 @@ achievement.craftableCreatures.mobSpawner.desc=Craft spawn egg blueprint
 achievement.craftableCreatures.energy=Energy
 achievement.craftableCreatures.energy.desc=Craft powered block of bluestone
 achievement.craftableCreatures.soulExtractor=Soul Extractor
-achievement.craftableCreatures.soulExtractor.desc=Craft Soul extractor
+achievement.craftableCreatures.soulExtractor.desc=Craft soul extractor
 achievement.craftableCreatures.combiner=Combiner
 achievement.craftableCreatures.combiner.desc=Craft combiner
 
-item.spawnEggTemplate.name=Spawn egg blueprint
+item.spawnEggTemplate.name=Spawn Egg Blueprint
 item.template.name=Blueprint
 item.bluestone.name=Bluestone
-item.batWing.name=Bat wing
+item.batWing.name=Bat Wing
 item.ocelotTail.name=Ocelot Tail
 item.guideBook.name=Guide to Craftable Creatures
 item.soul.name=Soul
