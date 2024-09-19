@@ -26,13 +26,12 @@ public class CCBlocks {
         GameRegistry.registerBlock(bluestone_ore, "bluestone_ore");
         GameRegistry.registerBlock(soul_extractor, BlockSoulExtractor.SoulExtractorItemBlock.class, "soul_extractor");
         GameRegistry.registerBlock(lit_soul_extractor, "lit_soul_extractor");
+        GameRegistry.registerBlock(combiner, BlockCombiner.CombinerItemBlock.class, "combiner");
+        GameRegistry.registerBlock(lit_combiner, "lit_combiner");
         registerExperimental();
     }
 
     private static void registerExperimental() {
         if (!CCConfig.enableExperimentalContent) return;
-
-        GameRegistry.registerBlock(combiner, BlockCombiner.CombinerItemBlock.class, "combiner");
-        GameRegistry.registerBlock(lit_combiner, "lit_combiner");
     }
 }
