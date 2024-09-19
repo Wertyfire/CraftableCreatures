@@ -11,6 +11,9 @@ import net.minecraft.entity.passive.*;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import org.apache.commons.lang3.tuple.ImmutablePair;
+import org.apache.commons.lang3.tuple.MutablePair;
+import org.apache.commons.lang3.tuple.Pair;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 import java.util.HashMap;
@@ -18,7 +21,7 @@ import java.util.Map;
 
 public class CombinerRecipes {
     private static final CombinerRecipes combiningBase = new CombinerRecipes();
-    private final Map<Map<ItemStack, ItemStack>, ItemStack> combiningRecipes = new HashMap<>();
+    private final Map<Pair<ItemStack, ItemStack>, ItemStack> combiningRecipes = new HashMap<>();
     private final Map<ItemStack, Float> experienceList = new HashMap<>();
 
     private CombinerRecipes() {
@@ -51,7 +54,7 @@ public class CombinerRecipes {
     public static CombinerRecipes get() {
         return combiningBase;
     }
-    public Map<Map<ItemStack, ItemStack>, ItemStack> getCombiningRecipes() {
+    public Map<Pair<ItemStack, ItemStack>, ItemStack> getCombiningRecipes() {
         return combiningRecipes;
     }
 
@@ -65,8 +68,7 @@ public class CombinerRecipes {
         addRecipe(new ItemStack(firstInput), secondInput, output, xp);
     }
     public void addRecipe(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
-        Map<ItemStack, ItemStack> ingredients = new HashMap<>();
-        ingredients.put(firstInput.copy(), secondInput.copy());
+        Pair<ItemStack, ItemStack> ingredients = new ImmutablePair<>(firstInput.copy(), secondInput.copy());
         combiningRecipes.put(ingredients, output);
         experienceList.put(output.copy(), xp * 5f);
     }
@@ -84,25 +86,22 @@ public class CombinerRecipes {
 
     public boolean isIngredient(ItemStack item, int ingredientNumber) {
         if (ingredientNumber == 1 || ingredientNumber == 2) {
-            for (Map<ItemStack, ItemStack> ingredientPair : combiningRecipes.keySet()) {
+            for (Pair<ItemStack, ItemStack> ingredientPair : combiningRecipes.keySet()) {
                 if (ingredientNumber == 1)
-                    for (ItemStack stack : ingredientPair.keySet())
-                        if (areStacksEqual(item, stack)) return true;
+                        if (areStacksEqual(item, ingredientPair.getKey())) return true;
                 if (ingredientNumber == 2)
-                    for (ItemStack stack : ingredientPair.values())
-                        if (areStacksEqual(item, stack)) return true;
+                    if (areStacksEqual(item, ingredientPair.getValue())) return true;
             }
         }
         return false;
     }
 
     public ItemStack getCombiningResult(ItemStack firstIngredient, ItemStack secondIngredient) {
-        for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> entry : combiningRecipes.entrySet()) {
-            Map<ItemStack, ItemStack> ingredients = entry.getKey();
+        for (Map.Entry<Pair<ItemStack, ItemStack>, ItemStack> entry : combiningRecipes.entrySet()) {
             ItemStack output = entry.getValue();
 
-            ItemStack first = ingredients.keySet().iterator().next();
-            ItemStack second = ingredients.get(first);
+            ItemStack first = entry.getKey().getKey();
+            ItemStack second = entry.getKey().getValue();
 
             if (areStacksEqual(firstIngredient.copy(), first) && areStacksEqual(secondIngredient.copy(), second)) return output;
         }
