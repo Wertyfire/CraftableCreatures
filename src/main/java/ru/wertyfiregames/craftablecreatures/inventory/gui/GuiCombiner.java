@@ -14,7 +14,7 @@ import ru.wertyfiregames.craftablecreatures.inventory.container.ContainerCombine
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntityCombiner;
 
 public class GuiCombiner extends GuiContainer {
-    private static final ResourceLocation combinerGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/combiner/combiner.png");
+    private static final ResourceLocation combinerGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/combiner.png");
     private final TileEntityCombiner tileCombiner;
 
     public GuiCombiner(InventoryPlayer player, TileEntityCombiner combiner) {

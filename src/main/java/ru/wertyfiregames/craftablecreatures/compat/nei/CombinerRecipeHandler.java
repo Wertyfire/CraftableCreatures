@@ -10,6 +10,7 @@ import codechicken.nei.recipe.TemplateRecipeHandler;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.item.ItemStack;
+import org.apache.commons.lang3.tuple.Pair;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiCombiner;
 import ru.wertyfiregames.craftablecreatures.recipe.CombinerRecipes;
@@ -40,54 +41,50 @@ public class CombinerRecipeHandler extends TemplateRecipeHandler {
     @Override
     public void loadCraftingRecipes(String outputId, Object... results) {
         if (outputId.equals(COMBINING_ID) && getClass() == CombinerRecipeHandler.class) {
-            Map<Map<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
-            for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> recipe : recipes.entrySet()) {
-                for (Map.Entry<ItemStack, ItemStack> entry : recipe.getKey().entrySet())
-                    arecipes.add(new CachedCombinerRecipe(entry.getKey(), entry.getValue(), recipe.getValue()));
+            Map<Pair<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
+            for (Map.Entry<Pair<ItemStack, ItemStack>, ItemStack> recipe : recipes.entrySet()) {
+                    arecipes.add(new CachedCombinerRecipe(recipe.getKey().getKey(), recipe.getKey().getValue(), recipe.getValue()));
             }
         } else super.loadCraftingRecipes(outputId, results);
     }
 
     @Override
     public void loadCraftingRecipes(ItemStack result) {
-        Map<Map<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
-        for (Map.Entry<Map<ItemStack, ItemStack>, ItemStack> recipe : recipes.entrySet()) {
+        Map<Pair<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
+        for (Map.Entry<Pair<ItemStack, ItemStack>, ItemStack> recipe : recipes.entrySet()) {
             if (NEIServerUtils.areStacksSameType(recipe.getValue(), result)) {
-                for (Map.Entry<ItemStack, ItemStack> entry : recipe.getKey().entrySet())
-                    arecipes.add(new CachedCombinerRecipe(entry.getKey(), entry.getValue(), recipe.getValue()));
+                    arecipes.add(new CachedCombinerRecipe(recipe.getKey().getKey(), recipe.getKey().getValue(), recipe.getValue()));
             }
         }
     }
 
     @Override
     public void loadUsageRecipes(ItemStack ingredient) {
-        Map<Map<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
-        for (Map<ItemStack, ItemStack> recipe : recipes.keySet()) {
-            for (Map.Entry<ItemStack, ItemStack> entry : recipe.entrySet()) {
-                if (NEIServerUtils.areStacksSameTypeCrafting(entry.getKey(), ingredient)) {
-                    CachedCombinerRecipe cachedRecipe =
-                            new CachedCombinerRecipe(entry.getKey(), entry.getValue(), recipes.get(recipe));
-                    List<PositionedStack> lp = new ArrayList<>();
-                    lp.add(new PositionedStack(entry.getKey(), 49, 15));
-                    lp.add(new PositionedStack(entry.getValue(), 111, 15));
-                    cachedRecipe.setIngredientPermutation(lp, ingredient);
-                    arecipes.add(cachedRecipe);
-                } else if (NEIServerUtils.areStacksSameTypeCrafting(entry.getValue(), ingredient)) {
-                    CachedCombinerRecipe cachedRecipe =
-                            new CachedCombinerRecipe(entry.getKey(), entry.getValue(), recipes.get(recipe));
-                    List<PositionedStack> lp = new ArrayList<>();
-                    lp.add(new PositionedStack(entry.getKey(), 49, 15));
-                    lp.add(new PositionedStack(entry.getValue(), 111, 15));
-                    cachedRecipe.setIngredientPermutation(lp, ingredient);
-                    arecipes.add(cachedRecipe);
-                }
+        Map<Pair<ItemStack, ItemStack>, ItemStack> recipes = CombinerRecipes.get().getCombiningRecipes();
+        for (Pair<ItemStack, ItemStack> recipe : recipes.keySet()) {
+            if (NEIServerUtils.areStacksSameTypeCrafting(recipe.getKey(), ingredient)) {
+                CachedCombinerRecipe cachedRecipe =
+                        new CachedCombinerRecipe(recipe.getKey(), recipe.getValue(), recipes.get(recipe));
+                List<PositionedStack> lp = new ArrayList<>();
+                lp.add(new PositionedStack(recipe.getKey(), 49, 15));
+                lp.add(new PositionedStack(recipe.getValue(), 111, 15));
+                cachedRecipe.setIngredientPermutation(lp, ingredient);
+                arecipes.add(cachedRecipe);
+            } else if (NEIServerUtils.areStacksSameTypeCrafting(recipe.getValue(), ingredient)) {
+                CachedCombinerRecipe cachedRecipe =
+                        new CachedCombinerRecipe(recipe.getKey(), recipe.getValue(), recipes.get(recipe));
+                List<PositionedStack> lp = new ArrayList<>();
+                lp.add(new PositionedStack(recipe.getKey(), 49, 15));
+                lp.add(new PositionedStack(recipe.getValue(), 111, 15));
+                cachedRecipe.setIngredientPermutation(lp, ingredient);
+                arecipes.add(cachedRecipe);
             }
         }
     }
 
     @Override
     public String getGuiTexture() {
-        return CraftableCreatures.getModId() + ":textures/gui/combiner.png";
+        return CraftableCreatures.getModId() + ":textures/gui/container/combiner.png";
     }
 
     @Override

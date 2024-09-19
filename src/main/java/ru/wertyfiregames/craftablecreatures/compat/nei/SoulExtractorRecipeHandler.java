@@ -100,7 +100,7 @@ public class SoulExtractorRecipeHandler extends TemplateRecipeHandler {
 
     @Override
     public String getGuiTexture() {
-        return CraftableCreatures.getModId() + ":textures/gui/soul_extractor.png";
+        return CraftableCreatures.getModId() + ":textures/gui/container/soul_extractor.png";
     }
 
     @Override
