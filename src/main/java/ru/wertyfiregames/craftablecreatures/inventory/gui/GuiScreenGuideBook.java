@@ -372,8 +372,8 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawEmptyString();
             String
                     s1 = f("craftableCreatures.guide.page6.mainText.5"),
-                    s2 = s1.split("\n")[0],
-                    s3 = s1.split("\n")[1];
+                    s2 = s1.contains("\n") ? s1.split("\n")[0] : s1,
+                    s3 = s1.contains("\n") ? s1.split("\n")[1] : s1;
             drawAlignedString(s2, Alignment.CENTER);
             drawAlignedString(s3, Alignment.CENTER);
             drawItemStack(s(CCBlocks.powered_bluestone_block), lineXPos + xSize - 18 - 32, lineYPos - fontHeight * 2);
