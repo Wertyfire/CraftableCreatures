@@ -45,7 +45,6 @@ item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Лошадь§f]
 item.soul.villager.name=Душа [§6Житель§f]
 
-tooltip.lshift.press=§fЗажмите §cLSHIFT§f, чтобы увидеть информацию
 tooltip.soulExtractor=Извлекает чистую душу из первого предмета и помещает её в обычную душу
 tooltip.spawnEggCombiner=Преобразует предмет согласно чертежу
 
@@ -59,6 +58,9 @@ tile.spawnEggCombiner.name=Комбинатор
 
 container.soulExtractor=Извлекатель душ
 container.combiner=Комбинатор
+container.transmutator=Трансмутатор
+
+gui.transmutator.morphButton=Превратиться
 
 craftableCreatures.configGui.checkForUpdates=Проверять обновления
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
@@ -67,7 +69,7 @@ craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Эксперимен
 craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Не удалось проверить обновления!
 craftableCreatures.chat.latest=[§bCraftable Creatures§f] Установлена последняя стабильная версия!
 craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Вышла новая версия мода!
-craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Ваша версия мода выше последней зарегистрированной. Убедитесь, что вы скачали его с Modrinth или Github.
+craftableCreatures.chat.ahead=[§bCraftable Creatures§f] Ваша версия мода выше последней зарегистрированной. Убедитесь, что вы скачали её с Modrinth или Github.
 craftableCreatures.chat.beta=[§bCraftable Creatures§f] Вы используете нестабильную версию мода!
 craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] Вышла новая бета версия мода!
 craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Скачать:
@@ -81,6 +83,7 @@ craftableCreatures.nei.subsets.souls=Души
 craftableCreatures.guide.clickToViewIllustration=Нажмите, чтобы просмотреть иллюстрацию
 
 craftableCreatures.guide.cover.title=Руководство по
+craftableCreatures.guide.illustration.1.comment=Интерфейс извлекателя душ
 craftableCreatures.guide.page1.author=Автор:
 craftableCreatures.guide.page1.edition=Первое издание
 craftableCreatures.guide.page2.tableOfContents=Содержание
@@ -88,8 +91,9 @@ craftableCreatures.guide.page2.chapter1=Основы............................
 craftableCreatures.guide.page2.chapter2=Души............................................8
 craftableCreatures.guide.page2.chapter3=Остальные предметы...............10
 craftableCreatures.guide.page2.chapter4=Блоки.........................................13
+craftableCreatures.guide.page2.chapter5=Извлекатель душ......................18
 craftableCreatures.guide.page3.chapter=Глава 1, Основы
-craftableCreatures.guide.page3.mainText.1=Добро пожаловать в Craftable Creatures, мод который был создан для предоставления игроку возможность призывать мобов в режиме выживания!\n\nПрограммист: Wertyfire\nТекстуры: Wertyfire\n\nИсходный код мода можно найти на GitHub (по ссылке github.com/Wertyfire/CraftableCreatures).
+craftableCreatures.guide.page3.mainText.1=Добро пожаловать в Craftable Creatures, мод который был создан для предоставления игроку возможность призывать мобов в режиме выживания!\n<e>\nПрограммист: Wertyfire\nТекстуры: Wertyfire\n<e>\nИсходный код мода можно найти на GitHub (по ссылке github.com/Wertyfire/CraftableCreatures).
 craftableCreatures.guide.page3.mainText.2=Если у вас есть пожелание или вы нашли ошибку сообщайте на GitHub.
 craftableCreatures.guide.page4.chapter=Глава 2, Души
 craftableCreatures.guide.page4.mainText.1=Души - это один из главных элементов мода. Всего их существует 25 - 24 на каждого моба и одна душа игрока.\nДуша игрока появляется в том месте где он умирает, а остальные можно получить с помощью извлекателя душ (см. гл. 5). На следующей странице вы можете видеть все души которые существуют на данный момент.
@@ -109,4 +113,7 @@ craftableCreatures.guide.page6.mainText.4=Блок синего камня ни�
 craftableCreatures.guide.page6.mainText.5=Заряженный\nблок синего камня
 craftableCreatures.guide.page6.mainText.6=Заряженный блок синего камня за счёт своих магических свойств и одной единицы красной пыли может излучать редстоун-сигнал.
 craftableCreatures.guide.page6.mainText.7=Функциональные блоки
-craftableCreatures.guide.page6.mainText.8=Извлекатель душ извлека-\nет душу из предмета связан-\тного с мобом и помещает её в обычную душу. Ниже вы можете видеть его интерфейс.
+craftableCreatures.guide.page6.mainText.8=Извлекатель душ извле-\nкает душу из предмета свя-\nзанного с мобом и помещает её в обычную душу. Ниже вы можете видеть его интерфейс.
+craftableCreatures.guide.page6.mainText.9=Комбинатор преобразовы-\nвает душу в предмет согласно чертежу (в яйцо призыва).
+craftableCreatures.guide.page6.mainText.10=На данный момент это все блоки доступные в игре.
+craftableCreatures.guide.page7.chapter=Глава 5, Извлекатель душ

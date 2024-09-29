@@ -45,7 +45,6 @@ item.soul.ocelot.name=Soul [§eOcelot§f]
 item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
 
-tooltip.lshift.press=§fPress §cLSHIFT§f to see info
 tooltip.soulExtractor=Extracts clear soul from item and puts it into usual soul
 tooltip.spawnEggCombiner=Transforms item according to blueprint
 
@@ -59,6 +58,9 @@ tile.spawnEggCombiner.name=Combiner
 
 container.soulExtractor=Soul Extractor
 container.combiner=Combiner
+container.transmutator=Transmutator
+
+gui.transmutator.morphButton=Morph
 
 craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
@@ -81,13 +83,15 @@ craftableCreatures.nei.subsets.souls=Souls
 craftableCreatures.guide.clickToViewIllustration=Click to view illustration
 
 craftableCreatures.guide.cover.title=Guide to
+craftableCreatures.guide.illustration.1.comment=<empty>
 craftableCreatures.guide.page1.author=Author:
 craftableCreatures.guide.page1.edition=First edition
 craftableCreatures.guide.page2.tableOfContents=Table of Contents
 craftableCreatures.guide.page2.chapter1=Basics.........................................6
 craftableCreatures.guide.page2.chapter2=Souls...........................................8
 craftableCreatures.guide.page2.chapter3=Other Items..............................10
-craftableCreatures.guide.page2.chapter4=Blocks........................................13
+craftableCreatures.guide.page2.chapter4=Blocks.......................................13
+craftableCreatures.guide.page2.chapter5=Soul Extractor........................18
 craftableCreatures.guide.page3.chapter=Chapter 1, Basics
 craftableCreatures.guide.page3.mainText.1=Welcome to Craftable Creatures, mod created to provide player ability to summon mobs in survival mode!\n\nProgrammer: Wertyfire\nTextures: Wertyfire\n\nMod's source code can be found on GitHub (link is github.com/Wertyfire/CraftableCreatures).\nIf you have wish or you found a bug report on GitHub.
 craftableCreatures.guide.page3.mainText.2=<empty>
@@ -110,3 +114,6 @@ craftableCreatures.guide.page6.mainText.5=<empty>
 craftableCreatures.guide.page6.mainText.6=<empty>
 craftableCreatures.guide.page6.mainText.7=<empty>
 craftableCreatures.guide.page6.mainText.8=<empty>
+craftableCreatures.guide.page6.mainText.9=<empty>
+craftableCreatures.guide.page6.mainText.10=<empty>
+craftableCreatures.guide.page7.chapter=Chapter 5, Soul Extractor

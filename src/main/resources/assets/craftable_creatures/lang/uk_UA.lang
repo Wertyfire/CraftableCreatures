@@ -45,7 +45,7 @@ item.soul.ocelot.name=Душа [§eОцелот§f]
 item.soul.horse.name=Душа [§6Кiнь§f]
 item.soul.villager.name=Душа [§6Селянин§f]
 
-tooltip.lshift.press=§fНатисніть §cLSHIFT§f, щоб побачити інформацію
+tooltip.pressLshift=§fНатисніть §cLSHIFT§f, щоб побачити інформацію
 tooltip.soulExtractor=Витягує чисту душу з предмета і поміщає її в звичайну душу
 tooltip.spawnEggCombiner=Преобразует предмет согласно чертежу
 

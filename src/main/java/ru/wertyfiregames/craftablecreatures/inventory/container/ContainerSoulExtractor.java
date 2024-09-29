@@ -87,7 +87,7 @@ public class ContainerSoulExtractor extends Container {
             itemStack = slotStack.copy();
 
             if (fromSlot == 3) {
-                if (!this.mergeItemStack(slotStack, 3 + 1, 3 + 36 + 1, true)) return null;
+                if (!mergeItemStack(slotStack, 3 + 1, 3 + 36 + 1, true)) return null;
                 slot.onSlotChange(slotStack, itemStack);
             } else if (fromSlot != 0 && fromSlot != 1 && fromSlot != 2) {
                 if (SoulExtractorRecipes.get().getExtractingResult(slotStack) != null) {

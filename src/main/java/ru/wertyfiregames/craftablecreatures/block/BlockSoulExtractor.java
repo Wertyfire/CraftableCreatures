@@ -30,7 +30,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCParticles;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
-import ru.wertyfiregames.craftablecreatures.util.ParticleUtils;
+import ru.wertyfiregames.wertyfirecore.util.ParticleUtils;
 
 import java.util.List;
 import java.util.Random;
@@ -229,7 +229,7 @@ public class BlockSoulExtractor extends BlockContainer {
         @Override
         public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
             if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.soulExtractor"));
-            else tooltip.add(I18n.format("tooltip.lshift.press"));
+            else tooltip.add(I18n.format("tooltip.pressLshift"));
         }
     }
 }

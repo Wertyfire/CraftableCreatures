@@ -6,12 +6,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
+import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class ItemGuideBook extends ItemDefault {
+public class ItemGuideBook extends DefaultItem {
     public static final Map<String, Short> lastPageForPlayers = new HashMap<>();
 
     public ItemGuideBook() {

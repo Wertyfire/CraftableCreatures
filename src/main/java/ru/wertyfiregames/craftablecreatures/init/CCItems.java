@@ -5,14 +5,15 @@ import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.craftablecreatures.item.*;
+import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 public class CCItems {
-    public static final Item bluestone = new ItemDefault("bluestone", CCCreativeTabs.tabCraftableCreatures);
-    public static final Item template = new ItemDefault("template", CCCreativeTabs.tabCraftableCreatures);
-    public static final Item spawn_egg_template = new ItemDefault("spawnEggTemplate", "spawn_egg_template",
+    public static final Item bluestone = new DefaultItem("bluestone", CCCreativeTabs.tabCraftableCreatures);
+    public static final Item template = new DefaultItem("template", CCCreativeTabs.tabCraftableCreatures);
+    public static final Item spawn_egg_template = new DefaultItem("spawnEggTemplate", "spawn_egg_template",
             CCCreativeTabs.tabCraftableCreatures);
-    public static final Item bat_wing = new ItemDefault("batWing", "bat_wing", CCCreativeTabs.tabCraftableCreatures);
-    public static final Item ocelot_tail = new ItemDefault("ocelotTail", "ocelot_tail", CCCreativeTabs.tabCraftableCreatures);
+    public static final Item bat_wing = new DefaultItem("batWing", "bat_wing", CCCreativeTabs.tabCraftableCreatures);
+    public static final Item ocelot_tail = new DefaultItem("ocelotTail", "ocelot_tail", CCCreativeTabs.tabCraftableCreatures);
     public static final Item soul_element = new ItemSoulElement();
     public static final Item guide_book = new ItemGuideBook();
     public static final Item transmutator = new ItemTransmutator();

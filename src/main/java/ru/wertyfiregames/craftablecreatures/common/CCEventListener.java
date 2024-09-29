@@ -4,7 +4,6 @@ import cpw.mods.fml.client.event.ConfigChangedEvent;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
-import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityOcelot;
@@ -19,9 +18,9 @@ import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
-import ru.wertyfiregames.craftablecreatures.util.Utils;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
+import ru.wertyfiregames.wertyfirecore.util.ChatUtils;
 
 public class CCEventListener {
     @SubscribeEvent
@@ -63,7 +62,7 @@ public class CCEventListener {
             }
             if (CCVersionChecker.getStatus() == UpdateResult.OUTDATED) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.outdated"));
-                Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
+                ChatUtils.sendMessageWithLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
                         change = change.replace("<t>", "    ");
@@ -78,7 +77,7 @@ public class CCEventListener {
             }
             if (CCVersionChecker.getStatus() == UpdateResult.BETA_OUTDATED) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.betaOutdated"));
-                Utils.sendClickableLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
+                ChatUtils.sendMessageWithLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
                 for (String change : CCVersionChecker.getChangelog().split("<n>")) {
                     if (change.contains("<t>"))
                         change = change.replace("<t>", "    ");

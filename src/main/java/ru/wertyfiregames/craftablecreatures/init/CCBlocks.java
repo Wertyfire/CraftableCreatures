@@ -7,11 +7,13 @@ import net.minecraft.block.material.Material;
 import ru.wertyfiregames.craftablecreatures.block.*;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
+import ru.wertyfiregames.wertyfirecore.block.CompressedBlock;
+import ru.wertyfiregames.wertyfirecore.block.CompressedPoweredBlock;
 
 public class CCBlocks {
-    public static final Block powered_bluestone_block = new BlockCCCompressedPowered(MapColor.blueColor,
+    public static final Block powered_bluestone_block = new CompressedPoweredBlock(MapColor.blueColor,
             "poweredBluestoneBlock", "bluestone_block", CCCreativeTabs.tabCraftableCreatures, 2, 5f, 10f);
-    public static final Block bluestone_block = new BlockCCCompressed(MapColor.blueColor, "bluestoneBlock", "bluestone_block",
+    public static final Block bluestone_block = new CompressedBlock(MapColor.blueColor, "bluestoneBlock", "bluestone_block",
             CCCreativeTabs.tabCraftableCreatures, 2, 5f, 10f);
     public static final Block bluestone_ore = new BlockCCOre(MapColor.stoneColor, Material.rock, "bluestoneOre", "bluestone_ore",
             CCCreativeTabs.tabCraftableCreatures, "pickaxe", 2, 3f, 5f);

@@ -6,11 +6,13 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
+import ru.wertyfiregames.craftablecreatures.api.ISoulElement;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
+import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 import java.util.List;
 
-public class ItemSoulElement extends ItemDefault {
+public class ItemSoulElement extends DefaultItem implements ISoulElement {
     public static final String[] unlocalizedName = new String[] {"", ".creeper", ".skeleton", ".spider", ".zombie", ".slime", ".ghast", ".zombiePigman", ".enderman", ".caveSpider", ".silverfish", ".blaze", ".magmaCube", ".bat", ".witch", ".pig", ".sheep", ".cow", ".chicken", ".squid", ".wolf", ".mooshroom", ".ocelot", ".horse", ".villager"};
     public static final String[] textureName = new String[] {"", "_creeper", "_skeleton", "_spider", "_zombie", "_slime", "_ghast", "_zombie_pigman", "_enderman", "_cave_spider", "_silverfish", "_blaze", "_magma_cube", "_bat", "_witch", "_pig", "_sheep", "_cow", "_chicken", "_squid", "_wolf", "_mooshroom", "_ocelot", "_horse", "_villager"};
     private IIcon[] icon;

@@ -8,6 +8,7 @@ import cpw.mods.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
+import ru.wertyfiregames.craftablecreatures.inventory.InventoryTransmutator;
 import ru.wertyfiregames.craftablecreatures.inventory.gui.*;
 import ru.wertyfiregames.craftablecreatures.inventory.container.*;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntityCombiner;
@@ -21,6 +22,8 @@ public class CommonProxy implements IGuiHandler {
             return new GuiCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_GUIDE_BOOK)
             return new GuiScreenGuideBook(player);
+        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
+            return new GuiTransmutator(player.inventory, new InventoryTransmutator(player));
 
         return null;
     }
@@ -30,6 +33,8 @@ public class CommonProxy implements IGuiHandler {
             return new ContainerSoulExtractor(player.inventory, (TileEntitySoulExtractor) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_COMBINER)
             return new ContainerCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
+        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
+            return new ContainerTransmutator(player.inventory, new InventoryTransmutator(player));
 
         return null;
     }

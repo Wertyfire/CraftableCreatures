@@ -4,6 +4,8 @@
 
 package ru.wertyfiregames.craftablecreatures.inventory.gui;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -13,6 +15,7 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.inventory.container.ContainerCombiner;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntityCombiner;
 
+@SideOnly(Side.CLIENT)
 public class GuiCombiner extends GuiContainer {
     private static final ResourceLocation combinerGuiTextures = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/combiner.png");
     private final TileEntityCombiner tileCombiner;

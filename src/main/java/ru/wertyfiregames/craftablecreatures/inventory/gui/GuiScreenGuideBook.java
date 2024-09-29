@@ -4,6 +4,8 @@
 
 package ru.wertyfiregames.craftablecreatures.inventory.gui;
 
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -27,20 +29,21 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+@SideOnly(Side.CLIENT)
 public class GuiScreenGuideBook extends GuiScreen {
     private final String playerUUID;
 
     private static final ResourceLocation
-            guideBookPage1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_page1.png"),
-            guideBookPage2 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_page2.png"),
-            guideBookBack = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_back.png"),
-            guideBookCover = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_cover.png");
-    private static ResourceLocation
-            guideBookIllustrationSheet1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_illustrations/guide_book_illustration_sheet_1_en_US.png");
+            guideBookPage1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/guide_book_page1.png"),
+            guideBookPage2 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/guide_book_page2.png"),
+            guideBookBack = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/guide_book_back.png"),
+            guideBookCover = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/guide_book_cover.png");
+    private static final ResourceLocation
+            guideBookIllustrationSheet1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/illustrations/guide_book_illustration_sheet_1.png");
 
     private final GuiButton buttonBack = new ChangePageButton(0, 100, 0, false);
     private final GuiButton buttonNext = new ChangePageButton(1, 130, 0, true);
-    private final CloseButton buttonCloseIllustration = new CloseButton(2, 130, 50);
+    private CloseButton buttonCloseIllustration;
 
     private final List<Link> links = new ArrayList<>();
     private final List<Illustration> illustrations = new ArrayList<>();
@@ -48,7 +51,7 @@ public class GuiScreenGuideBook extends GuiScreen {
 
     private static final int xSize = 146, ySize = 180, fontHeight = 9;
 
-    private static final int maxWidthPerLine = 110;
+    private static final int maxWidthPerLine = 111;
     private static final int maxLinesPerPage = 16;
 
     private static boolean wasUnicode;
@@ -77,15 +80,7 @@ public class GuiScreenGuideBook extends GuiScreen {
     public void initGui() {
         wasUnicode = fontRendererObj.getUnicodeFlag();
 
-        switch (mc.getLanguageManager().getCurrentLanguage().getLanguageCode()) {
-            case "ru_RU":
-                guideBookIllustrationSheet1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_illustration/guide_book_illustration_sheet_1_ru_RU.png");
-                break;
-            case "en_US":
-            default:
-                guideBookIllustrationSheet1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book_illustration/guide_book_illustration_sheet_1_en_US.png");
-                break;
-        }
+        buttonCloseIllustration = new CloseButton(2, (width - xSize) / 2 + xSize / 2 + 111, (height - ySize) / 2 + 9);
 
         buttonList.clear();
         buttonList.add(buttonBack);
@@ -303,6 +298,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawLinkString(f("craftableCreatures.guide.page2.chapter2"), mouseX, mouseY, (short) 5, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter3"), mouseX, mouseY, (short) 6, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter4"), mouseX, mouseY, (short) 8, (short) 3);
+            drawLinkString(f("craftableCreatures.guide.page2.chapter5"), mouseX, mouseY, (short) 10, (short) 3);
         } else if (currentPage == 4) {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page3.chapter"), Alignment.CENTER);
@@ -382,8 +378,17 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawAlignedString(f("craftableCreatures.guide.page6.mainText.7"), Alignment.CENTER);
             drawEmptyString();
             drawAlignedString(f("tile.soulExtractor.name"), Alignment.CENTER);
-            drawItemStack(s(CCBlocks.lit_soul_extractor), lineXPos + xSize - 18 -32, lineYPos - fontHeight);
+            drawItemStack(s(CCBlocks.lit_soul_extractor), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.8"));
+            drawIllustration(r("gui/guide_book/illustrations/soul_extractor_interface_scaled.png"), f("craftableCreatures.guide.illustration.1.comment"), 0, 0, mouseX, mouseY);
+        } else if (currentPage == 10) {
+            drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
+            drawItemStack(s(CCBlocks.lit_combiner), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
+            drawSplitString(f("craftableCreatures.guide.page6.mainText.9"));
+            drawEmptyString();
+            drawSplitString(f("craftableCreatures.guide.page6.mainText.10"));
+            rightPage();
+            drawAlignedString(f("craftableCreatures.guide.page7.chapter"), Alignment.CENTER);
         }
     }
 
@@ -442,18 +447,17 @@ public class GuiScreenGuideBook extends GuiScreen {
         buttonCloseIllustration.enabled = true;
         buttonCloseIllustration.visible = true;
         buttonCloseIllustration.setZLevel(200f);
-        buttonCloseIllustration.drawButton(mc, mouseX, mouseY);
-        buttonCloseIllustration.setZLevel(0f);
 
         Illustration illustration = illustrations.get(currentIllustration);
-        mc.getTextureManager().bindTexture(illustration.sheet);
-        int drawX = (width - illustration.width) / 2;
-        int drawY = (height - illustration.height) / 2;
-        drawTexturedModalRect(drawX, drawY, illustration.u, illustration.v,
-                illustration.width, illustration.height);
-        if (isMouseOver(mouseX, mouseY, drawX, drawY, illustration.width, illustration.height))
+        mc.getTextureManager().bindTexture(illustration.scaled);
+        int drawX = (width - 222) / 2;
+        int drawY = (height - 136) / 2;
+        drawTexturedModalRect(drawX, drawY, 0, 0, 222, 136);
+        buttonCloseIllustration.drawButton(mc, mouseX, mouseY);
+        if (isMouseOver(mouseX, mouseY, drawX, drawY, 222, 136))
             drawHoveringText(Collections.singletonList(illustration.comment), mouseX, mouseY, fontRendererObj);
 
+        buttonCloseIllustration.setZLevel(0f);
         zLevel = 0f;
     }
 
@@ -542,7 +546,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         drawNonTextString(s, x, y, 0);
     }
     private void drawNonTextString(String s, int x, int y, int color) {
-        if (StringUtils.isNullOrEmpty(s) || s.equals("<empty>")) return;
+        if (StringUtils.isNullOrEmpty(s) || s.equals("<e>")) return;
         fontRendererObj.drawString(s, x, y, color);
     }
 
@@ -650,17 +654,17 @@ public class GuiScreenGuideBook extends GuiScreen {
         stacks.add(new DrawingStack(stackToDraw, x, y, currentPage, drawSlot));
     }
 
-    private void drawIllustration(String comment, int u, int v, int mouseX, int mouseY) {
-        drawIllustration(guideBookIllustrationSheet1, comment, mouseX, mouseY, u, v);
+    private void drawIllustration(ResourceLocation scaledImage, String comment, int u, int v, int mouseX, int mouseY) {
+        drawIllustration(guideBookIllustrationSheet1, scaledImage, comment, mouseX, mouseY, u, v);
     }
-    private void drawIllustration(ResourceLocation rl, String comment, int mouseX, int mouseY, int u, int v) {
-        drawIllustration(rl, comment, mouseX, mouseY, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 6);
+    private void drawIllustration(ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int u, int v) {
+        drawIllustration(rl, scaledImage, comment, mouseX, mouseY, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 8);
     }
-    private void drawIllustration(ResourceLocation rl, String comment, int mouseX, int mouseY, int x, int y, int u, int v, int width, int height) {
-        if (pageEnded) return;
-        if ((line + height / fontHeight) > maxLinesPerPage) return;
+    private void drawIllustration(ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int x, int y, int u, int v, int width, int height) {
+//        if (pageEnded) return;
+//        if ((line + height / fontHeight) > maxLinesPerPage) return;
         totalIllustrations++;
-        illustrations.add(new Illustration(rl, comment, totalIllustrations, x, y, currentPage, u, v, width, height));
+        illustrations.add(new Illustration(rl, scaledImage, comment, totalIllustrations, x, y, currentPage, u, v, width, height));
 
         drawImage(rl, x, y, u, v, width, height);
 
@@ -699,6 +703,9 @@ public class GuiScreenGuideBook extends GuiScreen {
     }
     private int w(String s) {
         return fontRendererObj.getStringWidth(s);
+    }
+    private ResourceLocation r(String path) {
+        return new ResourceLocation(CraftableCreatures.getModId(), "textures/" + path);
     }
 
     private ItemStack s(Block block) {
@@ -758,7 +765,7 @@ public class GuiScreenGuideBook extends GuiScreen {
     }
 
     private static class Illustration {
-        ResourceLocation sheet;
+        ResourceLocation sheet, scaled;
         String comment;
         short id;
         int x, y;
@@ -766,8 +773,9 @@ public class GuiScreenGuideBook extends GuiScreen {
         int width, height;
         int u, v;
 
-        public Illustration(ResourceLocation sheet, String comment, short id, int x, int y, short page, int u, int v, int width, int height) {
+        public Illustration(ResourceLocation sheet, ResourceLocation scaled, String comment, short id, int x, int y, short page, int u, int v, int width, int height) {
             this.sheet = sheet;
+            this.scaled = scaled;
             this.comment = comment;
             this.id = id;
             this.x = x;

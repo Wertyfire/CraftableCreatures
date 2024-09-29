@@ -47,7 +47,7 @@ item.soul.villager.name=Seele [§6Dorfbewohner§f]
 
 itemGroup.craftableCreatures=Craftable Creatures
 
-tooltip.lshift.press=§fDrücken Sie §cLSHIFT§f, um Informationen zu sehen
+tooltip.pressLshift=§fDrücken Sie §cLSHIFT§f, um Informationen zu sehen
 tooltip.soulExtractor=Entzieht dem Objekt eine klare Seele und legt sie in eine gewöhnliche Seele ein
 tooltip.spawnEggCombiner=Transformiert den Gegenstand gemäß der Zeichnung
 
