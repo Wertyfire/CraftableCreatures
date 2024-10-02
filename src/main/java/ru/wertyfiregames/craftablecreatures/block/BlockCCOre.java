@@ -25,7 +25,7 @@ public class BlockCCOre extends BlockDefault {
     }
 
     @Override
-    public MapColor getMapColor(int p_149728_1_) {
+    public MapColor getMapColor(int metadata) {
         return this.mapColor;
     }
 

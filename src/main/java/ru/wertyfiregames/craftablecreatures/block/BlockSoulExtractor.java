@@ -39,7 +39,7 @@ public class BlockSoulExtractor extends BlockContainer {
     private final Random random = new Random();
 
     private final boolean enabled;
-    private static boolean isWorking;
+    private static boolean keepInventory;
 
     @SideOnly(Side.CLIENT)
     private IIcon iconTop;
@@ -64,27 +64,27 @@ public class BlockSoulExtractor extends BlockContainer {
 
     public void onBlockAdded(World world, int x, int y, int z) {
         super.onBlockAdded(world, x, y, z);
-        updateBlockForNeighborChange(world, x, y, z);
+        setDefaultFacing(world, x, y, z);
     }
 
-    private void updateBlockForNeighborChange(World world, int x, int y, int z) {
+    private void setDefaultFacing(World world, int x, int y, int z) {
         if (!world.isRemote) {
-            Block left = world.getBlock(x, y, z - 1);
-            Block right = world.getBlock(x, y, z + 1);
-            Block backward = world.getBlock(x - 1, y, z);
-            Block forward = world.getBlock(x + 1, y, z);
+            Block backward = world.getBlock(x, y, z - 1);
+            Block forward = world.getBlock(x, y, z + 1);
+            Block left = world.getBlock(x - 1, y, z);
+            Block right = world.getBlock(x + 1, y, z);
             byte meta = 3;
 
-            if (right.func_149730_j() && !left.func_149730_j())
+            if (forward.func_149730_j() && !backward.func_149730_j())
                 meta = 2;
 
-            if (left.func_149730_j() && !right.func_149730_j())
+            if (backward.func_149730_j() && !forward.func_149730_j())
                 meta = 3;
 
-            if (forward.func_149730_j() && !backward.func_149730_j())
+            if (right.func_149730_j() && !left.func_149730_j())
                 meta = 4;
 
-            if (backward.func_149730_j() && !forward.func_149730_j())
+            if (left.func_149730_j() && !right.func_149730_j())
                 meta = 5;
 
             world.setBlockMetadataWithNotify(x, y, z, meta, 2);
@@ -112,12 +112,12 @@ public class BlockSoulExtractor extends BlockContainer {
     public static void updateSoulExtractorBlockState(World world, int x, int y, int z, boolean working) {
         int meta = world.getBlockMetadata(x, y, z);
         TileEntity tileEntity = world.getTileEntity(x, y, z);
-        isWorking = true;
+        keepInventory = true;
 
         if (working) world.setBlock(x, y, z, CCBlocks.lit_soul_extractor);
         else world.setBlock(x, y, z, CCBlocks.soul_extractor);
 
-        isWorking = false;
+        keepInventory = false;
         world.setBlockMetadataWithNotify(x, y, z, meta, 2);
 
         if (tileEntity != null) {
@@ -150,7 +150,7 @@ public class BlockSoulExtractor extends BlockContainer {
     }
 
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
-        if (!isWorking) {
+        if (!keepInventory) {
             TileEntitySoulExtractor teSe = (TileEntitySoulExtractor) world.getTileEntity(x, y, z);
 
             if (teSe != null) {
