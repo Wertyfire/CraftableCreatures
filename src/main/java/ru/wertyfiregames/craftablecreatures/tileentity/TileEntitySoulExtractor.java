@@ -24,7 +24,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
 public class TileEntitySoulExtractor extends TileEntity implements ISidedInventory {
-    // Slots: 0 - main ingredient (mob's item); 1 - fuel; 2 - extract helper item ; 3 - output
+    // Slots: 0 - main ingredient (mob's item); 1 - fuel; 2 - extract helper item; 3 - output
     // Total: 4
 
     private ItemStack[] soulExtractorItemStacks = new ItemStack[4];
