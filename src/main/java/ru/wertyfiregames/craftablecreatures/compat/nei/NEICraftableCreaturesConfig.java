@@ -28,6 +28,7 @@ public class NEICraftableCreaturesConfig implements IConfigureNEI {
 // <!---------- Registering methods ------->
     private void hideItems() {
         API.hideItem(new ItemStack(CCBlocks.lit_soul_extractor));
+        API.hideItem(new ItemStack(CCBlocks.lit_combiner));
     }
 
     private void loadSubsets() {
