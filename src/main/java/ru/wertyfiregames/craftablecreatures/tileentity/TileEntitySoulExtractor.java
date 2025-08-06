@@ -9,13 +9,13 @@ import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.ISidedInventory;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import ru.wertyfiregames.craftablecreatures.api.IBucket;
 import ru.wertyfiregames.craftablecreatures.block.BlockSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
@@ -211,6 +211,13 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
 
             --soulExtractorItemStacks[0].stackSize;
             --soulExtractorItemStacks[2].stackSize;
+
+
+            ItemStack ingredient = soulExtractorItemStacks[0];
+
+            if (ingredient.getItem() instanceof IBucket || ingredient.getItem() instanceof ItemBucket ||
+                    ingredient.getItem() instanceof ItemBucketMilk && (soulExtractorItemStacks[1] == null || soulExtractorItemStacks[1].getItem() == Items.bucket))
+                soulExtractorItemStacks[1] = new ItemStack(Items.bucket);
 
             if (soulExtractorItemStacks[0].stackSize <= 0) soulExtractorItemStacks[0] = null;
             if (soulExtractorItemStacks[2].stackSize <= 0) soulExtractorItemStacks[2] = null;
