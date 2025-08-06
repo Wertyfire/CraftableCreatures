@@ -28,7 +28,7 @@ public class CraftableCreaturesRegistry {
     public static void addBaseSoulItem(Item helper) {
         SoulExtractorRecipes.get().addBaseSoul(helper);
     }
-    /**Add every thing from ore dictionary as base soul*/
+    /**Add everything from ore dictionary as base soul*/
     public static void addBaseSoulItem(String nameInOreDict) {
         SoulExtractorRecipes.get().addBaseSoul(nameInOreDict);
     }
