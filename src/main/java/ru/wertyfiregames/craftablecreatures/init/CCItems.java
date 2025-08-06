@@ -24,6 +24,7 @@ public class CCItems {
         GameRegistry.registerItem(spawn_egg_template, "spawn_egg_template");
         GameRegistry.registerItem(bat_wing, "bat_wing");
         GameRegistry.registerItem(ocelot_tail, "ocelot_tail");
+        GameRegistry.registerItem(guide_book, "guide");
         registerExperimental();
 
         //Must be in the end
@@ -33,7 +34,6 @@ public class CCItems {
     private static void registerExperimental() {
         if (!CCConfig.enableExperimentalContent) return;
 
-        GameRegistry.registerItem(guide_book, "guide");
         GameRegistry.registerItem(transmutator, "transmutator");
     }
 }

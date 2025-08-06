@@ -12,7 +12,10 @@ import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.resources.I18n;
+import net.minecraft.entity.EntityList;
+import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -25,9 +28,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.item.ItemGuideBook;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 @SideOnly(Side.CLIENT)
 public class GuiScreenGuideBook extends GuiScreen {
@@ -41,12 +42,12 @@ public class GuiScreenGuideBook extends GuiScreen {
     private static final ResourceLocation
             guideBookIllustrationSheet1 = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/guide_book/illustrations/guide_book_illustration_sheet_1.png");
 
-    private final GuiButton buttonBack = new ChangePageButton(0, 100, 0, false);
-    private final GuiButton buttonNext = new ChangePageButton(1, 130, 0, true);
+    private GuiButton buttonBack;
+    private GuiButton buttonNext;
     private CloseButton buttonCloseIllustration;
 
     private final List<Link> links = new ArrayList<>();
-    private final List<Illustration> illustrations = new ArrayList<>();
+    private final Map<Short, Illustration> illustrations = new HashMap<>();
     private final List<DrawingStack> stacks = new ArrayList<>();
 
     private static final int xSize = 146, ySize = 180, fontHeight = 9;
@@ -62,10 +63,10 @@ public class GuiScreenGuideBook extends GuiScreen {
     private int lineXPos = (width - xSize) / 2 - xSize / 2 + 18;
     private int lineYPos = (height - ySize) / 2 + 10;
 
-    private final short totalPages = 15;
+    private final short totalPages = 16;
     private short
             currentPage = 1,
-            currentIllustration = 0, totalIllustrations = 0;
+            currentIllustration = 0;
 
     public GuiScreenGuideBook(EntityPlayer player) {
         super();
@@ -80,12 +81,15 @@ public class GuiScreenGuideBook extends GuiScreen {
     public void initGui() {
         wasUnicode = fontRendererObj.getUnicodeFlag();
 
+        buttonBack = new ChangePageButton(0, width / 2 - xSize - 25, (height + ySize) / 2 - 25, false);
+        buttonNext = new ChangePageButton(1, width / 2 + xSize + 5, (height + ySize) / 2 - 25, true);
         buttonCloseIllustration = new CloseButton(2, (width - xSize) / 2 + xSize / 2 + 111, (height - ySize) / 2 + 9);
 
         buttonList.clear();
         buttonList.add(buttonBack);
         buttonList.add(buttonNext);
         buttonList.add(buttonCloseIllustration);
+        checkButtons();
     }
 
     @Override
@@ -137,7 +141,7 @@ public class GuiScreenGuideBook extends GuiScreen {
                 }
             }
 
-            for (Illustration illustration : illustrations) {
+            for (Illustration illustration : illustrations.values()) {
                 if (illustration.canOpen(currentPage, currentIllustration) && illustration.isMouseOver(mouseX, mouseY)) {
                     currentIllustration = illustration.id;
                     break;
@@ -148,7 +152,6 @@ public class GuiScreenGuideBook extends GuiScreen {
 
     private void newFrame() {
         line = 1;
-        totalIllustrations = 0;
         lineXPos = (width - xSize) / 2 - xSize / 2 + 18;
         lineYPos = (height - ySize) / 2 + 10;
         leftPage = true;
@@ -269,7 +272,7 @@ public class GuiScreenGuideBook extends GuiScreen {
 
     private void drawBack() {
         int y = (height - ySize) / 2;
-        drawAlignedString("Wertyfire, 2024", y + ySize / 2 + fontHeight * 6, 10339058, Alignment.CENTER);
+        drawAlignedString("Wertyfire, 2025", y + ySize / 2 + fontHeight * 6, 10339058, Alignment.CENTER);
     }
 
     private void drawPageText(int mouseX, int mouseY) {
@@ -284,7 +287,7 @@ public class GuiScreenGuideBook extends GuiScreen {
                     s3 = f("craftableCreatures.guide.page1.author"),
                     s4 = "Wertyfire",
                     s5 = f("craftableCreatures.guide.page1.edition"),
-                    s6 = "2024";
+                    s6 = "2025";
             drawNonTextAlignedString(s1, xLeft, y + ySize / 2 - fontHeight, 0, Alignment.CENTER);
             drawNonTextAlignedString(s2, xLeft, y + ySize / 2, 0, Alignment.CENTER);
             rightPage();
@@ -299,6 +302,8 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawLinkString(f("craftableCreatures.guide.page2.chapter3"), mouseX, mouseY, (short) 6, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter4"), mouseX, mouseY, (short) 8, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter5"), mouseX, mouseY, (short) 10, (short) 3);
+            drawLinkString(f("craftableCreatures.guide.page2.chapter6"), mouseX, mouseY, (short) 11, (short) 3);
+            drawLinkString(f("craftableCreatures.guide.page2.chapter7"), mouseX, mouseY, (short) 12, (short) 3);
         } else if (currentPage == 4) {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page3.chapter"), Alignment.CENTER);
@@ -380,15 +385,62 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawAlignedString(f("tile.soulExtractor.name"), Alignment.CENTER);
             drawItemStack(s(CCBlocks.lit_soul_extractor), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.8"));
-            drawIllustration(r("gui/guide_book/illustrations/soul_extractor_interface_scaled.png"), f("craftableCreatures.guide.illustration.1.comment"), 0, 0, mouseX, mouseY);
+            drawIllustration((short) 1, r("gui/guide_book/illustrations/soul_extractor_interface_scaled.png"), f("craftableCreatures.guide.illustration.1.comment"), 0, 0, mouseX, mouseY);
         } else if (currentPage == 10) {
             drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
             drawItemStack(s(CCBlocks.lit_combiner), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.9"));
-            drawEmptyString();
+            drawIllustration((short) 2, r("gui/guide_book/illustrations/combiner_interface_scaled.png"), f("craftableCreatures.guide.illustration.2.comment"), 111, 0, mouseX, mouseY);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.10"));
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page7.chapter"), Alignment.CENTER);
+            drawSplitString(f("craftableCreatures.guide.page7.mainText.1"));
+            drawEmptyString();
+            drawSplitString(f("craftableCreatures.guide.page7.mainText.2"));
+        } else if (currentPage == 11) {
+            drawSplitString(f("craftableCreatures.guide.page7.mainText.3"));
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCBlocks.powered_bluestone_block), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.furnace), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.soul_extractor), lineXPos - 6, lineYPos);
+            rightPage();
+            drawAlignedString(f("craftableCreatures.guide.page8.chapter"), Alignment.CENTER);
+            drawSplitString(f("craftableCreatures.guide.page8.mainText.1"));
+            drawSplitString(f("craftableCreatures.guide.page8.mainText.2"));
+            drawSplitString(f("craftableCreatures.guide.page8.mainText.3"));
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCItems.template), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.redstone_block), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.combiner), lineXPos - 9, lineYPos);
+        } else if (currentPage == 12) {
+            rightPage();
+            drawAlignedString(f("craftableCreatures.guide.page9.chapter"), Alignment.CENTER);
+            drawAlignedString(f("craftableCreatures.guide.page9.mainText.1"), Alignment.CENTER);
+            drawAlignedString(f("tile.bluestoneBlock.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone)}, new ItemStack(CCBlocks.bluestone_block), lineXPos - 9, lineYPos);
+            drawEmptyString();
+            drawAlignedString(f("item.bluestone.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCBlocks.bluestone_block), null, null, null}, new ItemStack(CCItems.bluestone, 9), lineXPos + 11, lineYPos);
+        } else if (currentPage == 13) {
+            drawAlignedString(f("tile.poweredBluestoneBlock.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(Items.redstone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone)}, new ItemStack(CCBlocks.powered_bluestone_block), lineXPos - 6, lineYPos);
+            drawEmptyString();
+            drawAlignedString(f("item.bluestone.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCBlocks.powered_bluestone_block), null, null, null}, new ItemStack(CCItems.bluestone, 4), lineXPos + 11, lineYPos);
+            rightPage();
+            drawAlignedString(f("item.template.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Items.paper), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(Items.paper)}, new ItemStack(CCItems.template), lineXPos + 11, lineYPos);
+            drawEmptyString();
+            drawAlignedString(f("tile.soulExtractor.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCBlocks.powered_bluestone_block), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.furnace), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.soul_extractor), lineXPos - 9, lineYPos);
+        } else if (currentPage == 14) {
+            drawAlignedString(f("item.spawnEggTemplate.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Items.egg), null, null, new ItemStack(CCItems.template)}, new ItemStack(CCItems.spawn_egg_template), lineXPos + 13, lineYPos);
+            drawEmptyString();
+            drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCItems.template), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.redstone_block), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.combiner), lineXPos - 6, lineYPos);
+            rightPage();
+            drawAlignedString(f("craftableCreatures.guide.page9.mainText.2"), Alignment.CENTER);
+            drawSmeltingRecipe(new ItemStack(CCBlocks.bluestone_ore), new ItemStack(CCItems.bluestone), lineXPos + 8, lineYPos);
+            drawAlignedString(f("craftableCreatures.guide.page9.mainText.3"), Alignment.CENTER);
+            drawExtractingRecipe(new ItemStack(CCItems.bat_wing), new ItemStack(CCItems.soul_element, 1, 13), lineXPos, lineYPos);
+        } else if (currentPage == 15) {
+            drawAlignedString(f("craftableCreatures.guide.page9.mainText.4"), Alignment.CENTER);
+            drawCombiningRecipe(new ItemStack(CCItems.soul_element, 1, 1), new ItemStack(CCItems.spawn_egg_template), new ItemStack(Items.spawn_egg, 1, EntityList.getEntityID(new EntityCreeper(null))), lineXPos + 10, lineYPos);
         }
     }
 
@@ -610,6 +662,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawItemStack(stacks[2], x + 6, y + 24, false);
             drawItemStack(stacks[3], x + 24, y + 24, false);
             drawItemStack(output, x + 62, y + 16, false);
+            drawEmptyString(5);
         } else if (stacks.length == 9) {
             drawImage(guideBookPage1, x, y, 146, 0, 80, 64);
             drawImage(guideBookPage1, x + 80, y, 146, 64, 45, 32);
@@ -624,14 +677,16 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawItemStack(stacks[7], x + 24, y + 42, false);
             drawItemStack(stacks[8], x + 42, y + 42, false);
             drawItemStack(output, x + 99, y + 24, false);
+            drawEmptyString(7);
         } else
-            throw new IllegalArgumentException("stack.length must be 9 or 4. If you need empty slot write 'null'");
+            throw new IllegalArgumentException("stack.length must be 4 or 9. If you need empty slot write 'null'");
     }
     private void drawSmeltingRecipe(ItemStack input, ItemStack output, int x, int y) {
         drawImage(guideBookPage1, x, y, 63, 186, 92, 64);
         drawItemStack(s(Items.coal), x + 6, y + 42, false);
         drawItemStack(input, x + 6, y + 6, false);
         drawItemStack(output, x + 66, y + 24, false);
+        drawEmptyString(7);
     }
     private void drawExtractingRecipe(ItemStack input, ItemStack output, int x, int y) {
         drawImage(guideBookPage1, x, y, 147, 118, 107, 64);
@@ -639,6 +694,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         drawItemStack(s(CCItems.soul_element, 1, 0), x + 43, y + 6, false);
         drawItemStack(input, x + 6, y + 6, false);
         drawItemStack(output, x + 81, y + 24, false);
+        drawEmptyString(7);
     }
     private void drawCombiningRecipe(ItemStack firstInput, ItemStack secondInput, ItemStack output, int x, int y) {
         drawImage(guideBookPage2, x, y, 0, 182, 90, 72);
@@ -654,17 +710,16 @@ public class GuiScreenGuideBook extends GuiScreen {
         stacks.add(new DrawingStack(stackToDraw, x, y, currentPage, drawSlot));
     }
 
-    private void drawIllustration(ResourceLocation scaledImage, String comment, int u, int v, int mouseX, int mouseY) {
-        drawIllustration(guideBookIllustrationSheet1, scaledImage, comment, mouseX, mouseY, u, v);
+    private void drawIllustration(short id, ResourceLocation scaledImage, String comment, int u, int v, int mouseX, int mouseY) {
+        drawIllustration(id, guideBookIllustrationSheet1, scaledImage, comment, mouseX, mouseY, u, v);
     }
-    private void drawIllustration(ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int u, int v) {
-        drawIllustration(rl, scaledImage, comment, mouseX, mouseY, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 8);
+    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int u, int v) {
+        drawIllustration(id, rl, scaledImage, comment, mouseX, mouseY, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 8);
     }
-    private void drawIllustration(ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int x, int y, int u, int v, int width, int height) {
+    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int x, int y, int u, int v, int width, int height) {
 //        if (pageEnded) return;
 //        if ((line + height / fontHeight) > maxLinesPerPage) return;
-        totalIllustrations++;
-        illustrations.add(new Illustration(rl, scaledImage, comment, totalIllustrations, x, y, currentPage, u, v, width, height));
+        illustrations.put(id, new Illustration(rl, scaledImage, comment, id, x, y, currentPage, u, v, width, height));
 
         drawImage(rl, x, y, u, v, width, height);
 
