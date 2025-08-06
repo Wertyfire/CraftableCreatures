@@ -11,6 +11,7 @@ import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
 import ru.wertyfiregames.craftablecreatures.api.event.CraftableCreaturesEventFactory;
+import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.recipe.CombinerRecipes;
 
 public class SlotCombiner extends Slot {
@@ -67,5 +68,7 @@ public class SlotCombiner extends Slot {
         xpGained = 0;
 
         CraftableCreaturesEventFactory.itemCombinedEvent(player, stack);
+
+        player.triggerAchievement(CCAchievementList.combineItem);
     }
 }

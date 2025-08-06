@@ -10,6 +10,7 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
+import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
 import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 import ru.wertyfiregames.craftablecreatures.api.event.CraftableCreaturesEventFactory;
 
@@ -67,5 +68,7 @@ public class SlotSoulExtractor extends Slot {
         xpGained = 0;
 
         CraftableCreaturesEventFactory.soulExtractedEvent(player, stack);
+
+        player.triggerAchievement(CCAchievementList.extractSoul);
     }
 }
