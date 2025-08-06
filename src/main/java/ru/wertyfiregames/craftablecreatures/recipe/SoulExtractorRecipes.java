@@ -41,8 +41,8 @@ public class SoulExtractorRecipes {
         addRecipe(CCItems.bat_wing, new ItemStack(CCItems.soul_element, 1, 13), 0.05f);
         addRecipe(Items.potionitem, new ItemStack(CCItems.soul_element, 1, 14), 0.25f);
         addRecipe(Items.porkchop, new ItemStack(CCItems.soul_element, 1, 15), 0.05f);
+        ItemStack stack2 = new ItemStack(Blocks.wool);
         for (int i = 0; i < 16; i++) {
-            ItemStack stack2 = new ItemStack(Blocks.wool);
             stack2.setItemDamage(i);
             addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.05f);
         }
