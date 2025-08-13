@@ -33,9 +33,9 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "0.7.0";
-    protected static final String buildNumber = "14";
-    protected static final String modStatus = "rc1";
+    protected static final String modVersion = "1.0.0";
+    protected static final String buildNumber = "15";
+    protected static final String modStatus = "r";
 
 //    Name
     protected static final String name = "Craftable Creatures";
@@ -71,7 +71,7 @@ public class CraftableCreatures {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         ModContext.setModContext(METADATA);
-        modLogger = LogManager.getLogger("Craftable Creatures");
+        modLogger = event.getModLog();
         modLogger.debug("CC Logger loaded");
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
         config = new Configuration(configFile);

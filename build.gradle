@@ -19,7 +19,7 @@ apply plugin: 'forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "0.7.0"
+version = "1.0.0"
 group = "ru.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
