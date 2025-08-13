@@ -57,8 +57,6 @@ public class SoulExtractorRecipes {
         addRecipe(stack3, new ItemStack(CCItems.soul_element, 1, 20), 0.25f);
         addRecipe(Blocks.red_mushroom, new ItemStack(CCItems.soul_element, 1, 21), 0.25f);
         addRecipe(CCItems.ocelot_tail, new ItemStack(CCItems.soul_element, 1, 22), 0.15f);
-        //TODO: add horse recipe
-        addRecipe(Items.emerald, new ItemStack(CCItems.soul_element, 1, 24), 0.15f);
     }
 
     public static SoulExtractorRecipes get() {
