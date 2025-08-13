@@ -4,6 +4,8 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.MathHelper;
+import net.minecraft.world.IBlockAccess;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 
@@ -43,5 +45,19 @@ public class BlockCCOre extends BlockDefault {
     public int quantityDroppedWithBonus(int fortune, Random random) {
         int quantity = this.quantityDropped(random);
         return quantity + random.nextInt(fortune + 1);
+    }
+
+    private Random rand = new Random();
+
+    @Override
+    public int getExpDrop(IBlockAccess world, int metadata, int fortune) {
+        if (getItemDropped(metadata, rand, fortune) != Item.getItemFromBlock(this)) {
+            int exp = 0;
+
+            if (this == CCBlocks.bluestone_ore) exp = MathHelper.getRandomIntegerInRange(rand, 0, 2);
+
+            return exp;
+        }
+        return 0;
     }
 }
