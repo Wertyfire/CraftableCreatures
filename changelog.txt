@@ -1,10 +1,3 @@
-Soul extractor: if recipe contains filled bucket and fuel slot is empty you will get empty bucket in fuel slot after recipe completing
-Removed crafting table recipes of spawn eggs
-Added "Extract Soul" achievement
-Added "Combine Item" achievement
-Removed lit combiner from NEI items list
-Changed powered bluestone block craft (it was too easy to get block that emits redstone signal without spending too much redstone)
-Changed bluestone craft from powered bluestone block (to match the new craft of block)
-Changed some translations
-Guide book is no longer in experimental mode
-Changed 'craftable creatures' achievement icon from spawn egg blueprint to guide book
+Now changelog available in russian language
+Bluestone ore now drops experience
+Removed villager spawn egg recipe from soul extractor
