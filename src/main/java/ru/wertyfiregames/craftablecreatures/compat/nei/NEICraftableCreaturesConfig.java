@@ -18,7 +18,7 @@ import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;
 public class NEICraftableCreaturesConfig implements IConfigureNEI {
     @Override
     public void loadConfig() {
-        CraftableCreatures.getModLogger().info("Injecting recipes data and other stuff into NEI");
+        CraftableCreatures.getModLogger().info("Loading recipes data and other stuff into NEI");
         hideItems();
         loadSubsets();
         registerHandlers();
