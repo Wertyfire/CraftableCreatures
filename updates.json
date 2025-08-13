@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "1.0.0",
-    "1.7.10-recommended": "1.0.0",
+    "1.7.10-latest": "0.7.0",
+    "1.7.10-recommended": "0.7.0",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
