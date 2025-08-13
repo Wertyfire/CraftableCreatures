@@ -63,11 +63,7 @@ public class CCEventListener {
             if (CCVersionChecker.getStatus() == UpdateResult.OUTDATED) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.outdated"));
                 ChatUtils.sendMessageWithLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
-                for (String change : CCVersionChecker.getChangelog().split("<n>")) {
-                    if (change.contains("<t>"))
-                        change = change.replace("<t>", "    ");
-                    event.player.addChatMessage(new ChatComponentText(change));
-                }
+                ChatUtils.sendUpdateChangelogMessage(event.player, CCVersionChecker.getChangelog());
             }
             if (CCVersionChecker.getStatus() == UpdateResult.AHEAD) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.ahead"));
@@ -78,11 +74,7 @@ public class CCEventListener {
             if (CCVersionChecker.getStatus() == UpdateResult.BETA_OUTDATED) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.betaOutdated"));
                 ChatUtils.sendMessageWithLink(event.player, "craftableCreatures.chat.getUpdate", homepage, homepage, "");
-                for (String change : CCVersionChecker.getChangelog().split("<n>")) {
-                    if (change.contains("<t>"))
-                        change = change.replace("<t>", "    ");
-                    event.player.addChatMessage(new ChatComponentText(change));
-                }
+                ChatUtils.sendUpdateChangelogMessage(event.player, CCVersionChecker.getChangelog());
             }
         }
     }
