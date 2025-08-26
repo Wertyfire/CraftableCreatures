@@ -33,8 +33,8 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "1.0.0";
-    protected static final String buildNumber = "15";
+    protected static final String modVersion = "1.0.1";
+    protected static final String buildNumber = "16";
     protected static final String modStatus = "r";
 
 //    Name
