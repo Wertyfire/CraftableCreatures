@@ -50,7 +50,10 @@ public class CCEventListener {
     @SubscribeEvent
     public void onPlayerLoggedIn(PlayerEvent.PlayerLoggedInEvent event) {
         event.player.triggerAchievement(CCAchievementList.thanksForDownload);
-        event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.modInfo", CCConfig.enableExperimentalContent));
+
+        if (CCConfig.enableExperimentalContent) {
+            event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.modInfo", true));
+        }
 
         if (CCConfig.checkForUpdates) {
             String homepage = CCVersionChecker.getHomepageUrl();
