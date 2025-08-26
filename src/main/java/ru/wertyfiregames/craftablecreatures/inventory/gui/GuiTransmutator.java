@@ -26,6 +26,7 @@ public class GuiTransmutator extends GuiContainer {
 
     public GuiTransmutator(InventoryPlayer player, InventoryTransmutator transmutator) {
         super(new ContainerTransmutator(player, transmutator));
+        ySize = 194;
         inventoryTransmutator = transmutator;
     }
 

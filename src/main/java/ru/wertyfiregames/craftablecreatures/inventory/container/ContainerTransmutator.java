@@ -25,7 +25,7 @@ public class ContainerTransmutator extends Container {
 
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; j++) {
-                addSlotToContainer(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 84 + i * 18));
+                addSlotToContainer(new Slot(inv, j + i * 9 + 9, 18 + j * 18, 84 + i * 18));
             }
         }
 
