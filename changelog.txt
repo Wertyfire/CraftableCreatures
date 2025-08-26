@@ -1,3 +1,4 @@
-Now changelog available in russian language
-Bluestone ore now drops experience
-Removed villager spawn egg recipe from soul extractor
+The page numbers in the table of contents were aligned at the same level in german and ukrainian
+Added transmutator texture
+Message about experimental content now displayed only if mode is enabled
+Decreased spawn rate of bluestone ore: max veins per chunk - 8 -> 6; y coord from 20-60 -> 20-50;
