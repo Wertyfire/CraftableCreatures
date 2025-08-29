@@ -1,14 +1,10 @@
 package ru.wertyfiregames.craftablecreatures.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.entity.EntityList;
-import net.minecraft.entity.monster.*;
-import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.ShapedOreRecipe;
-import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 
 public class CCRecipes {
     public static void register() {
