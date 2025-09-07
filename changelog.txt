@@ -1,4 +1,5 @@
-The page numbers in the table of contents were aligned at the same level in german and ukrainian
-Added transmutator texture
-Message about experimental content now displayed only if mode is enabled
-Decreased spawn rate of bluestone ore: max veins per chunk - 8 -> 6; y coord from 20-60 -> 20-50;
+Fixed bug: at first frame after opening guidebook all content from right page was rendered on the left side
+Added functionality to transmutator (requires Morph and iChunUtil and does not function well)
+Now text on right page now overlaps tooltip for illustration on left page
+Added transmutator craft
+Transmutator out of experimental mode
