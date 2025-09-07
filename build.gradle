@@ -19,7 +19,7 @@ apply plugin: 'forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "1.0.1"
+version = "1.1.0"
 group = "ru.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
@@ -59,6 +59,8 @@ repositories {
 dependencies {
     //Wertyfire Core
     compile 'ru.wertyfiregames:wertyfire-core:1.7.10-1.0.2:dev'
+
+    implementation files('libs/morph-0.9.3.jar')
 
     //NEI
     implementation 'codechicken:CodeChickenCore:1.7.10-1.0.7.48:dev'

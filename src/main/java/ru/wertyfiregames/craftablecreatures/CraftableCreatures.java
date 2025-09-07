@@ -7,11 +7,11 @@ import cpw.mods.fml.common.ModMetadata;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.*;
 import cpw.mods.fml.common.network.NetworkRegistry;
+import cpw.mods.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.VillagerRegistry;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
-import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
 import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
@@ -33,8 +33,8 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "1.0.1";
-    protected static final String buildNumber = "16";
+    protected static final String modVersion = "1.1.0";
+    protected static final String buildNumber = "17";
     protected static final String modStatus = "r";
 
 //    Name
@@ -62,6 +62,9 @@ public class CraftableCreatures {
     @SidedProxy(clientSide = clientProxy, serverSide = commonProxy)
     public static CommonProxy proxy;
 
+//    Networking
+    public static final SimpleNetworkWrapper NETWORK = new SimpleNetworkWrapper(modId);
+
 //    Instance and metadata
     @Mod.Instance(modId)
     public static CraftableCreatures INSTANCE;
@@ -83,6 +86,8 @@ public class CraftableCreatures {
         getModLogger().debug("CC Blocks loaded");
         CCTileEntities.register();
         getModLogger().debug("CC Tile entities loaded");
+        CCPackets.register();
+        getModLogger().debug("CC Packets loaded");
         CCVersionChecker.check(getVersion());
         InitActions.doPreInit(event);
         CraftableCreatures.getModLogger().info("Pre initialization of Craftable Creatures complete");
