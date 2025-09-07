@@ -90,6 +90,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         buttonList.add(buttonNext);
         buttonList.add(buttonCloseIllustration);
         checkButtons();
+        newFrame();
     }
 
     @Override
@@ -177,6 +178,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawPageText(x, y);
             drawPageItemStacks();
             drawItemStackHovering(x, y);
+            drawIllustrationHovering(x, y);
             drawCurrentIllustration(x, y);
         }
     }
@@ -385,12 +387,12 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawAlignedString(f("tile.soulExtractor.name"), Alignment.CENTER);
             drawItemStack(s(CCBlocks.lit_soul_extractor), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.8"));
-            drawIllustration((short) 1, r("gui/guide_book/illustrations/soul_extractor_interface_scaled.png"), f("craftableCreatures.guide.illustration.1.comment"), 0, 0, mouseX, mouseY);
+            drawIllustration((short) 1, r("gui/guide_book/illustrations/soul_extractor_interface_scaled.png"), f("craftableCreatures.guide.illustration.1.comment"), 0, 0);
         } else if (currentPage == 10) {
             drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
             drawItemStack(s(CCBlocks.lit_combiner), lineXPos + xSize - 18 - 32, lineYPos - fontHeight);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.9"));
-            drawIllustration((short) 2, r("gui/guide_book/illustrations/combiner_interface_scaled.png"), f("craftableCreatures.guide.illustration.2.comment"), 111, 0, mouseX, mouseY);
+            drawIllustration((short) 2, r("gui/guide_book/illustrations/combiner_interface_scaled.png"), f("craftableCreatures.guide.illustration.2.comment"), 111, 0);
             drawSplitString(f("craftableCreatures.guide.page6.mainText.10"));
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page7.chapter"), Alignment.CENTER);
@@ -483,6 +485,16 @@ public class GuiScreenGuideBook extends GuiScreen {
                 return;
             }
         }
+    }
+
+    private void drawIllustrationHovering(int mouseX, int mouseY) {
+        Illustration ill = null;
+        for (Illustration ill_ : illustrations.values()) {
+            if (ill_.page == currentPage) ill = ill_;
+        }
+        if (ill == null) return;
+        if (currentIllustration == 0 && isMouseOver(mouseX, mouseY, ill.x, ill.y, ill.width, ill.height))
+            drawHoveringText(Collections.singletonList(f("craftableCreatures.guide.clickToViewIllustration")), mouseX, mouseY, fontRendererObj);
     }
 
     private void drawCurrentIllustration(int mouseX, int mouseY) {
@@ -710,13 +722,13 @@ public class GuiScreenGuideBook extends GuiScreen {
         stacks.add(new DrawingStack(stackToDraw, x, y, currentPage, drawSlot));
     }
 
-    private void drawIllustration(short id, ResourceLocation scaledImage, String comment, int u, int v, int mouseX, int mouseY) {
-        drawIllustration(id, guideBookIllustrationSheet1, scaledImage, comment, mouseX, mouseY, u, v);
+    private void drawIllustration(short id, ResourceLocation scaledImage, String comment, int u, int v) {
+        drawIllustration(id, guideBookIllustrationSheet1, scaledImage, comment, u, v);
     }
-    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int u, int v) {
-        drawIllustration(id, rl, scaledImage, comment, mouseX, mouseY, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 8);
+    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int u, int v) {
+        drawIllustration(id, rl, scaledImage, comment, lineXPos, lineYPos, u, v, maxWidthPerLine, fontHeight * 8);
     }
-    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int mouseX, int mouseY, int x, int y, int u, int v, int width, int height) {
+    private void drawIllustration(short id, ResourceLocation rl, ResourceLocation scaledImage, String comment, int x, int y, int u, int v, int width, int height) {
 //        if (pageEnded) return;
 //        if ((line + height / fontHeight) > maxLinesPerPage) return;
         illustrations.put(id, new Illustration(rl, scaledImage, comment, id, x, y, currentPage, u, v, width, height));
@@ -725,9 +737,6 @@ public class GuiScreenGuideBook extends GuiScreen {
 
         for (int i = 0; i < height / fontHeight; i++)
             plusLine();
-
-        if (isMouseOver(mouseX, mouseY, x, y, width, height) && currentIllustration == 0)
-            drawHoveringText(Collections.singletonList(f("craftableCreatures.guide.clickToViewIllustration")), mouseX, mouseY, fontRendererObj);
     }
 
     private void drawImage(ResourceLocation rl, int x, int y, int u, int v, int width, int height) {
