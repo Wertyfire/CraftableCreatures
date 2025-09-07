@@ -81,19 +81,7 @@ public class SoulExtractorRecipes {
         extractingRecipes.put(input.copy(), output);
         experienceList.put(output.copy(), xp * 5f);
     }
-
-    public void addBaseSoul(Block helper) {
-        addBaseSoul(Item.getItemFromBlock(helper));
-    }
-    public void addBaseSoul(Item helper) {
-        addBaseSoul(new ItemStack(helper));
-    }
-    public void addBaseSoul(String oreDictName) {
-        for (ItemStack stack : OreDictionary.getOres(oreDictName)) {
-            addBaseSoul(stack);
-        }
-    }
-    public void addBaseSoul(ItemStack helper) {
+    private void addBaseSoul(ItemStack helper) {
         extractHelpers.add(helper.copy());
     }
 

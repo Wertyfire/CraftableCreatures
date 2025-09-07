@@ -6,35 +6,39 @@ package ru.wertyfiregames.craftablecreatures.api;
 
 import com.google.common.collect.Lists;
 import net.minecraft.block.Block;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import ru.wertyfiregames.craftablecreatures.recipe.CombinerRecipes;
 import ru.wertyfiregames.craftablecreatures.recipe.SoulExtractorRecipes;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**@author Wertyfire*/
 public class CraftableCreaturesRegistry {
     /**List of souls which should be written to subset in NEI*/
     private static final List<Item> souls = Lists.newArrayList();
+    private static final Map<ItemStack, EntityLivingBase> morphList = new HashMap<>();
     /**List of soul extractor fuel handlers*/
     private static final List<ISEFuelHandler> seFuelHandlers = Lists.newArrayList();
 
-    /**Add block as base soul (so this block can be applied in slot for soul in soul extractor)*/
-    public static void addBaseSoulItem(Block helper) {
-        SoulExtractorRecipes.get().addBaseSoul(helper);
+    /**Link soul to mob so transmutator will send instance of this mob to Morph
+     * @param metaOptional if soul is item with meta, specify it here. if it's not - write 0
+     * @param entityToMorph instance of mob*/
+    public static void linkSoul(Item item, int metaOptional, EntityLivingBase entityToMorph) {
+        morphList.put(new ItemStack(item, 1, metaOptional), entityToMorph);
     }
-    /**Add item as base soul (so this item can be applied in slot for soul in soul extractor)*/
-    public static void addBaseSoulItem(Item helper) {
-        SoulExtractorRecipes.get().addBaseSoul(helper);
-    }
-    /**Add everything from ore dictionary as base soul*/
-    public static void addBaseSoulItem(String nameInOreDict) {
-        SoulExtractorRecipes.get().addBaseSoul(nameInOreDict);
-    }
-    /**Add item stack as base soul (so this item stack can e applied in slot for soul int soul extractor)*/
-    public static void addBaseSoulItem(ItemStack helper) {
-        SoulExtractorRecipes.get().addBaseSoul(helper);
+
+    /**Get instance of entity from item stack which will be sent to Morph*/
+    public static EntityLivingBase getMorphEntity(ItemStack stack) {
+        EntityLivingBase entity = null;
+        for (ItemStack stacks : morphList.keySet()) {
+            if (stacks.getItem() == stack.getItem() && stacks.getItemDamage() == stack.getItemDamage())
+                entity = morphList.get(stacks);
+        }
+        return entity;
     }
 
     /**Add recipe to soul extractor
@@ -79,19 +83,11 @@ public class CraftableCreaturesRegistry {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
 
-    /**Add block as soul so this will be shown in subset "Souls" in NEI*/
-    public static void registerItemAsSoul(Block soul) {
-        registerItemAsSoul(Item.getItemFromBlock(soul));
-    }
-    /**Add block as soul so this will be shown in subset "Souls" in NEI*/
+    /**Add item as soul so this will be shown in subset "Souls" in NEI*/
     public static void registerItemAsSoul(Item soul) {
         souls.add(soul);
     }
 
-    /**Check if given block registered as soul*/
-    public static boolean isItemSoul(Block potentialSoul) {
-        return isItemSoul(Item.getItemFromBlock(potentialSoul));
-    }
     /**Check if given item registered as soul*/
     public static boolean isItemSoul(Item potentialSoul) {
         return souls.contains(potentialSoul);

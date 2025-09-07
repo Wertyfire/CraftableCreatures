@@ -4,4 +4,8 @@
 
 package ru.wertyfiregames.craftablecreatures.api;
 
+/**
+ * Implement this if your item is soul
+ * @author Wertyfire
+ * */
 public interface ISoulElement {}
