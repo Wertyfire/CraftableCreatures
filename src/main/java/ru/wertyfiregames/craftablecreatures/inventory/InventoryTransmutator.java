@@ -14,7 +14,7 @@ import ru.wertyfiregames.craftablecreatures.api.ISoulElement;
 public class InventoryTransmutator implements IInventory {
     // Slots: 0-8 - small storage; 9 - soul to morph
     // Total: 10
-    private final EntityPlayer user;
+    public final EntityPlayer user;
     private final ItemStack sourceItem;
 
     private final ItemStack[] transmutatorItemStacks = new ItemStack[10];
@@ -124,7 +124,6 @@ public class InventoryTransmutator implements IInventory {
         }
 
         writeToNBT(sourceItem.getTagCompound());
-
         user.inventory.mainInventory[user.inventory.currentItem] = sourceItem;
     }
 

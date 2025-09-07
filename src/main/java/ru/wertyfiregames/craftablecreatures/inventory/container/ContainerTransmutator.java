@@ -18,19 +18,21 @@ public class ContainerTransmutator extends Container {
     public ContainerTransmutator(InventoryPlayer inv, InventoryTransmutator transmutator) {
         inventoryTransmutator = transmutator;
 
-        for (int i = 0; i < 8; i++) {
-            addSlotToContainer(new SlotTransmutator(transmutator, i, 8 + i * 18, 48));
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                addSlotToContainer(new SlotTransmutator(transmutator, j + i * 3, 8 + j * 18, 15 + i * 18));
+            }
         }
-        addSlotToContainer(new SlotTransmutator(transmutator, 9, 152, 21));
+        addSlotToContainer(new SlotTransmutator(transmutator, 9, 80, 33));
 
         for (int i = 0; i < 3; ++i) {
             for (int j = 0; j < 9; j++) {
-                addSlotToContainer(new Slot(inv, j + i * 9 + 9, 18 + j * 18, 84 + i * 18));
+                addSlotToContainer(new Slot(inv, j + i * 9 + 9, 8 + j * 18, 112 + i * 18));
             }
         }
 
         for (int i = 0; i < 9; i++) {
-            addSlotToContainer(new Slot(inv, i, 8 + i * 18, 142));
+            addSlotToContainer(new Slot(inv, i, 8 + i * 18, 170));
         }
     }
 
@@ -46,15 +48,15 @@ public class ContainerTransmutator extends Container {
             ItemStack slotStack = slot.getStack();
             itemStack = slotStack.copy();
 
-            if (fromSlot == 8) {
+            if (fromSlot == 9) {
                 if (!mergeItemStack(slotStack, 0, 8, false)) return null;
                 if (!mergeItemStack(slotStack, 8 + 1, 8 + 36 + 1, true)) return null;
                 slot.onSlotChange(slotStack, itemStack);
-            } else if (fromSlot > 8) {
-                if (fromSlot < 8 + 28) {
-                    if (!mergeItemStack(slotStack, 8 + 28, 8 + 37, false)) return null;
-                } else if (fromSlot < 8 + 37 + 1 && !mergeItemStack(slotStack, 8 + 1, 8 + 28, false)) return null;
-            } else if (!mergeItemStack(slotStack, 8 + 1, 8 + 37, false)) return null;
+            } else if (fromSlot > 9) {
+                if (fromSlot < 9 + 28) {
+                    if (!mergeItemStack(slotStack, 9 + 28, 9 + 37, false)) return null;
+                } else if (fromSlot < 9 + 37 + 1 && !mergeItemStack(slotStack, 9 + 1, 9 + 28, false)) return null;
+            } else if (!mergeItemStack(slotStack, 9 + 1, 9 + 37, false)) return null;
 
             if (slotStack.stackSize == 0) slot.putStack(null);
             else slot.onSlotChanged();
@@ -69,5 +71,9 @@ public class ContainerTransmutator extends Container {
     public ItemStack slotClick(int slot, int mouseButton, int flag, EntityPlayer player) {
         if (slot >= 0 && getSlot(slot) != null && getSlot(slot).getStack() == player.getHeldItem()) return null;
         return super.slotClick(slot, mouseButton, flag, player);
+    }
+
+    public InventoryTransmutator getInv() {
+        return inventoryTransmutator;
     }
 }
