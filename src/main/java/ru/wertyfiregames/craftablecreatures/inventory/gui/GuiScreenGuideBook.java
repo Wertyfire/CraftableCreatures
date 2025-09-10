@@ -63,7 +63,7 @@ public class GuiScreenGuideBook extends GuiScreen {
     private int lineXPos = (width - xSize) / 2 - xSize / 2 + 18;
     private int lineYPos = (height - ySize) / 2 + 10;
 
-    private final short totalPages = 16;
+    private final short totalPages = 17;
     private short
             currentPage = 1,
             currentIllustration = 0;
@@ -306,6 +306,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawLinkString(f("craftableCreatures.guide.page2.chapter5"), mouseX, mouseY, (short) 10, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter6"), mouseX, mouseY, (short) 11, (short) 3);
             drawLinkString(f("craftableCreatures.guide.page2.chapter7"), mouseX, mouseY, (short) 12, (short) 3);
+            drawLinkString(f("craftableCreatures.guide.page2.chapter8"), mouseX, mouseY, (short) 15, (short) 3);
         } else if (currentPage == 4) {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page3.chapter"), Alignment.CENTER);
@@ -357,6 +358,10 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawAlignedString(f("item.ocelotTail.name"), Alignment.CENTER);
             drawItemStack(s(CCItems.ocelot_tail), lineXPos + xSize - 18 - 32, lineYPos - fontHeight * 2);
             drawSplitString(f("craftableCreatures.guide.page5.mainText.6"));
+            drawEmptyString();
+            drawAlignedString(f("item.transmutator.name"), Alignment.CENTER);
+            drawItemStack(s(CCItems.transmutator), lineXPos + xSize - 18 - 32, lineYPos - fontHeight * 2);
+            drawSplitString(f("craftableCreatures.guide.page5.mainText.7"));
         } else if (currentPage == 8) {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page6.chapter"), Alignment.CENTER);
@@ -401,48 +406,55 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawSplitString(f("craftableCreatures.guide.page7.mainText.2"));
         } else if (currentPage == 11) {
             drawSplitString(f("craftableCreatures.guide.page7.mainText.3"));
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCBlocks.powered_bluestone_block), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.furnace), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.soul_extractor), lineXPos - 6, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(CCBlocks.powered_bluestone_block), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.furnace), s(Blocks.cobblestone)}, s(CCBlocks.soul_extractor), lineXPos - 6, lineYPos);
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page8.chapter"), Alignment.CENTER);
             drawSplitString(f("craftableCreatures.guide.page8.mainText.1"));
             drawSplitString(f("craftableCreatures.guide.page8.mainText.2"));
             drawSplitString(f("craftableCreatures.guide.page8.mainText.3"));
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCItems.template), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.redstone_block), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.combiner), lineXPos - 9, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(CCItems.template), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.redstone_block), s(Blocks.cobblestone)}, s(CCBlocks.combiner), lineXPos - 9, lineYPos);
         } else if (currentPage == 12) {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page9.chapter"), Alignment.CENTER);
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.1"), Alignment.CENTER);
             drawAlignedString(f("tile.bluestoneBlock.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone)}, new ItemStack(CCBlocks.bluestone_block), lineXPos - 9, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone), s(CCItems.bluestone)}, s(CCBlocks.bluestone_block), lineXPos - 9, lineYPos);
             drawEmptyString();
             drawAlignedString(f("item.bluestone.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCBlocks.bluestone_block), null, null, null}, new ItemStack(CCItems.bluestone, 9), lineXPos + 11, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(CCBlocks.bluestone_block), null, null, null}, s(CCItems.bluestone, 9), lineXPos + 11, lineYPos);
         } else if (currentPage == 13) {
             drawAlignedString(f("tile.poweredBluestoneBlock.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(Items.redstone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone), new ItemStack(Items.redstone), new ItemStack(CCItems.bluestone)}, new ItemStack(CCBlocks.powered_bluestone_block), lineXPos - 6, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(CCItems.bluestone), s(Items.redstone), s(CCItems.bluestone), s(Items.redstone), s(Items.redstone), s(Items.redstone), s(CCItems.bluestone), s(Items.redstone), s(CCItems.bluestone)}, s(CCBlocks.powered_bluestone_block), lineXPos - 6, lineYPos);
             drawEmptyString();
             drawAlignedString(f("item.bluestone.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(CCBlocks.powered_bluestone_block), null, null, null}, new ItemStack(CCItems.bluestone, 4), lineXPos + 11, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(CCBlocks.powered_bluestone_block), null, null, null}, s(CCItems.bluestone, 4), lineXPos + 11, lineYPos);
             rightPage();
             drawAlignedString(f("item.template.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Items.paper), new ItemStack(CCItems.bluestone), new ItemStack(CCItems.bluestone), new ItemStack(Items.paper)}, new ItemStack(CCItems.template), lineXPos + 11, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Items.paper), s(CCItems.bluestone), s(CCItems.bluestone), s(Items.paper)}, s(CCItems.template), lineXPos + 11, lineYPos);
             drawEmptyString();
             drawAlignedString(f("tile.soulExtractor.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCBlocks.powered_bluestone_block), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.furnace), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.soul_extractor), lineXPos - 9, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(CCBlocks.powered_bluestone_block), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.furnace), s(Blocks.cobblestone)}, s(CCBlocks.soul_extractor), lineXPos - 9, lineYPos);
         } else if (currentPage == 14) {
             drawAlignedString(f("item.spawnEggTemplate.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Items.egg), null, null, new ItemStack(CCItems.template)}, new ItemStack(CCItems.spawn_egg_template), lineXPos + 13, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Items.egg), null, null, s(CCItems.template)}, s(CCItems.spawn_egg_template), lineXPos + 13, lineYPos);
             drawEmptyString();
             drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
-            drawCraftingRecipe(new ItemStack[]{new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(CCItems.template), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.cobblestone), new ItemStack(Blocks.redstone_block), new ItemStack(Blocks.cobblestone)}, new ItemStack(CCBlocks.combiner), lineXPos - 6, lineYPos);
+            drawCraftingRecipe(new ItemStack[]{s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.cobblestone), s(CCItems.template), s(Blocks.cobblestone), s(Blocks.cobblestone), s(Blocks.redstone_block), s(Blocks.cobblestone)}, s(CCBlocks.combiner), lineXPos - 6, lineYPos);
             rightPage();
+            drawAlignedString(f("item.transmutator.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[] {s(Items.redstone), null, null, s(CCItems.bluestone), s(Items.iron_ingot), s(Items.iron_ingot), s(Items.iron_ingot), s(Items.iron_ingot), s(Items.iron_ingot)}, s(CCItems.transmutator), lineXPos - 9, lineYPos);
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.2"), Alignment.CENTER);
-            drawSmeltingRecipe(new ItemStack(CCBlocks.bluestone_ore), new ItemStack(CCItems.bluestone), lineXPos + 8, lineYPos);
-            drawAlignedString(f("craftableCreatures.guide.page9.mainText.3"), Alignment.CENTER);
-            drawExtractingRecipe(new ItemStack(CCItems.bat_wing), new ItemStack(CCItems.soul_element, 1, 13), lineXPos, lineYPos);
+            drawSmeltingRecipe(s(CCBlocks.bluestone_ore), s(CCItems.bluestone), lineXPos + 8, lineYPos);
         } else if (currentPage == 15) {
+            drawAlignedString(f("craftableCreatures.guide.page9.mainText.3"), Alignment.CENTER);
+            drawExtractingRecipe(s(CCItems.bat_wing), s(CCItems.soul_element, 1, 13), lineXPos, lineYPos);
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.4"), Alignment.CENTER);
-            drawCombiningRecipe(new ItemStack(CCItems.soul_element, 1, 1), new ItemStack(CCItems.spawn_egg_template), new ItemStack(Items.spawn_egg, 1, EntityList.getEntityID(new EntityCreeper(null))), lineXPos + 10, lineYPos);
+            drawCombiningRecipe(s(CCItems.soul_element, 1, 1), s(CCItems.spawn_egg_template), s(Items.spawn_egg, 1, EntityList.getEntityID(new EntityCreeper(null))), lineXPos + 10, lineYPos);
+            rightPage();
+            drawAlignedString(f("craftableCreatures.guide.page10.chapter"), Alignment.CENTER);
+            drawSplitString(f("craftableCreatures.guide.page10.mainText.1"));
+        } else if (currentPage == 16) {
+            drawSplitString(f("craftableCreatures.guide.page10.mainText.2"));
         }
     }
 

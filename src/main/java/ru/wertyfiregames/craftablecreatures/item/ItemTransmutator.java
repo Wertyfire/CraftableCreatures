@@ -8,6 +8,7 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import org.lwjgl.input.Keyboard;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
@@ -23,7 +24,8 @@ public class ItemTransmutator extends DefaultItem {
     @SuppressWarnings("unchecked")
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
-        tooltip.add(I18n.format("tooltip.transmutator"));
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.transmutator"));
+        else tooltip.add(I18n.format("tooltip.pressLshift"));
     }
 
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {

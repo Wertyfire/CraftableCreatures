@@ -48,15 +48,24 @@ public class ContainerTransmutator extends Container {
             ItemStack slotStack = slot.getStack();
             itemStack = slotStack.copy();
 
-            if (fromSlot == 9) {
-                if (!mergeItemStack(slotStack, 0, 8, false)) return null;
-                if (!mergeItemStack(slotStack, 8 + 1, 8 + 36 + 1, true)) return null;
-                slot.onSlotChange(slotStack, itemStack);
-            } else if (fromSlot > 9) {
-                if (fromSlot < 9 + 28) {
-                    if (!mergeItemStack(slotStack, 9 + 28, 9 + 37, false)) return null;
-                } else if (fromSlot < 9 + 37 + 1 && !mergeItemStack(slotStack, 9 + 1, 9 + 28, false)) return null;
-            } else if (!mergeItemStack(slotStack, 9 + 1, 9 + 37, false)) return null;
+            if (fromSlot < 10) {
+                if (!mergeItemStack(slotStack, 10, 46, true)) return null;
+            } else if (fromSlot <= 36) {
+                if (mergeItemStack(slotStack, 37, 46, false)) {}
+                else if (!mergeItemStack(slotStack, 0, 9, false)) return null;
+            } else if (fromSlot <= 45) {
+                if (mergeItemStack(slotStack, 0, 9, false)) {}
+                else if (!mergeItemStack(slotStack, 10, 37, false)) return null;
+            }
+
+//            if (fromSlot == 9) {
+//                if (!mergeItemStack(slotStack, 0, 8, false)) return null;
+//                if (!mergeItemStack(slotStack, 8 + 1, 8 + 36 + 1, true)) return null;
+//            } else if (fromSlot > 9) {
+//                if (fromSlot < 9 + 28) {
+//                    if (!mergeItemStack(slotStack, 9 + 28, 9 + 37, false)) return null;
+//                } else if (fromSlot < 9 + 37 + 1 && !mergeItemStack(slotStack, 9 + 1, 9 + 28, false)) return null;
+//            } else if (!mergeItemStack(slotStack, 9 + 1, 9 + 37, false)) return null;
 
             if (slotStack.stackSize == 0) slot.putStack(null);
             else slot.onSlotChanged();
