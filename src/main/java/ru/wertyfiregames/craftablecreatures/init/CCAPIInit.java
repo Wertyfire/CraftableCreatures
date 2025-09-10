@@ -14,30 +14,30 @@ public class CCAPIInit {
     public static void register() {
         CraftableCreaturesRegistry.registerItemAsSoul(CCItems.soul_element);
 
-        link(1, new EntityCreeper(Minecraft.getMinecraft().theWorld));
-        link(2, new EntitySkeleton(Minecraft.getMinecraft().theWorld));
-        link(3, new EntitySpider(Minecraft.getMinecraft().theWorld));
-        link(4, new EntityZombie(Minecraft.getMinecraft().theWorld));
-        link(5, new EntitySlime(Minecraft.getMinecraft().theWorld));
-        link(6, new EntityGhast(Minecraft.getMinecraft().theWorld));
-        link(7, new EntityPigZombie(Minecraft.getMinecraft().theWorld));
-        link(8, new EntityEnderman(Minecraft.getMinecraft().theWorld));
-        link(9, new EntityCaveSpider(Minecraft.getMinecraft().theWorld));
-        link(10, new EntitySilverfish(Minecraft.getMinecraft().theWorld));
-        link(11, new EntityBlaze(Minecraft.getMinecraft().theWorld));
-        link(12, new EntityMagmaCube(Minecraft.getMinecraft().theWorld));
-        link(13, new EntityBat(Minecraft.getMinecraft().theWorld));
-        link(14, new EntityWitch(Minecraft.getMinecraft().theWorld));
-        link(15, new EntityPig(Minecraft.getMinecraft().theWorld));
-        link(16, new EntitySheep(Minecraft.getMinecraft().theWorld));
-        link(17, new EntityCow(Minecraft.getMinecraft().theWorld));
-        link(18, new EntityChicken(Minecraft.getMinecraft().theWorld));
-        link(19, new EntitySquid(Minecraft.getMinecraft().theWorld));
-        link(20, new EntityWolf(Minecraft.getMinecraft().theWorld));
-        link(21, new EntityMooshroom(Minecraft.getMinecraft().theWorld));
-        link(22, new EntityOcelot(Minecraft.getMinecraft().theWorld));
+        link(1, new EntityCreeper(null));
+        link(2, new EntitySkeleton(null));
+        link(3, new EntitySpider(null));
+        link(4, new EntityZombie(null));
+        link(5, new EntitySlime(null));
+        link(6, new EntityGhast(null));
+        link(7, new EntityPigZombie(null));
+        link(8, new EntityEnderman(null));
+        link(9, new EntityCaveSpider(null));
+        link(10, new EntitySilverfish(null));
+        link(11, new EntityBlaze(null));
+        link(12, new EntityMagmaCube(null));
+        link(13, new EntityBat(null));
+        link(14, new EntityWitch(null));
+        link(15, new EntityPig(null));
+        link(16, new EntitySheep(null));
+        link(17, new EntityCow(null));
+        link(18, new EntityChicken(null));
+        link(19, new EntitySquid(null));
+        link(20, new EntityWolf(null));
+        link(21, new EntityMooshroom(null));
+        link(22, new EntityOcelot(null));
 //        link(23, new EntityHorse(Minecraft.getMinecraft().theWorld)); //This shit throws null pointer exception
-        link(24, new EntityVillager(Minecraft.getMinecraft().theWorld));
+        link(24, new EntityVillager(null));
     }
 
     private static void link(int meta, EntityLivingBase entity) {
