@@ -68,6 +68,7 @@ craftableCreatures.configGui.checkForUpdates=Auf Updates prüfen
 craftableCreatures.configGui.enableExperimentalContent=Aktivieren Sie experimentelle Inhalte
 
 craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Experimentelle Inhalte = %s
+craftableCreatures.chat.morphRequired=§cSie müssen die Modifikation Morph (von iChun) installieren, damit der Transmutator funktioniert!
 craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Suche nach Mod-Updates fehlgeschlagen!
 craftableCreatures.chat.latest=[§bCraftable Creatures§f] Neueste stabile Version des Mods installiert!
 craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Es gibt eine neue Version des Mods!
