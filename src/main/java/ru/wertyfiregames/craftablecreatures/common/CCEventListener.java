@@ -95,6 +95,9 @@ public class CCEventListener {
                     if (stack.getItem() == CCItems.spawn_egg_template) {
                         event.player.triggerAchievement(CCAchievementList.mobSpawner);
                     }
+                    if (stack.getItem() == CCItems.transmutator) {
+                        event.player.triggerAchievement(CCAchievementList.transmutator);
+                    }
                     if (stack.getItem() == Item.getItemFromBlock(CCBlocks.powered_bluestone_block)) {
                         event.player.triggerAchievement(CCAchievementList.energy);
                     }
