@@ -3,3 +3,7 @@ Added functionality to transmutator (requires Morph and iChunUtil and does not f
 Now text on right page now overlaps tooltip for illustration on left page
 Added transmutator craft
 Transmutator out of experimental mode
+Updated guide book
+Added achievement 'The Bugged One'
+Reordered achievements
+German and ukrainian languages is no longer supported
