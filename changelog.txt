@@ -7,3 +7,4 @@ Updated guide book
 Added achievement 'The Bugged One'
 Reordered achievements
 German and ukrainian languages is no longer supported
+Updated achievements translations
