@@ -1,15 +1,18 @@
 package ru.wertyfiregames.craftablecreatures.common;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
+import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
+import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentTranslation;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
@@ -55,6 +58,8 @@ public class CCEventListener {
         }
 
         if (CCConfig.checkForUpdates) {
+            MinecraftServer server = MinecraftServer.getServer();
+            if (server != null && !server.isSinglePlayer()) return;
             String homepage = CCVersionChecker.getHomepageUrl();
             if (CCVersionChecker.getStatus() == UpdateResult.FAILED) {
                 event.player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.failedToCheckUpdates"));

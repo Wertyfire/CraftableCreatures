@@ -33,15 +33,15 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "1.1.0";
-    protected static final String buildNumber = "17";
+    protected static final String modVersion = "1.1.1";
+    protected static final String buildNumber = "18";
     protected static final String modStatus = "r";
 
 //    Name
     protected static final String name = "Craftable Creatures";
 
 //    Dependencies
-    protected static final String dependencies = "required-after:wertyfirecore@[1.0.2];";
+    protected static final String dependencies = "required-after:wertyfirecore@[1.0.3,);";
 
 //    Config
     private static Configuration config;

@@ -1,10 +1,1 @@
-Fixed bug: at first frame after opening guidebook all content from right page was rendered on the left side
-Added functionality to transmutator (requires Morph and iChunUtil and does not function well)
-Now text on right page no longer overlaps tooltip for illustration on left page
-Added transmutator craft
-Transmutator out of experimental mode
-Updated guide book
-Added achievement 'The Bugged One'
-Reordered achievements
-German and ukrainian languages is no longer supported
-Updated achievements translations
+Fixed bug: disconnecting from server when server tries to show player update changelog
