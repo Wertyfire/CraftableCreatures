@@ -22,8 +22,12 @@ public class CommonProxy implements IGuiHandler {
             return new GuiCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_GUIDE_BOOK)
             return new GuiScreenGuideBook(player);
-        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
-            return new GuiTransmutator(player.inventory, new InventoryTransmutator(player));
+        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR) {
+            InventoryTransmutator transmutator = new InventoryTransmutator(player);
+            if (player.getHeldItem().hasDisplayName())
+                transmutator.setCustomName(player.getHeldItem().getDisplayName());
+            return new GuiTransmutator(player.inventory, transmutator);
+        }
 
         return null;
     }
@@ -33,9 +37,12 @@ public class CommonProxy implements IGuiHandler {
             return new ContainerSoulExtractor(player.inventory, (TileEntitySoulExtractor) world.getTileEntity(x, y, z));
         else if (ID == CraftableCreatures.GUI_COMBINER)
             return new ContainerCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(x, y, z));
-        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR)
-            return new ContainerTransmutator(player.inventory, new InventoryTransmutator(player));
-
+        else if (ID == CraftableCreatures.GUI_TRANSMUTATOR) {
+            InventoryTransmutator transmutator = new InventoryTransmutator(player);
+            if (player.getHeldItem().hasDisplayName())
+                transmutator.setCustomName(player.getHeldItem().getDisplayName());
+            return new ContainerTransmutator(player.inventory, transmutator);
+        }
         return null;
     }
 
