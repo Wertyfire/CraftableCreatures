@@ -1,1 +1,1 @@
-Fixed bug: disconnecting from server when server tries to show player update changelog
+Fixed transmutator name in gui not changing after renaming in anvil
