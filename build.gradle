@@ -17,7 +17,7 @@ compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.
 
 version = "1.0"
 group= "ru.wertyfiregames.craftablecreatures"
-archivesBaseName = "CraftableCreatures"
+archivesBaseName = "CraftableCreatures-1.8.9"
 
 minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
@@ -43,9 +43,17 @@ build.doFirst {
     } else throw new GradleException('Incorrect input!')
 }
 
-repositories {}
+repositories {
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.dev"
+    }
+}
 
-dependencies {}
+dependencies {
+    //JEI
+    implementation 'mezz.jei:jei_1.8.9:2.28.18.186'
+}
 
 processResources
 {
