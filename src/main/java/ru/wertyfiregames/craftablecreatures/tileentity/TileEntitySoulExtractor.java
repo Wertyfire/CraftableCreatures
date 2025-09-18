@@ -26,7 +26,6 @@ import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
-import ru.wertyfiregames.craftablecreatures.api.IBucket;
 import ru.wertyfiregames.craftablecreatures.block.BlockSoulExtractor;
 import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.inventory.container.ContainerSoulExtractor;
