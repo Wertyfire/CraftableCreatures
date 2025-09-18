@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "craftable_creatures:blocks/combiner_top",
+    "front": "craftable_creatures:blocks/combiner_front_on",
+    "side": "craftable_creatures:blocks/combiner"
+  }
+}

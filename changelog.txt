@@ -1,0 +1,2 @@
+Changed recipe of endermans soul (ender eye -> ender pearl)
+Added souls for rabbit, endermite and guardian
