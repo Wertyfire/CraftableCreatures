@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "1.1.3",
-    "1.7.10-recommended": "1.1.3",
+    "1.7.10-latest": "1.1.4",
+    "1.7.10-recommended": "1.1.4",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -26,6 +26,7 @@
     "1.1.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added functionality to transmutator<n><t>2. Added transmutator craft<n><t>3. Transmutator no longer requires experimental mode<n><t>4. Added achievement 'The Bugged One'<n><t>5. Reordered achievement on achievements screen<n><t>6. Updated guidebook to match additions<n><t>7. Fixed 2 bugs (more info on modrinth)<n><t>8. German and ukrainian languages are no longer supported<n><t>9. Updated translations<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Добавлен функционал трансмутатору<n><t>2. Добавлен крафт трансмутатора<n><t>3. Трансмутатор больше не требует экспериментального режима<n><t>4. Добавлено достижение 'Разработка Циппенштейна'<n><t>5. Изменены позиции достижений на экране достижений<n><t>6. Обновлена книга-гайд, чтобы соответствовать нововведениям<n><t>7. Исправлено 2 бага (подробнее на modrinth)<n><t>8. Немецкий и украинский язык больше не поддерживаются<n><t>9. Обновлены переводы",
     "1.1.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed issue causing players to disconnect when displaying the changelog after connecting to the server<n><t>2. Now Wertyfire Core v1.0.3 is required<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлена ошибка, из-за которой игроки отключались при отображении списка изменений после подключения к серверу<n><t>2. Теперь требуется Wertyfire Core версии 1.0.3",
     "1.1.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed issue when transmutator name in gui not changing after renaming in anvil<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлена ошибка, при которой имя трансмутатора не менялось в интерфейсе после переименования на наковальне",
-    "1.1.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Soul Extractor and Combiner now works correctly with hoppers<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Извлекатель душ и комбинатор теперь корректно работает с воронками"
+    "1.1.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Soul Extractor and Combiner now works correctly with hoppers<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Извлекатель душ и комбинатор теперь корректно работает с воронками",
+    "1.1.4": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Changed enderman soul recipe to use ender pearls instead of ender eye<n><t>2. Improved code of soul extractor and combiner recipes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Изменён рецепт души эндермена чтобы использовать жемчужину края вместо ока края<n><t>2. Улучшен код рецептов извлекателя душ и комбинатора"
   }
 }

@@ -1,2 +1,2 @@
-Soul Extractor now works correctly with hoppers
-Combiner now works correctly with hoppers
+Replaced ingredient in enderman's soul recipe (ender eye -> ender pearl)
+Now soul extractor and combiner uses wildcard meta value for some recipes
