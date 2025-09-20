@@ -91,6 +91,7 @@ craftableCreatures.chat.clickToOpenUrl=Нажмите, чтобы открыть
 craftableCreatures.nei.recipe.soulExtracting=Извлечение души
 craftableCreatures.nei.recipe.fuel.tooltip=Это топливо может извлечь: %s душ (-у)
 craftableCreatures.nei.recipe.combining=Комбинирование
+craftableCreatures.jei.recipe.experience=Опыт: %s
 craftableCreatures.nei.subsets.souls=Души
 
 craftableCreatures.guide.clickToViewIllustration=Нажмите, чтобы просмотреть иллюстрацию

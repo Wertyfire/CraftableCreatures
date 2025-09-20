@@ -91,6 +91,7 @@ craftableCreatures.chat.clickToOpenUrl=Click to open link
 craftableCreatures.nei.recipe.soulExtracting=Soul Extraction
 craftableCreatures.nei.recipe.fuel.tooltip=This fuel can extract: %s soul (-s)
 craftableCreatures.nei.recipe.combining=Combining
+craftableCreatures.jei.recipe.experience=%s XP
 craftableCreatures.nei.subsets.souls=Souls
 
 craftableCreatures.guide.clickToViewIllustration=Click to view illustration
