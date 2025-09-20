@@ -23,7 +23,7 @@ public class TileEntityCombiner extends TileEntity implements ISidedInventory {
     private ItemStack[] combinerItemStacks = new ItemStack[3];
     private static final int[] slotAccess_fromTop = new int[] { 0, 1 };
     private static final int[] slotAccess_fromBottom = new int[] { 2 };
-    private static final int[] slotAccess_fromSides = new int[] {};
+    private static final int[] slotAccess_fromSides = new int[] { 0, 1 };
 
     public int combineTime;
 
@@ -189,7 +189,11 @@ public class TileEntityCombiner extends TileEntity implements ISidedInventory {
     public void closeInventory() {}
 
     public boolean isItemValidForSlot(int slot, ItemStack item) {
-        return slot != 2;
+        if (slot == 0)
+            return CombinerRecipes.get().isIngredient(item, 1);
+        else if (slot == 1)
+            return CombinerRecipes.get().isIngredient(item, 2);
+        return false;
     }
 
     public int[] getAccessibleSlotsFromSide(int side) {
