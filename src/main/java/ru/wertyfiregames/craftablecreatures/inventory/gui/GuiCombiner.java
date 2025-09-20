@@ -42,8 +42,6 @@ public class GuiCombiner extends GuiContainer {
         drawTexturedModalRect(xPos, yPos, 0, 0, xSize, ySize);
 
         int scaled = getCombineProgressScaled(17);
-        System.out.println("scaled=" + scaled);
-        System.out.println("field0=" + tileSoulExtractor.getField(0));
         drawTexturedModalRect(xPos + 60, yPos + 33, 176, 0, 55, scaled);
     }
 
