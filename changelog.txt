@@ -1,1 +1,2 @@
-Fixed transmutator name in gui not changing after renaming in anvil
+Soul Extractor now works correctly with hoppers
+Combiner now works correctly with hoppers
