@@ -260,7 +260,13 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
     public void closeInventory() {}
 
     public boolean isItemValidForSlot(int slot, ItemStack item) {
-        return slot != 3 && (slot == 1 ? isItemFuel(item) : slot != 2 || isItemExtractHelper(item));
+        if (slot == 0)
+            return SoulExtractorRecipes.get().getExtractingResult(item) != null;
+        else if (slot == 1)
+            return isItemFuel(item);
+        else if (slot == 2)
+            return isItemExtractHelper(item);
+        return false;
     }
 
     public int[] getAccessibleSlotsFromSide(int side) {
