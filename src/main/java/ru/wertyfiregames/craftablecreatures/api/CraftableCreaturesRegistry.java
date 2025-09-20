@@ -42,43 +42,43 @@ public class CraftableCreaturesRegistry {
     }
 
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addExtracting(Block input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addExtracting(Item input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addExtracting(String nameInOreDict, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(nameInOreDict, output, xp);
     }
     /**Add recipe to soul extractor
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addExtracting(ItemStack input, ItemStack output, float xp) {
         SoulExtractorRecipes.get().addRecipe(input, output, xp);
     }
 
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addCombining(Item firstInput, Item secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addCombining(ItemStack firstInput, Item secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addCombining(Item firstInput, ItemStack secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction.*/
     public static void addCombining(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
