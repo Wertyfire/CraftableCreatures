@@ -204,7 +204,11 @@ public class TileEntityCombiner extends TileEntityLockable implements ITickable,
     public void closeInventory(EntityPlayer player) {}
 
     public boolean isItemValidForSlot(int slot, ItemStack item) {
-        return slot != 2;
+        if (slot == 0)
+            return CombinerRecipes.get().isIngredient(item, 1);
+        else if (slot == 1)
+            return CombinerRecipes.get().isIngredient(item, 2);
+        return false;
     }
 
     public int[] getSlotsForFace(EnumFacing facing) {
