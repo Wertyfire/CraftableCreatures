@@ -31,7 +31,7 @@ public class SoulExtractorRecipes {
         addRecipe(Items.slime_ball, new ItemStack(CCItems.soul_element, 1, 5), 0.1f);
         addRecipe(Items.ghast_tear, new ItemStack(CCItems.soul_element, 1, 6), 0.175f);
         addRecipe(Items.golden_sword, new ItemStack(CCItems.soul_element, 1, 7), 0.25f);
-        addRecipe(Items.ender_eye, new ItemStack(CCItems.soul_element, 1, 8), 0.175f);
+        addRecipe(Items.ender_pearl, new ItemStack(CCItems.soul_element, 1, 8), 0.175f);
         ItemStack stack1 = new ItemStack(CCItems.soul_element);
         stack1.setItemDamage(3);
         addRecipe(stack1, new ItemStack(CCItems.soul_element, 1, 9), 0.25f);
@@ -42,10 +42,8 @@ public class SoulExtractorRecipes {
         addRecipe(Items.potionitem, new ItemStack(CCItems.soul_element, 1, 14), 0.25f);
         addRecipe(Items.porkchop, new ItemStack(CCItems.soul_element, 1, 15), 0.05f);
         ItemStack stack2 = new ItemStack(Blocks.wool);
-        for (int i = 0; i < 16; i++) {
-            stack2.setItemDamage(i);
-            addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.05f);
-        }
+        stack2.setItemDamage(OreDictionary.WILDCARD_VALUE);
+        addRecipe(stack2, new ItemStack(CCItems.soul_element, 1, 16), 0.05f);
         addRecipe(Items.beef, new ItemStack(CCItems.soul_element, 1, 17), 0.05f);
         addRecipe(Items.milk_bucket, new ItemStack(CCItems.soul_element, 1, 17), 0.05f);
         addRecipe(Items.chicken, new ItemStack(CCItems.soul_element, 1, 18), 0.05f);
@@ -86,7 +84,8 @@ public class SoulExtractorRecipes {
     }
 
     private boolean areStacksEqual(ItemStack stack1, ItemStack stack2) {
-        return stack1.isItemEqual(stack2) && (stack2.getItemDamage() == 32767 || stack2.getItemDamage() == stack1.getItemDamage());
+        return stack1.getItem() == stack2.getItem() && (stack1.getItemDamage() == OreDictionary.WILDCARD_VALUE
+                || stack2.getItemDamage() == stack1.getItemDamage());
     }
 
     public boolean isItemExtractHelper(ItemStack stack) {
