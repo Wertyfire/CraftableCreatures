@@ -94,7 +94,8 @@ public class SoulExtractorRecipes {
     }
 
     private boolean areStacksEqual(ItemStack stack1, ItemStack stack2) {
-        return stack1.isItemEqual(stack2) && (stack2.getItemDamage() == 32767 || stack2.getItemDamage() == stack1.getItemDamage());
+        return stack1.getItem() == stack2.getItem() && (stack1.getItemDamage() == OreDictionary.WILDCARD_VALUE
+                || stack2.getItemDamage() == stack1.getItemDamage());
     }
 
     public boolean isItemExtractHelper(ItemStack stack) {

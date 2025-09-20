@@ -11,6 +11,7 @@ import net.minecraft.entity.passive.*;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.tuple.ImmutablePair;
 import org.apache.commons.lang3.tuple.Pair;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
@@ -76,7 +77,8 @@ public class CombinerRecipes {
     }
 
     private boolean areStacksEqual(ItemStack stack1, ItemStack stack2) {
-        return stack1.isItemEqual(stack2) && (stack2.getItemDamage() == 32767 || stack2.getItemDamage() == stack1.getItemDamage());
+        return stack1.getItem() == stack2.getItem() && (stack1.getItemDamage() == OreDictionary.WILDCARD_VALUE
+                || stack2.getItemDamage() == stack1.getItemDamage());
     }
 
     private ItemStack soul(int id) {
