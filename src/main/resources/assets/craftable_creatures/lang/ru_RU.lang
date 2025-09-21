@@ -89,7 +89,7 @@ craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Скачать:
 craftableCreatures.chat.clickToOpenUrl=Нажмите, чтобы открыть ссылку
 
 craftableCreatures.nei.recipe.soulExtracting=Извлечение души
-craftableCreatures.nei.recipe.fuel.tooltip=Это топливо может извлечь: %s душ (-у)
+craftableCreatures.nei.recipe.fuel.tooltip=Время работы: %s
 craftableCreatures.nei.recipe.combining=Комбинирование
 craftableCreatures.jei.recipe.experience=Опыт: %s
 craftableCreatures.nei.subsets.souls=Души
