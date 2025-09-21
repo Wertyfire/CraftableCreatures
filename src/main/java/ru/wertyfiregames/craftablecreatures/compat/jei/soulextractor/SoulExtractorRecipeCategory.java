@@ -31,7 +31,7 @@ public abstract class SoulExtractorRecipeCategory extends BlankRecipeCategory {
         IDrawableStatic flameDrawable = guiHelper.createDrawable(backgroundLocation, 176, 0, 14, 14);
         flame = guiHelper.createAnimatedDrawable(flameDrawable, 300, IDrawableAnimated.StartDirection.TOP, true);
 
-        IDrawableStatic arrowDrawable = guiHelper.createDrawable(backgroundLocation, 176, 0, 14, 14);
+        IDrawableStatic arrowDrawable = guiHelper.createDrawable(backgroundLocation, 176, 14, 42, 30);
         arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200, IDrawableAnimated.StartDirection.LEFT, false);
     }
 }

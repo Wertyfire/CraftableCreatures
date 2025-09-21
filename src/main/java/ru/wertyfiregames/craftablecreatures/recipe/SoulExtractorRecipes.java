@@ -42,10 +42,8 @@ public class SoulExtractorRecipes {
         addRecipe(Items.potionitem, new ItemStack(CCItems.soul, 1, 14), 0.25f);
         addRecipe(Items.porkchop, new ItemStack(CCItems.soul, 1, 15), 0.05f);
         ItemStack stack2 = new ItemStack(Blocks.wool);
-        for (int i = 0; i < 16; i++) {
-            stack2.setItemDamage(i);
-            addRecipe(stack2, new ItemStack(CCItems.soul, 1, 16), 0.05f);
-        }
+        stack2.setItemDamage(OreDictionary.WILDCARD_VALUE);
+        addRecipe(stack2, new ItemStack(CCItems.soul, 1, 16), 0.05f);
         addRecipe(Items.beef, new ItemStack(CCItems.soul, 1, 17), 0.05f);
         addRecipe(Items.milk_bucket, new ItemStack(CCItems.soul, 1, 17), 0.05f);
         addRecipe(Items.chicken, new ItemStack(CCItems.soul, 1, 18), 0.05f);
