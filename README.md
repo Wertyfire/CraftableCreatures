@@ -1,14 +1,31 @@
 # Craftable Creatures
 
-Мод добавляет предметы и 2 прибора с гуи, с помощью которых можно создать яйцо призыва в выживании.
+This mod adds ability to create spawn egg of any mob in survival mode,  
+using soul extractor and combiner.
 
-Тут вы можете посмотреть, как я сделал гуи, tileentity, нетворкинг и обычные блоки и предметы
 ___
 
-Если хотите помочь с разработкой, пишите @wertyfire в дискорд.  
+Current goals:
+1. all content done
+2. port mod to another minecraft versions
 
-Текущие цели:  
-• портировать мод на 1.8.9, 1.12.2
+Modrinth page:  
+https://modrinth.com/mod/craftable_creatures/
 
-Страница на Modrinth:  
+---
+
+## Русский
+
+# Craftable Creatures
+
+Этот мод добавляет возможность создавать яйца призыва любого моба в режиме выживания,  
+используя извлекатель душ и комбинатор
+
+---
+
+Текущие цели:
+1. весь контент готов
+2. портировать мод на другие версии Майнкрафта
+
+Страница на Modrinth:
 https://modrinth.com/mod/craftable_creatures/
