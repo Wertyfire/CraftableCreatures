@@ -1,2 +1,2 @@
-Changed recipe of endermans soul (ender eye -> ender pearl)
 Added souls for rabbit, endermite and guardian
+Added compatibility with JEI for soul extractor and combiner
