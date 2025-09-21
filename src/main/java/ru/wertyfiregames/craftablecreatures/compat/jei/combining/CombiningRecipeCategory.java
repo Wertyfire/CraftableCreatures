@@ -15,7 +15,6 @@ import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.compat.jei.CraftableCreaturesJEIPlugin;
 
 import javax.annotation.Nonnull;
-import java.util.List;
 
 public class CombiningRecipeCategory extends BlankRecipeCategory {
     private static final int firstInputSlot = 0;
@@ -34,7 +33,7 @@ public class CombiningRecipeCategory extends BlankRecipeCategory {
 
     public CombiningRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation location = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/combiner.png");
-        background = guiHelper.createDrawable(location, 48, 13, 79, 63, 0, 0, 0, 40);
+        background = guiHelper.createDrawable(location, 48, 13, 80, 63, 0, 0, 0, 40);
         localizedName = Translator.translateToLocal("craftableCreatures.nei.recipe.combining");
 
         IDrawableStatic arrowDrawable = guiHelper.createDrawable(location, 177, 0, 54, 17);
