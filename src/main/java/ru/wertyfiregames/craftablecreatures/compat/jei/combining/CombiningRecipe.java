@@ -67,7 +67,7 @@ public class CombiningRecipe extends BlankRecipeWrapper {
         if (experienceString != null) {
             FontRenderer fontRenderer = minecraft.fontRendererObj;
             int stringWidth = fontRenderer.getStringWidth(experienceString);
-            fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0, Color.GRAY.getRGB());
+            fontRenderer.drawString(experienceString, recipeWidth - stringWidth - 40, 0, Color.GRAY.getRGB());
         }
     }
 }

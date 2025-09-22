@@ -21,8 +21,8 @@ public class CombiningRecipeCategory extends BlankRecipeCategory {
     private static final int secondInputSlot = 1;
     private static final int outputSlot = 2;
 
-    private static final int outputSlotX = 31;
-    private static final int outputSlotY = 41;
+    private static final int outputSlotX = 69;
+    private static final int outputSlotY = 18;
 
     @Nonnull
     private final IDrawable background;
@@ -33,11 +33,11 @@ public class CombiningRecipeCategory extends BlankRecipeCategory {
 
     public CombiningRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation location = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/combiner.png");
-        background = guiHelper.createDrawable(location, 48, 13, 80, 63, 0, 0, 0, 40);
+        background = guiHelper.createDrawable(location, 0, 166, 91, 54, 0, 0, 0, 40);
         localizedName = Translator.translateToLocal("craftableCreatures.nei.recipe.combining");
 
-        IDrawableStatic arrowDrawable = guiHelper.createDrawable(location, 177, 0, 54, 17);
-        arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200, IDrawableAnimated.StartDirection.TOP, false);
+        IDrawableStatic arrowDrawable = guiHelper.createDrawable(location, 176, 17, 40, 30);
+        arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200, IDrawableAnimated.StartDirection.LEFT, false);
     }
 
     @Nonnull
@@ -60,15 +60,15 @@ public class CombiningRecipeCategory extends BlankRecipeCategory {
 
     @Override
     public void drawAnimations(@Nonnull Minecraft minecraft) {
-        arrow.draw(minecraft, 13, 20);
+        arrow.draw(minecraft, 21, 12);
     }
 
     @Override
     public void setRecipe(@Nonnull IRecipeLayout recipeLayout, @Nonnull IRecipeWrapper recipeWrapper) {
         IGuiItemStackGroup itemStacks = recipeLayout.getItemStacks();
 
-        itemStacks.init(firstInputSlot, true, 0, 1);
-        itemStacks.init(secondInputSlot, true, 62, 1);
+        itemStacks.init(firstInputSlot, true, 0, 36);
+        itemStacks.init(secondInputSlot, true, 0, 0);
         itemStacks.init(outputSlot, false, outputSlotX, outputSlotY);
 
         CombiningRecipe wrapper = (CombiningRecipe) recipeWrapper;
