@@ -88,11 +88,10 @@ craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] There is new be
 craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Download update:
 craftableCreatures.chat.clickToOpenUrl=Click to open link
 
-craftableCreatures.nei.recipe.soulExtracting=Soul Extraction
-craftableCreatures.nei.recipe.fuel.tooltip=Work time: %s
-craftableCreatures.nei.recipe.combining=Combining
+craftableCreatures.jei.recipe.soulExtracting=Soul Extraction
+craftableCreatures.jei.recipe.fuel.tooltip=Work time: %s
+craftableCreatures.jei.recipe.combining=Combining
 craftableCreatures.jei.recipe.experience=%s XP
-craftableCreatures.nei.subsets.souls=Souls
 
 craftableCreatures.guide.clickToViewIllustration=Click to view illustration
 

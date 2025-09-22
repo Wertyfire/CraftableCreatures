@@ -34,7 +34,7 @@ public class CombiningRecipeCategory extends BlankRecipeCategory {
     public CombiningRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation location = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/combiner.png");
         background = guiHelper.createDrawable(location, 0, 166, 91, 54, 0, 0, 0, 40);
-        localizedName = Translator.translateToLocal("craftableCreatures.nei.recipe.combining");
+        localizedName = Translator.translateToLocal("craftableCreatures.jei.recipe.combining");
 
         IDrawableStatic arrowDrawable = guiHelper.createDrawable(location, 176, 17, 40, 30);
         arrow = guiHelper.createAnimatedDrawable(arrowDrawable, 200, IDrawableAnimated.StartDirection.LEFT, false);

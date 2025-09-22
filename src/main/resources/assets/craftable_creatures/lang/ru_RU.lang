@@ -88,11 +88,10 @@ craftableCreatures.chat.betaOutdated=[§bCraftable Creatures§f] Вышла но
 craftableCreatures.chat.getUpdate=[§bCraftable Creatures§f] Скачать:
 craftableCreatures.chat.clickToOpenUrl=Нажмите, чтобы открыть ссылку
 
-craftableCreatures.nei.recipe.soulExtracting=Извлечение души
-craftableCreatures.nei.recipe.fuel.tooltip=Время работы: %s
-craftableCreatures.nei.recipe.combining=Комбинирование
+craftableCreatures.jei.recipe.soulExtracting=Извлечение души
+craftableCreatures.jei.recipe.fuel.tooltip=Время работы: %s
+craftableCreatures.jei.recipe.combining=Комбинирование
 craftableCreatures.jei.recipe.experience=Опыт: %s
-craftableCreatures.nei.subsets.souls=Души
 
 craftableCreatures.guide.clickToViewIllustration=Нажмите, чтобы просмотреть иллюстрацию
 

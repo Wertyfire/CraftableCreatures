@@ -32,7 +32,7 @@ public class SEFuelRecipe extends BlankRecipeWrapper {
     public SEFuelRecipe(@Nonnull IGuiHelper guiHelper, @Nonnull Collection<ItemStack> input, int workTime) {
         List<ItemStack> inputList = new ArrayList<>(input);
         inputs = Collections.singletonList(inputList);
-        workTimeString = Translator.translateToLocalFormatted("craftableCreatures.nei.recipe.fuel.tooltip", workTime);
+        workTimeString = Translator.translateToLocalFormatted("craftableCreatures.jei.recipe.fuel.tooltip", workTime);
 
         ResourceLocation soulExtractorBackgroundLocation = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/soul_extractor.png");
         IDrawableStatic flameDrawable = guiHelper.createDrawable(soulExtractorBackgroundLocation, 176, 0, 14, 14);

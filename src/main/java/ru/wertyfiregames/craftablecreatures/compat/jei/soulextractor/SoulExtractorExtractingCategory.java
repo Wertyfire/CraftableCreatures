@@ -29,7 +29,7 @@ public class SoulExtractorExtractingCategory extends SoulExtractorRecipeCategory
         super(guiHelper);
         ResourceLocation location = new ResourceLocation(CraftableCreatures.getModId(), "textures/gui/container/soul_extractor.png");
         background = guiHelper.createDrawable(location, 40, 16, 97, 54);
-        localizedName = Translator.translateToLocal("craftableCreatures.nei.recipe.soulExtracting");
+        localizedName = Translator.translateToLocal("craftableCreatures.jei.recipe.soulExtracting");
     }
 
     @Nonnull
