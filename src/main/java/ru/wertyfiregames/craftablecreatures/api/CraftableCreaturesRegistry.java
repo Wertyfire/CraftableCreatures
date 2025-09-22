@@ -63,22 +63,22 @@ public class CraftableCreaturesRegistry {
     }
 
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction*/
     public static void addCombining(Item firstInput, Item secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction*/
     public static void addCombining(ItemStack firstInput, Item secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction*/
     public static void addCombining(Item firstInput, ItemStack secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }
     /**Add recipe to combiner
-     * @param xp experience from this extraction. Will be multiplied by 5*/
+     * @param xp experience from this extraction*/
     public static void addCombining(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
     }

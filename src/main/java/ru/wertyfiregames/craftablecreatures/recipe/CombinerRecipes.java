@@ -30,14 +30,14 @@ public class CombinerRecipes {
         addRecipe(soul(3), CCItems.spawn_egg_blueprint, spawnEgg(new EntitySpider(null)), 0.2f);
         addRecipe(soul(4), CCItems.spawn_egg_blueprint, spawnEgg(new EntityZombie(null)), 0.2f);
         addRecipe(soul(5), CCItems.spawn_egg_blueprint, spawnEgg(new EntitySlime(null)), 0.2f);
-        addRecipe(soul(6), CCItems.spawn_egg_blueprint, spawnEgg(new EntityGhast(null)), 0.2f);
-        addRecipe(soul(7), CCItems.spawn_egg_blueprint, spawnEgg(new EntityPigZombie(null)), 0.2f);
+        addRecipe(soul(6), CCItems.spawn_egg_blueprint, spawnEgg(new EntityGhast(null)), 0.25f);
+        addRecipe(soul(7), CCItems.spawn_egg_blueprint, spawnEgg(new EntityPigZombie(null)), 0.25f);
         addRecipe(soul(8), CCItems.spawn_egg_blueprint, spawnEgg(new EntityEnderman(null)), 0.2f);
         addRecipe(soul(9), CCItems.spawn_egg_blueprint, spawnEgg(new EntityCaveSpider(null)), 0.2f);
-        addRecipe(soul(10), CCItems.spawn_egg_blueprint, spawnEgg(new EntitySilverfish(null)), 0.2f);
-        addRecipe(soul(11), CCItems.spawn_egg_blueprint, spawnEgg(new EntityBlaze(null)), 0.2f);
-        addRecipe(soul(12), CCItems.spawn_egg_blueprint, spawnEgg(new EntityMagmaCube(null)), 0.2f);
-        addRecipe(soul(13), CCItems.spawn_egg_blueprint, spawnEgg(new EntityBat(null)), 0.05f);
+        addRecipe(soul(10), CCItems.spawn_egg_blueprint, spawnEgg(new EntitySilverfish(null)), 0.3f);
+        addRecipe(soul(11), CCItems.spawn_egg_blueprint, spawnEgg(new EntityBlaze(null)), 0.25f);
+        addRecipe(soul(12), CCItems.spawn_egg_blueprint, spawnEgg(new EntityMagmaCube(null)), 0.25f);
+        addRecipe(soul(13), CCItems.spawn_egg_blueprint, spawnEgg(new EntityBat(null)), 0.1f);
         addRecipe(soul(14), CCItems.spawn_egg_blueprint, spawnEgg(new EntityWitch(null)), 0.2f);
         addRecipe(soul(15), CCItems.spawn_egg_blueprint, spawnEgg(new EntityPig(null)), 0.1f);
         addRecipe(soul(16), CCItems.spawn_egg_blueprint, spawnEgg(new EntitySheep(null)), 0.1f);
@@ -47,10 +47,10 @@ public class CombinerRecipes {
         addRecipe(soul(20), CCItems.spawn_egg_blueprint, spawnEgg(new EntityWolf(null)), 0.15f);
         addRecipe(soul(21), CCItems.spawn_egg_blueprint, spawnEgg(new EntityMooshroom(null)), 0.15f);
         addRecipe(soul(22), CCItems.spawn_egg_blueprint, spawnEgg(new EntityOcelot(null)), 0.1f);
-        addRecipe(soul(23), CCItems.spawn_egg_blueprint, new ItemStack(Items.spawn_egg, 1, 100), 0.1f); //horse
-        addRecipe(soul(24), CCItems.spawn_egg_blueprint, spawnEgg(new EntityVillager(null)), 0.1f);
+        addRecipe(soul(23), CCItems.spawn_egg_blueprint, new ItemStack(Items.spawn_egg, 1, 100), 0.15f); //horse
+        addRecipe(soul(24), CCItems.spawn_egg_blueprint, spawnEgg(new EntityVillager(null)), 0.35f);
         addRecipe(soul(25), CCItems.spawn_egg_blueprint, spawnEgg(new EntityEndermite(null)), 0.15f);
-        addRecipe(soul(26), CCItems.spawn_egg_blueprint, spawnEgg(new EntityGuardian(null)), 0.2f);
+        addRecipe(soul(26), CCItems.spawn_egg_blueprint, spawnEgg(new EntityGuardian(null)), 0.25f);
         addRecipe(soul(27), CCItems.spawn_egg_blueprint, spawnEgg(new EntityRabbit(null)), 0.1f);
     }
 
@@ -73,7 +73,7 @@ public class CombinerRecipes {
     public void addRecipe(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
         Pair<ItemStack, ItemStack> ingredients = new ImmutablePair<>(firstInput.copy(), secondInput.copy());
         combiningRecipes.put(ingredients, output);
-        experienceList.put(output.copy(), xp * 5f);
+        experienceList.put(output.copy(), xp);
     }
 
     private boolean areStacksEqual(ItemStack stack1, ItemStack stack2) {
