@@ -6,11 +6,12 @@ package ru.wertyfiregames.craftablecreatures.init;
 
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraftforge.common.ChestGenHooks;
+import ru.wertyfiregames.craftablecreatures.item.EnumSoulElement;
 
 public class CCChestLoot {
     public static void register() {
         //Souls
-        for (int i = 14; i <= 24; i++) {
+        for (int i = 14; i <= EnumSoulElement.values().length; i++) {
             ChestGenHooks.getInfo(ChestGenHooks.DUNGEON_CHEST).addItem(new WeightedRandomChestContent(CCItems.soul, i, 0, 1, 1));
             ChestGenHooks.getInfo(ChestGenHooks.MINESHAFT_CORRIDOR).addItem(new WeightedRandomChestContent(CCItems.soul, i, 1, 3, 2));
             ChestGenHooks.getInfo(ChestGenHooks.PYRAMID_DESERT_CHEST).addItem(new WeightedRandomChestContent(CCItems.soul, i, 0, 1, 1));
