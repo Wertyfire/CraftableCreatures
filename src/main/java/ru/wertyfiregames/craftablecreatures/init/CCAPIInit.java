@@ -11,7 +11,7 @@ import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 
 public class CCAPIInit {
     public static void register() {
-        CraftableCreaturesRegistry.registerItemAsSoul(CCItems.soul);
+//        CraftableCreaturesRegistry.registerItemAsSoul(CCItems.soul);
 
         link(1, new EntityCreeper(null));
         link(2, new EntitySkeleton(null));

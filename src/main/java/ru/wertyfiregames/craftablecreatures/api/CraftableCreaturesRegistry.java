@@ -18,8 +18,6 @@ import java.util.Map;
 
 /**@author Wertyfire*/
 public class CraftableCreaturesRegistry {
-    /**List of souls which should be written to subset in NEI*/
-    private static final List<Item> souls = Lists.newArrayList();
     private static final Map<ItemStack, EntityLivingBase> morphList = new HashMap<>();
     /**List of soul extractor fuel handlers*/
     private static final List<ISEFuelHandler> seFuelHandlers = Lists.newArrayList();
@@ -81,21 +79,6 @@ public class CraftableCreaturesRegistry {
      * @param xp experience from this extraction*/
     public static void addCombining(ItemStack firstInput, ItemStack secondInput, ItemStack output, float xp) {
         CombinerRecipes.get().addRecipe(firstInput, secondInput, output, xp);
-    }
-
-    /**Add item as soul so this will be shown in subset "Souls" in NEI*/
-    public static void registerItemAsSoul(Item soul) {
-        souls.add(soul);
-    }
-
-    /**Check if given item registered as soul*/
-    public static boolean isItemSoul(Item potentialSoul) {
-        return souls.contains(potentialSoul);
-    }
-
-    /**Get list of souls*/
-    public static List<Item> listSouls() {
-        return souls;
     }
 
     /**Register fuel handler for soul extractor*/
