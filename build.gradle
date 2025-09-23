@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "1.0"
+version = "1.0.0"
 group= "ru.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures-1.8.9"
 
@@ -31,7 +31,7 @@ tasks.withType(JavaCompile) {
 }
 
 build.doFirst {
-    Scanner scanner = new Scanner(System.in);
+    Scanner scanner = new Scanner(System.in)
     println 'Are you updated version numbers??? [y/n]'
 
     def input = scanner.nextLine()
