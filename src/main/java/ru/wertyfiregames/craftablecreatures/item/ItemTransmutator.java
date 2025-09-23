@@ -22,8 +22,14 @@ public class ItemTransmutator extends DefaultItem {
 
     @Override
     public void addInformation(ItemStack stack, EntityPlayer player, List<String> tooltip, boolean advanced) {
-        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.transmutator"));
-        else tooltip.add(I18n.format("tooltip.pressLshift"));
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+            tooltip.add(I18n.format("tooltip.transmutator1"));
+            tooltip.add(I18n.format("tooltip.transmutator2"));
+        }
+        else {
+            tooltip.add(I18n.format("tooltip.pressLshift1"));
+            tooltip.add(I18n.format("tooltip.pressLshift2"));
+        }
     }
 
     public ItemStack onItemRightClick(ItemStack stack, World world, EntityPlayer player) {
