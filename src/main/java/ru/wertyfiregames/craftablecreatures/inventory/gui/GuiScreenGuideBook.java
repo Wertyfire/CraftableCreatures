@@ -8,6 +8,7 @@ import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.GuiScreen;
+import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.EntityList;
@@ -26,6 +27,7 @@ import org.lwjgl.opengl.GL12;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
+import ru.wertyfiregames.craftablecreatures.item.EnumSoulElement;
 import ru.wertyfiregames.craftablecreatures.item.ItemGuideBook;
 
 import java.io.IOException;
@@ -243,7 +245,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         if (part < 0 || part > 2)
             throw new IllegalArgumentException("Argument part must be 0 to 2 but current is: " + part);
 
-        GL11.glColor4f(1f, 1f, 1f, 1f);
+        GlStateManager.color(1f, 1f, 1f, 1f);
 
         int x = (width - xSize) / 2 + xSize / 2;
         int xLeft = (width - xSize) / 2 - xSize / 2;
@@ -323,7 +325,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             int stackX = lineXPos;
             int stackY = lineYPos;
             int stacks = 0;
-            for (int i = 0; i < 25; i++) {
+            for (int i = 0; i < EnumSoulElement.values().length; i++) {
                 drawItemStack(s(CCItems.soul, 1, i), stackX, stackY);
                 stackX += 18;
                 stacks++;
@@ -751,7 +753,7 @@ public class GuiScreenGuideBook extends GuiScreen {
     }
 
     private void drawImage(ResourceLocation rl, int x, int y, int u, int v, int width, int height) {
-        GL11.glColor4f(1f, 1f, 1f, 1f);
+        GlStateManager.color(1f, 1f, 1f, 1f);
         mc.getTextureManager().bindTexture(rl);
         drawTexturedModalRect(x, y, u, v, width, height);
     }
@@ -905,7 +907,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         public void drawButton(Minecraft mc, int x, int y) {
             if (visible) {
                 boolean hovered = isMouseOver(x, y);
-                GL11.glColor4f(1f, 1f,1f, 1f);
+                GlStateManager.color(1f, 1f,1f, 1f);
                 mc.getTextureManager().bindTexture(guideBookPage1);
 
                 int u = 2;
@@ -933,7 +935,7 @@ public class GuiScreenGuideBook extends GuiScreen {
         public void drawButton(Minecraft mc, int x, int y) {
             if (visible) {
                 boolean hovered = isMouseOver(x, y);
-                GL11.glColor4f(1f, 1f, 1f, 1f);
+                GlStateManager.color(1f, 1f, 1f, 1f);
                 mc.getTextureManager().bindTexture(guideBookPage1);
 
                 int u = 5;
