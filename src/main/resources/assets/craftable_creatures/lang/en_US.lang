@@ -52,9 +52,13 @@ item.soul.ocelot.name=Soul [§eOcelot§f]
 item.soul.horse.name=Soul [§6Horse§f]
 item.soul.villager.name=Soul [§6Villager§f]
 
-tooltip.soulExtractor=Extracts soul element from item and puts it into player's soul
+tooltip.pressLshift1=§fPress §cLSHIFT§f to see
+tooltip.pressLshift2=§fmore info
+tooltip.soulExtractor1=Extracts soul element from
+tooltip.soulExtractor2=item and puts it into player's soul
 tooltip.spawnEggCombiner=Transforms item according to blueprint
-tooltip.transmutator=Lets you morph into any mob by using soul
+tooltip.transmutator1=Lets you morph into
+tooltip.transmutator2=any mob by using soul
 
 itemGroup.craftableCreatures=Craftable Creatures
 

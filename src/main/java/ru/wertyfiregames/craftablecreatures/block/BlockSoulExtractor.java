@@ -228,8 +228,14 @@ public class BlockSoulExtractor extends BlockContainer {
         @SuppressWarnings("unchecked")
         @Override
         public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
-            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.soulExtractor"));
-            else tooltip.add(I18n.format("tooltip.pressLshift"));
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+                tooltip.add(I18n.format("tooltip.soulExtractor1"));
+                tooltip.add(I18n.format("tooltip.soulExtractor2"));
+            }
+            else {
+                tooltip.add(I18n.format("tooltip.pressLshift1"));
+                tooltip.add(I18n.format("tooltip.pressLshift2"));
+            }
         }
     }
 }

@@ -202,7 +202,10 @@ public class BlockCombiner extends BlockContainer {
         @Override
         public void addInformation(ItemStack stack, EntityPlayer player, List tooltip, boolean flag) {
             if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(I18n.format("tooltip.spawnEggCombiner"));
-            else tooltip.add(I18n.format("tooltip.pressLshift"));
+            else {
+                tooltip.add(I18n.format("tooltip.pressLshift1"));
+                tooltip.add(I18n.format("tooltip.pressLshift2"));
+            }
         }
     }
 }
