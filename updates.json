@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "1.1.4",
-    "1.7.10-recommended": "1.1.4",
+    "1.7.10-latest": "1.1.5",
+    "1.7.10-recommended": "1.1.5",
     "1.8.9-latest": "1.0.0",
     "1.8.9-recommended": "1.0.0",
     "1.12.2-latest": "0.1.0",
@@ -29,7 +29,8 @@
     "1.1.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed issue causing players to disconnect when displaying the changelog after connecting to the server<n><t>2. Now Wertyfire Core v1.0.3 is required<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлена ошибка, из-за которой игроки отключались при отображении списка изменений после подключения к серверу<n><t>2. Теперь требуется Wertyfire Core версии 1.0.3",
     "1.1.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed issue when transmutator name in gui not changing after renaming in anvil<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлена ошибка, при которой имя трансмутатора не менялось в интерфейсе после переименования на наковальне",
     "1.1.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Soul Extractor and Combiner now works correctly with hoppers<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Извлекатель душ и комбинатор теперь корректно работает с воронками",
-    "1.1.4": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Changed enderman soul recipe to use ender pearls instead of ender eye<n><t>2. Improved code of soul extractor and combiner recipes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Изменён рецепт души эндермена чтобы использовать жемчужину края вместо ока края<n><t>2. Улучшен код рецептов извлекателя душ и комбинатора"
+    "1.1.4": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Changed enderman soul recipe to use ender pearls instead of ender eye<n><t>2. Improved code of soul extractor and combiner recipes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Изменён рецепт души эндермена чтобы использовать жемчужину края вместо ока края<n><t>2. Улучшен код рецептов извлекателя душ и комбинатора",
+    "1.1.5": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed NBT saving<n><t>2. Updated some translations<n><t>3. Separated tooltips for soul extractor and combiner<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлено сохранение NBT<n><t>2. Обновлены некоторые переводы<n><t>3. Разделены подсказки к извлекателю душ и комбинатору"
   },
   "1.8.9": {}
 }
