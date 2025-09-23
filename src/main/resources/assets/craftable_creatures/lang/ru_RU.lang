@@ -24,7 +24,7 @@ item.template.name=Чертёж
 item.bluestone.name=Синяя пыль
 item.batWing.name=Крыло летучей мыши
 item.ocelotTail.name=Хвост оцелота
-item.guideBook.name=Путеводитель по Craftable Creatures
+item.guideBook.name=Руководство по Craftable Creatures
 item.transmutator.name=Трансмутатор
 item.soul.player.name=Душа
 item.soul.creeper.name=Душа [§aКрипер§f]
@@ -55,10 +55,13 @@ item.soul.horse.name=Душа [§6Лошадь§f]
 item.soul.rabbit.name=Душа [§7Кролик§f]
 item.soul.villager.name=Душа [§6Житель§f]
 
-tooltip.pressLshift=§fЗажмите §cLSHIFT§f, чтобы увидеть больше информации
-tooltip.soulExtractor=Извлекает элемент душу из первого предмета и помещает её в душу игрока
+tooltip.pressLshift1=§fЗажмите §cLSHIFT§f, чтобы
+tooltip.pressLshift2=§fувидеть больше информации
+tooltip.soulExtractor1=Извлекает элемент души из предмета
+tooltip.soulExtractor2=и помещает её в душу игрока
 tooltip.spawnEggCombiner=Преобразует предмет согласно чертежу
-tooltip.transmutator=Позволяет превратиться в любого моба используя душу
+tooltip.transmutator1=Позволяет превратиться в
+tooltip.transmutator2=любого моба используя душу
 
 itemGroup.craftableCreatures=Craftable Creatures
 

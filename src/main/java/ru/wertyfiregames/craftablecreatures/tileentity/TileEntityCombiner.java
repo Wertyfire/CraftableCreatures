@@ -105,13 +105,13 @@ public class TileEntityCombiner extends TileEntityLockable implements ITickable,
 
             if (slot >= 0 && slot < combinerItemStacks.length)
                 combinerItemStacks[slot] = ItemStack.loadItemStackFromNBT(nbtCompound);
-
-            combineTime = nbt.getInteger("CombineTime");
-            totalCombineTime = nbt.getInteger("CombineTimeTotal");
-
-            if (nbt.hasKey("CustomName", 8))
-                combinerCustomName = nbt.getString("CustomName");
         }
+
+        combineTime = nbt.getInteger("CombineTime");
+        totalCombineTime = nbt.getInteger("CombineTimeTotal");
+
+        if (nbt.hasKey("CustomName", 8))
+            combinerCustomName = nbt.getString("CustomName");
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
