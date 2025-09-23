@@ -57,7 +57,7 @@ public class SERecipe extends BlankRecipeWrapper {
         if (experienceString != null) {
             FontRenderer fontRenderer = minecraft.fontRendererObj;
             int stringWidth = fontRenderer.getStringWidth(experienceString);
-            fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 0, Color.gray.getRGB());
+            fontRenderer.drawString(experienceString, recipeWidth - stringWidth, 46, Color.gray.getRGB());
         }
     }
 }
