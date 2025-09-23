@@ -95,14 +95,14 @@ public class TileEntitySoulExtractor extends TileEntity implements ISidedInvento
 
             if (slot >= 0 && slot < soulExtractorItemStacks.length)
                 soulExtractorItemStacks[slot] = ItemStack.loadItemStackFromNBT(nbtCompound);
-
-            fuelWorkTime = nbt.getShort("FuelWorkTime");
-            extractTime = nbt.getShort("ExtractTime");
-            currentFuelWorkTime = getFuelWorkTime(soulExtractorItemStacks[1]);
-
-            if (nbt.hasKey("CustomName", 8))
-                customName = nbt.getString("CustomName");
         }
+
+        fuelWorkTime = nbt.getShort("FuelWorkTime");
+        extractTime = nbt.getShort("ExtractTime");
+        currentFuelWorkTime = getFuelWorkTime(soulExtractorItemStacks[1]);
+
+        if (nbt.hasKey("CustomName", 8))
+            customName = nbt.getString("CustomName");
     }
 
     public void writeToNBT(NBTTagCompound nbt) {

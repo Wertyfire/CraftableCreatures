@@ -88,12 +88,11 @@ public class TileEntityCombiner extends TileEntity implements ISidedInventory {
 
             if (slot >= 0 && slot < combinerItemStacks.length)
                 combinerItemStacks[slot] = ItemStack.loadItemStackFromNBT(nbtCompound);
-
-            combineTime = nbt.getShort("CombineTime");
-
-            if (nbt.hasKey("CustomName"))
-                customName = nbt.getString("CustomName");
         }
+        combineTime = nbt.getShort("CombineTime");
+
+        if (nbt.hasKey("CustomName"))
+            customName = nbt.getString("CustomName");
     }
 
     public void writeToNBT(NBTTagCompound nbt) {
