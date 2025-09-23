@@ -21,7 +21,7 @@ import ru.wertyfiregames.craftablecreatures.inventory.gui.GuiSoulExtractor;
 import javax.annotation.Nonnull;
 
 @JEIPlugin
-public class CraftableCreaturesJEIPlugin implements IModPlugin {
+public class CraftableCreaturesJEIPlugin extends BlankModPlugin {
     public static final String SOUL_EXTRACTING_ID = CraftableCreatures.getModId() + "." + "soul_extracting";
     public static final String SE_FUEL_ID = CraftableCreatures.getModId() + "." + "soul_extracting.fuel";
     public static final String COMBINING_ID = CraftableCreatures.getModId() + "." + "combining";
@@ -58,10 +58,4 @@ public class CraftableCreaturesJEIPlugin implements IModPlugin {
         registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(CCBlocks.lit_soul_extractor));
         registry.getJeiHelpers().getItemBlacklist().addItemToBlacklist(new ItemStack(CCBlocks.lit_combiner));
     }
-
-    public void onRuntimeAvailable(@Nonnull IJeiRuntime jeiRuntime) {}
-
-    public void onJeiHelpersAvailable(IJeiHelpers jeiHelpers) {}
-    public void onItemRegistryAvailable(IItemRegistry itemRegistry) {}
-    public void onRecipeRegistryAvailable(@Nonnull IRecipeRegistry recipeRegistry) {}
 }
