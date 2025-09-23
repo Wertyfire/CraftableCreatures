@@ -1,3 +1,3 @@
 Fixed bug when NBT from soul extractor and combiner was saving incorrectly
 Updated russian translations
-Separated tooltips for soul extractor and transmutator
+Separated tooltips for soul extractor, combiner and transmutator
