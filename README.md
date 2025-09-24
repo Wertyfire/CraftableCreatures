@@ -3,7 +3,7 @@
 This mod adds ability to create spawn egg of any mob in survival mode,  
 using soul extractor and combiner.
 
-___
+===================
 
 Current goals:
 1. all content done
@@ -21,7 +21,7 @@ https://modrinth.com/mod/craftable_creatures/
 Этот мод добавляет возможность создавать яйца призыва любого моба в режиме выживания,  
 используя извлекатель душ и комбинатор
 
-___
+===================
 
 Текущие цели:
 1. весь контент готов
