@@ -1,0 +1,16 @@
+[
+  {
+    "modid": "craftable_creatures",
+    "name": "Craftable Creatures",
+    "description": "Now you can craft mobs!",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://modrinth.com/mod/craftable_creatures",
+    "updateJSON": "https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/1.7.10/updates.json",
+    "authorList": ["Wertyfire"],
+    "credits": "",
+    "logoFile": "assets/craftable_creatures/logo.png",
+    "screenshots": [],
+    "dependencies": []
+  }
+]
