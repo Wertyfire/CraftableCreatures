@@ -3,8 +3,8 @@
   "promos": {
     "1.7.10-latest": "1.1.5",
     "1.7.10-recommended": "1.1.5",
-    "1.8.9-latest": "1.0.0",
-    "1.8.9-recommended": "1.0.0",
+    "1.8.9-latest": "1.0.1",
+    "1.8.9-recommended": "1.0.1",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -32,5 +32,8 @@
     "1.1.4": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Changed enderman soul recipe to use ender pearls instead of ender eye<n><t>2. Improved code of soul extractor and combiner recipes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Изменён рецепт души эндермена чтобы использовать жемчужину края вместо ока края<n><t>2. Улучшен код рецептов извлекателя душ и комбинатора",
     "1.1.5": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed NBT saving<n><t>2. Updated some translations<n><t>3. Separated tooltips for soul extractor and combiner<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлено сохранение NBT<n><t>2. Обновлены некоторые переводы<n><t>3. Разделены подсказки к извлекателю душ и комбинатору"
   },
-  "1.8.9": {}
+  "1.8.9": {
+    "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n>All content from Craftable Creatures 1.7.10 1.1.5 PLUS the following:<n><t>1. Added endermite, guardian and rabbit souls<n><t>2. Added JEI integration<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n>Весь контент из Craftable Creatures 1.7.10 1.1.5 ПЛЮС следующее:<n><t>1. Добавлены души чешуйницы края, стража и кролика<n><t>2. Добавлена интеграция с JEI",
+    "1.0.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. API fixes<n><t>2. Soul Extractor and Combiner fixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправления API<n><t>2. Исправления извлекателя душ и комбинатора"
+  }
 }
