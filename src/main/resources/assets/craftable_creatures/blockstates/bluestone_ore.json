@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": { "model": "craftable_creatures:bluestone_ore" }
+  }
+}

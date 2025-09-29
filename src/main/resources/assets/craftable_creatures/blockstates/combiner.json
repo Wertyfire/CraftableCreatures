@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "craftable_creatures:combiner" },
+    "facing=south": { "model": "craftable_creatures:combiner", "y": 180 },
+    "facing=west": { "model": "craftable_creatures:combiner", "y": 270 },
+    "facing=east": { "model": "craftable_creatures:combiner", "y": 90 }
+  }
+}

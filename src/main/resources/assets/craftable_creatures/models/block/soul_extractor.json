@@ -1,0 +1,8 @@
+{
+  "parent": "block/orientable",
+  "textures": {
+    "top": "craftable_creatures:blocks/se_top",
+    "front": "craftable_creatures:blocks/se_front_off",
+    "side": "craftable_creatures:blocks/soul_extractor"
+  }
+}
