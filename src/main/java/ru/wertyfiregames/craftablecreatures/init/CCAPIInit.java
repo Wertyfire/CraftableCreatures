@@ -37,6 +37,9 @@ public class CCAPIInit {
         link(22, new EntityOcelot(null));
 //        link(23, new EntityHorse(Minecraft.getMinecraft().theWorld)); //This shit throws null pointer exception
         link(24, new EntityVillager(null));
+        link(25, new EntityEndermite(null));
+        link(26, new EntityGuardian(null));
+        link(27, new EntityRabbit(null));
     }
 
     private static void link(int meta, EntityLivingBase entity) {
