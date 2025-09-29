@@ -1,2 +1,2 @@
-Added souls for rabbit, endermite and guardian
-Added compatibility with JEI for soul extractor and combiner
+Set default state FACING for soul extractor and combiner
+Add endermite, guardian and rabbit to morph list
