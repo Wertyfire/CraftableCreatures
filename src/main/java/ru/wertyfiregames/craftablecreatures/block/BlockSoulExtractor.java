@@ -50,6 +50,7 @@ public class BlockSoulExtractor extends BlockContainer {
         setHardness(3.5f);
         setResistance(3.5f);
         if (enabled) setLightLevel(0.875f);
+        setDefaultState(getBlockState().getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 
     public Item getItemDropped(IBlockState state, Random random, int fortune) {
