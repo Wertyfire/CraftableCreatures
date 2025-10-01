@@ -52,6 +52,7 @@ public class CombinerRecipes {
         addRecipe(soul(25), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityEndermite(null)), 0.15f);
         addRecipe(soul(26), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityGuardian(null)), 0.25f);
         addRecipe(soul(27), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityRabbit(null)), 0.1f);
+        addRecipe(soul(28), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityShulker(null)), 0.3f);
     }
 
     public static CombinerRecipes get() {
