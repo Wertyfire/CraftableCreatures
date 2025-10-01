@@ -40,6 +40,7 @@ public class CCAPIInit {
         link(25, new EntityEndermite(null));
         link(26, new EntityGuardian(null));
         link(27, new EntityRabbit(null));
+        link(28, new EntityShulker(null));
     }
 
     private static void link(int meta, EntityLivingBase entity) {
