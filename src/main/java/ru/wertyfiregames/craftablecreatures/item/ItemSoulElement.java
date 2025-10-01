@@ -23,14 +23,14 @@ public class ItemSoulElement extends DefaultItem implements IMetaItemModel, ISou
     }
 
     public String getUnlocalizedName(ItemStack stack) {
-        int i = stack.getMetadata();
+        int i = stack.getItemDamage();
         return super.getUnlocalizedName() + EnumSoulElement.byMetadata(i).getUnlocalizedName();
     }
 
     @SideOnly(Side.CLIENT)
     public void getSubItems(Item item, CreativeTabs creativeTabs, List<ItemStack> subItems) {
         for (int i = 0; i < EnumSoulElement.values().length; i++) {
-            subItems.add(new ItemStack(item, 1, i));
+            subItems.add(new ItemStack(item, 1, EnumSoulElement.byOrder(i).getMetadata()));
         }
     }
 
