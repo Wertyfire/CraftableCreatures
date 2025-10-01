@@ -31,20 +31,6 @@ public class CCEventListener {
             event.getDrops().add(new EntityItem(player.worldObj, player.posX, player.posY, player.posZ,
                     new ItemStack(CCItems.SOUL, 1, 0)));
         }
-
-        if (event.getEntityLiving() instanceof EntityBat) {
-            EntityBat bat = (EntityBat) event.getEntityLiving();
-
-            event.getDrops().add(new EntityItem(bat.worldObj, bat.posX, bat.posY, bat.posZ,
-                    new ItemStack(CCItems.BAT_WING)));
-        }
-
-        if (event.getEntityLiving() instanceof EntityOcelot) {
-            EntityOcelot ocelot = (EntityOcelot) event.getEntityLiving();
-
-            event.getDrops().add(new EntityItem(ocelot.worldObj, ocelot.posX, ocelot.posY, ocelot.posZ,
-                    new ItemStack(CCItems.OCELOT_TAIL)));
-        }
     }
 
     @SubscribeEvent
