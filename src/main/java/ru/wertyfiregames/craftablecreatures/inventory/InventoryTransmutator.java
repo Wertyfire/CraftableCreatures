@@ -21,7 +21,7 @@ public class InventoryTransmutator implements IInventory {
     // Slots: 0-8 - small storage; 9 - soul to morph
     // Total: 10
     public final EntityPlayer user;
-    private final ItemStack sourceItem;
+    public final ItemStack sourceItem;
 
     private final ItemStack[] transmutatorItemStacks = new ItemStack[10];
 
@@ -29,7 +29,9 @@ public class InventoryTransmutator implements IInventory {
 
     public InventoryTransmutator(EntityPlayer player) {
         user = player;
-        sourceItem = user.getHeldItem(EnumHand.MAIN_HAND);
+        if (user.getHeldItem(EnumHand.MAIN_HAND) != null)
+            sourceItem = user.getHeldItem(EnumHand.MAIN_HAND);
+        else sourceItem = user.getHeldItem(EnumHand.OFF_HAND);
         if (!sourceItem.hasTagCompound())
             sourceItem.setTagCompound(new NBTTagCompound());
 
