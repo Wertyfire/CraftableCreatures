@@ -31,8 +31,8 @@ public class CommonProxy implements IGuiHandler {
             return new GuiScreenGuideBook(player);
         else if (ID == CraftableCreatures.GUI_TRANSMUTATOR) {
             InventoryTransmutator transmutator = new InventoryTransmutator(player);
-            if (player.getHeldItem(EnumHand.MAIN_HAND).hasDisplayName())
-                transmutator.setCustomInventoryName(player.getHeldItem(EnumHand.MAIN_HAND).getDisplayName());
+            if (transmutator.sourceItem.hasDisplayName())
+                transmutator.setCustomInventoryName(transmutator.sourceItem.getDisplayName());
             return new GuiTransmutator(player.inventory, transmutator);
         }
 
@@ -46,8 +46,8 @@ public class CommonProxy implements IGuiHandler {
             return new ContainerCombiner(player.inventory, (TileEntityCombiner) world.getTileEntity(new BlockPos(x, y, z)));
         else if (ID == CraftableCreatures.GUI_TRANSMUTATOR) {
             InventoryTransmutator transmutator = new InventoryTransmutator(player);
-            if (player.getHeldItem(EnumHand.MAIN_HAND).hasDisplayName())
-                transmutator.setCustomInventoryName(player.getHeldItem(EnumHand.MAIN_HAND).getDisplayName());
+            if (transmutator.sourceItem.hasDisplayName())
+                transmutator.setCustomInventoryName(transmutator.sourceItem.getDisplayName());
             return new ContainerTransmutator(player.inventory, transmutator);
         }
 
