@@ -7,7 +7,6 @@
 *.location
 *.tree
 *.dat
-*.json
 *.launch
 *.mca
 *.lock
