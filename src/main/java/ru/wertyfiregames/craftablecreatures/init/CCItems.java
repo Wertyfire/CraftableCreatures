@@ -27,7 +27,7 @@ public class CCItems {
     public static void register() {
         register(BLUESTONE, "bluestone");
         register(BLUEPRINT, "blueprint");
-        register(SPAWN_EGG_BLUEPRINT, "spawn_egg_template");
+        register(SPAWN_EGG_BLUEPRINT, "spawn_egg_blueprint");
         register(BAT_WING, "bat_wing");
         register(OCELOT_TAIL, "ocelot_tail");
         register(GUIDE_BOOK, "guide");
