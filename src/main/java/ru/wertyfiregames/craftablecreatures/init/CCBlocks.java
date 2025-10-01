@@ -6,6 +6,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.block.*;
@@ -29,9 +30,9 @@ public class CCBlocks {
         register(POWERED_BLUESTONE_BLOCK, "powered_bluestone_block");
         register(BLUESTONE_BLOCK, "bluestone_block");
         register(BLUESTONE_ORE, "bluestone_ore");
-        GameRegistry.registerBlock(SOUL_EXTRACTOR, BlockSoulExtractor.SoulExtractorItemBlock.class, "soul_extractor");
+        register(SOUL_EXTRACTOR, BlockSoulExtractor.SoulExtractorItemBlock.class, "soul_extractor");
         register(LIT_SOUL_EXTRACTOR, "lit_soul_extractor");
-        GameRegistry.registerBlock(COMBINER, BlockCombiner.CombinerItemBlock.class, "combiner");
+        register(COMBINER, BlockCombiner.CombinerItemBlock.class, "combiner");
         register(LIT_COMBINER, "lit_combiner");
         registerExperimental();
     }
@@ -49,6 +50,14 @@ public class CCBlocks {
 
     private static void register(Block block, String id) {
         GameRegistry.register(block.setRegistryName(CraftableCreatures.getModId(), id));
+        GameRegistry.register(new ItemBlock(block).setRegistryName(block.getRegistryName()));
+    }
+    private static void register(Block block, Class<? extends ItemBlock> itemBlock, String id) {
+        GameRegistry.register(block.setRegistryName(CraftableCreatures.getModId(), id));
+        try {
+            ItemBlock ib = itemBlock.getConstructor(Block.class).newInstance(block);
+            GameRegistry.register(ib.setRegistryName(block.getRegistryName()));
+        } catch (Exception ignored) {}
     }
 
     public static void registerRender(Block block) {
