@@ -7,6 +7,7 @@ import net.minecraftforge.fml.common.Mod.*;
 import net.minecraftforge.fml.common.ModMetadata;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
@@ -107,6 +108,18 @@ public class CraftableCreatures {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         CraftableCreatures.getModLogger().info("Post initialization of Craftable Creatures complete");
+    }
+
+    @EventHandler
+    public void missingMappings(FMLMissingMappingsEvent event) {
+        for (FMLMissingMappingsEvent.MissingMapping missing : event.get()) {
+            if (missing.resourceLocation.getResourcePath().equals("template"))
+                missing.remap(CCItems.BLUEPRINT);
+            if (missing.resourceLocation.getResourcePath().equals("spawn_egg_template"))
+                missing.remap(CCItems.SPAWN_EGG_BLUEPRINT);
+            if (missing.resourceLocation.getResourcePath().equals("soul_element"))
+                missing.remap(CCItems.SOUL);
+        }
     }
 
 //    Getters
