@@ -103,7 +103,10 @@ public class CCEventListener {
 
     @SubscribeEvent
     public void onConfigChanged(ConfigChangedEvent.OnConfigChangedEvent event) {
-        if (event.getModID().equalsIgnoreCase(CraftableCreatures.getModId()))
+        if (event.getModID().equalsIgnoreCase(CraftableCreatures.getModId())) {
             CCConfig.load();
+            if (CCConfig.checkForUpdates && CCVersionChecker.getStatus() == UpdateResult.PENDING)
+                CCVersionChecker.check(CraftableCreatures.getVersion());
+        }
     }
 }
