@@ -35,7 +35,7 @@ public enum EnumSoulElement implements IStringSerializable {
     ENDERMITE(25, "endermite", "endermite", 15),
     GUARDIAN(26, "guardian", "guardian", 16),
     RABBIT(27, "rabbit", "rabbit", 27),
-    SHULKER(28, "shulker", "shulker", 17),;
+    SHULKER(28, "shulker", "shulker", 17);
 
     private static final EnumSoulElement[] META_LOOKUP = new EnumSoulElement[values().length];
     private static final EnumSoulElement[] CTAB_LOOKUP = new EnumSoulElement[values().length];
