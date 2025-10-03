@@ -6,7 +6,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 import java.util.HashMap;
 import java.util.List;

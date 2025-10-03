@@ -5,7 +5,6 @@ import net.minecraft.item.Item;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.craftablecreatures.item.*;
-import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 public class CCItems {
     public static final Item bluestone = new DefaultItem("bluestone", CCCreativeTabs.tabCraftableCreatures);

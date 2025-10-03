@@ -4,6 +4,7 @@
 
 package ru.wertyfiregames.craftablecreatures.network.client;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.network.simpleimpl.IMessage;
 import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
 import cpw.mods.fml.common.network.simpleimpl.MessageContext;
@@ -16,7 +17,6 @@ import net.minecraft.util.ChatComponentTranslation;
 import ru.wertyfiregames.craftablecreatures.api.CraftableCreaturesRegistry;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.inventory.container.ContainerTransmutator;
-import ru.wertyfiregames.wertyfirecore.util.CompatibilityHelper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -40,7 +40,7 @@ public class MorphClientPacket implements IMessage {
         public IMessage onMessage(MorphClientPacket message, MessageContext ctx) {
             EntityPlayerMP player = ctx.getServerHandler().playerEntity;
 
-            if (!CompatibilityHelper.isModLoaded("Morph")) {
+            if (!Loader.isModLoaded("Morph")) {
                 player.addChatMessage(new ChatComponentTranslation("craftableCreatures.chat.morphRequired"));
                 player.closeScreen();
                 return null;

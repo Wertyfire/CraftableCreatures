@@ -8,7 +8,6 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import ru.wertyfiregames.craftablecreatures.api.ISoulElement;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 import java.util.List;
 

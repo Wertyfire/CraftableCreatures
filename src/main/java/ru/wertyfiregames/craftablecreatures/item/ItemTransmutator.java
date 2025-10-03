@@ -11,7 +11,6 @@ import net.minecraft.world.World;
 import org.lwjgl.input.Keyboard;
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.wertyfirecore.item.DefaultItem;
 
 import java.util.List;
 

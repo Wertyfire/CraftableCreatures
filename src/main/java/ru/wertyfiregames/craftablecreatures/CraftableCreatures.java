@@ -21,27 +21,22 @@ import ru.wertyfiregames.craftablecreatures.init.*;
 import ru.wertyfiregames.craftablecreatures.proxy.CommonProxy;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.world.CCWorldOreGenerator;
-import ru.wertyfiregames.wertyfirecore.context.InitActions;
-import ru.wertyfiregames.wertyfirecore.context.ModContext;
 
 import java.io.File;
 
 import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 
 @Mod(modid = modId, version = modVersion, name = name,
-        guiFactory = guiFactory, dependencies = dependencies)
+        guiFactory = guiFactory)
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "1.1.5";
-    protected static final String buildNumber = "22";
+    protected static final String modVersion = "1.1.6";
+    protected static final String buildNumber = "23";
     protected static final String modStatus = "r";
 
 //    Name
     protected static final String name = "Craftable Creatures";
-
-//    Dependencies
-    protected static final String dependencies = "required-after:wertyfirecore@[1.0.3,);";
 
 //    Config
     private static Configuration config;
@@ -73,7 +68,6 @@ public class CraftableCreatures {
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        ModContext.setModContext(METADATA);
         modLogger = event.getModLog();
         modLogger.debug("CC Logger loaded");
         File configFile = new File(event.getModConfigurationDirectory().toString() + "/craftableCreatures.cfg");
@@ -89,13 +83,10 @@ public class CraftableCreatures {
         CCPackets.register();
         getModLogger().debug("CC Packets loaded");
         CCVersionChecker.check(getVersion());
-        InitActions.doPreInit(event);
         CraftableCreatures.getModLogger().info("Pre initialization of Craftable Creatures complete");
-        ModContext.freeContext();
     }
     @EventHandler
     public void init(FMLInitializationEvent event) {
-        ModContext.setModContext(METADATA);
         CCEventListener eventListener = new CCEventListener();
         FMLCommonHandler.instance().bus().register(eventListener);
         MinecraftForge.EVENT_BUS.register(eventListener);
@@ -117,16 +108,11 @@ public class CraftableCreatures {
         getModLogger().debug("CC Ore dictionary loaded");
         CCChestLoot.register();
         CCAPIInit.register();
-        InitActions.doInit(event);
         CraftableCreatures.getModLogger().info("Initialization of Craftable Creatures complete");
-        ModContext.freeContext();
     }
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-        ModContext.setModContext(METADATA);
-        InitActions.doPostInit(event);
         CraftableCreatures.getModLogger().info("Post initialization of Craftable Creatures complete");
-        ModContext.freeContext();
     }
 
 //    Getters

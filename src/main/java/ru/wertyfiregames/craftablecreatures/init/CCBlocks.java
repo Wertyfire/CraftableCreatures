@@ -7,8 +7,6 @@ import net.minecraft.block.material.Material;
 import ru.wertyfiregames.craftablecreatures.block.*;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
-import ru.wertyfiregames.wertyfirecore.block.CompressedBlock;
-import ru.wertyfiregames.wertyfirecore.block.CompressedPoweredBlock;
 
 public class CCBlocks {
     public static final Block powered_bluestone_block = new CompressedPoweredBlock(MapColor.blueColor,

@@ -19,7 +19,7 @@ apply plugin: 'forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "1.1.5"
+version = "1.1.6"
 group = "ru.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures"
 
@@ -50,16 +50,9 @@ repositories {
         name = "ModMaven"
         url = "https://modmaven.dev"
     }
-    maven {
-        name = "wertyfireMaven"
-        url = "https://raw.githubusercontent.com/Wertyfire/Versions/main/maven/"
-    }
 }
 
 dependencies {
-    //Wertyfire Core
-    compile 'ru.wertyfiregames:wertyfire-core:1.7.10-1.0.3:dev'
-
     implementation files('libs/morph-0.9.3.jar')
 
     //NEI

@@ -6,7 +6,7 @@ package ru.wertyfiregames.craftablecreatures.init;
 
 import ru.wertyfiregames.craftablecreatures.CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.particle.*;
-import ru.wertyfiregames.wertyfirecore.util.ParticleUtils;
+import ru.wertyfiregames.craftablecreatures.util.ParticleUtils;
 
 public class CCParticles {
     public static final String soul = CraftableCreatures.getModId() + ":soul";

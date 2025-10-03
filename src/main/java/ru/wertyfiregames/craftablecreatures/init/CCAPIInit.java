@@ -4,7 +4,6 @@
 
 package ru.wertyfiregames.craftablecreatures.init;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;

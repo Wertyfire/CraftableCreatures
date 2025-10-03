@@ -30,7 +30,7 @@ import ru.wertyfiregames.craftablecreatures.init.CCParticles;
 import ru.wertyfiregames.craftablecreatures.tileentity.TileEntitySoulExtractor;
 import ru.wertyfiregames.craftablecreatures.creativetab.CCCreativeTabs;
 import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
-import ru.wertyfiregames.wertyfirecore.util.ParticleUtils;
+import ru.wertyfiregames.craftablecreatures.util.ParticleUtils;
 
 import java.util.List;
 import java.util.Random;

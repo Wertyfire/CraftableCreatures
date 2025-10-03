@@ -1,11 +1,9 @@
 package ru.wertyfiregames.craftablecreatures.common;
 
 import cpw.mods.fml.client.event.ConfigChangedEvent;
-import cpw.mods.fml.common.FMLCommonHandler;
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent;
 import cpw.mods.fml.common.gameevent.TickEvent;
-import cpw.mods.fml.relauncher.Side;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityBat;
 import net.minecraft.entity.passive.EntityOcelot;
@@ -20,9 +18,9 @@ import ru.wertyfiregames.craftablecreatures.init.CCBlocks;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.CCItems;
 import ru.wertyfiregames.craftablecreatures.init.CCAchievementList;
+import ru.wertyfiregames.craftablecreatures.util.ChatUtils;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker;
 import ru.wertyfiregames.craftablecreatures.version.CCVersionChecker.UpdateResult;
-import ru.wertyfiregames.wertyfirecore.util.ChatUtils;
 
 public class CCEventListener {
     @SubscribeEvent
