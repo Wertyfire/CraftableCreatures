@@ -49,6 +49,10 @@ public class CraftableCreaturesJEIPlugin extends BlankModPlugin {
         transferRegistry.addRecipeTransferHandler(ContainerSoulExtractor.class, SE_FUEL_ID, 1, 1, 4, 36);
         transferRegistry.addRecipeTransferHandler(ContainerCombiner.class, COMBINING_ID, 0, 2, 3, 36);
 
+        //Recipe category crafter recipe
+        registry.addRecipeCategoryCraftingItem(new ItemStack(CCBlocks.SOUL_EXTRACTOR), SOUL_EXTRACTING_ID, SE_FUEL_ID);
+        registry.addRecipeCategoryCraftingItem(new ItemStack(CCBlocks.COMBINER), COMBINING_ID);
+
         //Adding recipes
         registry.addRecipes(SERecipeMaker.getSoulExtractorRecipes(registry.getJeiHelpers()));
         registry.addRecipes(SEFuelRecipeMaker.getSEFuelRecipes(registry.getItemRegistry(), registry.getJeiHelpers()));
