@@ -10,6 +10,7 @@ import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import org.apache.commons.lang3.tuple.ImmutablePair;
@@ -47,7 +48,9 @@ public class CombinerRecipes {
         addRecipe(soul(20), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityWolf(null)), 0.15f);
         addRecipe(soul(21), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityMooshroom(null)), 0.15f);
         addRecipe(soul(22), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityOcelot(null)), 0.1f);
-        addRecipe(soul(23), CCItems.SPAWN_EGG_BLUEPRINT, new ItemStack(Items.SPAWN_EGG, 1, 100), 0.15f); //horse
+        ItemStack stack1 = new ItemStack(Items.SPAWN_EGG, 1);
+        ItemMonsterPlacer.applyEntityIdToItemStack(stack1, "EntityHorse");
+        addRecipe(soul(23), CCItems.SPAWN_EGG_BLUEPRINT, stack1, 0.15f); //horse
         addRecipe(soul(24), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityVillager(null)), 0.35f);
         addRecipe(soul(25), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityEndermite(null)), 0.15f);
         addRecipe(soul(26), CCItems.SPAWN_EGG_BLUEPRINT, spawnEgg(new EntityGuardian(null)), 0.25f);
@@ -86,7 +89,9 @@ public class CombinerRecipes {
         return new ItemStack(CCItems.SOUL, 1, id);
     }
     private ItemStack spawnEgg(Entity entity) {
-        return new ItemStack(Items.SPAWN_EGG, 1, EntityList.getEntityID(entity));
+        ItemStack egg = new ItemStack(Items.SPAWN_EGG, 1);
+        ItemMonsterPlacer.applyEntityIdToItemStack(egg, EntityList.getEntityString(entity));
+        return egg;
     }
 
     public boolean isIngredient(ItemStack item, int ingredientNumber) {
