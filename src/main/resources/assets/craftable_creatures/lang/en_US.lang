@@ -43,6 +43,7 @@ item.soul.bat.name=Soul [§6Bat§f]
 item.soul.witch.name=Soul [§5Witch§f]
 item.soul.endermite.name=Soul [§5Endermite§f]
 item.soul.guardian.name=Soul [§3Guardian§f]
+item.soul.shulker.name=Soul [§dShulker§f]
 item.soul.pig.name=Soul [§dPig§f]
 item.soul.sheep.name=Soul [Sheep]
 item.soul.cow.name=Soul [§8Cow§f]
@@ -81,7 +82,7 @@ craftableCreatures.configGui.checkForUpdates=Check for updates
 craftableCreatures.configGui.enableExperimentalContent=Enable experimental content
 
 craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Experimental content = %s
-craftableCreatures.chat.morphRequired=§cUnluckily, mod Morph (which is required for transmutator) is unavailable for Minecraft 1.8.9
+craftableCreatures.chat.morphRequired=§cUnluckily, mod Morph (which is required for transmutator) is unavailable for Minecraft 1.9.4
 craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Failed to check for mod updates!
 craftableCreatures.chat.latest=[§bCraftable Creatures§f] Installed latest stable version of mod!
 craftableCreatures.chat.outdated=[§bCraftable Creatures§f] There is new version of mod!

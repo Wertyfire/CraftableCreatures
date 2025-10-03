@@ -43,6 +43,7 @@ item.soul.bat.name=Душа [§6Летучая мышь§f]
 item.soul.witch.name=Душа [§5Ведьма§f]
 item.soul.endermite.name=Душа [§5Эндермит§f]
 item.soul.guardian.name=Душа [§3Страж§f]
+item.soul.shulker.name=Душа [§dШалкер§f]
 item.soul.pig.name=Душа [§dСвинья§f]
 item.soul.sheep.name=Душа [Овца]
 item.soul.cow.name=Душа [§8Корова§f]
@@ -81,7 +82,7 @@ craftableCreatures.configGui.checkForUpdates=Проверять обновлен
 craftableCreatures.configGui.enableExperimentalContent=Включить экспериментальный режим
 
 craftableCreatures.chat.modInfo=[§bCraftable Creatures§f] Экспериментальный режим = %s
-craftableCreatures.chat.morphRequired=§cК сожалению, мод Morph (который требуется для работы трансмутатора) не доступен для Minecraft 1.8.9
+craftableCreatures.chat.morphRequired=§cК сожалению, мод Morph (который требуется для работы трансмутатора) не доступен для Minecraft 1.9.4
 craftableCreatures.chat.failedToCheckUpdates=[§bCraftable Creatures§f] Не удалось проверить обновления!
 craftableCreatures.chat.latest=[§bCraftable Creatures§f] Установлена последняя стабильная версия!
 craftableCreatures.chat.outdated=[§bCraftable Creatures§f] Вышла новая версия мода!
