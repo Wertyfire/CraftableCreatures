@@ -1,1 +1,4 @@
 Added sheep soul recipe from mutton
+Added shulker soul
+Changed soul generation in chests in structures
+Added missing mappings handling
