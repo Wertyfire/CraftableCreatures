@@ -202,7 +202,8 @@ public class TileEntitySoulExtractor extends TileEntityLockable implements ITick
         if (soulExtractorItemStacks[0] == null || soulExtractorItemStacks[2] == null) return false;
         else {
             ItemStack stack = SoulExtractorRecipes.get().getExtractingResult(soulExtractorItemStacks[0]);
-            if (stack == null) return false;
+            boolean flag = SoulExtractorRecipes.get().isItemExtractHelper(soulExtractorItemStacks[2]);
+            if (stack == null || !flag) return false;
             if (soulExtractorItemStacks[3] == null) return true;
             if (!soulExtractorItemStacks[3].isItemEqual(stack)) return false;
 
