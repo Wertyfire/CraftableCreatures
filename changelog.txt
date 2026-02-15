@@ -2,3 +2,5 @@ Added sheep soul recipe from mutton
 Added shulker soul
 Changed soul generation in chests in structures
 Added missing mappings handling
+Fixed bug when soul extractor worked with any item put into player's soul slot
+Now book will take amount of souls from code and not localization files
