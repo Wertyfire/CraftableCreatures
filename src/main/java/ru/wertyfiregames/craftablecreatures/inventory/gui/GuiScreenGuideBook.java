@@ -319,7 +319,7 @@ public class GuiScreenGuideBook extends GuiScreen {
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page4.chapter"), Alignment.CENTER);
             drawEmptyString();
-            drawSplitString(f("craftableCreatures.guide.page4.mainText.1"));
+            drawSplitString(f("craftableCreatures.guide.page4.mainText.1", new Object[]{EnumSoulElement.values().length, EnumSoulElement.values().length - 1}));
         } else if (currentPage == 6) {
             drawSplitString(f("craftableCreatures.guide.page4.mainText.2"));
             int stackX = lineXPos;
@@ -775,6 +775,11 @@ public class GuiScreenGuideBook extends GuiScreen {
 
     private String f(String key) {
         String output = I18n.format(key);
+        output = output.replace("\\n", "\n").replace("<empty>", "");
+        return output;
+    }
+    private String f(String key, Object[] replacements) {
+        String output = I18n.format(key, replacements);
         output = output.replace("\\n", "\n").replace("<empty>", "");
         return output;
     }
