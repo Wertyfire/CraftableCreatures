@@ -122,13 +122,13 @@ public class CCEventListener {
         if (event.getName().equals(LootTableList.ENTITIES_BAT)) {
             LootFunction[] functions = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)),
                     new LootingEnchantBonus(new LootCondition[0], new RandomValueRange(0, 1)) };
-            LootEntry[] entries = { new LootEntryItem(CCItems.BAT_WING, 1, 1, functions, new LootCondition[0], "bat_wing") };
+            LootEntry[] entries = { new LootEntryItem(CCItems.BAT_WING, 4, 1, functions, new LootCondition[0], "bat_wing") };
             LootCondition[] conditions = { new KilledByPlayer(false) };
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_bat_drop"));
         }
         if (event.getName().equals(LootTableList.ENTITIES_OCELOT)) {
             LootFunction[] functions = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)) };
-            LootEntry[] entries = { new LootEntryItem(CCItems.OCELOT_TAIL, 1, 1, functions, new LootCondition[0], "bat_wing") };
+            LootEntry[] entries = { new LootEntryItem(CCItems.OCELOT_TAIL, 3, 1, functions, new LootCondition[0], "bat_wing") };
             LootCondition[] conditions = { new KilledByPlayer(false) };
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_ocelot_drop"));
         }
@@ -139,10 +139,10 @@ public class CCEventListener {
             LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
             LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions4, new LootCondition[0], "soul28")
+                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions2, new LootCondition[0], "soul23"),
+                    new LootEntryItem(CCItems.SOUL, 3, 1, functions3, new LootCondition[0], "soul24"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_abandoned_mineshaft_loot"));
@@ -153,10 +153,10 @@ public class CCEventListener {
             LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
             LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions4, new LootCondition[0], "soul28")
+                    new LootEntryItem(CCItems.SOUL, 2, 2, functions1, new LootCondition[0], "soul0"),
+                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions3, new LootCondition[0], "soul24"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_desert_pyramid_loot"));
@@ -167,10 +167,10 @@ public class CCEventListener {
             LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
             LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions4, new LootCondition[0], "soul28")
+                    new LootEntryItem(CCItems.SOUL, 2, 2, functions1, new LootCondition[0], "soul0"),
+                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions3, new LootCondition[0], "soul24"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_jungle_temple_loot"));
@@ -181,10 +181,10 @@ public class CCEventListener {
             LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
             LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions4, new LootCondition[0], "soul28")
+                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions2, new LootCondition[0], "soul23"),
+                    new LootEntryItem(CCItems.SOUL, 2, 1, functions3, new LootCondition[0], "soul24"),
+                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_simple_dungeon_loot"));
@@ -195,10 +195,10 @@ public class CCEventListener {
             LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
             LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 5, 1, functions4, new LootCondition[0], "soul28")
+                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
+                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
+                    new LootEntryItem(CCItems.SOUL, 2, 1, functions3, new LootCondition[0], "soul24"),
+                    new LootEntryItem(CCItems.SOUL, 4, 1, functions4, new LootCondition[0], "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_stronghold_corridor_loot"));
