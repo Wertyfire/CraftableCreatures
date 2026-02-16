@@ -24,7 +24,7 @@ public class CCRecipes {
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.BLUESTONE_BLOCK),
                 "SSS", "SSS", "SSS", 'S', CCItems.BLUESTONE);
         GameRegistry.addShapedRecipe(new ItemStack(CCItems.GUIDE_BOOK),
-                "SSS", "SUS", "SSS", 'S', CCItems.SOUL, 'U', Items.BOOK);
+                " S ", "SUS", " S ", 'S', CCItems.SOUL, 'U', Items.BOOK);
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.SOUL_EXTRACTOR),
                 "SSS", "SUS", "SAS", 'S', Blocks.COBBLESTONE, 'U', CCBlocks.POWERED_BLUESTONE_BLOCK, 'A', Blocks.FURNACE);
         GameRegistry.addShapedRecipe(new ItemStack(CCBlocks.COMBINER),
