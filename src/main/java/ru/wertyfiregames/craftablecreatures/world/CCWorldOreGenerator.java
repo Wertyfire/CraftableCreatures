@@ -34,8 +34,8 @@ public class CCWorldOreGenerator implements IWorldGenerator {
     private void generateEnd(World world, Random random, int x, int z) {
     }
 
-    private void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int chancesToSpawn, int minY, int maxY) {
-        for (int i = 0; i < chancesToSpawn; i++) {
+    private void addOreSpawn(Block block, World world, Random random, int blockXPos, int blockZPos, int maxX, int maxZ, int maxVeinSize, int maxVeinsPerChunk, int minY, int maxY) {
+        for (int i = 0; i < maxVeinsPerChunk; i++) {
             int posX = blockXPos + random.nextInt(maxX);
             int posY = minY + random.nextInt(maxY - minY);
             int posZ = blockZPos + random.nextInt(maxZ);
