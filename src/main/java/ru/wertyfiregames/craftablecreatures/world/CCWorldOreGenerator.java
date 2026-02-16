@@ -28,7 +28,7 @@ public class CCWorldOreGenerator implements IWorldGenerator {
     }
 
     private void generateSurface(World world, Random random, int x, int z) {
-        addOreSpawn(CCBlocks.BLUESTONE_ORE, world, random, x, z, 16, 16, 6, 12, 20, 50);
+        addOreSpawn(CCBlocks.BLUESTONE_ORE, world, random, x, z, 16, 16, 5, 10, 10, 40);
     }
 
     private void generateEnd(World world, Random random, int x, int z) {
