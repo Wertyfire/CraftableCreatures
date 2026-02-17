@@ -1,2 +1,2 @@
-Set default state FACING for soul extractor and combiner
-Add endermite, guardian and rabbit to morph list
+Fixed bug when soul extractor worked with any item put in player's soul slot
+Now book will take amount of souls from code and not localization files
