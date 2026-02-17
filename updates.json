@@ -1,10 +1,10 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.7.10-latest": "1.1.6",
-    "1.7.10-recommended": "1.1.6",
-    "1.8.9-latest": "1.0.1",
-    "1.8.9-recommended": "1.0.1",
+    "1.7.10-latest": "1.1.7",
+    "1.7.10-recommended": "1.1.7",
+    "1.8.9-latest": "1.0.2",
+    "1.8.9-recommended": "1.0.2",
     "1.9.4-latest": "1.0.0",
     "1.9.4-recommended": "1.0.0",
     "1.12.2-latest": "0.1.0",
@@ -18,7 +18,7 @@
     "0.2.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added update checker<n><t>2. Deleted transmutator<n><t>3. Deleted soul extractor",
     "0.3.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Improved config system<n><t>2. Improved generation system<n><t>3. Improved update checking system",
     "0.4.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Bat drops bat wing<n><t>2. Now player drops soul when dead instead of dropping soul when respawned",
-    "0.5.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed event listener so now achievements and startup messages should work fine<n><t>2. Added ocelot tail<n><t>3. Finally added working soul extractor. In future versions will be added NEI integration. Now to craft soul of mob you should use this soul extractor<n><t>4. Removed bluestone tools<n><t>\u00A70Please don't tell anyone that 0.4.1 exists!\u00A7f",
+    "0.5.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed event listener so now achievements and startup messages should work fine<n><t>2. Added ocelot tail<n><t>3. Finally added working soul extractor. In future versions will be added NEI integration. Now to craft soul of mob you should use this soul extractor<n><t>4. Removed bluestone tools<n><t>\u00A70Secret: 0.4.1 existed!\u00A7f",
     "0.5.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Now you can view recipes of soul extractor with NEI<n><t>2. Added subset \"Souls\" to NEI",
     "0.5.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Returned bluestone recipe from bluestone ore",
     "0.5.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added particles to soul extractor<n><t>2. Changed soul extractor recipe<n><t>3. Added tooltip for soul extractor",
@@ -38,7 +38,8 @@
   },
   "1.8.9": {
     "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n>All content from Craftable Creatures 1.7.10 1.1.5 PLUS the following:<n><t>1. Added endermite, guardian and rabbit souls<n><t>2. Added JEI integration<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n>Весь контент из Craftable Creatures 1.7.10 1.1.5 ПЛЮС следующее:<n><t>1. Добавлены души чешуйницы края, стража и кролика<n><t>2. Добавлена интеграция с JEI",
-    "1.0.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. API fixes<n><t>2. Soul Extractor and Combiner fixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправления API<n><t>2. Исправления извлекателя душ и комбинатора"
+    "1.0.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. API fixes<n><t>2. Soul Extractor and Combiner fixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправления API<n><t>2. Исправления извлекателя душ и комбинатора",
+    "1.0.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<nt><t>1. Added sheep's soul recipe from mutton<n><t>2. Bugfixes<n><t>3. Updated some translations<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<nt><t>1. Добавлен рецепт души овцы из баранины<n><t>2. Исправления багов<n><t>3. Обновлены переводы"
   },
   "1.9.4": {
     "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] WHat's new:<n><t>1All content from Craftable Creatures 1.8.9 1.0.1 PLUS the following:<n><t>1. Added shulker soul<n><t>2. Added sheep's soul recipe from mutton<n><t>3. Changed soul generation in chests in structures<n><t>4. Reordered achievements in achievements page<n><t>5. Decreased spawn rate of bluestone ore<n><t>6. Simplified guidebook recipe<n><t>7. Updated some translations<n><t>8. Removed all villager trades (due to bug)<n><t>9. Bugfixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Весь контент из Craftable Creatures 1.8.9 1.0.1 ПЛЮС следующее:<n><t>1. Добавлена душа шалкера<n><t>2. Добавлен рецепт души овцы из баранины<n><t>3. Изменено генерирование душ в сундуках в структурах<n><t>4. Изменён порядок достижений на странице достижений<n><t>5. Уменьшена частота генерации руды синего камня<n><t>6. Упрощён рецепт руководства<n><t>7. Обновлены переводы<n><t>8. Удалены все торги с жителями (из-за бага)<n><t>9. Исправления багов"
