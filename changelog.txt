@@ -1,3 +1,2 @@
-Fixed bug when NBT from soul extractor and combiner was saving incorrectly
-Updated russian translations
-Separated tooltips for soul extractor, combiner and transmutator
+Fixed bug when soul extractor worked with any item put in player's soul slot
+Now book will take amount of souls from code and not localization files
