@@ -15,7 +15,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 targetCompatibility = sourceCompatibility =
 compileJava.targetCompatibility = compileJava.sourceCompatibility = JavaVersion.VERSION_1_8
 
-version = "1.0.1"
+version = "1.0.2"
 group= "ru.wertyfiregames.craftablecreatures"
 archivesBaseName = "CraftableCreatures-1.8.9"
 
