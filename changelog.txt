@@ -1,3 +1,1 @@
-Fixed bug when soul extractor worked with any item put in player's soul slot
-Now book will take amount of souls from code and not localization files
-Added sheep's soul recipe from mutton
+Added villager trades
