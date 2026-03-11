@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.network.simpleimpl.SimpleNetworkWrapper;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import org.apache.logging.log4j.Logger;
 import ru.wertyfiregames.craftablecreatures.common.CCEventListener;
+import ru.wertyfiregames.craftablecreatures.common.CCTradeHandler;
 import ru.wertyfiregames.craftablecreatures.compat.CCOreDictionary;
 import ru.wertyfiregames.craftablecreatures.config.CCConfig;
 import ru.wertyfiregames.craftablecreatures.init.*;
@@ -31,8 +32,8 @@ import static ru.wertyfiregames.craftablecreatures.CraftableCreatures.*;
 public class CraftableCreatures {
 //    Version
     protected static final String modId = "craftable_creatures";
-    protected static final String modVersion = "1.0.0";
-    protected static final String buildNumber = "01";
+    protected static final String modVersion = "1.0.1";
+    protected static final String buildNumber = "02";
     protected static final String modStatus = "r";
 
 //    Name
@@ -91,7 +92,9 @@ public class CraftableCreatures {
         MinecraftForge.EVENT_BUS.register(new CCEventListener());
         getModLogger().debug("CC Event listener loaded");
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new CommonProxy());
-        getModLogger().debug("CC Gui handler loaded"); //add villager trade handler
+        getModLogger().debug("CC Gui handler loaded");
+        CCTradeHandler.registerTrades();
+        getModLogger().debug("CC Villager trades loaded");
         GameRegistry.registerWorldGenerator(new CCWorldOreGenerator(), 0);
         getModLogger().debug("CC Ore generation loaded");
         CCAchievementList.register();
