@@ -1,11 +1,4 @@
-Added sheep soul recipe from mutton
-Added shulker soul
-Changed soul generation in chests in structures
-Added missing mappings handling
-Fixed bug when soul extractor worked with any item put into player's soul slot
-Now book will take amount of souls from code and not localization files
-Reordered achievements in achievements page
-Changed bluestone ore generation: y coord 20-50 -> 10-40, maxVeinSize 6 -> 5, maxVeinsPerChunk 12 -> 10
-Simplified crafting of the guidebook
-Localization changes
-No villager trades for souls
+Add villager trades
+Rename bat and ocelot pool names
+Code optimizations
+Add mod id check in FMLMissingMappingsEvent
