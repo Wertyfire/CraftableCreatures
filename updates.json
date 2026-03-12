@@ -5,8 +5,8 @@
     "1.7.10-recommended": "1.1.7",
     "1.8.9-latest": "1.0.3",
     "1.8.9-recommended": "1.0.3",
-    "1.9.4-latest": "1.0.0",
-    "1.9.4-recommended": "1.0.0",
+    "1.9.4-latest": "1.0.1",
+    "1.9.4-recommended": "1.0.1",
     "1.12.2-latest": "0.1.0",
     "1.12.2-recommended": "0.1.0"
   },
@@ -43,6 +43,7 @@
     "1.0.3": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Returned villager trades from 1.7.10 version<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Возвращены торги с жителями из версии для 1.7.10"
   },
   "1.9.4": {
-    "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] WHat's new:<n><t>1All content from Craftable Creatures 1.8.9 1.0.1 PLUS the following:<n><t>1. Added shulker soul<n><t>2. Added sheep's soul recipe from mutton<n><t>3. Changed soul generation in chests in structures<n><t>4. Reordered achievements in achievements page<n><t>5. Decreased spawn rate of bluestone ore<n><t>6. Simplified guidebook recipe<n><t>7. Updated some translations<n><t>8. Removed all villager trades (due to bug)<n><t>9. Bugfixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Весь контент из Craftable Creatures 1.8.9 1.0.1 ПЛЮС следующее:<n><t>1. Добавлена душа шалкера<n><t>2. Добавлен рецепт души овцы из баранины<n><t>3. Изменено генерирование душ в сундуках в структурах<n><t>4. Изменён порядок достижений на странице достижений<n><t>5. Уменьшена частота генерации руды синего камня<n><t>6. Упрощён рецепт руководства<n><t>7. Обновлены переводы<n><t>8. Удалены все торги с жителями (из-за бага)<n><t>9. Исправления багов"
+    "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>All content from Craftable Creatures 1.8.9 1.0.1 PLUS the following:<n><t>1. Added shulker soul<n><t>2. Added sheep's soul recipe from mutton<n><t>3. Changed soul generation in chests in structures<n><t>4. Reordered achievements in achievements page<n><t>5. Decreased spawn rate of bluestone ore<n><t>6. Simplified guidebook recipe<n><t>7. Updated some translations<n><t>8. Removed all villager trades (due to bug)<n><t>9. Bugfixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>Весь контент из Craftable Creatures 1.8.9 1.0.1 ПЛЮС следующее:<n><t>1. Добавлена душа шалкера<n><t>2. Добавлен рецепт души овцы из баранины<n><t>3. Изменено генерирование душ в сундуках в структурах<n><t>4. Изменён порядок достижений на странице достижений<n><t>5. Уменьшена частота генерации руды синего камня<n><t>6. Упрощён рецепт руководства<n><t>7. Обновлены переводы<n><t>8. Удалены все торги с жителями (из-за бага)<n><t>9. Исправления багов",
+    "1.0.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Returned villager trades from 1.7.10 version<n><t>2. Code improvements<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Возвращены торги с жителями из версии для 1.7.10<n><t>2. Улучшения кода"
   }
 }
