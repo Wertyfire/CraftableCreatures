@@ -116,6 +116,8 @@ public class CraftableCreatures {
     @EventHandler
     public void missingMappings(FMLMissingMappingsEvent event) {
         for (FMLMissingMappingsEvent.MissingMapping missing : event.get()) {
+            if (!missing.resourceLocation.getResourceDomain().equals(modId)) continue;
+
             if (missing.resourceLocation.getResourcePath().equals("template"))
                 missing.remap(CCItems.BLUEPRINT);
             if (missing.resourceLocation.getResourcePath().equals("spawn_egg_template"))
