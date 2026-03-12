@@ -122,86 +122,74 @@ public class CCEventListener {
         if (event.getName().equals(LootTableList.ENTITIES_BAT)) {
             LootFunction[] functions = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)),
                     new LootingEnchantBonus(new LootCondition[0], new RandomValueRange(0, 1)) };
-            LootEntry[] entries = { new LootEntryItem(CCItems.BAT_WING, 4, 1, functions, new LootCondition[0], "bat_wing") };
+            LootEntry[] entries = { new LootEntryItem(CCItems.BAT_WING, 4, 1, functions, new LootCondition[0], "cc_bat_wing") };
             LootCondition[] conditions = { new KilledByPlayer(false) };
-            table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_bat_drop"));
+            table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_bat_pool"));
         }
         if (event.getName().equals(LootTableList.ENTITIES_OCELOT)) {
             LootFunction[] functions = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)) };
-            LootEntry[] entries = { new LootEntryItem(CCItems.OCELOT_TAIL, 3, 1, functions, new LootCondition[0], "bat_wing") };
+            LootEntry[] entries = { new LootEntryItem(CCItems.OCELOT_TAIL, 3, 1, functions, new LootCondition[0], "cc_ocelot_tail") };
             LootCondition[] conditions = { new KilledByPlayer(false) };
-            table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_ocelot_drop"));
+            table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_ocelot_pool"));
         }
 
         if (event.getName().equals(LootTableList.CHESTS_ABANDONED_MINESHAFT)) {
-            LootFunction[] functions1 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(0)) };
-            LootFunction[] functions2 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(23)) };
-            LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
-            LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 2)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 3, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
+                    createSoulEntry(0, 5, 2, new RandomValueRange(0, 1), "soul0"),
+                    createSoulEntry(23, 1, 1, new RandomValueRange(0, 1), "soul23"),
+                    createSoulEntry(24, 3, 1, new RandomValueRange(0, 1), "soul24"),
+                    createSoulEntry(28, 1, 1, new RandomValueRange(0, 1), "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_abandoned_mineshaft_loot"));
         }
         if (event.getName().equals(LootTableList.CHESTS_DESERT_PYRAMID)) {
-            LootFunction[] functions1 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(0)) };
-            LootFunction[] functions2 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(23)) };
-            LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
-            LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 2, 2, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
+                    createSoulEntry(0, 2, 2, new RandomValueRange(0, 1), "soul0"),
+                    createSoulEntry(23, 3, 1, new RandomValueRange(0, 1), "soul23"),
+                    createSoulEntry(24, 1, 1, new RandomValueRange(0, 1), "soul24"),
+                    createSoulEntry(28, 1, 1, new RandomValueRange(0, 1), "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_desert_pyramid_loot"));
         }
         if (event.getName().equals(LootTableList.CHESTS_JUNGLE_TEMPLE)) {
-            LootFunction[] functions1 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(0)) };
-            LootFunction[] functions2 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(23)) };
-            LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
-            LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 2, 2, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
+                    createSoulEntry(0, 2, 2, new RandomValueRange(0, 1), "soul0"),
+                    createSoulEntry(23, 3, 1, new RandomValueRange(0, 1), "soul23"),
+                    createSoulEntry(24, 1, 1, new RandomValueRange(0, 1), "soul24"),
+                    createSoulEntry(28, 1, 1, new RandomValueRange(0, 1), "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_jungle_temple_loot"));
         }
         if (event.getName().equals(LootTableList.CHESTS_SIMPLE_DUNGEON)) {
-            LootFunction[] functions1 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(0)) };
-            LootFunction[] functions2 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(23)) };
-            LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
-            LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 2, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 1, 1, functions4, new LootCondition[0], "soul28")
+                    createSoulEntry(0, 5, 2, new RandomValueRange(0, 1), "soul0"),
+                    createSoulEntry(23, 1, 1, new RandomValueRange(0, 1), "soul23"),
+                    createSoulEntry(24, 2, 1, new RandomValueRange(0, 1), "soul24"),
+                    createSoulEntry(28, 1, 1, new RandomValueRange(0, 1), "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_simple_dungeon_loot"));
         }
         if (event.getName().equals(LootTableList.CHESTS_STRONGHOLD_CORRIDOR)) {
-            LootFunction[] functions1 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(0)) };
-            LootFunction[] functions2 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(23)) };
-            LootFunction[] functions3 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(24)) };
-            LootFunction[] functions4 = { new SetCount(new LootCondition[0], new RandomValueRange(0, 1)), new SetMetadata(new LootCondition[0], new RandomValueRange(28)) };
             LootEntry[] entries = {
-                    new LootEntryItem(CCItems.SOUL, 5, 2, functions1, new LootCondition[0], "soul0"),
-                    new LootEntryItem(CCItems.SOUL, 3, 1, functions2, new LootCondition[0], "soul23"),
-                    new LootEntryItem(CCItems.SOUL, 2, 1, functions3, new LootCondition[0], "soul24"),
-                    new LootEntryItem(CCItems.SOUL, 4, 1, functions4, new LootCondition[0], "soul28")
+                    createSoulEntry(0, 5, 2, new RandomValueRange(0, 1), "soul0"),
+                    createSoulEntry(23, 3, 1, new RandomValueRange(0, 1), "soul23"),
+                    createSoulEntry(24, 2, 1, new RandomValueRange(0, 1), "soul24"),
+                    createSoulEntry(28, 4, 1, new RandomValueRange(0, 1), "soul28")
             };
             LootCondition[] conditions = new LootCondition[0];
             table.addPool(new LootPool(entries, conditions, new RandomValueRange(1), new RandomValueRange(0), "cc_custom_stronghold_corridor_loot"));
         }
+    }
+
+    private static LootEntryItem createSoulEntry(int meta, int weight, int quality, RandomValueRange range, String entryName) {
+        LootFunction[] funcs = {
+                new SetCount(new LootCondition[0], range),
+                new SetMetadata(new LootCondition[0], new RandomValueRange(meta))
+        };
+        return new LootEntryItem(CCItems.SOUL, weight, quality, funcs, new LootCondition[0], entryName);
     }
 }
