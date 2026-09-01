@@ -1,0 +1,4 @@
+Removed powered bluestone block
+Removed Energy achievement
+Bluestone ore now generates in 15-45y
+Removed souls/recipes for mobs that not exist in Minecraft 1.1
