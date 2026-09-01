@@ -17,5 +17,5 @@ RetroMCP-Java-GUI.jar
 /minecraft/minecraft_resources
 sources.txt
 /*/src/forge
-/*/src/net/minecraft/
+/*/src/net/minecraft
 !/*/src/net/minecraft/src/mod_CraftableCreatures.java
