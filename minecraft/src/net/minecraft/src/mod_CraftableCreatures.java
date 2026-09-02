@@ -22,8 +22,8 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     private static boolean updateNotified = false;
 
-    public static final String blockAtlas = "/craftable_creatures/block_textures.png";
-    public static final String itemAtlas = "/craftable_creatures/item_textures.png";
+    public static final String blockAtlas = "/craftablecreatures/block_textures.png";
+    public static final String itemAtlas = "/craftablecreatures/item_textures.png";
 
     public static Block bluestoneBlock;
     public static Block bluestoneOre;

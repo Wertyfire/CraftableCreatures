@@ -24,7 +24,7 @@ public class GuiCombiner extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float delta, int x, int y) {
-        int texture = mc.renderEngine.getTexture("/craftable_creatures/gui/combiner.png");
+        int texture = mc.renderEngine.getTexture("/craftablecreatures/gui/combiner.png");
         GL11.glColor4f(1f, 1f, 1f, 1f);
         mc.renderEngine.bindTexture(texture);
 
