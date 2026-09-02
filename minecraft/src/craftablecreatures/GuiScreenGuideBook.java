@@ -61,12 +61,12 @@ public class GuiScreenGuideBook extends GuiScreen {
     @SuppressWarnings("unchecked")
     @Override
     public void initGui() {
-        guideBookPage1 = mc.renderEngine.getTexture("/craftablecreatures/gui/guide_book/guide_book_page1.png");
-        guideBookPage2 = mc.renderEngine.getTexture("/craftablecreatures/gui/guide_book/guide_book_page2.png");
-        guideBookBack = mc.renderEngine.getTexture("/craftablecreatures/gui/guide_book/guide_book_back.png");
-        guideBookCover = mc.renderEngine.getTexture("/craftablecreatures/gui/guide_book/guide_book_cover.png");
+        guideBookPage1 = mc.renderEngine.getTexture("/craftable_creatures/gui/guide_book/guide_book_page1.png");
+        guideBookPage2 = mc.renderEngine.getTexture("/craftable_creatures/gui/guide_book/guide_book_page2.png");
+        guideBookBack = mc.renderEngine.getTexture("/craftable_creatures/gui/guide_book/guide_book_back.png");
+        guideBookCover = mc.renderEngine.getTexture("/craftable_creatures/gui/guide_book/guide_book_cover.png");
 
-        guideBookIllustrationSheet1 = mc.renderEngine.getTexture("/craftablecreatures/gui/guide_book/illustrations/guide_book_illustration_sheet_1.png");
+        guideBookIllustrationSheet1 = mc.renderEngine.getTexture("/craftable_creatures/gui/guide_book/illustrations/guide_book_illustration_sheet_1.png");
 
         wasUnicode = StringTranslate.getInstance().func_46110_d();
 

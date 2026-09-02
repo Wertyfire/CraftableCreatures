@@ -24,7 +24,7 @@ public class GuiSoulExtractor extends GuiContainer {
 
     @Override
     protected void drawGuiContainerBackgroundLayer(float delta, int x, int y) {
-        int texture = mc.renderEngine.getTexture("/craftablecreatures/gui/soul_extractor.png");
+        int texture = mc.renderEngine.getTexture("/craftable_creatures/gui/soul_extractor.png");
         GL11.glColor4f(1f, 1f, 1f, 1f);
         mc.renderEngine.bindTexture(texture);
 
