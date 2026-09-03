@@ -1,3 +1,4 @@
+Removed transmutator
 Removed powered bluestone block
 Removed Energy achievement
 Bluestone ore now generates in 15-45y
