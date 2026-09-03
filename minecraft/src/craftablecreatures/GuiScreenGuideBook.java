@@ -257,7 +257,7 @@ public class GuiScreenGuideBook extends GuiScreen {
     }
 
     private void drawTitle() {
-        String s = StringTranslate.getInstance().translateKey("craftableCreatures.guide.cover.title");
+        String s = TranslateUtils.translate("craftableCreatures.guide.cover.title");
         drawNonTextString(s, ((width - xSize) / 2 + xSize) - w(s) / 2, (height - ySize) / 2 + 45, 10339058);
     }
 
@@ -727,12 +727,12 @@ public class GuiScreenGuideBook extends GuiScreen {
     }
 
     private String f(String key) {
-        String output = StringTranslate.getInstance().translateKey(key);
+        String output = TranslateUtils.translate(key);
         output = output.replace("\\n", "\n").replace("<empty>", "");
         return output;
     }
     private String f(String key, Object[] replacements) {
-        String output = StringTranslate.getInstance().translateKeyFormat(key, replacements);
+        String output = TranslateUtils.translateFormatted(key, replacements);
         output = output.replace("\\n", "\n").replace("<empty>", "");
         return output;
     }

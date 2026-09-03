@@ -1,22 +1,15 @@
 /**
- * File created on 20:44 30.08.2026 by Wertyfire
+ * File created on 21:20 02.09.2026 by Wertyfire
  */
 
 package craftablecreatures;
 
-import forge.ITextureProvider;
-import net.minecraft.src.Item;
+import net.minecraft.src.ItemBlock;
 import net.minecraft.src.ItemStack;
-import net.minecraft.src.mod_CraftableCreatures;
 
-public class ItemDefault extends Item implements ITextureProvider {
-    public ItemDefault(int id) {
+public class ItemBlockDefault extends ItemBlock {
+    public ItemBlockDefault(int id) {
         super(id);
-    }
-
-    @Override
-    public String getTextureFile() {
-        return mod_CraftableCreatures.itemAtlas;
     }
 
     @Override

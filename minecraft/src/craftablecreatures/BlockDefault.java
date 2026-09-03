@@ -31,4 +31,9 @@ public class BlockDefault extends Block implements ITextureProvider {
         this.blockIndexInTexture = index;
         return this;
     }
+
+    @Override
+    public String translateBlockName() {
+        return TranslateUtils.translate(getBlockName() + ".name");
+    }
 }

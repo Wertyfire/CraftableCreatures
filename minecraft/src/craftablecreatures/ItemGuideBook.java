@@ -20,7 +20,7 @@ public class ItemGuideBook extends ItemDefault {
 
     @Override
     public void addInformation(ItemStack stack, List tooltip) {
-        tooltip.add(StringTranslate.getInstance().translateKey("craftableCreatures.guide.page1.author")
+        tooltip.add(TranslateUtils.translate("craftableCreatures.guide.page1.author")
                 + " " + "Wertyfire");
     }
 

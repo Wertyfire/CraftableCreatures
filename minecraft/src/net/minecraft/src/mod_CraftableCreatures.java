@@ -10,6 +10,11 @@ import forge.*;
 import net.minecraft.client.Minecraft;
 
 import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.Properties;
 import java.util.Random;
 
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
@@ -24,6 +29,11 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     public static final String blockAtlas = "/craftablecreatures/block_textures.png";
     public static final String itemAtlas = "/craftablecreatures/item_textures.png";
+
+    private static final String enUSTranslationsPath = "/craftablecreatures/lang/en_US.lang";
+    private static final String ruRUTranslationsPath = "/craftablecreatures/lang/ru_RU.lang";
+    public static Properties enUSTranslations = new Properties();
+    public static Properties ruRUTranslations = new Properties();
 
     public static Block bluestoneBlock;
     public static Block bluestoneOre;
@@ -59,6 +69,7 @@ public class mod_CraftableCreatures extends BaseModMp {
         CCVersionChecker.check(VERSION);
 
         loadTextures();
+        cacheTranslations();
         loadBlocks();
         loadItems();
         registerTileEntities();
@@ -91,26 +102,26 @@ public class mod_CraftableCreatures extends BaseModMp {
                 String homepage = CCVersionChecker.getHomepageUrl();
 
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.FAILED) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.failedToCheckUpdates"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.failedToCheckUpdates"));
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.UP_TO_DATE) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.latest"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.latest"));
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.OUTDATED) {
                     player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.outdated"));
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.getUpdate") + " " + homepage);
-                    ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), ModLoader.getMinecraftInstance().gameSettings.field_44018_Q);
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.getUpdate") + " " + homepage);
+                    ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), TranslateUtils.getCurrentLanguage());
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.AHEAD) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.ahead"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.ahead"));
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.BETA) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.beta"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.beta"));
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.BETA_OUTDATED) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.betaOutdated"));
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.getUpdate") + " " + homepage);
-                    ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), ModLoader.getMinecraftInstance().gameSettings.field_44018_Q);
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.betaOutdated"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.getUpdate") + " " + homepage);
+                    ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), TranslateUtils.getCurrentLanguage());
                 }
             }
 
@@ -203,6 +214,25 @@ public class mod_CraftableCreatures extends BaseModMp {
         MinecraftForgeClient.preloadTexture(itemAtlas);
     }
 
+    private void cacheTranslations() {
+        cacheTranslation(enUSTranslationsPath, enUSTranslations);
+        cacheTranslation(ruRUTranslationsPath, ruRUTranslations);
+    }
+
+    private void cacheTranslation(String path, Properties targetProps) {
+        try {
+            InputStream stream = mod_CraftableCreatures.class.getResourceAsStream(path);
+            if (stream != null) {
+                InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
+                targetProps.load(reader);
+                reader.close();
+                stream.close();
+            }
+        } catch (IOException e) {
+            err("Error caching translations from '" + path + "': " + e.getMessage());
+        }
+    }
+
     private static void loadBlocks() {
         bluestoneBlock = createBlock(new BlockDefault(bluestoneBlockID, Material.iron, 3f, 5f, Block.soundMetalFootstep)
                 .setTextureIndex(0).setBlockName("bluestoneBlock"), "pickaxe", 2);
@@ -239,14 +269,14 @@ public class mod_CraftableCreatures extends BaseModMp {
     }
 
     private static void loadAchievements() {
-        thanksForDownload = new Achievement(thanksForDownloadAchID, "craftableCreatures.thanksForDownload", -8, 10, guideBook, null).b().d();
-        bluestoneCollector = new Achievement(bluestoneCollectorID, "craftableCreatures.bluedustCollector", -8, 8, bluestone, thanksForDownload).d();
-        templateManager = new Achievement(templateManagerID, "craftableCreatures.templateManager", -10, 7, template, bluestoneCollector).d();
-        mobSpawner = new Achievement(mobSpawnerID, "craftableCreatures.mobSpawner", -10, 5, spawnEggTemplate, templateManager).d();
-        soulExtractorAch = new Achievement(soulExtractorAchID, "craftableCreatures.soulExtractor", -8, 6, soulExtractorLit, bluestoneCollector).d();
-        extractSoulAch = new Achievement(extractSoulID, "craftableCreatures.extractSoul", -8, 4, soulExtractor, soulExtractorAch).d();
-        combinerAch = new Achievement(combinerAchID, "craftableCreatures.combiner", -6, 7, combinerLit, bluestoneCollector).d();
-        combineItemAch = new Achievement(combineItemsID, "craftableCreatures.combineItem", -6, 5, combiner, combinerAch).d();
+        thanksForDownload = new AchievementT(thanksForDownloadAchID, "craftableCreatures.thanksForDownload", -8, 10, guideBook, null).b().d();
+        bluestoneCollector = new AchievementT(bluestoneCollectorID, "craftableCreatures.bluedustCollector", -8, 8, bluestone, thanksForDownload).d();
+        templateManager = new AchievementT(templateManagerID, "craftableCreatures.templateManager", -10, 7, template, bluestoneCollector).d();
+        mobSpawner = new AchievementT(mobSpawnerID, "craftableCreatures.mobSpawner", -10, 5, spawnEggTemplate, templateManager).d();
+        soulExtractorAch = new AchievementT(soulExtractorAchID, "craftableCreatures.soulExtractor", -8, 6, soulExtractorLit, bluestoneCollector).d();
+        extractSoulAch = new AchievementT(extractSoulID, "craftableCreatures.extractSoul", -8, 4, soulExtractor, soulExtractorAch).d();
+        combinerAch = new AchievementT(combinerAchID, "craftableCreatures.combiner", -6, 7, combinerLit, bluestoneCollector).d();
+        combineItemAch = new AchievementT(combineItemsID, "craftableCreatures.combineItem", -6, 5, combiner, combinerAch).d();
     }
 
     private static void loadRecipes() {
@@ -302,7 +332,7 @@ public class mod_CraftableCreatures extends BaseModMp {
     }
 
     private static Block createBlock(Block block, String tool, int level) {
-        return createBlock(block, null, tool, level);
+        return createBlock(block, ItemBlockDefault.class, tool, level);
     }
     private static Block createBlock(Block block, Class<? extends ItemBlock> itemBlockClass, String tool, int level) {
         ModLoader.RegisterBlock(block, itemBlockClass);
@@ -388,7 +418,7 @@ public class mod_CraftableCreatures extends BaseModMp {
                 guiSoulExtractorID = i(config.getOrCreateIntProperty("guiSoulExtractor", Configuration.GENERAL_PROPERTY, 200));
                 guiCombinerID = i(config.getOrCreateIntProperty("guiCombiner", Configuration.GENERAL_PROPERTY, 201));
             } catch (Exception e) {
-                err("Error loading config!");
+                err("Error loading config: " + e.getMessage());
             } finally {
                 config.save();
             }

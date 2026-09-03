@@ -47,6 +47,11 @@ public class BlockSoulExtractor extends BlockContainer implements ITextureProvid
     }
 
     @Override
+    public String translateBlockName() {
+        return TranslateUtils.translate(getBlockName() + ".name");
+    }
+
+    @Override
     public int idDropped(int meta, Random random, int fortune) {
         return mod_CraftableCreatures.soulExtractor.blockID;
     }
@@ -202,7 +207,7 @@ public class BlockSoulExtractor extends BlockContainer implements ITextureProvid
         super.onBlockRemoval(world, x, y, z);
     }
 
-    public static class SoulExtractorItemBlock extends ItemBlock {
+    public static class SoulExtractorItemBlock extends ItemBlockDefault {
         public SoulExtractorItemBlock(int id) {
             super(id);
         }
@@ -210,12 +215,12 @@ public class BlockSoulExtractor extends BlockContainer implements ITextureProvid
         @Override
         public void addInformation(ItemStack stack, List tooltip) {
             if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.soulExtractor1"));
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.soulExtractor2"));
+                tooltip.add(TranslateUtils.translate("tooltip.soulExtractor1"));
+                tooltip.add(TranslateUtils.translate("tooltip.soulExtractor2"));
             }
             else {
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.pressLshift1"));
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.pressLshift2"));
+                tooltip.add(TranslateUtils.translate("tooltip.pressLshift1"));
+                tooltip.add(TranslateUtils.translate("tooltip.pressLshift2"));
             }
         }
     }

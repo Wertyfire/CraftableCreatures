@@ -47,6 +47,11 @@ public class BlockCombiner extends BlockContainer implements ITextureProvider {
     }
 
     @Override
+    public String translateBlockName() {
+        return TranslateUtils.translate(getBlockName() + ".name");
+    }
+
+    @Override
     public int idDropped(int meta, Random random, int fortune) {
         return mod_CraftableCreatures.combiner.blockID;
     }
@@ -182,17 +187,17 @@ public class BlockCombiner extends BlockContainer implements ITextureProvider {
         super.onBlockRemoval(world, x, y, z);
     }
 
-    public static class CombinerItemBlock extends ItemBlock {
+    public static class CombinerItemBlock extends ItemBlockDefault {
         public CombinerItemBlock(int id) {
             super(id);
         }
 
         @Override
         public void addInformation(ItemStack stack, List tooltip) {
-            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(StringTranslate.getInstance().translateKey("tooltip.spawnEggCombiner"));
+            if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) tooltip.add(TranslateUtils.translate("tooltip.spawnEggCombiner"));
             else {
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.pressLshift1"));
-                tooltip.add(StringTranslate.getInstance().translateKey("tooltip.pressLshift2"));
+                tooltip.add(TranslateUtils.translate("tooltip.pressLshift1"));
+                tooltip.add(TranslateUtils.translate("tooltip.pressLshift2"));
             }
         }
     }
