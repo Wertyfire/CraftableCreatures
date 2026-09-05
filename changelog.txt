@@ -1,5 +1,1 @@
-Removed transmutator
-Removed powered bluestone block
-Removed Energy achievement
-Bluestone ore now generates in 15-45y
-Removed souls/recipes for mobs that not exist in Minecraft 1.1
+Added 2 recipes for cow's soul: from milk bucket and leather
