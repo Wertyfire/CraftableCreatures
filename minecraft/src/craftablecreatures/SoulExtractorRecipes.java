@@ -39,6 +39,8 @@ public class SoulExtractorRecipes {
         addRecipe(Item.fermentedSpiderEye, 12);
         addRecipe(Block.cloth, 13);
         addRecipe(Item.beefRaw, 15);
+        addRecipe(Item.bucketMilk, 15);
+        addRecipe(Item.leather, 15);
         addRecipe(Item.blazeRod, 16);
         addRecipe(Item.chickenRaw, 17);
         addRecipe(Item.egg, 17);

@@ -20,8 +20,8 @@ import java.util.Random;
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
 
 public class mod_CraftableCreatures extends BaseModMp {
-    public static final String VERSION = "1.0.0";
-    public static final String BUILD = "01";
+    public static final String VERSION = "1.0.1";
+    public static final String BUILD = "02";
 
     public static mod_CraftableCreatures instance;
 
@@ -308,6 +308,7 @@ public class mod_CraftableCreatures extends BaseModMp {
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 5), 0.8f, 1, 2);
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 8), 0.5f, 0, 2);
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 12), 0.8f, 0, 2);
+        MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 14), 0.5f, 0, 2);
     }
 
     @Override
