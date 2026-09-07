@@ -1,8 +1,8 @@
 {
   "homepage": "https://modrinth.com/mod/craftable_creatures",
   "promos": {
-    "1.1-latest": "1.0.2",
-    "1.1-recommended": "1.0.2",
+    "1.1-latest": "1.1.0",
+    "1.1-recommended": "1.1.0",
     "1.7.10-latest": "1.1.7",
     "1.7.10-recommended": "1.1.7",
     "1.8.9-latest": "1.0.3",
@@ -15,7 +15,7 @@
   "1.1": {
     "1.0.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>Backported 1.7.10 version to Minecraft 1.1<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>Портирована версия для Minecraft 1.7.10 на Minecraft 1.1",
     "1.0.1": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added cow soul's recipes from leather and milk bucket<n><t>2. Now more souls generating in dungeons<n><t>3. Code optimisations<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Добавлены рецепты души коровы из кожи и ведра молока<n><t>2. Теперь больше душ генерируется в подземельях<n><t>3. Оптимизация кода",
-    "1.0.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Fixed update checker<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Исправлена проверка обновлений"
+    "1.0.2": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added mob spawner recipe<n><t>2. Now you can change mob spawner's mob by clicking on it with mob's soul<n><t>3. Minor changes and bugfixes<lang>[\u00A7bCraftable Creatures\u00A7f] Что нового:<n><t>1. Добавлен рецепт рассадника монстров<n><t>2. Теперь вы можете менять моба в рассаднике кликая по нему душой моба<n><t>3. Незначительные изменения и исправления багов"
   },
   "1.7.10": {
     "0.1.0": "[\u00A7bCraftable Creatures\u00A7f] What's new:<n><t>1. Added bluestone ore<n><t>2. Added bluestone block<n><t>3. Added powered bluestone block (like redstone block)<n><t>4. Added bluestone<n><t>5. Added soul<n><t>6. Added 24 mob souls<n><t>7. Added template<n><t>8. Added 5 achievement<n><t>9. Bluestone ore generation parameters in config",
