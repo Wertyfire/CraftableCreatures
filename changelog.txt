@@ -1,3 +1,4 @@
-Added 2 recipes for cow's soul: from milk bucket and leather
-Removed minimal-json lib to use Minecraft's json.org lib
-Added some souls to generate in dungeons
+Fixed update checker
+Added mob spawner recipe
+Now mob spawner's mob can be changed by clicking with mob's soul
+Updated guide book
