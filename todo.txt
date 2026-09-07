@@ -1,1 +1,0 @@
-Add cow's soul recipe from milk bucket and leather and empty bucket returning if needed
