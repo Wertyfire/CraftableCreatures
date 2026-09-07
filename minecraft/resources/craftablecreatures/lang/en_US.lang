@@ -85,6 +85,7 @@ craftableCreatures.guide.page3.mainText.2=If you have wishes or you found a bug 
 craftableCreatures.guide.page4.chapter=Chapter 2, Souls
 craftableCreatures.guide.page4.mainText.1=Souls are one of the main elements of mod. There are %s souls - %s of each mob and one of player.\nPlayer's soul appears in the place where he dies and the rest can be obtained with the help of soul extractor (see ch. 5).
 craftableCreatures.guide.page4.mainText.2=<empty>
+craftableCreatures.guide.page4.mainText.3=Souls also can be used on mob spawner to change mob.
 craftableCreatures.guide.page5.chapter=Chapter 3, Other Items
 craftableCreatures.guide.page5.mainText.1=In addition to souls, there are also other items.\n
 craftableCreatures.guide.page5.mainText.2=Bluestone is an important resource. It can be obtained by mining bluestone ore.\n\nBluestone is used in craft of Blueprints and evolved in craft of Soul Extractor and Combiner.

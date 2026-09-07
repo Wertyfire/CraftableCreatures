@@ -278,7 +278,7 @@ public class GuiScreenGuideBook extends GuiScreen {
                     s3 = f("craftableCreatures.guide.page1.author"),
                     s4 = "Wertyfire",
                     s5 = f("craftableCreatures.guide.page1.edition"),
-                    s6 = "2025";
+                    s6 = "2026";
             drawNonTextAlignedString(s1, xLeft, y + ySize / 2 - fontHeight, 0, Alignment.CENTER);
             drawNonTextAlignedString(s2, xLeft, y + ySize / 2, 0, Alignment.CENTER);
             rightPage();
@@ -322,6 +322,8 @@ public class GuiScreenGuideBook extends GuiScreen {
                     stacks = 0;
                 }
             }
+            drawEmptyString(2);
+            drawSplitString(f("craftableCreatures.guide.page4.mainText.3"));
             rightPage();
             drawAlignedString(f("craftableCreatures.guide.page5.chapter"), Alignment.CENTER);
             drawEmptyString();
@@ -402,13 +404,15 @@ public class GuiScreenGuideBook extends GuiScreen {
             drawAlignedString(f("tile.spawnEggCombiner.name"), Alignment.CENTER);
             drawCraftingRecipe(new ItemStack[]{s(Block.cobblestone), s(Block.cobblestone), s(Block.cobblestone), s(Block.cobblestone), s(mod_CraftableCreatures.template), s(Block.cobblestone), s(Block.cobblestone), s(Block.torchRedstoneActive), s(Block.cobblestone)}, s(mod_CraftableCreatures.combiner), lineXPos - 6, lineYPos);
         } else if (currentPage == 14) {
+            drawAlignedString(StringTranslate.getInstance().translateKey("tile.mobSpawner.name"), Alignment.CENTER);
+            drawCraftingRecipe(new ItemStack[]{s(Block.fenceIron), s(Block.fenceIron), s(Block.fenceIron), s(Block.fenceIron), s(mod_CraftableCreatures.soulElement), s(Block.fenceIron), s(Block.fenceIron), s(Block.fenceIron), s(Block.fenceIron)}, s(Block.mobSpawner), lineXPos - 9, lineYPos);
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.2"), Alignment.CENTER);
             drawSmeltingRecipe(s(mod_CraftableCreatures.bluestoneOre), s(mod_CraftableCreatures.bluestone), lineXPos + 8, lineYPos);
+            rightPage();
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.3"), Alignment.CENTER);
             drawExtractingRecipe(s(Item.rottenFlesh), s(mod_CraftableCreatures.soulElement, 1, 5), lineXPos, lineYPos);
-            rightPage();
             drawAlignedString(f("craftableCreatures.guide.page9.mainText.4"), Alignment.CENTER);
-            drawCombiningRecipe(s(mod_CraftableCreatures.soulElement, 1, 1), s(mod_CraftableCreatures.spawnEggTemplate), s(Item.field_44019_bC, 1, EntityList.getEntityID(new EntityCreeper(null))), lineXPos + 10, lineYPos);
+            drawCombiningRecipe(s(mod_CraftableCreatures.soulElement, 1, 1), s(mod_CraftableCreatures.spawnEggTemplate), s(Item.field_44019_bC, 1, EntityList.getEntityID(new EntityCreeper(null))), lineXPos + 9, lineYPos);
         }
     }
 
