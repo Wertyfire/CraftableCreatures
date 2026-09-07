@@ -174,6 +174,8 @@ public class mod_CraftableCreatures extends BaseModMp {
                 "SSS", "SUS", "SAS", 'S', Block.cobblestone, 'U', bluestoneBlock, 'A', Block.stoneOvenIdle});
         ModLoader.AddRecipe(new ItemStack(combiner), new Object[] {
                 "SSS", "SUS", "SAS", 'S', Block.cobblestone, 'U', template, 'A', Block.torchRedstoneActive});
+        ModLoader.AddRecipe(new ItemStack(Block.mobSpawner), new Object[] {
+                "SSS", "SUS", "SSS", 'S', Block.fenceIron, 'U', soulElement});
 
         //Smelting recipes
         ModLoader.AddSmelting(bluestoneOre.blockID, new ItemStack(bluestone));

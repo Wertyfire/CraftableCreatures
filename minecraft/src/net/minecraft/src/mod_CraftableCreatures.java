@@ -98,30 +98,36 @@ public class mod_CraftableCreatures extends BaseModMp {
 
         if (player != null) {
             if (checkForUpdates && !player.worldObj.multiplayerWorld && !updateNotified) {
-                updateNotified = true;
                 String homepage = CCVersionChecker.getHomepageUrl();
 
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.FAILED) {
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.failedToCheckUpdates"));
+                    updateNotified = true;
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.UP_TO_DATE) {
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.latest"));
+                    updateNotified = true;
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.OUTDATED) {
-                    player.addChatMessage(StringTranslate.getInstance().translateKey("craftableCreatures.chat.outdated"));
+                    player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.outdated"));
+                    System.out.println(TranslateUtils.translate("craftableCreatures.chat.outdated"));
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.getUpdate") + " " + homepage);
                     ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), TranslateUtils.getCurrentLanguage());
+                    updateNotified = true;
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.AHEAD) {
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.ahead"));
+                    updateNotified = true;
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.BETA) {
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.beta"));
+                    updateNotified = true;
                 }
                 if (CCVersionChecker.getStatus() == CCVersionChecker.UpdateResult.BETA_OUTDATED) {
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.betaOutdated"));
                     player.addChatMessage(TranslateUtils.translate("craftableCreatures.chat.getUpdate") + " " + homepage);
                     ChatUtils.sendUpdateChangelogMessage(player, CCVersionChecker.getChangelog(), TranslateUtils.getCurrentLanguage());
+                    updateNotified = true;
                 }
             }
 
@@ -295,6 +301,8 @@ public class mod_CraftableCreatures extends BaseModMp {
                 "SSS", "SUS", "SAS", 'S', Block.cobblestone, 'U', bluestoneBlock, 'A', Block.stoneOvenIdle);
         ModLoader.AddRecipe(new ItemStack(combiner),
                 "SSS", "SUS", "SAS", 'S', Block.cobblestone, 'U', template, 'A', Block.torchRedstoneActive);
+        ModLoader.AddRecipe(new ItemStack(Block.mobSpawner),
+                "SSS", "SUS", "SSS", 'S', Block.fenceIron, 'U', soulElement);
 
         //Smelting recipes
         ModLoader.AddSmelting(bluestoneOre.blockID, new ItemStack(bluestone));
@@ -385,8 +393,8 @@ public class mod_CraftableCreatures extends BaseModMp {
         public static int combinerAchID;
         public static int combineItemsID;
 
-        public static int guiSoulExtractorID = 200;
-        public static int guiCombinerID = 201;
+        public static int guiSoulExtractorID;
+        public static int guiCombinerID;
 
         public static void init(Configuration config) {
             try {
