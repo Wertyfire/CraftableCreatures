@@ -2,3 +2,4 @@ Fixed update checker
 Added mob spawner recipe
 Now mob spawner's mob can be changed by clicking with mob's soul
 Updated guide book
+Fixed bug when on server player's soul after death was duplicating on client
