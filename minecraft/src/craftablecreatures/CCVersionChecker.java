@@ -6,13 +6,14 @@
 
 package craftablecreatures;
 
+import craftablecreatures.lib.Json;
 import craftablecreatures.lib.SimpleVersion;
 import net.minecraft.src.mod_CraftableCreatures;
-import org.json.JSONObject;
 
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
-import java.util.Scanner;
+import java.nio.charset.StandardCharsets;
 
 
 public class CCVersionChecker {
@@ -62,15 +63,22 @@ public class CCVersionChecker {
 
                     URL url = new URL(updateUrl);
                     InputStream stream = url.openStream();
-                    JSONObject json = new JSONObject(new Scanner(stream, "UTF_8").useDelimiter("\\A").next());
+                    InputStreamReader reader = new InputStreamReader(stream, StandardCharsets.UTF_8);
+                    StringBuilder content = new StringBuilder();
+                    char [] buf = new char[1024];
+                    for (int n = reader.read(buf); n > -1; n = reader.read(buf))
+                        content.append(buf, 0, n);
+
+                    Json json = Json.read(content.toString());
+                    reader.close();
                     stream.close();
 
-                    homepage = json.optString("homepage");
-                    JSONObject promos = json.optJSONObject("promos");
-                    JSONObject changes = json.optJSONObject(mcVersion);
+                    homepage = json.at("homepage").asString();
+                    Json promos = json.at("promos");
+                    Json changes = json.at(mcVersion);
 
-                    String rec = promos.optString(mcVersion + "-recommended");
-                    String lat = promos.optString(mcVersion + "-latest");
+                    String rec = promos.at(mcVersion + "-recommended").asString();
+                    String lat = promos.at(mcVersion + "-latest").asString();
                     SimpleVersion current = new SimpleVersion(currentVersion);
 
                     if (rec != null) {
@@ -88,7 +96,7 @@ public class CCVersionChecker {
                                     updateResult = UpdateResult.OUTDATED;
                                     downloadLink = homepage + "/versions/" + lat;
                                     target = lat;
-                                    changelog = changes.optString(lat);
+                                    changelog = changes.at(lat).asString();
                                     mod_CraftableCreatures.info("Found new version: " + lat);
                                 }
                             }
@@ -96,7 +104,7 @@ public class CCVersionChecker {
                             updateResult = UpdateResult.OUTDATED;
                             downloadLink = homepage + "/versions/" + rec;
                             target = rec;
-                            changelog = changes.optString(rec);
+                            changelog = changes.at(rec).asString();
                             mod_CraftableCreatures.info("Found new version: " + rec);
                         }
                     } else if (lat != null) {
@@ -104,7 +112,7 @@ public class CCVersionChecker {
                             updateResult = UpdateResult.BETA_OUTDATED;
                             downloadLink = homepage + "/versions/" + lat;
                             target = lat;
-                            changelog = changes.optString(lat);
+                            changelog = changes.at(lat).asString();
                             mod_CraftableCreatures.info("Found new version: " + lat);
                         } else
                             updateResult = UpdateResult.BETA;

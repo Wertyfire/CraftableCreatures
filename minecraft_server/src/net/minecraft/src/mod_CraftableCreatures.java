@@ -262,8 +262,8 @@ public class mod_CraftableCreatures extends BaseModMp {
         public static int combinerAchID;
         public static int combineItemsID;
 
-        public static int guiSoulExtractorID = 200;
-        public static int guiCombinerID = 201;
+        public static int guiSoulExtractorID;
+        public static int guiCombinerID;
 
         public static void init(Configuration config) {
             try {
