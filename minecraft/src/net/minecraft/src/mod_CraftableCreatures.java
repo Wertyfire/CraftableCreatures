@@ -137,7 +137,7 @@ public class mod_CraftableCreatures extends BaseModMp {
                 checkForAchievementsTick(player, item);
             }
 
-            if (player.isDead) {
+            if (player.isDead && !player.worldObj.multiplayerWorld) {
                 if (!player.getEntityData().getBoolean("CraftableCreatures_DeathProcessed")) {
                     player.getEntityData().setBoolean("CraftableCreatures_DeathProcessed", true);
 
