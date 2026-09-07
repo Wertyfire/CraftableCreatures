@@ -4,9 +4,7 @@
 
 package craftablecreatures;
 
-import net.minecraft.src.ItemStack;
-import net.minecraft.src.MathHelper;
-import net.minecraft.src.mod_CraftableCreatures;
+import net.minecraft.src.*;
 
 import java.util.ArrayList;
 
@@ -33,5 +31,19 @@ public class ItemSoulElement extends ItemDefault {
         for (int x = 0; x < 21; x++) {
             itemList.add(new ItemStack(this, 1, x));
         }
+    }
+
+    @Override
+    public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side) {
+        if (world.getBlockTileEntity(x, y, z) instanceof TileEntityMobSpawner) {
+            TileEntityMobSpawner tile = (TileEntityMobSpawner) world.getBlockTileEntity(x, y, z);
+            ItemStack spawnEggStack = CombinerRecipes.get().getCombiningResult(stack, new ItemStack(mod_CraftableCreatures.spawnEggTemplate));
+            if (spawnEggStack == null) return false;
+            String mobID = EntityList.getEntityString(EntityList.func_44014_a(spawnEggStack.getItemDamage(), null));
+            tile.setMobID(mobID == null ? "Pig" : mobID);
+            --stack.stackSize;
+            return true;
+        }
+        return super.onItemUse(stack, player, world, x, y, z, side);
     }
 }
