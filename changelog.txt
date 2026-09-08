@@ -1,3 +1,3 @@
 Added player's soul recipe from soul sand (2 items from 1 soul sand)
-Added World.multiplayerWorld check in ItemSoulElement#onItemUse
+Added World.multiplayerWorld check in ItemSoulElement#onItemUse on client
 Removed ItemSoulElement textures registration on server
