@@ -41,7 +41,7 @@ public class ItemSoulElement extends ItemDefault {
 
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side) {
-        if (world.getBlockTileEntity(x, y, z) instanceof TileEntityMobSpawner) {
+        if (!world.multiplayerWorld && world.getBlockTileEntity(x, y, z) instanceof TileEntityMobSpawner) {
             TileEntityMobSpawner tile = (TileEntityMobSpawner) world.getBlockTileEntity(x, y, z);
             ItemStack spawnEggStack = CombinerRecipes.get().getCombiningResult(stack, new ItemStack(mod_CraftableCreatures.spawnEggTemplate));
             if (spawnEggStack == null) return false;
