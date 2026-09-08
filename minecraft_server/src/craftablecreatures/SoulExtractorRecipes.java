@@ -26,6 +26,7 @@ public class SoulExtractorRecipes {
     private SoulExtractorRecipes() {
         addBaseSoul(new ItemStack(mod_CraftableCreatures.soulElement, 1, 0));
 
+        extractingList.put(Block.slowSand.blockID, new ItemStack(mod_CraftableCreatures.soulElement, 2, 0));
         addRecipe(Block.mushroomRed, 1);
         addRecipe(Item.gunpowder, 2);
         addRecipe(Item.bone, 3);
