@@ -10,8 +10,6 @@ import java.util.ArrayList;
 
 public class ItemSoulElement extends ItemDefault {
     public static final String[] soulNames = { "", "mooshroom", "creeper", "skeleton", "spider", "zombie", "slime", "ghast", "villager", "zombiePigman", "enderman", "pig", "caveSpider", "sheep", "silverfish", "cow", "blaze", "chicken", "magmaCube", "squid", "wolf" };
-    public static final String[] soulTextureNames = { "", "mooshroom", "creeper", "skeleton", "spider", "zombie", "slime", "ghast", "villager", "zombie_pigman", "enderman", "pig", "cave_spider", "sheep", "silverfish", "cow", "blaze", "chicken", "magma_cube", "squid", "wolf" };
-    public static final int[] soulTextures = new int[21];
 
     public ItemSoulElement() {
         super(mod_CraftableCreatures.CraftableCreaturesIDs.soulElementID);

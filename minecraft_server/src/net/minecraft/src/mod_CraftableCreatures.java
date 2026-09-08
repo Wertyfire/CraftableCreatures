@@ -138,8 +138,6 @@ public class mod_CraftableCreatures extends BaseModMp {
         spawnEggTemplate = new ItemDefault(spawnEggTemplateID).setItemName("spawnEggTemplate");
         guideBook = new ItemGuideBook(guideBookID).setItemName("craftableCreaturesGuideBook");
         soulElement = new ItemSoulElement().setItemName("soul");
-        ItemSoulElement.soulTextures[0] = 4;
-        for (int i = 1; i < 21; i++) ItemSoulElement.soulTextures[i] = 4 + i;
     }
 
     private static void registerTileEntities() {
