@@ -1,5 +1,3 @@
-Fixed update checker
-Added mob spawner recipe
-Now mob spawner's mob can be changed by clicking with mob's soul
-Updated guide book
-Fixed bug when on server player's soul after death was duplicating on client
+Added player's soul recipe from soul sand (2 items from 1 soul sand)
+Added World.multiplayerWorld check in ItemSoulElement#onItemUse
+Removed ItemSoulElement textures registration on server
