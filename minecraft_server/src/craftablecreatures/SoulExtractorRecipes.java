@@ -55,6 +55,9 @@ public class SoulExtractorRecipes {
     public void addRecipe(Block block, int soulIndex) {
         extractingList.put(block.blockID, new ItemStack(mod_CraftableCreatures.soulElement, 1, soulIndex));
     }
+    public void addRecipe(int input, ItemStack output) {
+        extractingList.put(input, output);
+    }
 
     public void addBaseSoul(ItemStack helper) {
         extractHelpers.add(helper);

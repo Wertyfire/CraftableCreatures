@@ -4,6 +4,7 @@
 
 package craftablecreatures;
 
+import craftablecreatures.api.CraftableCreaturesRegistry;
 import net.minecraft.src.*;
 
 public class SlotSoulExtractor extends Slot {
@@ -23,6 +24,7 @@ public class SlotSoulExtractor extends Slot {
     public void onPickupFromSlot(ItemStack stack) {
         stack.onCrafting(thePlayer.worldObj, thePlayer);
         thePlayer.triggerAchievement(mod_CraftableCreatures.extractSoulAch);
+        CraftableCreaturesRegistry.onSoulExtractedEvent(thePlayer, stack);
         super.onPickupFromSlot(stack);
     }
 }

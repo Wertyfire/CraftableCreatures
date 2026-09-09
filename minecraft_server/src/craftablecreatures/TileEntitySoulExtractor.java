@@ -4,6 +4,7 @@
 
 package craftablecreatures;
 
+import craftablecreatures.api.CraftableCreaturesRegistry;
 import forge.ISidedInventory;
 import net.minecraft.src.*;
 
@@ -181,7 +182,7 @@ public class TileEntitySoulExtractor extends TileEntity implements IInventory, I
         if (fuel == null) return 0;
         else {
             int item = fuel.itemID;
-            return item == mod_CraftableCreatures.bluestone.shiftedIndex ? 1600 : (item == mod_CraftableCreatures.bluestoneBlock.blockID ? 16000 : 0);
+            return item == mod_CraftableCreatures.bluestone.shiftedIndex ? 1600 : (item == mod_CraftableCreatures.bluestoneBlock.blockID ? 16000 : CraftableCreaturesRegistry.getSEFuelValue(fuel));
         }
     }
 

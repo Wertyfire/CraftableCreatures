@@ -6,6 +6,7 @@ package net.minecraft.src;
 
 import craftablecreatures.*;
 import craftablecreatures.BlockOre;
+import craftablecreatures.api.CraftableCreaturesRegistry;
 import forge.*;
 import net.minecraft.client.Minecraft;
 
@@ -20,8 +21,8 @@ import java.util.Random;
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
 
 public class mod_CraftableCreatures extends BaseModMp {
-    public static final String VERSION = "1.1.1";
-    public static final String BUILD = "04";
+    public static final String VERSION = "1.1.2";
+    public static final String BUILD = "05";
 
     public static mod_CraftableCreatures instance;
 
@@ -78,6 +79,7 @@ public class mod_CraftableCreatures extends BaseModMp {
         loadAchievements();
         loadRecipes();
         loadChestLoots();
+        initializeApi();
 
         ModLoader.SetInGameHook(this, true, false);
     }
@@ -317,6 +319,10 @@ public class mod_CraftableCreatures extends BaseModMp {
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 8), 0.5f, 0, 2);
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 12), 0.8f, 0, 2);
         MinecraftForge.addDungeonLoot(new ItemStack(soulElement, 1, 14), 0.5f, 0, 2);
+    }
+
+    private static void initializeApi() {
+        CraftableCreaturesRegistry.registerItemAsSoul(soulElement);
     }
 
     @Override
