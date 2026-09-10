@@ -54,7 +54,8 @@ public class ContainerCombiner extends Container {
     }
 
     @Override
-    public ItemStack transferStackInSlot(int fromSlot) {ItemStack itemStack = null;
+    public ItemStack transferStackInSlot(int fromSlot) {
+        ItemStack itemStack = null;
         Slot slot = (Slot) inventorySlots.get(fromSlot);
 
         if (slot != null && slot.getHasStack()) {
