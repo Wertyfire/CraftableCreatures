@@ -17,12 +17,13 @@ import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.Properties;
 import java.util.Random;
+import java.util.Set;
 
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
 
 public class mod_CraftableCreatures extends BaseModMp {
-    public static final String VERSION = "1.1.2";
-    public static final String BUILD = "05";
+    public static final String VERSION = "1.2.0";
+    public static final String BUILD = "06";
 
     public static mod_CraftableCreatures instance;
 
@@ -62,6 +63,7 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     public mod_CraftableCreatures() {
         instance = this;
+        CraftableCreaturesRegistry.setRegistrar(this, new CCRegistrarImpl());
     }
 
     @Override
@@ -82,6 +84,18 @@ public class mod_CraftableCreatures extends BaseModMp {
         initializeApi();
 
         ModLoader.SetInGameHook(this, true, false);
+    }
+
+    @Override
+    public void ModsLoaded() {
+        Set<BaseMod> addons = CraftableCreaturesRegistry.getAddons();
+        for (BaseMod addon : addons) {
+            info("Found addon: %s, version: %s", addon.getName(), addon.getVersion());
+        }
+        if (!addons.isEmpty())
+            info("Found %s addon(-s).", addons.size());
+        else
+            info("No addons found.");
     }
 
     @Override
@@ -361,8 +375,14 @@ public class mod_CraftableCreatures extends BaseModMp {
     public static void info(String info) {
         System.out.println("[Craftable Creatures]: " + info);
     }
+    public static void info(String info, Object... format) {
+        info(String.format(info, format));
+    }
     public static void err(String err) {
         System.err.println("[Craftable Creatures]: " + err);
+    }
+    public static void err(String err, Object... format) {
+        err(String.format(err, format));
     }
 
     @Override
