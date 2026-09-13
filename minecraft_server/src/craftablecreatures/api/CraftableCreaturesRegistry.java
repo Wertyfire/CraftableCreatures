@@ -268,6 +268,10 @@ public class CraftableCreaturesRegistry {
         }
     }
 
+    /**
+     * Check if addon loaded.
+     * @see #registerAddon(BaseMod)
+     * */
     public static boolean isAddonLoaded(String addonId) {
         return addons.stream().anyMatch(addon -> addon.getClass().getSimpleName().equals(addonId));
     }
