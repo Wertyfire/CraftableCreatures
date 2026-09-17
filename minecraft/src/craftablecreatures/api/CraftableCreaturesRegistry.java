@@ -12,16 +12,16 @@ import java.util.Set;
 
 /**
  * Main Craftable Creatures registry for addons.
- * Addons must register themselves using {@linkplain #registerAddon(BaseMod) registerAddon(BaseMod)} method.
+ * Addons must register themselves using {@linkplain #registerAddon(ICraftableCreaturesAddon) registerAddon(ICraftableCreaturesAddon)} method.
  * @author Wertyfire*/
 public class CraftableCreaturesRegistry {
     /**API version*/
-    private static final String API_VERSION = "1.0";
+    private static final String API_VERSION = "2.0";
 
     /**Registrar interface to avoid crashes when Craftable Creatures not installed (or in dev env)*/
     private static CCRegistrar registrar = new CCEmptyRegistrar();
     /**List of addons*/
-    private static final Set<BaseMod> addons = new HashSet<>();
+    private static final Set<ICraftableCreaturesAddon> addons = new HashSet<>();
     /**List of souls so other addons can check if items is soul*/
     private static final Set<Item> souls = new HashSet<>();
     /**List of soul extractor fuel handlers*/
@@ -44,7 +44,7 @@ public class CraftableCreaturesRegistry {
      * Register Craftable Creatures addon. If base mod implements any handler from API
      * it will automatically be registered.
      * */
-    public static void registerAddon(BaseMod addon) {
+    public static void registerAddon(ICraftableCreaturesAddon addon) {
         addons.add(addon);
         if (addon instanceof IItemCombinedEventHandler)
             registerItemCombinedEventHandler((IItemCombinedEventHandler) addon);
@@ -57,12 +57,13 @@ public class CraftableCreaturesRegistry {
     /**
      * Get list of registered addons.
      * */
-    public static Set<BaseMod> getAddons() {
+    public static Set<ICraftableCreaturesAddon> getAddons() {
         return addons;
     }
 
     /**
      * Get is Craftable Creatures installed.
+     * Probably useless.
      * */
     public static boolean craftableCreaturesLoaded() {
         return modLoaded("mod_CraftableCreatures");
@@ -270,10 +271,10 @@ public class CraftableCreaturesRegistry {
 
     /**
      * Check if addon loaded.
-     * @see #registerAddon(BaseMod)
+     * @see #registerAddon(ICraftableCreaturesAddon)
      * */
     public static boolean isAddonLoaded(String addonId) {
-        return addons.stream().anyMatch(addon -> addon.getClass().getSimpleName().equals(addonId));
+        return addons.stream().anyMatch(addon -> addon.getName().equalsIgnoreCase(addonId));
     }
 
     /**

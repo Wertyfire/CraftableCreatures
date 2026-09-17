@@ -7,6 +7,8 @@ package net.minecraft.src;
 import craftablecreatures.*;
 import craftablecreatures.BlockOre;
 import craftablecreatures.api.CraftableCreaturesRegistry;
+import craftablecreatures.api.ICraftableCreaturesAddon;
+import craftablecreatures.lib.SimpleVersion;
 import forge.*;
 import net.minecraft.client.Minecraft;
 
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.HashSet;
 import java.util.Properties;
 import java.util.Random;
 import java.util.Set;
@@ -22,8 +25,9 @@ import java.util.Set;
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
 
 public class mod_CraftableCreatures extends BaseModMp {
-    public static final String VERSION = "1.2.0";
-    public static final String BUILD = "06";
+    public static final String VERSION = "1.2.1";
+    public static final String BUILD = "07";
+    public static final String MATCHING_API_VERSION = "2.0";
 
     public static mod_CraftableCreatures instance;
 
@@ -63,6 +67,10 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     public mod_CraftableCreatures() {
         instance = this;
+        SimpleVersion current = new SimpleVersion(CraftableCreaturesRegistry.apiVersion());
+        SimpleVersion matching = new SimpleVersion(MATCHING_API_VERSION);
+        if (current.compareTo(matching) != 0)
+            throw new RuntimeException("Craftable Creatures: required version of API not present. Probably some addon included API with its code!");
         CraftableCreaturesRegistry.setRegistrar(this, new CCRegistrarImpl());
     }
 
@@ -88,14 +96,7 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     @Override
     public void ModsLoaded() {
-        Set<BaseMod> addons = CraftableCreaturesRegistry.getAddons();
-        for (BaseMod addon : addons) {
-            info("Found addon: %s, version: %s", addon.getName(), addon.getVersion());
-        }
-        if (!addons.isEmpty())
-            info("Found %s addon(-s).", addons.size());
-        else
-            info("No addons found.");
+        handleAddons();
     }
 
     @Override
@@ -153,7 +154,7 @@ public class mod_CraftableCreatures extends BaseModMp {
                 checkForAchievementsTick(player, item);
             }
 
-            if (player.isDead && !player.worldObj.multiplayerWorld) {
+            if (player.health <= 0 && !player.worldObj.multiplayerWorld) {
                 if (!player.getEntityData().getBoolean("CraftableCreatures_DeathProcessed")) {
                     player.getEntityData().setBoolean("CraftableCreatures_DeathProcessed", true);
 
@@ -353,6 +354,46 @@ public class mod_CraftableCreatures extends BaseModMp {
         }
     }
 
+    private static void handleAddons() {
+        Set<ICraftableCreaturesAddon> addons = CraftableCreaturesRegistry.getAddons();
+        if (addons.isEmpty()) {
+            info("No addons found");
+            return;
+        }
+
+        info("Found %s addon(-s)", addons.size());
+
+        Set<String> byName = new HashSet<>(addons.size());
+        for (ICraftableCreaturesAddon addon : addons)
+            byName.add(addon.getName().toLowerCase());
+        int erred = 0;
+
+        for (ICraftableCreaturesAddon addon : addons) {
+            StringBuilder missingDependenciesBuilder = new StringBuilder();
+            for (String dependency : addon.getDependencies())
+                if (!byName.contains(dependency.toLowerCase())) missingDependenciesBuilder.append("'").append(dependency).append("', ");
+            String missingDependencies = missingDependenciesBuilder.toString();
+            if (!missingDependencies.isEmpty()) {
+                info("Addon '%s', version %s missing following dependencies: %s, skipping...", addon.getName(), addon.getVersion(), missingDependencies.substring(0, missingDependencies.lastIndexOf(",")));
+                erred++;
+                continue;
+            }
+            try {
+                boolean success = addon.loadCompatibility();
+                if (success) info("Successfully loaded addon '%s', version %s", addon.getName(), addon.getVersion());
+                else {
+                    info("Addon '%s', version %s was not loaded", addon.getName(), addon.getVersion());
+                    erred++;
+                }
+            } catch (Exception e) {
+                err("Failed to load addon '%s', version %s. Message: %s", addon.getName(), addon.getVersion(), e.getMessage());
+                erred++;
+            }
+        }
+
+        info("Successfully loaded %s/%s addons", addons.size() - erred, addons.size());
+    }
+
     private static Configuration createConfig() {
         File configDir = new File(Minecraft.getMinecraftDir(), "config");
         if (!configDir.exists()) configDir.mkdirs();
@@ -392,6 +433,10 @@ public class mod_CraftableCreatures extends BaseModMp {
 
     public String getBuild() {
         return BUILD;
+    }
+
+    public String getRequiredApiVersion() {
+        return MATCHING_API_VERSION;
     }
 
     public static final class CraftableCreaturesIDs {
