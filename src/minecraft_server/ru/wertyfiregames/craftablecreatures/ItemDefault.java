@@ -5,7 +5,6 @@
 package ru.wertyfiregames.craftablecreatures;
 
 import net.minecraft.src.Item;
-import net.minecraft.src.mod_CraftableCreatures;
 
 public class ItemDefault extends Item {
     public ItemDefault(int id) {

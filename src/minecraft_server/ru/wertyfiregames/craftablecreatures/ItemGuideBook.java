@@ -7,7 +7,6 @@ package ru.wertyfiregames.craftablecreatures;
 import net.minecraft.src.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class ItemGuideBook extends ItemDefault {

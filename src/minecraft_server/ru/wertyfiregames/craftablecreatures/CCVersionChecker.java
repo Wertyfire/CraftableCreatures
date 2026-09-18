@@ -8,10 +8,7 @@ import net.minecraft.src.mod_CraftableCreatures;
 import ru.wertyfiregames.craftablecreatures.lib.Json;
 import ru.wertyfiregames.craftablecreatures.lib.SimpleVersion;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 public class CCVersionChecker {
     private static final String updateUrl = "https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/refs/heads/1.7.10/updates.json";
