@@ -87,12 +87,12 @@ public class mod_CraftableCreatures extends NetworkMod {
     public boolean onTickInGame(MinecraftServer game) {
         List<EntityOcelot> deadOcelots = new ArrayList<>();
         for (World world : DimensionManager.getWorlds()) {
-            world.loadedEntityList.forEach(entity -> {
-                if (entity instanceof EntityOcelot && ((EntityOcelot) entity).health <= 0 && !((EntityOcelot) entity).getEntityData().getBoolean("CraftableCreatures_DeathProcessed")) {
+            for (Entity entity : (List<Entity>) world.loadedEntityList) {
+                if (entity instanceof EntityOcelot && ((EntityOcelot) entity).health <= 0 && !entity.getEntityData().getBoolean("CraftableCreatures_DeathProcessed")) {
                     deadOcelots.add((EntityOcelot) entity);
-                    ((EntityOcelot) entity).getEntityData().setBoolean("CraftableCreatures_DeathProcessed", true);
+                    entity.getEntityData().setBoolean("CraftableCreatures_DeathProcessed", true);
                 }
-            });
+            }
             for (EntityOcelot ocelot : deadOcelots)
                 ocelot.worldObj.spawnEntityInWorld(new EntityItem(ocelot.worldObj, ocelot.posX, ocelot.posY, ocelot.posZ, new ItemStack(ocelotTail, 1)));
         }
