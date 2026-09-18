@@ -274,7 +274,10 @@ public class CraftableCreaturesRegistry {
      * @see #registerAddon(ICraftableCreaturesAddon)
      * */
     public static boolean isAddonLoaded(String addonId) {
-        return addons.stream().anyMatch(addon -> addon.getName().equalsIgnoreCase(addonId));
+        for (ICraftableCreaturesAddon addon : addons) {
+            if (addon.getName().equalsIgnoreCase(addonId)) return true;
+        }
+        return false;
     }
 
     /**
