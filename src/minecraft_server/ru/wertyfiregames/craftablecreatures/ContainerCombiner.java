@@ -44,6 +44,7 @@ public class ContainerCombiner extends Container {
 
     @Override
     public void onCraftGuiOpened(ICrafting icrafting) {
+        super.onCraftGuiOpened(icrafting);
         icrafting.updateCraftingInventoryInfo(this, 0, combiner.combineTime);
     }
 
