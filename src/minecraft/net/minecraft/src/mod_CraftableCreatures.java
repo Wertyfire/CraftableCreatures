@@ -202,8 +202,13 @@ public class mod_CraftableCreatures extends NetworkMod {
     private static void loadTranslations() {
         Properties enUSProps = loadLangProperties(enUSTranslations);
         Properties ruRUProps = loadLangProperties(ruRUTranslations);
-        addTranslations(enUSProps, "en_US");
-        addTranslations(ruRUProps, "ru_RU");
+        if (StringTranslate.getInstance().getCurrentLanguage().equals("ru_RU")) {
+            addTranslations(enUSProps, "en_US");
+            addTranslations(ruRUProps, "ru_RU");
+        } else {
+            addTranslations(ruRUProps, "ru_RU");
+            addTranslations(enUSProps, "en_US");
+        }
     }
 
     private static Properties loadLangProperties(String path) {

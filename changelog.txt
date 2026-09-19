@@ -1,1 +1,2 @@
 Fixed bug when while playing on server combiner progress and items weren't updating
+Fixed bug when after opening minecraft mod loaded incorrect localization
