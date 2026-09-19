@@ -18,8 +18,8 @@ import java.util.*;
 import static net.minecraft.src.mod_CraftableCreatures.CraftableCreaturesIDs.*;
 
 public class mod_CraftableCreatures extends NetworkMod {
-    public static final String VERSION = "1.0.0";
-    public static final String BUILD = "01";
+    public static final String VERSION = "1.0.1";
+    public static final String BUILD = "02";
     public static final String MATCHING_API_VERSION = "2.0";
 
     public static mod_CraftableCreatures instance;
