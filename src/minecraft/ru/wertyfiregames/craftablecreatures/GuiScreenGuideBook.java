@@ -261,9 +261,11 @@ public class GuiScreenGuideBook extends GuiScreen {
         drawNonTextString(s, ((width - xSize) / 2 + xSize) - w(s) / 2, (height - ySize) / 2 + 45, 10339058);
     }
 
+    private final String lastModifiedYear = "2026";
+
     private void drawBack() {
         int y = (height - ySize) / 2;
-        drawAlignedString("Wertyfire, 2025", y + ySize / 2 + fontHeight * 6, 10339058, Alignment.CENTER);
+        drawAlignedString("Wertyfire, " + lastModifiedYear, y + ySize / 2 + fontHeight * 6, 10339058, Alignment.CENTER);
     }
 
     private void drawPageText(int mouseX, int mouseY) {
@@ -278,7 +280,7 @@ public class GuiScreenGuideBook extends GuiScreen {
                     s3 = f("craftableCreatures.guide.page1.author"),
                     s4 = "Wertyfire",
                     s5 = f("craftableCreatures.guide.page1.edition"),
-                    s6 = "2026";
+                    s6 = lastModifiedYear;
             drawNonTextAlignedString(s1, xLeft, y + ySize / 2 - fontHeight, 0, Alignment.CENTER);
             drawNonTextAlignedString(s2, xLeft, y + ySize / 2, 0, Alignment.CENTER);
             rightPage();
