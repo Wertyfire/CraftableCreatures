@@ -3,7 +3,7 @@
     "modid": "mod_CraftableCreatures",
     "name": "Craftable Creatures",
     "description": "Now you can craft mobs!",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "url": "https://modrinth.com/mod/craftable_creatures",
     "updateUrl": "https://raw.githubusercontent.com/Wertyfire/CraftableCreatures/1.7.10/updates.json",
     "authors": ["Wertyfire"],
